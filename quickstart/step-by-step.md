@@ -33,15 +33,6 @@ Manually:
 Configure Docker Compose file <compose.yml> to create all the containers needed to run the Coral system.
 
 
-##### pillar / MONGODB_URL
-
-Pillar is the service layer that receives data from the partners. You will need to change the configuration MONGODB_URL for the IP of the docker instance for mongo.
-
-
-##### xenia / XENIA_MONGO_*
-
-Xenia is the service layer based on MongoDB aggregation framwork queries. It serves the front end. You will need to change the configuration XENIA_MONGO_* for the credentials of the mongo on the docker instance.
-
 ## Step 1
 
 Spin all the apps
