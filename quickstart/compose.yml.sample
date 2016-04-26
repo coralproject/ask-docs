@@ -1,0 +1,45 @@
+mongo:
+    image: mongo:3.2.3
+    ports:
+        - "27017:27017"
+    volumes:
+        - /mongo:/data/db
+    command: --auth
+pillarapp:
+    environment:
+            - PILLAR_HOME=/opt/pillar
+            - PILLAR_ADDRESS=:8080
+            - MONGODB_URL=mongodb://xxx:xxx@xxx:27017/xxx
+    image: coralproject/pillarrelease
+    ports:
+        - "8080:8080"
+    links:
+       - mongo
+atollapp:
+    image: coralproject/atoll
+    ports:
+        - "8181:8181"
+    links:
+       - mongo
+xeniaapp:
+    environment:
+            - XENIA_MONGO_HOST=xxx:27017
+            - XENIA_MONGO_AUTHDB=xxx
+            - XENIA_MONGO_DB=xxx
+            - XENIA_MONGO_USER=xxx
+            - XENIA_MONGO_PASS=xxx
+            - XENIA_LOGGING_LEVEL=2
+            - XENIA_HOST=:4000
+    image: coralproject/xenia
+    ports:
+        - "4000:4000"
+    links:
+       - mongo
+cayapp:
+    image: coralproject/cayrelease
+    ports:
+        - "81:80"
+    links:
+        - pillarapp
+        - xeniaapp
+        - mongo
