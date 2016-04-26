@@ -1,15 +1,21 @@
 # Summary
 
-- Quickstart
+- Quick start
 - Coral Ecosystem
 - Coral Sponge
 - Coral Pillar
 - Coral Xenia
 - Coral Cay
+- Design Process
 - User Guides
 - Contributions
-    Development and PR
-    Translation
-    Reporting Bugs and Features
+    - Development and PR
+        - Basic contribution workflow
+    - Translation
+        - Tools
+        - How to request/start a new language
+        - Workflow
+    - Reporting Bugs and Features
+    - Supporting the community
 - FAQ
 - About
