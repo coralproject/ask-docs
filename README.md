@@ -7,11 +7,10 @@ We seek to accomplish this by
 * creating open source community building software, and
 * creating, refining and disseminating practices, tools and studies to improve communities around journalism on the web.
 
-.
 
-<img src="https://coralproject.net/wp-content/uploads/2015/10/coralWordMark-1.5.png" width="400px" title="Coral Logo - an orange square with white curly lines similiar to those found in sea coral - plus the title The Coral Project" />
 
-.
+![Coral Logo](/imagescoralWordMark-1.5.png)
+
 
 ## Build a Community for your Audience
 
