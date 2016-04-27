@@ -14,8 +14,6 @@ We use docker hub to host all the images for the Coral apps. And we are using do
 - docker toolbox
     - docker compose https://docs.docker.com/compose/install/
 
-
-
 ### Create Docker MongoDB instance
 
 ##### mongo

@@ -9,13 +9,17 @@
 - Design Process
 - User Guides
 - Contributions
+    - Get involved
     - Development and PR
         - Basic contribution workflow
+        - Writing Code
     - Translation
         - Tools
         - How to request/start a new language
         - Workflow
-    - Reporting Bugs and Features
+    - Requesting features
+    - Reporting Bugs
     - Supporting the community
+    - Contributor License Agreements
 - FAQ
 - About
