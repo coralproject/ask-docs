@@ -1,25 +1,29 @@
 # Summary
 
-- Quick start
-- Coral Ecosystem
-- Coral Sponge
-- Coral Pillar
-- Coral Xenia
-- Coral Cay
-- Design Process
-- User Guides
-- Contributions
-    - Get involved
-    - Development and PR
-        - Basic contribution workflow
-        - Writing Code
-    - Translation
-        - Tools
-        - How to request/start a new language
-        - Workflow
-    - Requesting features
-    - Reporting Bugs
-    - Supporting the community
-    - Contributor License Agreements
-- FAQ
-- About
+* [Introduction](README.md)
+* [Quick start](quickstart/index.md)
+* [Coral Ecosystem](coral_ecosystem.md)
+* [Coral Sponge](sponge/index.md)
+* [Coral Pillar](pillar/index.md)
+   * [How to install](pillar/how_to_install.md)
+   * [Architecture](pillar/architecture.md)
+   * [Web Service](pillar/web_service.md)
+* [Coral Xenia](xenia/index.md)
+* [Coral Cay](cay/index.md)
+* [Design Process](design/index.md)
+* [User Guides](user_guides/user_guides.md)
+* [Contributions](contributions/contributions.md)
+   * [Get involved](contributions/getinvolved.md)
+   * [Development](contributions/development/development.md)
+       * [Basic contribution workflow](contributions/development/basic_contribution_workflow.md)
+       * [Writing Code](contributions/development/writing_code.md)
+   * [Translation](contributions/translation/translation.md)
+       * [Tools](contributions/translation/tools.md)
+       * [How to request/start a new language](contributions/translation/how_to_requeststart_a_new_language.md)
+       * [Workflow](contributions/translation/workflow.md)
+   * [Requesting features](contributions/requesting_features.md)
+   * [Reporting Bugs](contributions/reporting_bugs.md)
+   * [Supporting the community](contributions/supporting_the_community.md)
+   * [Contributor License Agreements](contributions/contributor_license_agreements.md)
+* [FAQ](faq.md)
+* [About](about.md)

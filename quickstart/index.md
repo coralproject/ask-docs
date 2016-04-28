@@ -1,4 +1,102 @@
+# Introduction
 
-- quick introduction to Coral
-- how to install it (docker)
-- where to go from here
+## Architecture
+
+This installation includes:
+
+##### MongoDB server
+##### Sponge Application
+##### Pillar Service
+##### Xenia Service
+##### Cay Application
+##### Documentation
+
+
+# Step By Step Guide
+
+We use [docker hub](https://hub.docker.com/) to host all the images for the Coral apps. And we are using [docker compose](https://docs.docker.com/compose/) to compose an image for all the apps needed to run the system. It will install the coral system based on the last updates from the projects in the coralproject's github.
+
+## Requirements
+
+#### Docker ToolBox
+
+[Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. You will need to [install it](https://docs.docker.com/compose/install/) to be able to run instances of apps from the coral system.
+
+### Create Docker MongoDB instance
+
+// TO DO
+
+##### mongo
+
+We are using MongoDB for the coral database. Docker will launch one mongo instance to manage all the databases we work on.
+
+Manually:
+
+- Setup credentials
+- Import sample data
+
+
+## Configuration
+
+We are using [compose.yml](quickstart/compose.yml) to create all the containers needed to run the Coral system.
+
+
+### Step 1
+
+Spin all the apps
+
+
+> docker-compose -f compose.yml up -d
+
+### Step 2
+
+to see if the instances are running :
+
+
+> docker-compose -f compose.yml ps
+
+
+to see the logs:
+
+
+> docker-compose -f compose.yml logs
+
+
+
+### Step 3
+
+How to use it
+
+
+> $ docker ps
+
+gives you the name for Cay (front-end app)
+
+
+get the port available:
+
+> $ docker port quickstart_cayapp_1
+80/tcp -> 0.0.0.0:81
+
+
+get the ip for your docker machine:
+
+
+> $ docker-machine ip default
+192.168.99.100
+
+
+To view the logs:
+
+
+> $ docker logs -f quickstart_cayapp_1
+
+
+To access Trust App browse to http://192.168.99.100:81
+
+
+# Where to go from here?
+
+Standalone Application deployment <https://github.com/coralproject/reef/wiki/Standalone-Application-deployment>
+
+Ecosystem <https://github.com/coralproject/reef/blob/master/ECOSYSTEM.md>

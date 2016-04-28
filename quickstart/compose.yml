@@ -5,7 +5,6 @@ mongodata:
     volumes:
         - /data/db
     command: mongod
-
 pillarapp:
     environment:
             - PILLAR_HOME=/opt/pillar
