@@ -9,7 +9,7 @@ We seek to accomplish this by
 
 
 
-![Coral Logo](/imagescoralWordMark-1.5.png)
+![Coral Logo](/images/coralWordMark-1.5.png)
 
 
 ## Build a Community for your Audience
