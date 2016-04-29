@@ -2,6 +2,8 @@
 
 ## Architecture
 
+![Architecture](/images/trust-architecture.png)
+
 This installation includes:
 
 ##### MongoDB server
@@ -10,7 +12,6 @@ This installation includes:
 ##### Xenia Service
 ##### Cay Application
 ##### Documentation
-
 
 # Step By Step Guide
 
