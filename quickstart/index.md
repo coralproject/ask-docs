@@ -22,20 +22,6 @@ We use [docker hub](https://hub.docker.com/) to host all the images for the Cora
 
 [Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. You will need to [install it](https://docs.docker.com/compose/install/) to be able to run instances of apps from the coral system.
 
-### Create Docker MongoDB instance
-
-// TO DO
-
-##### mongo
-
-We are using MongoDB for the coral database. Docker will launch one mongo instance to manage all the databases we work on.
-
-Manually:
-
-- Setup credentials
-- Import sample data
-
-
 ## Configuration
 
 We are using [compose.yml](quickstart/compose.yml) to create all the containers needed to run the Coral system.

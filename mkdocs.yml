@@ -1,11 +1,10 @@
 # If you add a page, you must add it to the index here
 pages:
-  - Home: 'index.md'
-  - Getting Started: 'quickstart/index.md'
+  - Introduction: 'index.md'
   - Coral Ecosystem: 'coral_ecosystem.md'
+  - Getting Started: 'quickstart/index.md'
   - Coral Sponge:
      - Home: 'sponge/index.md'
-     - Intro to Translation File: 'sponge/strategy.md'
   - Coral Pillar:
      - Home: 'pillar/index.md'
      - How to install: 'pillar/how_to_install.md'
@@ -45,8 +44,9 @@ site_name: The Coral Project Documentation
 
 markdown_extensions:
   - admonition
-  - smarty
+  - fenced_code
   - sane_lists
+  - smarty
 
 extra_css:
   - css/code_fixer.css
