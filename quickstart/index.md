@@ -6,12 +6,11 @@
 
 This installation includes:
 
-##### MongoDB server
-##### Sponge Application
-##### Pillar Service
-##### Xenia Service
-##### Cay Application
-##### Documentation
+  * MongoDB server
+  * [Sponge Application](https://github.com/coralproject/sponge)
+  * [Pillar Service](https://github.com/coralproject/pillar)
+  * [Xenia Service](https://github.com/coralproject/xenia)
+  * [Cay Application](https://github.com/coralproject/cay)
 
 # Step By Step Guide
 
@@ -41,15 +40,29 @@ Manually:
 
 We are using [compose.yml](quickstart/compose.yml) to create all the containers needed to run the Coral system.
 
-
 ### Step 1
+
+Setup environment variables:
+
+Google Analytics ID (not needed for local test):
+
+> export GAID_VALUE=<entervalue>
+
+> export AUTH_TOKEN_VALUE=<entervalue>
+
+Where your app is going to be running on:
+
+
+> export FRONTEND_HOST=localhost
+
+### Step 2
 
 Spin all the apps
 
 
 > docker-compose -f compose.yml up -d
 
-### Step 2
+### Step 3
 
 to see if the instances are running :
 
@@ -64,7 +77,7 @@ to see the logs:
 
 
 
-### Step 3
+### Step 4
 
 How to use it
 
