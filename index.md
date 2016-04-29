@@ -34,9 +34,6 @@ Coral products are based on the following technologies:
 * [Webpack](https://webpack.github.io/) and [Babel](https://babeljs.io/)
 * [Docker](https://www.docker.com/)
 
-
-## Technical Documentation
-
 You can use Docker Compose to [quick start](quickstart/index.md) the Coral System or read more about how the whole ecosystem and [each of its pieces work](coral_ecosystem.md).
 
 
