@@ -111,6 +111,4 @@ To access Trust App browse to http://192.168.99.100:81
 
 # Where to go from here?
 
-Standalone Application deployment <https://github.com/coralproject/reef/wiki/Standalone-Application-deployment>
-
-Ecosystem <https://github.com/coralproject/reef/blob/master/ECOSYSTEM.md>
+You can read on how each application is being build and [how to contribute to the project](/contributions/index.md).
