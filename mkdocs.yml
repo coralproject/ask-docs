@@ -1,0 +1,54 @@
+# If you add a page, you must add it to the index here
+pages:
+  - Home: 'README.md'
+  - Getting Started: 'quickstart/index.md'
+  - Coral Ecosystem: 'coral_ecosystem.md'
+  - Coral Sponge:
+     - Home: 'sponge/index.md'
+     - Intro to Translation File: 'sponge/strategy.md'
+  - Coral Pillar:
+     - Home: 'pillar/index.md'
+     - How to install: 'pillar/how_to_install.md'
+     - Architecture: 'pillar/architecture.md'
+     - Web Service: 'pillar/web_service.md'
+  - Coral Xenia:
+     - Home: 'xenia/index.md'
+     - Xenia Driver: 'xenia/xenia-driver-js.md'
+  - Coral Cay: 'cay/index.md'
+  - Widgets: 'ask/how-to-write-a-widget.md'
+  - Design Process: 'design/index.md'
+  - User Guides: 'user_guides/user_guides.md'
+  - Contributions:
+     - Home: 'contributions/contributions.md'
+     - Get involved: contributions/getinvolved.md'
+     - Development:
+         - Home: 'contributions/development/development.md'
+         - Basic contribution workflow: contributions/development/basic_contribution_workflow.md'
+         - Writing Code: 'contributions/development/writing-code.md'
+         - Conventions: 'contributions/development/code_style.md'
+     - Translation:
+         - Home: 'contributions/translation/translation.md'
+         - Tools: 'contributions/translation/tools.md'
+         - How to request/start a new language: 'contributions/translation/how_to_requeststart_a_new_language.md'
+         - Workflow: 'contributions/translation/workflow.md'
+     - Requesting features: 'contributions/requesting_features.md'
+     - Reporting Bugs: 'contributions/reporting_bugs.md'
+     - Supporting the community: 'contributions/supporting_the_community.md'
+     - Contributor License Agreements: 'contributions/contributor_license_agreements.md'
+  - FAQ: 'faq.md'
+  - Support: 'about.md'
+  - Style Guide: 'styleguide.md'
+
+
+# Do not edit in PRs below here
+site_name: The Coral Project Documentation
+
+markdown_extensions:
+  - admonition
+  - smarty
+  - sane_lists
+
+extra_css:
+  - css/code_fixer.css
+
+theme: readthedocs
