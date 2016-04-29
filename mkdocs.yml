@@ -17,26 +17,26 @@ pages:
   - Coral Cay: 'cay/index.md'
   - Widgets: 'ask/how-to-write-a-widget.md'
   - Design Process: 'design/index.md'
-  - User Guides: 'user_guides/user_guides.md'
+  - User Guides: 'user_guides/index.md'
   - Contributions:
-     - Home: 'contributions/contributions.md'
+     - Home: 'contributions/index.md'
      - Get involved: contributions/getinvolved.md'
      - Development:
-         - Home: 'contributions/development/development.md'
+         - Home: 'contributions/development/index.md'
          - Basic contribution workflow: contributions/development/basic_contribution_workflow.md'
-         - Writing Code: 'contributions/development/writing-code.md'
+         - Writing Code: 'contributions/development/writing_code.md'
          - Conventions: 'contributions/development/code_style.md'
      - Translation:
-         - Home: 'contributions/translation/translation.md'
+         - Home: 'contributions/translation/index.md'
          - Tools: 'contributions/translation/tools.md'
-         - How to request/start a new language: 'contributions/translation/how_to_requeststart_a_new_language.md'
+         - How to request/start a new language: 'contributions/translation/how_to_request_a_new_language.md'
          - Workflow: 'contributions/translation/workflow.md'
      - Requesting features: 'contributions/requesting_features.md'
      - Reporting Bugs: 'contributions/reporting_bugs.md'
      - Supporting the community: 'contributions/supporting_the_community.md'
      - Contributor License Agreements: 'contributions/contributor_license_agreements.md'
   - FAQ: 'faq.md'
-  - Support: 'about.md'
+  - Support & About: 'support.md'
   - Style Guide: 'styleguide.md'
 
 
