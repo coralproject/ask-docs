@@ -34,7 +34,7 @@ pages:
      - Requesting features: 'contributions/requesting_features.md'
      - Reporting Bugs: 'contributions/reporting_bugs.md'
      - Supporting the community: 'contributions/supporting_the_community.md'
-     - Contributor License Agreements: 'contributions/contributor_license_agreements.md'
+     - Contributor License Agreements: 'contributions/contributor_license_agreement.md'
   - FAQ: 'faq.md'
   - Support & About: 'support.md'
   - Style Guide: 'styleguide.md'
