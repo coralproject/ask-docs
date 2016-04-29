@@ -1,7 +1,14 @@
 # Coral Ecosystem
 
+Over the course of the project, we are building an ecosystem of products, tools and practices. These elements will work together and/or integrate with existing community tools.
+
 ![Architecture](/images/coral-ecosystem-current.png)
 
+## Trust
+
+Trust is our [first product](https://coralproject.net/first-product/) and introduce a number of technological components in this configuration:
+
+![Trust Architecture](/images/trust-architecture.png)
 
 ## Repositories
 

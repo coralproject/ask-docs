@@ -7,10 +7,7 @@ We seek to accomplish this by
 * creating open source community building software, and
 * creating, refining and disseminating practices, tools and studies to improve communities around journalism on the web.
 
-
-
-![Coral Logo](/imagescoralWordMark-1.5.png)
-
+![Coral Logo](/images/coralWordMark-1.5.png)
 
 ## Build a Community for your Audience
 
@@ -25,19 +22,10 @@ The relationship between a reader and a journalistic organization is profound, n
 
 ## What's going on and how can I get involved?
 
-We are still actively developing this open presence. The best way to help us is to file issues and pull requests against our community documention. You can also email us with your experience to let us know what you find exciting/dull, clear/obscure, verbose/missing or "other".
-
-For a high level picture of our vision and products, see [our ecosystem page](ECOSYSTEM.md).
-
-For a granular view of our current focus and future plans, see [the roadmap](ROADMAP.md). This is a great place to go if you're looking for a way to contribute code or documentation.  
-
-For more details, visit our various repos and check the issues and milestones.
-
-To get a sense of who we are and how we approach open source software, read through our [principles](PRINCIPLES.md), [branching and tagging strategy](BRANCHES-AND-TAGS.md), [coding style suggestions](CODE-STYLES.md), and [code of conduct](CODE-OF-CONDUCT.md) as well.
-
-Also, make sure to play _at least_ three rounds of [Cards Against Community](cards) daily.
+We are still actively developing this open presence and we always looking for [contributions](/contributions/contributions.md). We want to build this project with all of you.
 
 ## Under the hood
+
 Coral products are based on the following technologies:
 
 * The [Go](https://golang.org) programming language
@@ -45,6 +33,13 @@ Coral products are based on the following technologies:
 * [React](https://facebook.github.io/react/) and [Redux](https://github.com/rackt/redux)
 * [Webpack](https://webpack.github.io/) and [Babel](https://babeljs.io/)
 * [Docker](https://www.docker.com/)
+
+
+## Technical Documentation
+
+You can use Docker Compose to [quick start](quickstart/index.md) the Coral System or read more about how the whole ecosystem and [each of its pieces work](coral_ecosystem.md).
+
+
 
 For more information about us and to see our blog, please visit [our website](https://coralproject.net) and [sign up to our newsletter](http://tinyletter.com/coralproject). We are also on [Twitter](https://twitter.com/coralproject).
 

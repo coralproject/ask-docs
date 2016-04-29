@@ -64,4 +64,6 @@ _Attribution: Go Coding Style adopted from the Docker project._
 
 # Javascript conventions
 
-We are currently working under the [Airbnb js react conventions](https://github.com/airbnb/javascript/tree/master/react).
+We are currently working under the [Airbnb js react conventions](https://github.com/airbnb/javascript/tree/master/react). 
+
+
