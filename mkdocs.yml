@@ -23,7 +23,7 @@ pages:
      - Get involved: 'contributions/getinvolved.md'
      - Development:
          - Home: 'contributions/development/index.md'
-         - Basic contribution workflow: contributions/development/basic_contribution_workflow.md'
+         - Basic contribution workflow: 'contributions/development/basic_contribution_workflow.md'
          - Writing Code: 'contributions/development/writing_code.md'
          - Conventions: 'contributions/development/code_style.md'
      - Translation:
