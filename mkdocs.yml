@@ -1,6 +1,6 @@
 # If you add a page, you must add it to the index here
 pages:
-  - Home: 'README.md'
+  - Home: 'index.md'
   - Getting Started: 'quickstart/index.md'
   - Coral Ecosystem: 'coral_ecosystem.md'
   - Coral Sponge:
