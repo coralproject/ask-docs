@@ -22,7 +22,7 @@ The relationship between a reader and a journalistic organization is profound, n
 
 ## What's going on and how can I get involved?
 
-We are still actively developing this open presence and we always looking for [contributions](/contributions/contributions.md). We want to build this project with all of you.
+We are still actively developing this open presence and we always looking for [contributions](/contributions/index.md). We want to build this project with all of you.
 
 ## Under the hood
 
