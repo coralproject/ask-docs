@@ -17,7 +17,7 @@ pages:
        - Home: 'xenia/index.md'
        - Xenia Driver: 'xenia/xenia-driver-js.md'
     - Coral Cay: 'cay/index.md'
-    - Coral Elkhorn: 'ask/how-to-write-a-widget.md'
+    - Coral Elkhorn: 'elkhorn/index.md'
   - User Guides: 'user_guides/index.md'
   - Contributions:
      - Home: 'contributions/index.md'
