@@ -1,21 +1,23 @@
 # If you add a page, you must add it to the index here
 pages:
   - Introduction: 'index.md'
-  - Coral Ecosystem: 'coral_ecosystem.md'
-  - Getting Started: 'quickstart/index.md'
-  - Coral Sponge:
-     - Home: 'sponge/index.md'
-  - Coral Pillar:
-     - Home: 'pillar/index.md'
-     - How to install: 'pillar/how_to_install.md'
-     - Architecture: 'pillar/architecture.md'
-     - Web Service: 'pillar/web_service.md'
-  - Coral Xenia:
-     - Home: 'xenia/index.md'
-     - Xenia Driver: 'xenia/xenia-driver-js.md'
-  - Coral Cay: 'cay/index.md'
-  - Widgets: 'ask/how-to-write-a-widget.md'
   - Design Process: 'design/index.md'
+  - Developer Guides:
+    - Architectural Overview: 'coral_ecosystem.md'
+    - Getting Started: 'quickstart/index.md'
+    - Coral Sponge:
+       - Home: 'sponge/index.md'
+    - Coral Pillar:
+       - Home: 'pillar/index.md'
+       - How to install: 'pillar/how_to_install.md'
+       - Architecture: 'pillar/architecture.md'
+       - Web Service: 'pillar/web_service.md'
+       - Stats: 'pillar/stats.md'
+    - Coral Xenia:
+       - Home: 'xenia/index.md'
+       - Xenia Driver: 'xenia/xenia-driver-js.md'
+    - Coral Cay: 'cay/index.md'
+    - Coral Elkhorn: 'ask/how-to-write-a-widget.md'
   - User Guides: 'user_guides/index.md'
   - Contributions:
      - Home: 'contributions/index.md'
