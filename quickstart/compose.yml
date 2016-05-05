@@ -28,10 +28,13 @@ xeniaapp:
            - "XENIA_MONGO_PASS="
            - "XENIA_LOGGING_LEVEL=1"
            - "XENIA_HOST=:4000"
+           - "XENIA_CREATE_DATABASE=${XENIA_CREATE_DATABASE}"
+           - "XENIA_UPDATE_QUERY=${XENIA_UPDATE_QUERY}"
    ports:
        - "4000:4000"
    links:
       - mongodata
+
 
 cayapp:
    image: coralproject/cay
