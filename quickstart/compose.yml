@@ -37,7 +37,6 @@ xeniaapp:
    links:
       - mongodata
 
-
 cayapp:
    image: coralproject/cay
    environment:
