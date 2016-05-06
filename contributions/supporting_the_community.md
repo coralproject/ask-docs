@@ -4,16 +4,18 @@
 
 ### Break the Ice Activity
 
-Questions
-
+Discuss:
 * name / any organization
 * what community you participate in?
+
+Write down sticky notes:
+
+* what makes that a healthy community
 
 
 ### Spectogram
 
 ### Brainstorm group
 
-Questions
 
-* 
+### Lighting Talks
