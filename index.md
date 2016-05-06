@@ -6,12 +6,12 @@ The Coral Project is an open source project to help publishers of all sizes buil
 
 We believe that if journalism is going to remain relevant and connected to the needs of people who live in a democracy, journalists need to do a better job of listening, validating, factchecking, and responding to experiences, opinions, and ideas. 
 
-To do this, we need better tools that make everyone feel safe, respected, and heard, as well as improving the reading experience by focusing on positive contributions as well as making negative ones less prominent.
+To do this, we need better tools that make everyone feel safe, respected, and heard. We need to focus our resources on identifying positive contributions as well as making negative ones less prominent.
 
-To achieve our goals, we are:
+To achieve these goals, we are:
 
-* creating open source community building software, and
-* creating, refining and disseminating practices, tools and studies to improve communities around journalism on the web.
+* creating open source software, and
+* creating, refining and disseminating practices, tools, and studies 
 
 
 
