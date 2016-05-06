@@ -1,13 +1,19 @@
-# The Coral Project: build community
+![Coral Logo](/images/coralWordMark-1.5.png)
 
-The Coral Project is an open source project helping publishers of all sizes to build better communities around their journalism.
+***This is a work in progress. Some sections are missing/incomplete***
 
-We seek to accomplish this by
+The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. 
+
+We believe that if journalism is going to remain relevant and connected to the needs of people who live in a democracy, journalists need to do a better job of listening, validating, factchecking, and responding to experiences, opinions, and ideas. 
+
+To do this, we need better tools that make everyone feel safe, respected, and heard, as well as improving the reading experience by focusing on positive contributions as well as making negative ones less prominent.
+
+To achieve our goals, we are:
 
 * creating open source community building software, and
 * creating, refining and disseminating practices, tools and studies to improve communities around journalism on the web.
 
-![Coral Logo](/images/coralWordMark-1.5.png)
+
 
 ## Build a Community for your Audience
 
