@@ -1,5 +1,11 @@
 # Organizing Events
 
+## Goals
+
+* Fire up discussion on community
+* Share our research/discussion on healthy community
+* Share tools we are building
+
 ## Activities
 
 ### Break the Ice Activity
