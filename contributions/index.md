@@ -8,6 +8,6 @@ For a high level picture of our vision and products, see [our ecosystem page](co
 
 For more details, visit our [contributions guideline](/contributions/index.md) and [various repos](https://github.com/coralproject) and check the issues and milestones.
 
-To get a sense of [who we are](community url) and how we approach open source software, read through our [principles](/contributions/PRINCIPLES.md), [branching and tagging strategy](/contributions/BRANCHES-AND-TAGS.md), [coding style suggestions](CODE-STYLES.md), and [code of conduct](CODE-OF-CONDUCT.md) as well.
+To get a sense of [who we are](http://community.coralproject.net/) and how we approach open source software, read through our [principles](/contributions/PRINCIPLES.md), [branching and tagging strategy](/contributions/BRANCHES-AND-TAGS.md), [coding style suggestions](CODE-STYLES.md), and [code of conduct](CODE-OF-CONDUCT.md) as well.
 
 Also, make sure to play _at least_ three rounds of [Cards Against Community](cards) daily.

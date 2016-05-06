@@ -6,29 +6,29 @@ pages:
     - Architectural Overview: 'coral_ecosystem.md'
     - Getting Started: 'quickstart/index.md'
     - Coral Sponge:
-       - Home: 'sponge/index.md'
+       - Introduction: 'sponge/index.md'
     - Coral Pillar:
-       - Home: 'pillar/index.md'
+       - Introduction: 'pillar/index.md'
        - How to install: 'pillar/how_to_install.md'
        - Architecture: 'pillar/architecture.md'
        - Web Service: 'pillar/web_service.md'
        - Stats: 'pillar/stats.md'
     - Coral Xenia:
-       - Home: 'xenia/index.md'
+       - Introduction: 'xenia/index.md'
        - Xenia Driver: 'xenia/xenia-driver-js.md'
     - Coral Cay: 'cay/index.md'
     - Coral Elkhorn: 'elkhorn/index.md'
   - User Guides: 'user_guides/index.md'
   - Contributions:
-     - Home: 'contributions/index.md'
+     - Introduction: 'contributions/index.md'
      - Get involved: 'contributions/getinvolved.md'
      - Development:
-         - Home: 'contributions/development/index.md'
+         - Introduction: 'contributions/development/index.md'
          - Basic contribution workflow: 'contributions/development/basic_contribution_workflow.md'
          - Writing Code: 'contributions/development/writing_code.md'
          - Conventions: 'contributions/development/code_style.md'
      - Translation:
-         - Home: 'contributions/translations/index.md'
+         - Introduction: 'contributions/translations/index.md'
          - Tools: 'contributions/translations/tools.md'
          - How to request/start a new language: 'contributions/translations/how_to_request_a_new_language.md'
          - Workflow: 'contributions/translations/workflow.md'

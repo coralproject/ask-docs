@@ -10,7 +10,6 @@ We work with all the projects in https://github.com/CoralProject/ .
 * Sketch the work you are going to do.
 * Create a Pull Request to master to start working on the story. In the PR describe how you are going to do the work and if you need further discussion.
 
-
 ## Resources
 
 * How Github uses Github https://www.youtube.com/watch?v=qyz3jkOBbQY&feature=youtu.be&t=399

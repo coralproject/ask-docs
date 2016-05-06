@@ -1,6 +1,6 @@
 # Contributor Guide
 
-We seek to find the simplest set of practices and guidelines that lead to a welcoming, robust and productive coding community.
+We seek to find the simplest set of practices and guidelines that lead to a welcoming, robust and productive community.
 
 ## Roles and Responsibilities
 

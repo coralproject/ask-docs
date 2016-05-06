@@ -1,3 +1,6 @@
+# Development
+
+Thanks for being interested in contributing code to this project!
 
 ## Setting up development environment
 ## Development cycles

@@ -3,13 +3,8 @@ Branches and tags
 
 # Branches
 
-Coral repositories should normally have only three living branches at all time, including
+Coral repositories should normally have only two living branches at all time, including
 the regular `master` branch:
-
-## `docs` branch
-
-The `docs` branch supports documentation updates between product releases. This branch allow us to
-decouple documentation releases from product releases.
 
 ## `release` branch
 
@@ -17,8 +12,7 @@ The `release` branch contains the last _released_, Tagged version of the code fo
 
 # Tags
 
-Any public release of a compiled binary, with the logical exception of nightly builds, should have
-a corresponding tag in the repository.
+Any public release of a compiled binary, with the logical exception of nightly builds, should have a corresponding tag in the repository.
 
 The general format of a tag is `vX.Y.Z[-suffix[N]]`:
 
