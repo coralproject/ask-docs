@@ -6,7 +6,9 @@ Over the course of the project, we are building an ecosystem of products, tools 
 
 ## Trust
 
-Trust is our [first product](https://coralproject.net/first-product/) and introduce a number of technological components in this configuration:
+Trust is our [first product](https://coralproject.net/first-product/). It enables newsroom users to identify different kinds of end users in order to take actions (eg. I want to block these trolls on this author; I want to highlight the best commenters on this subject.) It allows newsrooms to make manual or automated lists of users via a series of filters. 
+
+Trust introduces a number of technological components:
 
 ![Trust Architecture](/images/trust-architecture.png)
 
@@ -14,9 +16,9 @@ Trust is our [first product](https://coralproject.net/first-product/) and introd
 
 ### Sponge
 
-[Sponge](https://github.com/coralproject/sponge) is a command line tool to import comments, authors, assets and other entities into the coral system. It is designed to read data from a foreign _source_, translate the schema into coral conventions, and POST entities to [our service layer](https://github.com/coralproject/pillar) for inserting.
+[Sponge](https://github.com/coralproject/sponge) is a command line tool to import comments, authors, assets and other entities into the Coral system. It is designed to read data from a foreign _source_, translate the schema into Coral conventions, and POST entities to [our service layer](https://github.com/coralproject/pillar) for inserting.
 
-Right now the foreign source could be any of the following
+Right now the foreign source could be any of the following:
 
   * MySQL
   * PostgreSQL
@@ -27,9 +29,9 @@ Right now the foreign source could be any of the following
 
 [Pillar](https://github.com/coralproject/pillar) is a REST based web-service module written in golang. It provides the following services:
 
-  * Imports external data into the coral data model
-  * Allows CRUD operation on coral data model
-  * Provides simple queries on coral data model
+  * Imports external data into the Coral data model
+  * Allows CRUD operation on Coral data model
+  * Provides simple queries on Coral data model
 
 ### Xenia
 
