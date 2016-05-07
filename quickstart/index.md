@@ -24,7 +24,7 @@ We use [docker hub](https://hub.docker.com/) to host all the images for the Cora
 
 ## Configuration
 
-We are using [compose.yml](quickstart/compose.yml) to create all the containers needed to run the Coral system.
+We are using [compose.yml](https://github.com/coralproject/docs/blob/master/quickstart/compose.yml) to create all the containers needed to run the Coral system.
 
 ### Step 1
 
