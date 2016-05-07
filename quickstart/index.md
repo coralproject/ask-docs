@@ -32,69 +32,53 @@ Setup environment variables:
 
 Google Analytics ID (not needed for local test):
 
-> export GAID_VALUE=<entervalue>
-
-> export AUTH_TOKEN_VALUE=<entervalue>
+    $ export GAID_VALUE=<entervalue>
+    $ export AUTH_TOKEN_VALUE=<entervalue>
 
 Where your app is going to be running on:
 
-
-> export FRONTEND_HOST=localhost
+    $ export FRONTEND_HOST=localhost
 
 ### Step 2
 
 Spin all the apps
 
-
-> docker-compose -f compose.yml up -d
+    $ docker-compose -f compose.yml up -d
 
 ### Step 3
 
 to see if the instances are running :
 
-
-> docker-compose -f compose.yml ps
-
+    $ docker-compose -f compose.yml ps
 
 to see the logs:
 
-
-> docker-compose -f compose.yml logs
-
-
+    $ docker-compose -f compose.yml logs
 
 ### Step 4
 
 How to use it
 
-
-> $ docker ps
+    $ docker ps
 
 gives you the name for Cay (front-end app)
 
+Get the port available:
 
-get the port available:
+    $ docker port quickstart_cayapp_1
+    80/tcp -> 0.0.0.0:81
 
-> $ docker port quickstart_cayapp_1
-80/tcp -> 0.0.0.0:81
+Get the ip for your docker machine:
 
-
-get the ip for your docker machine:
-
-
-> $ docker-machine ip default
-192.168.99.100
-
+    $ docker-machine ip default
+    192.168.99.100
 
 To view the logs:
 
-
-> $ docker logs -f quickstart_cayapp_1
-
+    $ docker logs -f quickstart_cayapp_1
 
 To access Trust App browse to http://192.168.99.100:81
 
-
 # Where to go from here?
 
-You can read on how each application is being build and [how to contribute to the project](/contributions/index.md).
+You can read on how each application is being built and [how to contribute to the project](/contributions/index.md).
