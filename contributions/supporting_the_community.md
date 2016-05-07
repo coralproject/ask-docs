@@ -11,6 +11,7 @@
 ### Break the Ice Activity
 
 Discuss:
+
 * name / any organization
 * what community you participate in?
 
