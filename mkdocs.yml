@@ -5,14 +5,8 @@ pages:
   - Developer Guides:
     - Architectural Overview: 'coral_ecosystem.md'
     - Getting Started: 'quickstart/index.md'
-    - Coral Sponge:
-       - Introduction: 'sponge/index.md'
-    - Coral Pillar:
-       - Introduction: 'pillar/index.md'
-       - How to install: 'pillar/how_to_install.md'
-       - Architecture: 'pillar/architecture.md'
-       - Web Service: 'pillar/web_service.md'
-       - Stats: 'pillar/stats.md'
+    - Coral Sponge: 'sponge/index.md'
+    - Coral Pillar: 'pillar/index.md'
     - Coral Xenia:
        - Introduction: 'xenia/index.md'
        - Xenia Driver: 'xenia/xenia-driver-js.md'
