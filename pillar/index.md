@@ -1,4 +1,4 @@
-# Pillar Service
+# Pillar
 
 [Pillar](https://github.com/coralproject/pillar) is a REST based WebService written in Golang. It provides the following services:
 
