@@ -2,7 +2,9 @@
 
 ## Architecture
 
-The Coral ecosystem consists of several appliations that work together to form our products. The following diagram lays out the full install.  *It is not required to full understand each application's role to get started*, but this reference should help orient you going forward. 
+The Coral ecosystem consists of several appliations that work together to form our products. The following diagram lays out the full install.  
+
+'''Note: *It is not required to full understand each application's role to get started*.  This reference should help orient you going forward. '''
 
 ![Architecture](/images/trust-architecture.png)
 
@@ -16,50 +18,52 @@ This installation includes:
 
 # Step By Step Guide
 
-We use [docker hub](https://hub.docker.com/) to host all the images for the Coral apps. And we are using [docker compose](https://docs.docker.com/compose/) to compose an image for all the apps needed to run the system. It will install the coral system based on the last updates from the projects in the coralproject's github.
+### Step 0, Install Docker ToolBox
 
-## Requirements
+The most direct way to get up an running is to use our Dockerized environment.
 
-#### Docker ToolBox
+If you do not already have a Docker environment (including Docker Compose), we recommend installing via [Docker Toolbox] (https://docs.docker.com/mac/step_one/).
 
-[Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. You will need to [install it](https://docs.docker.com/compose/install/) to be able to run instances of apps from the coral system.
+Docker has you covered with [quickstart guides for Toolbox](https://docs.docker.com/mac/).
 
-## Configuration
+Docker Toolbox is all you need to begin installing the Coral Ecosystem on a single machine!
 
-[compose.yml](compose.yml) contains all the containers and network configuration needed to run the Coral ecosystem.
+### Step 1 - Set Environment Variables
 
-### Step 1
+**Required**
 
-Setup environment variables:
+Set up your http host.  If you're running locally, use localhost.
 
-Google Analytics ID (not needed for local test):
+```export FRONTEND_HOST=localhost```
 
-> export GAID_VALUE=<entervalue>
+**Optional**
 
-> export AUTH_TOKEN_VALUE=<entervalue>
+If you're using Google Analytics, set the token here:
 
-Where your app is going to be running on:
+```export GAID_VALUE=<entervalue>```
 
+If you're using a custom auth token, set it like so:
 
-> export FRONTEND_HOST=localhost
+```export AUTH_TOKEN_VALUE=<entervalue>```
 
-### Step 2
+### Step 2 - Spin up all the apps!
 
-Spin all the apps
+Save this file somewhere on your system: [compose.yml](compose.yml).  This file contains all the instructions Docker Compose needs to set up the Coral Ecosystem.
 
+You can run the file like so:
 
-> docker-compose -f compose.yml up -d
+```docker-compose -f compose.yml up -d```
 
-### Step 3
+### Step 3 - That's it!
+
+You should now have a fully operational Coral Ecosystem. If anything has gone wrong, please let us know!
 
 to see if the instances are running :
-
 
 > docker-compose -f compose.yml ps
 
 
 to see the logs:
-
 
 > docker-compose -f compose.yml logs
 
