@@ -1,24 +1,8 @@
-# Introduction
+# Welcome!
 
-## Architecture
+This guide will take you from scratch through a fully functioning single-server Coral Ecosystem in 3 or 4 steps.
 
-The Coral ecosystem consists of several appliations that work together to form our products. The following diagram lays out the full install.  
-
-'''Note: *It is not required to full understand each application's role to get started*.  This reference should help orient you going forward. '''
-
-![Architecture](/images/trust-architecture.png)
-
-This installation includes:
-
-  * MongoDB server
-  * [Sponge Application](https://github.com/coralproject/sponge)
-  * [Pillar Service](https://github.com/coralproject/pillar)
-  * [Xenia Service](https://github.com/coralproject/xenia)
-  * [Cay Application](https://github.com/coralproject/cay)
-
-# Step By Step Guide
-
-### Step 0, Install Docker ToolBox
+## Step 0, Install Docker ToolBox
 
 The most direct way to get up an running is to use our Dockerized environment.
 
@@ -28,35 +12,60 @@ Docker has you covered with [quickstart guides for Toolbox](https://docs.docker.
 
 Docker Toolbox is all you need to begin installing the Coral Ecosystem on a single machine!
 
-### Step 1 - Set Environment Variables
+## Step 1 - Set Environment Variables
 
 **Required**
 
-Set up your http host.  If you're running locally, use localhost.
+Set up your http host.  If you're running locally, you should use the ip address your ```docker-machine```.
 
-```export FRONTEND_HOST=localhost```
+To find your docker-machine ip, run this command:
+
+> docker-machine ip default
+
+(note, if you are not using the *default* docker machine, use the name of your docker-machine env above.)
+
+Now, set an evnironment var using that value like so:
+
+> export FRONTEND_HOST=<docker-machine ip>
 
 **Optional**
 
 If you're using Google Analytics, set the token here:
 
-```export GAID_VALUE=<entervalue>```
+> export GAID_VALUE=<entervalue>
 
 If you're using a custom auth token, set it like so:
 
-```export AUTH_TOKEN_VALUE=<entervalue>```
+> export AUTH_TOKEN_VALUE=<entervalue>
 
-### Step 2 - Spin up all the apps!
+## Step 2 - Spin up all the apps!
 
 Save this file somewhere on your system: [compose.yml](compose.yml).  This file contains all the instructions Docker Compose needs to set up the Coral Ecosystem.
 
 You can run the file like so:
 
-```docker-compose -f compose.yml up -d```
+> docker-compose -f compose.yml up -d
 
-### Step 3 - That's it!
+## Step 3 - That's it!
 
 You should now have a fully operational Coral Ecosystem. If anything has gone wrong, please let us know!
+
+
+## What just happened?!
+
+You just installed the following coral components:
+
+![Architecture](/images/trust-architecture.png)
+
+* MongoDB server
+  * [Sponge Application](https://github.com/coralproject/sponge)
+  * [Pillar Service](https://github.com/coralproject/pillar)
+  * [Xenia Service](https://github.com/coralproject/xenia)
+  * [Cay Application](https://github.com/coralproject/cay)
+
+
+
+# Working with the Coral Single Server Docker Ecosystem
 
 to see if the instances are running :
 
@@ -98,7 +107,13 @@ To view the logs:
 > $ docker logs -f quickstart_cayapp_1
 
 
-To access Trust App browse to http://192.168.99.100:81
+To access Trust App browse to http://192.168.99.100
+
+## Architecture
+
+The Coral ecosystem consists of several appliations that work together to form our products. The following diagram lays out the full install.  
+
+![Architecture](/images/trust-architecture.png)
 
 
 # Where to go from here?
