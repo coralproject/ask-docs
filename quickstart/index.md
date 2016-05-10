@@ -2,6 +2,8 @@
 
 ## Architecture
 
+The Coral ecosystem consists of several appliations that work together to form our products. The following diagram lays out the full install.  *It is not required to full understand each application's role to get started*, but this reference should help orient you going forward. 
+
 ![Architecture](/images/trust-architecture.png)
 
 This installation includes:
@@ -24,7 +26,7 @@ We use [docker hub](https://hub.docker.com/) to host all the images for the Cora
 
 ## Configuration
 
-We are using [compose.yml](quickstart/compose.yml) to create all the containers needed to run the Coral system.
+[compose.yml](compose.yml) contains all the containers and network configuration needed to run the Coral ecosystem.
 
 ### Step 1
 
