@@ -12,6 +12,8 @@ Docker has you covered with [quickstart guides for Toolbox](https://docs.docker.
 
 Docker Toolbox is all you need to begin installing the Coral Ecosystem on a single machine!
 
+(Note: you must have docker-compose v1.7 or later.)
+
 ## Step 1 - Set Environment Variables
 
 **Required**
