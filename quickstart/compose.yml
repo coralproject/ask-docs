@@ -6,16 +6,24 @@ mongodata:
        - /data/db
    command: mongod
 
+rabbitmq:
+  image: rabbitmq:management
+  environment:
+    - "RABBITMQ_DEFAULT_USER=${RABBIT_USER}"
+    - "RABBITMQ_DEFAULT_PASS=${RABBIT_PASS}"
+
 pillarapp:
    image: coralproject/pillar
    environment:
            - "PILLAR_HOME=/opt/pillar"
            - "PILLAR_ADDRESS=:8080"
            - "MONGODB_URL=mongodb://mongodata:27017/coral"
+           - "AMQP_URL=amqp://${RABBIT_USER}:${RABBIT_PASS}@rabbitmq:5672/"
    ports:
        - "8080:8080"
    links:
       - mongodata
+      - rabbitmq
 
 xeniaapp:
    image: coralproject/xenia
