@@ -62,3 +62,6 @@ sponge:
     environment:
         - "STRATEGY_CONF=/usr/local/strategy.json"
         - "PILLAR_URL=${FRONTEND_HOST}:8080"
+
+     volumes:
+         - ./strategy.json:/usr/local/strategy.json
