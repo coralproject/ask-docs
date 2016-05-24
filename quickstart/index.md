@@ -45,16 +45,23 @@ If you're using a custom auth token, set it like so:
 > export AUTH_TOKEN_VALUE=entervalue
 
 > export RABBIT_USER=entervalue
+
 > export RABBIT_PASS=entervalue
 
 # mongo:
+
 >export MONGO_DUMP=entervalue
+
 >export MONGO_AUTHDB=admin
+
 >export MONGO_USER=entervalue
+
 >export MONGO_PASS=entervalue
+
 >export MONGO_DB=coral
 
 # sponge:
+
 >export STRATEGY_CONF=/usr/local/strategy.json
 
 Now run command inside Proxy folder , source env.conf to make sure teh environment variables are set correctly. 
