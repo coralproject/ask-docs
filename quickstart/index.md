@@ -32,26 +32,26 @@ Next you will need to clone the setup git repo to get started, we reccomend you 
 
 Now, cd into Proxy directory , set an evnironment var in env.conf file  using that value like so:
 
-> "export FRONTEND_HOST=<docker-machine ip>"
+> export FRONTEND_HOST=docker-machine ip value
 
 **Optional**
 
 If you're using Google Analytics, set the token here:
 
-> export GAID_VALUE=<entervalue>
+> export GAID_VALUE=entervalue
 
 If you're using a custom auth token, set it like so:
 
-> export AUTH_TOKEN_VALUE=<entervalue>
+> export AUTH_TOKEN_VALUE=entervalue
 
-> export RABBIT_USER=<entervalue>
-> export RABBIT_PASS=<entervalue>
+> export RABBIT_USER=entervalue
+> export RABBIT_PASS=entervalue
 
 # mongo:
->export MONGO_DUMP=<entervalue>
+>export MONGO_DUMP=entervalue
 >export MONGO_AUTHDB=admin
->export MONGO_USER=<entervalue>
->export MONGO_PASS=<entervalue>
+>export MONGO_USER=entervalue
+>export MONGO_PASS=entervalue
 >export MONGO_DB=coral
 
 # sponge:
