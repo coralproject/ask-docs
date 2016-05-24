@@ -32,7 +32,7 @@ Next you will need to clone the setup git repo to get started, we reccomend you 
 
 Now, cd into Proxy directory , set an evnironment var in env.conf file  using that value like so:
 
-> export FRONTEND_HOST=<docker-machine ip>
+> "export FRONTEND_HOST=<docker-machine ip>"
 
 **Optional**
 
