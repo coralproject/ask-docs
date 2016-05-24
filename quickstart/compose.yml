@@ -1,7 +1,7 @@
 mongodata:
   image: coralproject/mongodata
   environment:
-    - "MONGO_DUMP=https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz"
+    - "MONGO_DUMP="
     - "MONGO_USER=${MONGO_USER}"
     - "MONGO_PASS=${MONGO_PASS}"
     - "MONGO_DB=${MONGO_DB}"
