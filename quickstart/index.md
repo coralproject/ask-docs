@@ -64,11 +64,11 @@ If you're using a custom auth token, set it like so:
 
 >export STRATEGY_CONF=/usr/local/strategy.json
 
-Now run command inside Proxy folder , source env.conf to make sure teh environment variables are set correctly. 
+Now run command inside Proxy folder , source env.conf to make sure teh environment variables are set correctly.
 
 ## Step 2 - Spin up all the apps!
 
-Save this file somewhere on your system: [compose.yml](compose.yml).  This file contains all the instructions Docker Compose needs to set up the Coral Ecosystem.
+Save this file somewhere on your system: [compose.yml](quickstart/compose.yml).  This file contains all the instructions Docker Compose needs to set up the Coral Ecosystem.
 
 You can run the file like so:
 
