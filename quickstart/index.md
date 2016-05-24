@@ -6,7 +6,7 @@ This guide will take you from scratch through a fully functioning single-server 
 
 The most direct way to get up an running is to use our Dockerized environment.
 
-If you do not already have a Docker environment (including Docker Compose), we recommend installing via [Docker Toolbox] (https://docs.docker.com/mac/step_one/).
+If you do not already have a Docker environment (including Docker Compose) setup on MAC OSX 10.9, we recommend installing via [Docker Toolbox] (https://docs.docker.com/mac/step_one/).
 
 Docker has you covered with [quickstart guides for Toolbox](https://docs.docker.com/mac/).
 
@@ -26,7 +26,11 @@ To find your docker-machine ip, run this command:
 
 (note, if you are not using the *default* docker machine, use the name of your docker-machine env above.)
 
-Now, set an evnironment var using that value like so:
+Next you will need to clone the setup git repo to get started, we reccomend you check out git repo into desired folder and make that your starting location.
+
+> git clone https://github.com/coralproject/Proxy.git
+
+Now, cd into Proxy directory , set an evnironment var in env.conf file  using that value like so:
 
 > export FRONTEND_HOST=<docker-machine ip>
 
@@ -39,6 +43,21 @@ If you're using Google Analytics, set the token here:
 If you're using a custom auth token, set it like so:
 
 > export AUTH_TOKEN_VALUE=<entervalue>
+
+> export RABBIT_USER=<entervalue>
+> export RABBIT_PASS=<entervalue>
+
+# mongo:
+>export MONGO_DUMP=<entervalue>
+>export MONGO_AUTHDB=admin
+>export MONGO_USER=<entervalue>
+>export MONGO_PASS=<entervalue>
+>export MONGO_DB=coral
+
+# sponge:
+>export STRATEGY_CONF=/usr/local/strategy.json
+
+Now run command inside Proxy folder , source env.conf to make sure teh environment variables are set correctly. 
 
 ## Step 2 - Spin up all the apps!
 
