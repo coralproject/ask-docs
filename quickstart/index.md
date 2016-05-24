@@ -38,46 +38,45 @@ Now, cd into Proxy directory , set an evnironment var in env.conf file  using th
 
 If you're using Google Analytics, set the token here:
 
-> export GAID_VALUE=entervalue
+    $ export GAID_VALUE=entervalue
 
 If you're using a custom auth token, set it like so:
 
-> export AUTH_TOKEN_VALUE=entervalue
+    $ export AUTH_TOKEN_VALUE=entervalue
 
-> export RABBIT_USER=entervalue
+    $ export RABBIT_USER=entervalue
 
-> export RABBIT_PASS=entervalue
+    $ export RABBIT_PASS=entervalue
 
 # mongo:
 
->export MONGO_DUMP=entervalue
+  $ export MONGO_DUMP=entervalue
 
->export MONGO_AUTHDB=admin
+  $ export MONGO_AUTHDB=admin
 
->export MONGO_USER=entervalue
+  $ export MONGO_USER=entervalue
 
->export MONGO_PASS=entervalue
+  $ export MONGO_PASS=entervalue
 
->export MONGO_DB=coral
+  $ export MONGO_DB=coral
 
 # sponge:
 
->export STRATEGY_CONF=/usr/local/strategy.json
+  $ export STRATEGY_CONF=/usr/local/strategy.json
 
 Now run command inside Proxy folder , source env.conf to make sure teh environment variables are set correctly.
 
 ## Step 2 - Spin up all the apps!
 
-Save this file somewhere on your system: [compose.yml](quickstart/compose.yml).  This file contains all the instructions Docker Compose needs to set up the Coral Ecosystem.
+Save this file somewhere on your system: [compose.yml](https://github.com/coralproject/docs/blob/master/quickstart/compose.yml).  This file contains all the instructions Docker Compose needs to set up the Coral Ecosystem.
 
 You can run the file like so:
 
-> docker-compose -f compose.yml up -d
+  $ docker-compose -f compose.yml up -d
 
 ## Step 3 - That's it!
 
 You should now have a fully operational Coral Ecosystem. If anything has gone wrong, please let us know!
-
 
 ## What just happened?!
 
@@ -97,43 +96,35 @@ You just installed the following coral components:
 
 to see if the instances are running :
 
-> docker-compose -f compose.yml ps
+    $ docker-compose -f compose.yml ps
 
 
 to see the logs:
 
-> docker-compose -f compose.yml logs
-
+    $ docker-compose -f compose.yml logs
 
 
 ### Step 4
 
 How to use it
 
-
-> $ docker ps
+    $ docker ps
 
 gives you the name for Cay (front-end app)
 
+Get the port available:
 
-get the port available:
+    $ docker port quickstart_cayapp_1
+    80/tcp -> 0.0.0.0:81
 
-> $ docker port quickstart_cayapp_1
-80/tcp -> 0.0.0.0:81
+Get the ip for your docker machine:
 
-
-get the ip for your docker machine:
-
-
-> $ docker-machine ip default
-192.168.99.100
-
+    $ docker-machine ip default
+    192.168.99.100
 
 To view the logs:
 
-
-> $ docker logs -f quickstart_cayapp_1
-
+    $ docker logs -f quickstart_cayapp_1
 
 To access Trust App browse to http://192.168.99.100
 
@@ -143,7 +134,6 @@ The Coral ecosystem consists of several appliations that work together to form o
 
 ![Architecture](/images/trust-architecture.png)
 
-
 # Where to go from here?
 
-You can read on how each application is being build and [how to contribute to the project](/contributions/index.md).
+You can read on how each application is being built and [how to contribute to the project](/contributions/index.md).
