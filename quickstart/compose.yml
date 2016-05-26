@@ -31,8 +31,6 @@ pillar:
    links:
       - mongodata:mongo
       - rabbitmq
-   depends_on: 
-      - rabbitmq
 xeniaapp:
 
 atoll:
