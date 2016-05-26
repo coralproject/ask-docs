@@ -24,7 +24,8 @@ pillarapp:
    links:
       - mongodata
       - rabbitmq
-
+   depends_on: 
+      - rabbitmq
 xeniaapp:
    image: coralproject/xenia
    environment:
@@ -40,7 +41,7 @@ xeniaapp:
        - "4000:4000"
    links:
       - mongodata
-
+  
 cayapp:
    image: coralproject/cay
    environment:
