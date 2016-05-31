@@ -1,11 +1,12 @@
-## What's going on and how can I get involved?
+## Contributing to the Coral Project
 
-We are still actively developing this open presence. The development and all the contribution to this project is governed by our [code of conduct](CODE-OF-CONDUCT.md) The best way to help us is to file issues and pull requests against our community documentation. You can also [email us](mailto:andrewl@mozillafoundation.org?Subject=Getting%20Involved) with your experience to let us know what you find exciting/dull, clear/obscure, verbose/missing or "other".
+Before you get started, be sure to review our [Code of Conduct](CODE-OF-CONDUCT.md), which governs all development and project contributions.
 
-For a high-level view of our vision and products, see [our ecosystem page](coral_ecosystem.md).
+There are a number of ways that you can contribute to the Coral Project:
 
-For more details, visit our [contributions guideline](/contributions/index.md) and [various repos](https://github.com/coralproject) and check the issues and milestones.
-
-To get a sense of [who we are](http://community.coralproject.net/) and how we approach open source software, read through our [principles](/contributions/PRINCIPLES.md), [branching and tagging strategy](/contributions/BRANCHES-AND-TAGS.md), [coding style suggestions](CODE-STYLES.md), and [code of conduct](CODE-OF-CONDUCT.md) as well.
-
+    * [Report bugs](reporting_bugs.md)
+    * [Request features](reporting_bugs.md)
+    * [Write code](write_code.md)
+    * [Write and edit documentation](write_documentation.md)
+    
 Also, make sure to play _at least_ three rounds of [Cards Against Community](cards) daily.

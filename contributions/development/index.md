@@ -19,7 +19,6 @@ Fixes for bugs that have made it into the _release_ branch must be applied to bo
 
 Previous releases can be accessed via tags.
 
-
 ## Checklists
 
 Follow these steps when contributing to the project:
