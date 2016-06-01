@@ -1,38 +1,37 @@
 # If you add a page, you must add it to the index here
 pages:
-  - Introduction: 'index.md'
-  - Design Process: 'design/index.md'
-  - Developer Guides:
-    - Architectural Overview: 'coral_ecosystem.md'
-    - Getting Started: 'quickstart/index.md'
-    - Coral Sponge: 'sponge/index.md'
-    - Coral Pillar: 'pillar/index.md'
-    - Coral Xenia:
-       - Introduction: 'xenia/index.md'
-       - Xenia Driver: 'xenia/xenia-driver-js.md'
-    - Coral Cay: 'cay/index.md'
-    - Coral Elkhorn: 'elkhorn/index.md'
-  - User Guides: 'user_guides/index.md'
-  - Contributions:
-     - Introduction: 'contributions/index.md'
-     - Get involved: 'contributions/getinvolved.md'
-     - Development:
-         - Introduction: 'contributions/development/index.md'
-         - Basic contribution workflow: 'contributions/development/basic_contribution_workflow.md'
-         - Writing Code: 'contributions/development/writing_code.md'
-         - Conventions: 'contributions/development/code_style.md'
-     - Translation:
-         - Introduction: 'contributions/translations/index.md'
-         - Tools: 'contributions/translations/tools.md'
-         - How to request/start a new language: 'contributions/translations/how_to_request_a_new_language.md'
-         - Workflow: 'contributions/translations/workflow.md'
-     - Requesting features: 'contributions/requesting_features.md'
-     - Reporting Bugs: 'contributions/reporting_bugs.md'
-     - Supporting the community: 'contributions/supporting_the_community.md'
-     - Contributor License Agreements: 'contributions/contributor_license_agreement.md'
-  - FAQ: 'faq.md'
-  - Support & About: 'support.md'
-  - Style Guide: 'styleguide.md'
+- INTRODUCTION:
+  - About: 'index.md'
+  - Architectural Overview: 'coral_ecosystem.md'
+- DEVELOPER USER GUIDE:
+  - Installing Coral Ecosystem: 'quickstart/install.md'
+  - Cay: 'cay/index.md'
+  - Elkhorn: 'elkhorn/index.md'
+  - Pillar:
+    - Introduction: 'pillar/index.md'
+    - Installation: 'pillar/install.md'
+    - API: 'pillar/api.md'
+  - Sponge:
+    - Introduction: 'sponge/index.md'
+    - Installation: 'sponge/install.md'
+    - Development:
+      - Logging: 'sponge/logging.md'
+      - Included packages: 'sponge/included_packages.md'
+  - Xenia: 'xenia/index.md'
+  - Xenia Driver: 'xenia/xenia-driver-js.md'
+- CONTRIBUTE:
+  - Introduction: 'contributions/index.md'
+  - DEVELOPMENT:
+    - Development workflow: 'contributions/development/working_with_github.md'
+    - Writing Code: 'contributions/development/writing_code.md'
+    - Conventions: 'contributions/development/code_style.md'
+  - DOCUMENTATION:
+    - Writing documentation: 'contributions/development/code_style.md'
+  - Reporting Bugs: 'contributions/reporting_bugs.md'
+  - Requesting Features: 'contributions/requesting_features.md'
+  - Supporting the community: 'contributions/supporting_the_community.md'
+  - Contributor License Agreements: 'contributions/contributor_license_agreement.md'
+- FAQ: 'faq.md'
 
 
 # Do not edit in PRs below here
