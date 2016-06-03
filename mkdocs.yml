@@ -5,8 +5,12 @@ pages:
   - Architectural Overview: 'coral_ecosystem.md'
 - DEVELOPER USER GUIDE:
   - Installing Coral Ecosystem: 'quickstart/install.md'
-  - Cay: 'cay/index.md'
-  - Elkhorn: 'elkhorn/index.md'
+  - Cay:
+    - Overview: 'cay/index.md'
+    - Installation: 'cay/install.md'
+  - Elkhorn:
+    - Overview: 'elkhorn/index.md'
+    - Installation: 'elkhorn/install.md'
   - Pillar:
     - Introduction: 'pillar/index.md'
     - Installation: 'pillar/install.md'
@@ -17,8 +21,12 @@ pages:
     - Development:
       - Logging: 'sponge/logging.md'
       - Included packages: 'sponge/included_packages.md'
-  - Xenia: 'xenia/index.md'
-  - Xenia Driver: 'xenia/xenia-driver-js.md'
+  - Xenia:
+    - Overview: 'xenia/index.md'
+    - Installation: 'xenia/install.md'
+  - Xenia Driver:
+    - Overview: 'xenia/xenia-driver-js.md'
+    - Installation: 'xenia/xenia-driver-js-install.md'
 - CONTRIBUTE:
   - Introduction: 'contributions/index.md'
   - DEVELOPMENT:
