@@ -1,5 +1,31 @@
 # Installation
 
+# Install from source
+
+## Before you begin
+
+You will need an instance of mysql running for the external source and an instance of [Pillar](http://github.com/coralproject/pillar) running to send the data to.
+
+You will also need Go installed.
+
+## Get the source code
+
+You can also clone the code manually. The project must be cloned inside the `github.com/coralproject/sponge` folder from inside your GOPATH.
+
+```
+mkdir -p $GOPATH/src/github.com/coralproject/sponge
+cd $GOPATH/src/github.com/coralproject/sponge
+
+git clone git@github.com:CoralProject/sponge.git
+```
+
+export STRATEGY_CONF="/strategy/strategy.json"
+export PILLAR_URL=http://localhost:8080
+
+
+
+
+
 ## Run it from Docker Image
 
 ### Building image

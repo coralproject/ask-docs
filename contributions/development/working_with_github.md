@@ -5,6 +5,7 @@ This section explains how the community can contribute code to the Coral Project
 For a general primer on contributing to open source projects, GitHub has created [a nice guide to contributing to open source](https://guides.github.com/activities/contributing-to-open-source/).
 
 The fundamentals (which are expanded on below) are:
+
 * Fork the project & clone locally.
 * Create an upstream remote and sync your local copy before you branch.
 * Branch for each separate piece of work.
