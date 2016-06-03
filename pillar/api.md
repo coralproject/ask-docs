@@ -13,15 +13,26 @@
 
 # Pillar endpoints
 
+## CRUD endpoints
 | URL           | HTTP Verb     | Description             |
 |:------------- |:--------------|:------------------------|
 | /api/user     |GET            |[Queries users](#get-users) |
-| /api/user     |POST           |[Creating and update users](#create-and-update-users)  |
-| /api/asset    |GET            |                         |
-| /api/asset    |POST           |                         |
-| /api/import/user  |POST       |Import user from external source   |
-| /api/import/asset  |POST       |Import asset from external source         |
+| /api/user     |POST           |[Creates and updates users](#create-and-update-users)  |
+| /api/user     |POST           |[Deletes users](#delete-users)  |
+| /api/asset    |GET            |[Queries assets](#get-assets) |
+| /api/asset    |POST           |[Creates and updates assets](#create-and-update-assets) |
+| /api/asset    |POST           |[Deletes assets](#delete-assets)  |
+| /api/actions  |GET            |[Queries actions](#get-actions) |
+| /api/actions  |POST           |[Creates and updates actions](#create-and-update-actions)  |
+| /api/actions  |POST           |[Deletes actions](#delete-actions)  |
 
+## Import endpoints
+
+| URL           | HTTP Verb     | Description             |
+|:------------- |:--------------|:------------------------|
+| /api/import/user     |GET            |[Import users](#import-users) |
+| /api/import/asset    |GET            |[Import assets](#import-assets) |
+| /api//import/actions  |GET            |[Import actions](#import-actions) |
 
 ## Get Users
 | URL           | HTTP Verb     | Functionality   |
@@ -34,14 +45,6 @@
 | Name          |Y|string                    |                 |
 | Avatar        | |string                    |                 |
 | Status        | |status                    |                 |
-| LastLogin     | |time.Time                 |                 |
-| MemberSince   | |time.Time                 |                 |
-| Actions       | |[]Action                  |                 |
-| Notes         | |[]Note                    |                 |
-| Tags          | |[]string                  |                 |
-| Stats         | |bson.M                    |                 |
-| Metadata      | |bson.M                    |                 |
-| Source        | |*ImportSource             |                 |
 
 ### Example Call
 You can retrieve multiple objects at once by sending a GET request to the class URL. Without any URL parameters, this simply lists objects in the class:
