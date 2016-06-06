@@ -1,4 +1,5 @@
-mongodata:
+services:
+ mongodata:
   image: coralproject/mongodata
   environment:
     - "MONGO_DUMP=https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz"
@@ -19,31 +20,40 @@ rabbitmq:
     - "15672:15672"
     - "5672:5672"
 
-pillar:
+pillarapp:
    image: coralproject/pillar
+   restart: always
+   depends_on:
+    - rabbitmq
    environment:
            - "PILLAR_HOME=/opt/pillar"
            - "PILLAR_ADDRESS=:8080"
            - "MONGODB_URL=mongodb://${MONGO_USER}:${MONGO_PASS}@mongo:27017/${MONGO_AUTHDB}"
+           - "AMQP_EXCHANGE=PillarMQ"
+           - "PILLAR_CRON=false"
+           - "PILLAR_CRON_SEARCH=@every 30m"
+           - "PILLAR_CRON_STATS=@every 1m"
+           - "XENIA_URL="http://xeniaapp:4000/1.0/exec/"
+           - "XENIA_QUERY_PARAM=?skip=0&limit=100"
+           - "XENIA_AUTH=<auth token>"
            - "AMQP_URL=amqp://${RABBIT_USER}:${RABBIT_PASS}@rabbitmq:5672/"
    ports:
        - "8080:8080"
    links:
-      - mongodata:mongo
+      - mongodata
       - rabbitmq
-xeniaapp:
-
-atoll:
+atollapp:
    image: coralproject/atoll
    ports:
        - "8181:8181"
    links:
-      - mongodata:mongo
+      - mongodata
 
-xenia:
+xeniaapp:
    image: coralproject/xenia
+   restart: always
    environment:
-           - "XENIA_MONGO_HOST=mongo:27017"
+           - "XENIA_MONGO_HOST=mongodata:27017"
            - "XENIA_MONGO_AUTHDB=${MONGO_AUTHDB}"
            - "XENIA_MONGO_DB=${MONGO_DB}"
            - "XENIA_MONGO_USER=${MONGO_USER}"
@@ -72,11 +82,12 @@ cay:
        - "GAID=${GAID_VALUE}"
        - "AUTH_TOKEN=${AUTH_TOKEN_VALUE}"
    links:
-       - pillar
-       - xenia
+       - pillarapp
+       - xeniaapp
 
 sponge:
     image: coralproject/sponge
+    restart: always
     environment:
         - "STRATEGY_CONF=/usr/local/strategy.json"
         - "PILLAR_URL=http://${FRONTEND_HOST}:8080"
@@ -85,14 +96,15 @@ sponge:
 
 proxy:
     image: nginx:stable-alpine
+    restart: always
     volumes:
       - ./proxy/:/etc/nginx/conf.d/
       - ./certs/:/etc/ssl/certs/
     links:
-      - atoll
-      - pillar
-      - xenia
-      - cay
+      - atollapp:atoll
+      - pillarapp:pillar
+      - xeniaapp:xenia
+      - cayapp:cay
     ports:
-      - "80:80"
+      - "8080:80"
       - "443:443"
