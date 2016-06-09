@@ -24,6 +24,8 @@ pages:
   - Xenia:
     - Overview: 'xenia/index.md'
     - Installation: 'xenia/install.md'
+    - API and Query Management: 'xenia/api.md'
+    - Testing: 'xenia/tests.md'
   - Xenia Driver:
     - Overview: 'xenia/xenia-driver-js.md'
     - Installation: 'xenia/xenia-driver-js-install.md'

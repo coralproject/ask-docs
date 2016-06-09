@@ -1,8 +1,16 @@
 # Pillar Installation
 
-There are two options for installing Pillar: installing as a Docker container, or installing it from source code.
+If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions for that here](quickstart/install.md).
 
-There are slight differences between installing on a server, and installing on your local desktop machine.
+## Individual Pillar Installation
+When installing Pillar, you can choose between installing Pillar as a Docker container, or installing from source.
+
+The instructions are slightly different for installing on a server, and installing on your local machine.
+
+* [Install Pillar as a Docker container on server](#install-as-docker-container-on-server)
+* [Install Pillar as a Docker container locally](#install-as-docker-container-locally)
+* [Install Pillar from source on server](#install-from-source-on-server)
+* [Install Pillar from source locally](#install-from-source-locally)
 
 ## Before you begin
 

@@ -1,172 +1,152 @@
 # Installation
 
-# Install from source
-
 ## Before you begin
 
-You will need an instance of mysql running for the external source and an instance of [Pillar](http://github.com/coralproject/pillar) running to send the data to.
+### Pillar
+You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running to send the data to. Instructions on installing Pillar [can be found here](/pillar/install.md).
 
-You will also need Go installed.
+### External database source
+You will also have your external database source running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.
+
+The external sources we currently support are: PostgreSQL, MySQL, MongoDB, and REST APIs.
+
+# Install from source
+
+## Install Go
+
+If you want to install from source, you will need to have Go installed.
+
+First [install Go](https://golang.org/dl/). The [installation and setup instructions](https://golang.org/doc/install) on the Go website are pretty good. Ensure that you have exported your $GOPATH environment variable, as detailed in the [installation instructions](https://golang.org/doc/install).
+
+If you are not on a version of Go that is 1.7 or higher, you will also have to set the GO15VENDOREXPERIMENT flag.
+```
+export GO15VENDOREXPERIMENT=1
+```
+
+_If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script._ TODO: add insx
 
 ## Get the source code
 
-You can also clone the code manually. The project must be cloned inside the `github.com/coralproject/sponge` folder from inside your GOPATH.
+You can install the source code via using the `go get` command, or by manually cloning the code.
+
+### Using the go get command
+```
+go get github.com/coralproject/sponge
+```
+If you see a message about "no buildable Go source files" like the below, you can ignore it. It simply means that there are buildable source files in subdirectories, just not the uppermost sponge directory.
+```
+package github.com/coralproject/sponge: no buildable Go source files in [directory]
+```
+
+### Cloning manually
+You can also clone the code manually.
 
 ```
-mkdir -p $GOPATH/src/github.com/coralproject/sponge
+mkdir $GOPATH/src/github.com/coralproject/sponge
 cd $GOPATH/src/github.com/coralproject/sponge
 
 git clone git@github.com:CoralProject/sponge.git
 ```
 
-export STRATEGY_CONF="/strategy/strategy.json"
+## Set up your strategy.json file
+
+The strategy.json file tells Sponge how to do the transformation between the publisher's existing data and the Coral data schema. It also tells us how to connect to the external publisher's source data. We currently support the following sources: PostgreSQL, MySQL, MongoDB, and REST APIs.
+
+We have example strategy.json files for each of those source types. You can see those example strategy.json files in the `examples` folder: `$GOPATH/src/github.com/coralproject/sponge/examples`
+
+To copy one of the example strategy.json files to another folder, where you can then customize it:
+```
+cp $GOPATH/src/github.com/coralproject/sponge/examples/strategy.json.example $GOPATH/src/github.com/coralproject/sponge/strategy/strategy.json
+```
+
+## Set your environment variables
+
+Setting your environment variables tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar) instance you are pushing data into.
+
+Make your own copy of the `config/dev.cfg` file (you can edit this configuration file with your own values, and then ensure that you don't commit it back to the repository).
+
+Call your config file whatever you like; we'll call it "custom" in this example.
+```
+cd $GOPATH/src/github.com/coralproject/sponge
+cp config/dev.cfg config/custom.cfg
+```
+
+Now edit the values in your custom.cfg file:
+```
+export STRATEGY_CONF=/path/to/my/strategy.json
 export PILLAR_URL=http://localhost:8080
+```
 
+* The `STRATEGY_CONF` variable specifies the path to your strategy.json file.
+* The `PILLAR_URL` variable specifies the URL where your Pillar instance is running.
 
+Once you've edited and saved your custom.cfg file, source it:
 
+```
+source $GOPATH/src/github.com/coralproject/sponge/config/custom.cfg
+```
 
+## Run Sponge
 
-## Run it from Docker Image
+You can either run Sponge using Go, or via a CLI tool.
+
+### Running Sponge using go run
+```
+cd $GOPATH/src/github.com/coralproject/sponge/cmd/sponge
+go run main.go
+```
+
+### Running Sponge using the CLI tool
+
+First build the CLI tool:
+```
+cd $GOPATH/src/github.com/coralproject/cmd/cmd/sponge
+go build
+```
+
+Then run the CLI tool
+```
+./sponge -h
+```
+
+# Install as a Docker container
 
 ### Building image
 
 To build the docker image run this command:
 
+```
 docker build -t "sponge:latest" -f Dockerfile ./
+```
 
 ### Edit env.list
 
-``STRATEGY_CONF=<path to strategy file>
-PILLAR_URL=<url where pillar is running>``
+The env.list file contains environment variables you need to set.
 
-``// DATABASE (optional if you want to overwrite strategy file values)
-- DB_database= ""
-- DB_username= ""
-- DB_password= ""
-- DB_host= ""
-- DB_port= ""``
+```
+PILLAR_URL=http://192.168.99.100:8080
+STRATEGY_CONF=/strategy/strategy_psql.json
 
-`// WEB SERVICE (optional if you want to overwrite strategy file values)
+# DATABASE
+# (optional if you want to overwrite strategy file values)
+DB_database= ""
+DB_username= ""
+DB_password= ""
+DB_host= ""
+DB_port= ""
+
+# WEB SERVICE
+# (optional if you want to overwrite strategy file values)
 WS_appkey= ""
 WS_endpoint= ""
 WS_records= ""
 WS_pagination= ""
 WS_useragent= ""
-WS_attributes= ""``
+WS_attributes= ""
+```
 
 ### Running the container
 
 It will start imorting everything setup in the [strategy file](strategy.md).
 
 ``docker run --env-file env.list -d sponge``
-
-## Development environment
-
-You will need an instance of mysql running for the external source and an instance of [Pillar](http://github.com/coralproject/pillar) running to send the data to.
-
-### Install Go
-
-**Mac OS X**  
-http://www.goinggo.net/2013/06/installing-go-gocode-gdb-and-liteide.html
-
-**Windows**  
-http://www.wadewegner.com/2014/12/easy-go-programming-setup-for-windows/
-
-**Linux**  
-I do not recommend using `apt-get`. Go is easy to install. Just download the
-archive and extract it into /usr/local, creating a Go tree in /usr/local/go.
-
-https://golang.org/doc/install
-
-
-### Vendor Flag
-
-Make sure your go vendor experiment flag is set (will be set by default in a couple of months).
-
-```
-export GO15VENDOREXPERIMENT=1
-```
-
-_We recommend adding this to your ~/.bash_profile or other startup script as it will become default go behavior soon._
-
-### Get the source code
-
-```
-go get github.com/coralproject/xenia
-```
-
-You can also clone the code manually. The project must be cloned inside the `github.com/coralproject/sponge` folder from inside your GOPATH.
-
-```
-md $GOPATH/src/github.com/coralproject/sponge
-cd $GOPATH/src/github.com/coralproject/sponge
-
-git clone git@github.com:CoralProject/sponge.git
-```
-
-### Setup up your environment variables
-
-This tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar)'s instance you are pushing data into.
-
-* Specify a strategy configuration file with the environment variable STRATEGY_CONF
-
-```
-// Mandatory
-export STRATEGY_CONF=/path/to/my/strategy.json
-```
-
-* Copy strategy file
-
-There is one strategy file for publisher. It tells us how to do the transformation between the publisher's data and the coral data schema. It also tells us how to connect to the external publisher's source. There is a strategy file example in app/sponge/strategy.json.example.
-
-```
-cp app/sponge/strategy.json.example /path/to/my/strategy.json
-```
-
-* Specify the URL where pillar services are running
-
-```
-// Mandatory
-export PILLAR_URL=http://localhost:8080
-```
-
-### Running tests
-
-You can run tests in the `pkg` folder.
-
-If you plan to run tests in parallel please use this command:
-
-```
-go test -cpu 1 ./...
-```
-
-You can alway run individual tests in each package using just:
-
-```
-go test
-```
-
-Do not run tests in the vendor folder.
-
-### How to run
-
-```
-cd cmd/sponge
- go run main.go
-```
-
-
-### Build the CLI tool
-
-```
-cd $GOPATH/src/github.com/coralproject/cmd/cmd/sponge
-go build
-```
-
-### Run the CLI tool
-
-```
- ./sponge -h
-```
-
-will give you all the options to run it
