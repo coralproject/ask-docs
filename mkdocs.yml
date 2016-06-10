@@ -5,6 +5,7 @@ pages:
   - Architectural Overview: 'coral_ecosystem.md'
 - DEVELOPER USER GUIDE:
   - Installing Coral Ecosystem: 'quickstart/install.md'
+  - Setting Up MongoDB: 'quickstart/mongodb.md'
   - Cay:
     - Overview: 'cay/index.md'
     - Installation: 'cay/install.md'
