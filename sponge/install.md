@@ -63,9 +63,7 @@ cp $GOPATH/src/github.com/coralproject/sponge/examples/strategy.json.example $GO
 
 Setting your environment variables tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar) instance you are pushing data into.
 
-Make your own copy of the `config/dev.cfg` file (you can edit this configuration file with your own values, and then ensure that you don't commit it back to the repository).
-
-Call your config file whatever you like; we'll call it "custom" in this example.
+Make your own copy of the `config/dev.cfg` file (you can edit this configuration file with your own values, and then ensure that you don't commit it back to the repository). Call your config file whatever you like; we'll call it "custom" in this example.
 ```
 cd $GOPATH/src/github.com/coralproject/sponge
 cp config/dev.cfg config/custom.cfg

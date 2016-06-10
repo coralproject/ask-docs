@@ -30,18 +30,18 @@ pages:
   - Xenia Driver:
     - Overview: 'xenia/xenia-driver-js.md'
     - Installation: 'xenia/xenia-driver-js-install.md'
+    - API and Use: 'xenia/xenia-driver-js-api.md'
 - CONTRIBUTE:
   - Introduction: 'contributions/index.md'
+  - Reporting Bugs and Requesting Features: 'contributions/reporting_bugs.md'
+  - Supporting the community: 'contributions/supporting_the_community.md'
+  - Contributor License Agreements: 'contributions/contributor_license_agreement.md'
   - DEVELOPMENT:
     - Development workflow: 'contributions/development/working_with_github.md'
     - Writing Code: 'contributions/development/writing_code.md'
     - Conventions: 'contributions/development/code_style.md'
   - DOCUMENTATION:
     - Writing documentation: 'contributions/development/code_style.md'
-  - Reporting Bugs: 'contributions/reporting_bugs.md'
-  - Requesting Features: 'contributions/requesting_features.md'
-  - Supporting the community: 'contributions/supporting_the_community.md'
-  - Contributor License Agreements: 'contributions/contributor_license_agreement.md'
 - FAQ: 'faq.md'
 
 

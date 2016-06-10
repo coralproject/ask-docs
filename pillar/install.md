@@ -1,38 +1,40 @@
 # Pillar Installation
 
-If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions for that here](quickstart/install.md).
+If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions to do that here](../../quickstart/install.md).
 
-## Individual Pillar Installation
-When installing Pillar, you can choose between installing Pillar as a Docker container, or installing from source.
+When installing Pillar by itself, you can choose between installing Pillar as a Docker container, or installing from source.
 
-The instructions are slightly different for installing on a server, and installing on your local machine.
-
-* [Install Pillar as a Docker container on server](#install-as-docker-container-on-server)
-* [Install Pillar as a Docker container locally](#install-as-docker-container-locally)
-* [Install Pillar from source on server](#install-from-source-on-server)
-* [Install Pillar from source locally](#install-from-source-locally)
+* [Install Pillar as a Docker container](#install-as-docker-container)
+* [Install Pillar from source](#install-pillar-from-source)
 
 ## Before you begin
 
 Before you install Pillar, you must have the following items installed and running:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
+    * There are [instructions on importing sample comment data into MongoDB here](../../quickstart/mongodb)
 * **RabbitMQ**: You can find instructions on installing RabbitMQ [on the RabbitMQ website](https://www.rabbitmq.com/download.html).
-* **Git**: You can find instructions on installing git [on the git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-* **Docker**: You can find more information on installing Docker [on the Docker website](https://docs.docker.com/engine/installation/).
-    * On the server, you can install Docker with the following command:
-
-      ```sudo yum install docker```
-
-* **Xenia**: Xenia is a XXX, and is part of the Coral Ecosystem. You can find instructions on how to install Xenia on your server [here](xenia/install.md).
+* **Xenia**: Xenia is a configurable service layer that publishes endpoints against mongo aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia on your server [here](../../xenia/install.md).
 
 # Install as Docker Container
+
+## Install Docker
+You can find more information on installing Docker on your machine [on the Docker website](https://docs.docker.com/engine/installation/).
+
+* On the server, you can install Docker with the following command:
+
+      ```
+      sudo yum install docker
+      ```
+
 
 ## Clone the Pillar repository
 
 Clone the Pillar repository:
 
-    git clone https://github.com/coralproject/pillar.git
+```
+git clone https://github.com/coralproject/pillar.git
+```
 
 Then cd into the Pillar directory.
 
@@ -40,56 +42,180 @@ Then cd into the Pillar directory.
 
 First, start Docker.
 
-    sudo service docker start
+* On the server, you can do this via the command:
+  ```
+  sudo service docker start
+  ```
+* On your local machine, you can start Docker via the Docker Quickstart Terminal: TODO image or link
 
-Then, build the Pillar server.
+## Build Pillar server
 
-    sudo docker build -t pillar-server:0.1 .
+Then, build the Pillar server using `docker build`.
+```
+docker build -t pillar-server:0.1 .
+```
 
-## Set environment variables
+* If you are building on the server, you may have to use `sudo`:
+```
+sudo docker build -t pillar-server:0.1 .
+```
 
-Edit the file `config/dev.cfg` in the Pillar directory to set your environment variables.
+## Edit environment variables
 
-The dev.cfg file already has some default values, but you should edit the following variables to match the values on your system:
+The env.list file contains environment variables you need to set.
 
-* MONGODB_URL : Edit with your MongoDB URL.
-* AMQP_URL : Edit with your RabbitMQ URL.
-* XENIA_URL : Edit with your Xenia URL.
-* XENIA_AUTH : Edit with your Xenia auth token.
+```
+#Resources
+export MONGODB_URL="mongodb://localhost:27017/coral"
+export AMQP_URL="amqp://localhost:5672/"
+export AMQP_EXCHANGE="PillarMQ"
+
+#Pillar
+export PILLAR_ADDRESS=":8080"
+export PILLAR_HOME="/opt/pillar"
+export PILLAR_CRON="false"
+export PILLAR_CRON_SEARCH="@every 30m"
+export PILLAR_CRON_STATS="@every 1m"
+
+#Xenia
+export XENIA_URL="http://localhost:4000/1.0/exec/"
+export XENIA_QUERY_PARAM="?skip=0&limit=100"
+export XENIA_AUTH="<auth token>"
+
+
+# Stats
+export MONGODB_ADDRESS="127.0.0.1:27017"
+export MONGODB_USERNAME=""
+export MONGODB_PASSWORD=""
+export MONGODB_DATABASE=""
+export MONGODB_SSL="False"
+```
 
 ## Run Docker
 
 First, find the Image ID for the Pillar server:
-    sudo docker images
+```
+docker images
+```
+
+* If you are running on a server, you may have to use `sudo`.
 
 This shows you the Image ID:
-
-    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-    pillar-server       0.1                 24b7acf7a4b3        4 hours ago         771 MB
-    golang              1.6                 024309f28934        8 days ago          744.1 MB
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+pillar-server       0.1                 24b7acf7a4b3        4 hours ago         771 MB
+golang              1.6                 024309f28934        8 days ago          744.1 MB
+```
 
 Then run the docker run command with the Image ID:
-
-    sudo docker run --env-file config/dev.cfg --publish 8080:8080 24b7acf7a4b3
-
+```
+docker run --env-file env.list --publish 8080:8080 24b7acf7a4b3
+```
 You should see the following:
-
-    [negroni] listening on :8080
+```
+[negroni] listening on :8080
+```
 
 ## Test it out
 
 To see if Pillar is working correctly, visit this url: [http://10.0.4.105:8080/about](http://10.0.4.105:8080/about).
 
 If things are running as they should, you should see this text:
+```
+{"App":"Coral Pillar Web Service","Version":"Version - 0.0.1"}
+```
 
-    {"App":"Coral Pillar Web Service","Version":"Version - 0.0.1"}
+# Install Pillar from source
 
-# Pillar installation from source
+## Install Git
 
-First, you must have the following installed:
-- MongoDB
-- RabbitMQ
-- Xenia
+* **Git**: You can find instructions on installing git [on the git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-export MONGODB_URL=username:password@host/database
-export MONGODB_URL=mongodb://localhost:27017/coral
+## Install Go
+
+If you want to install from source, you will need to have Go installed.
+
+First [install Go](https://golang.org/dl/). The [installation and setup instructions](https://golang.org/doc/install) on the Go website are pretty good. Ensure that you have exported your $GOPATH environment variable, as detailed in the [installation instructions](https://golang.org/doc/install).
+
+If you are not on a version of Go that is 1.7 or higher, you will also have to set the GO15VENDOREXPERIMENT flag.
+```
+export GO15VENDOREXPERIMENT=1
+```
+
+_If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script._ TODO: add insx
+
+## Get the source code
+
+You can install the source code via using the `go get` command, or by manually cloning the code.
+
+### Using the go get command
+```
+go get github.com/coralproject/pillar
+```
+If you see a message about "no buildable Go source files" like the below, you can ignore it. It simply means that there are buildable source files in subdirectories, just not the uppermost pillar directory.
+```
+package github.com/coralproject/pillar: no buildable Go source files in [directory]
+```
+
+### Cloning manually
+You can also clone the code manually.
+
+```
+mkdir $GOPATH/src/github.com/coralproject/pillar
+cd $GOPATH/src/github.com/coralproject/pillar
+
+git clone https://github.com/coralproject/pillar.git
+```
+
+## Set your environment variables
+
+Setting your environment variables tells Pillar the URLs, ports, and other information for communicating with MongoDB, RabbitMQ, and Xenia.
+
+Make your own copy of the `config/dev.cfg` file (you can edit this configuration file with your own values, and then ensure that you don't commit it back to the repository). Call your config file whatever you like; we'll call it "custom" in this example.
+```
+cd $GOPATH/src/github.com/coralproject/pillar
+cp config/dev.cfg config/custom.cfg
+```
+
+Now edit the values in your custom.cfg file:
+```
+#Resources
+export MONGODB_URL="mongodb://localhost:27017/coral"
+export AMQP_URL="amqp://localhost:5672/"
+export AMQP_EXCHANGE="PillarMQ"
+
+#Pillar
+export PILLAR_ADDRESS=":8080"
+export PILLAR_HOME="/opt/pillar"
+export PILLAR_CRON="false"
+export PILLAR_CRON_SEARCH="@every 30m"
+export PILLAR_CRON_STATS="@every 1m"
+
+#Xenia
+export XENIA_URL="http://localhost:4000/1.0/exec/"
+export XENIA_QUERY_PARAM="?skip=0&limit=100"
+export XENIA_AUTH="<auth token>"
+
+# Stats
+export MONGODB_ADDRESS="127.0.0.1:27017"
+export MONGODB_USERNAME=""
+export MONGODB_PASSWORD=""
+export MONGODB_DATABASE=""
+export MONGODB_SSL="False"
+```
+
+Once you've edited and saved your custom.cfg file, source it:
+
+```
+source $GOPATH/src/github.com/coralproject/pillar/config/custom.cfg
+```
+
+## Run Pillar
+
+```
+$GOPATH/bin/pillar
+```
+You should see:
+```
+[negroni] listening on :8080
+```

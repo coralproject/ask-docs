@@ -57,3 +57,4 @@ You can now start Cay by running npm start:
 ```
 npm start
 ```
+You can now visit Cay by visiting the URL [http://localhost:3000](http://localhost:3000).
