@@ -2,6 +2,8 @@
 
 [Elkhorn](https://github.com/coralproject/elkhorn) is the form composer and embeddable builder.
 
+![ArchDiagram](../images/arch.png?raw=true "ArchDiagram")
+
 ## AskComposer:
 
 - ...takes an **Ask spec** in some sort of serialization (JSON or any other), and renders it.
