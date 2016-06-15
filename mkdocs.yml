@@ -41,7 +41,7 @@ pages:
     - Development workflow: 'contributions/development/working_with_github.md'
     - Coding style: 'contributions/development/code_style.md'
   - DOCUMENTATION:
-    - Writing documentation: 'contributions/development/writing_documentation.md'
+    - Writing documentation: 'contributions/documentation/writing_documentation.md'
 - FAQ: 'faq.md'
 
 

@@ -1,6 +1,6 @@
 # Writing Code
 
-So you’d like to write some code to improve the Coral Project? Great! 
+So you’d like to write some code to improve the Coral Project? Great!
 
 ## Before you begin
 
@@ -10,7 +10,7 @@ Before writing any code with the intention of merging into master, ensure the wo
 * Check the GitHub issues to see if an issue already exists for the work you want to do, and to make sure that there isn't already someone working on it.
     * If there isn't already someone working on it, then leave a comment to let everyone know that you are starting work on it.
     * If someone is already working on it, consider collaborating with them.
-* If no issue exists, then create an issue for it before getting started. You can find more information on writing a detailed issue [here](reporting_bugs.md).
+* If no issue exists, then create an issue for it before getting started. You can find more information on writing a detailed issue [here](../reporting_bugs.md).
 
 ## Writing code
 
@@ -18,4 +18,3 @@ Once you've followed the checklist above, browse the following sections to find 
 
 * [Coding style](code_style.md)
 * [Working with Git and GitHub](working_with_github.md)
-
