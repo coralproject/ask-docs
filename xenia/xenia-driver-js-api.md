@@ -1,20 +1,4 @@
-## Usage
-
-    import XeniaDriver from 'xenia-driver'
-
-    // Configure your instance
-    const xenia = XeniaDriver(baseUrl, {username: 'user', password: 'pass'})
-
-    // Use the driver
-    xenia()
-      .match({ 'category': 'sports' })
-      .include(['comments', 'name'])
-      .limit(14)
-      .skip(8)
-    .join('my_collection')
-    .exec().then(data => console.log(data.results))
-
-## API
+# Xenia Driver API
 
 ### Xenia(baseURL, auth [, queryParams] [, reqParams])
 

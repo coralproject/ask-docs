@@ -30,7 +30,7 @@ pages:
   - Xenia Driver:
     - Introduction: 'xenia/xenia-driver-js.md'
     - Installation: 'xenia/xenia-driver-js-install.md'
-    - API and use: 'xenia/xenia-driver-js-api.md'
+    - API: 'xenia/xenia-driver-js-api.md'
 - CONTRIBUTE:
   - Introduction: 'contributions/index.md'
   - Reporting bugs and requesting features: 'contributions/reporting_bugs.md'
