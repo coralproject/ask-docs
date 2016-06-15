@@ -1,4 +1,4 @@
-# Xenia
+# Xenia Installation
 
 Xenia is a configurable service layer that publishes endpoints against [mongo aggregation pipeline queries](https://docs.mongodb.org/manual/core/aggregation-introduction/).
 
@@ -9,22 +9,20 @@ Before you install Xenia, you will want to have the following installed.
 #### MongoDB
 You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
 
-If you need to set up your MongoDB installation, a handy GUI program you can use is [MongoChef](http://3t.io/mongochef/).
+There are [instructions on importing sample comment data into MongoDB here](../../quickstart/mongodb)
 
 #### Go
 
-First [install Go](https://golang.org/dl/). The [installation and setup instructions](https://golang.org/doc/install) on the Go website are pretty good. Ensure that you have exported your $GOPATH environment variable, as detailed in the [installation instructions](https://golang.org/doc/install).
+If you want to install from source, you will need to have Go installed.
+
+You can install [install Go from their website](https://golang.org/dl/). The [installation and setup instructions](https://golang.org/doc/install) on the Go website are quite good. Ensure that you have exported your $GOPATH environment variable, as detailed in the [installation instructions](https://golang.org/doc/install).
 
 If you are not on a version of Go that is 1.7 or higher, you will also have to set the GO15VENDOREXPERIMENT flag.
 ```
 export GO15VENDOREXPERIMENT=1
 ```
 
-_If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script._ TODO: add insx
-
-
-
-# Installation
+_If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script._
 
 ## Obtaining the source code
 
@@ -207,7 +205,9 @@ In your browser, you will see some json displayed. In your terminal, you should 
 
 ## Authorization
 
-The Anvil.io system is used for authentication and authorization. This requires the creation of a user against the Anvil system.
+TODO
+
+<!-- The Anvil.io system is used for authentication and authorization. This requires the creation of a user against the Anvil system.
 
 ** NEED MORE **
 
@@ -224,4 +224,4 @@ You can turn off authentication by setting
 
 ```
 export XENIA_AUTH=off
-```
+``` -->

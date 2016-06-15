@@ -2,15 +2,15 @@
 pages:
 - INTRODUCTION:
   - About: 'index.md'
-  - Architectural Overview: 'coral_ecosystem.md'
+  - Architectural overview: 'coral_ecosystem.md'
 - DEVELOPER USER GUIDE:
   - Installing Coral Ecosystem: 'quickstart/install.md'
-  - Setting Up MongoDB: 'quickstart/mongodb.md'
+  - Setting up MongoDB: 'quickstart/mongodb.md'
   - Cay:
-    - Overview: 'cay/index.md'
+    - Introduction: 'cay/index.md'
     - Installation: 'cay/install.md'
   - Elkhorn:
-    - Overview: 'elkhorn/index.md'
+    - Introduction: 'elkhorn/index.md'
     - Installation: 'elkhorn/install.md'
   - Pillar:
     - Introduction: 'pillar/index.md'
@@ -19,29 +19,29 @@ pages:
   - Sponge:
     - Introduction: 'sponge/index.md'
     - Installation: 'sponge/install.md'
-    - Development:
-      - Logging: 'sponge/logging.md'
-      - Included packages: 'sponge/included_packages.md'
+    - Included packages: 'sponge/included_packages.md'
+    - Roadmap: 'sponge/roadmap.md'
+    - Logging: 'sponge/logging.md'
   - Xenia:
-    - Overview: 'xenia/index.md'
+    - Introduction: 'xenia/index.md'
     - Installation: 'xenia/install.md'
-    - API and Query Management: 'xenia/api.md'
+    - API and query management: 'xenia/api.md'
     - Testing: 'xenia/tests.md'
   - Xenia Driver:
-    - Overview: 'xenia/xenia-driver-js.md'
+    - Introduction: 'xenia/xenia-driver-js.md'
     - Installation: 'xenia/xenia-driver-js-install.md'
-    - API and Use: 'xenia/xenia-driver-js-api.md'
+    - API and use: 'xenia/xenia-driver-js-api.md'
 - CONTRIBUTE:
   - Introduction: 'contributions/index.md'
-  - Reporting Bugs and Requesting Features: 'contributions/reporting_bugs.md'
+  - Reporting bugs and requesting features: 'contributions/reporting_bugs.md'
   - Supporting the community: 'contributions/supporting_the_community.md'
-  - Contributor License Agreements: 'contributions/contributor_license_agreement.md'
+  - Contributor License Agreement: 'contributions/contributor_license_agreement.md'
   - DEVELOPMENT:
+    - Writing code: 'contributions/development/writing_code.md'
     - Development workflow: 'contributions/development/working_with_github.md'
-    - Writing Code: 'contributions/development/writing_code.md'
-    - Conventions: 'contributions/development/code_style.md'
+    - Coding style: 'contributions/development/code_style.md'
   - DOCUMENTATION:
-    - Writing documentation: 'contributions/development/code_style.md'
+    - Writing documentation: 'contributions/development/writing_documentation.md'
 - FAQ: 'faq.md'
 
 

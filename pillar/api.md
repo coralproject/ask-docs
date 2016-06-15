@@ -11,8 +11,6 @@
 
 * All import endpoints `upsert` data. This means that when you import an entry, it will overwrite the information for that entry if the entry already exists. This prevents duplications and other problems.
 
-# Pillar endpoints
-
 ## CRUD endpoints
 | URL           | HTTP Verb     | Description             |
 |:------------- |:--------------|:------------------------|
@@ -34,19 +32,19 @@
 | /api/import/asset    |GET            |[Import assets](#import-assets) |
 | /api//import/actions  |GET            |[Import actions](#import-actions) |
 
-## Get Users
+### Get Users
 | URL           | HTTP Verb     | Functionality   |
 |:------------- |:--------------|:----------------|
 | /api/user     |GET            |Queries users    |
 
-### Parameters
+#### Parameters
 | Name          | Required?          | Type                     | Description     |
 |:------------- |:------------- |:-------------------------|:----------------|
 | Name          |Y|string                    |                 |
 | Avatar        | |string                    |                 |
 | Status        | |status                    |                 |
 
-### Example Call
+#### Example Call
 You can retrieve multiple objects at once by sending a GET request to the class URL. Without any URL parameters, this simply lists objects in the class:
 ~~~
 > curl -i -H "Accept: application/json" -XPOST -d '  {
@@ -61,7 +59,7 @@ You can retrieve multiple objects at once by sending a GET request to the class 
 ' http://localhost:8080/api/import/user
 ~~~
 
-### Response
+#### Response
 The return value is a JSON object that contains a results field with a JSON array that lists the objects.
 ~~~
 {

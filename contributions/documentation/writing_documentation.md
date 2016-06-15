@@ -4,6 +4,8 @@ This section explains how the community can contribute code to the Coral Project
 
 ## Getting the documentation
 
+
+
 ## Getting started with Mkdocs
 
 ## How the documentation is organized
@@ -13,4 +15,3 @@ This section explains how the community can contribute code to the Coral Project
 ## Documenting new features
 
 ## Improving the documentation
-

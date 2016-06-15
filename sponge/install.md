@@ -10,9 +10,13 @@ You will also have your external database source running. This external database
 
 The external sources we currently support are: PostgreSQL, MySQL, MongoDB, and REST APIs.
 
-# Install from source
+### Vendoring dependencies
 
-## Install Go
+You should be vendoring the packages you choose to use. We recommend using [govendor](https://github.com/kardianos/govendor). This tool will vendor from the vendor folder associated with this project repo for the dependencies in use. It is recommended to use a project based repo with a single vendor folder for all your dependencies.
+
+## Install from source
+
+### Before you begin
 
 If you want to install from source, you will need to have Go installed.
 
@@ -23,13 +27,13 @@ If you are not on a version of Go that is 1.7 or higher, you will also have to s
 export GO15VENDOREXPERIMENT=1
 ```
 
-_If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script._ TODO: add insx
+_If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script._
 
-## Get the source code
+### Get the source code
 
 You can install the source code via using the `go get` command, or by manually cloning the code.
 
-### Using the go get command
+#### Using the go get command
 ```
 go get github.com/coralproject/sponge
 ```
@@ -38,7 +42,7 @@ If you see a message about "no buildable Go source files" like the below, you ca
 package github.com/coralproject/sponge: no buildable Go source files in [directory]
 ```
 
-### Cloning manually
+#### Cloning manually
 You can also clone the code manually.
 
 ```
@@ -48,7 +52,9 @@ cd $GOPATH/src/github.com/coralproject/sponge
 git clone git@github.com:CoralProject/sponge.git
 ```
 
-## Set up your strategy.json file
+### Set up your strategy.json file
+
+You can read about [strategy files in depth here](strategy).
 
 The strategy.json file tells Sponge how to do the transformation between the publisher's existing data and the Coral data schema. It also tells us how to connect to the external publisher's source data. We currently support the following sources: PostgreSQL, MySQL, MongoDB, and REST APIs.
 
@@ -59,7 +65,7 @@ To copy one of the example strategy.json files to another folder, where you can 
 cp $GOPATH/src/github.com/coralproject/sponge/examples/strategy.json.example $GOPATH/src/github.com/coralproject/sponge/strategy/strategy.json
 ```
 
-## Set your environment variables
+### Set your environment variables
 
 Setting your environment variables tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar) instance you are pushing data into.
 
@@ -76,7 +82,7 @@ export PILLAR_URL=http://localhost:8080
 ```
 
 * The `STRATEGY_CONF` variable specifies the path to your strategy.json file.
-* The `PILLAR_URL` variable specifies the URL where your Pillar instance is running.
+* The `PILLAR_URL` variable specifies the URL where your Pillar instance is running. If you installed Pillar locally from source, this will probably be `http://localhost:8080`.
 
 Once you've edited and saved your custom.cfg file, source it:
 
@@ -84,17 +90,17 @@ Once you've edited and saved your custom.cfg file, source it:
 source $GOPATH/src/github.com/coralproject/sponge/config/custom.cfg
 ```
 
-## Run Sponge
+### Run Sponge
 
 You can either run Sponge using Go, or via a CLI tool.
 
-### Running Sponge using go run
+#### Running Sponge using go run
 ```
 cd $GOPATH/src/github.com/coralproject/sponge/cmd/sponge
 go run main.go
 ```
 
-### Running Sponge using the CLI tool
+#### Running Sponge using the CLI tool
 
 First build the CLI tool:
 ```
@@ -107,7 +113,7 @@ Then run the CLI tool
 ./sponge -h
 ```
 
-# Install as a Docker container
+## Install as a Docker container
 
 ### Building image
 
@@ -119,7 +125,7 @@ docker build -t "sponge:latest" -f Dockerfile ./
 
 ### Edit env.list
 
-The env.list file contains environment variables you need to set.
+The env.list file contains environment variables you need to set. Setting your environment variables tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar) instance you are pushing data into.
 
 ```
 PILLAR_URL=http://192.168.99.100:8080
@@ -143,8 +149,11 @@ WS_useragent= ""
 WS_attributes= ""
 ```
 
+* The `STRATEGY_CONF` variable specifies the path to your strategy.json file.
+* The `PILLAR_URL` variable specifies the URL where your Pillar instance is running. If you installed Pillar as a Docker container, this will probably be `http://192.168.99.100:8080`.
+
 ### Running the container
 
-It will start imorting everything setup in the [strategy file](strategy.md).
+It will start importing everything setup in the [strategy file](strategy).
 
-``docker run --env-file env.list -d sponge``
+```docker run --env-file env.list -d sponge```
