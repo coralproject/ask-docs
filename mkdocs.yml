@@ -1,9 +1,9 @@
 # If you add a page, you must add it to the index here
 pages:
-- INTRODUCTION:
+- Home:
   - About: 'index.md'
   - Architectural overview: 'coral_ecosystem.md'
-- DEVELOPER USER GUIDE:
+- Developer Guide:
   - Installing Coral Ecosystem: 'quickstart/install.md'
   - Setting up MongoDB: 'quickstart/mongodb.md'
   - Cay:
@@ -31,8 +31,11 @@ pages:
     - Introduction: 'xenia/xenia-driver-js.md'
     - Installation: 'xenia/xenia-driver-js-install.md'
     - API: 'xenia/xenia-driver-js-api.md'
-- CONTRIBUTE:
+- User Guide:
   - Introduction: 'contributions/index.md'
+- Contribute:
+  - Introduction: 'contributions/index.md'
+  - Writing documentation: 'contributions/documentation/writing_documentation.md'
   - Reporting bugs and requesting features: 'contributions/reporting_bugs.md'
   - Supporting the community: 'contributions/supporting_the_community.md'
   - Contributor License Agreement: 'contributions/contributor_license_agreement.md'
@@ -40,13 +43,11 @@ pages:
     - Writing code: 'contributions/development/writing_code.md'
     - Development workflow: 'contributions/development/working_with_github.md'
     - Coding style: 'contributions/development/code_style.md'
-  - DOCUMENTATION:
-    - Writing documentation: 'contributions/documentation/writing_documentation.md'
 - FAQ: 'faq.md'
 
 
 # Do not edit in PRs below here
-site_name: The Coral Project Documentation
+site_name: Coral Project Docs
 
 markdown_extensions:
   - admonition
@@ -57,4 +58,4 @@ markdown_extensions:
 extra_css:
   - css/code_fixer.css
 
-theme: readthedocs
+theme: united
