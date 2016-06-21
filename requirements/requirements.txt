@@ -1,1 +1,1 @@
-pip install mkdocs-bootswatch
+mkdocs-bootswatch
