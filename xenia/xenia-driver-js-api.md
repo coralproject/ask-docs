@@ -1,6 +1,6 @@
 # Xenia Driver API
 
-### Xenia(baseURL, auth [, queryParams] [, reqParams])
+### XeniaDriver(baseURL, auth [, queryParams] [, reqParams])
 
 Creates a new `XeniaDriver` instance
 
@@ -15,7 +15,7 @@ Creates a new `XeniaDriver` instance
 const xenia = XeniaDriver('https://my-xenia-url.com', 'Basic kewlrgm;we4p3jtqpwfawmeklfdmdsadlm')
 ```
 
-### Xenia#addQuery(queryData)
+### addQuery(queryData)
 
 Initialize a query. When the xenia constructor runs it will call this function for you. Use it for adding more than one query in the same request.
 
@@ -28,7 +28,7 @@ xenia()
   .exec().then(data => console.log(data))
 ```
 
-### Xenia#collection(name)
+### collection(name)
 
 Set the current query collection
 
@@ -41,7 +41,7 @@ xenia()
   .exec().then(data => console.log(data))
 ```
 
-### Xenia#exec(queryName, params)
+### exec(queryName, params)
 
 Executes the request
 
@@ -58,7 +58,7 @@ xenia().limit(20).skip(10)
   .catch(err => console.log(err))
 ```
 
-### Xenia#getQueries()
+### getQueries()
 
 Get a list of available queries
 
@@ -66,7 +66,7 @@ Get a list of available queries
 xenia().getQueries().then(data => console.log(data))
 ```
 
-### Xenia#getQuery(name)
+### getQuery(name)
 
 Get a specific query document
 
@@ -101,7 +101,7 @@ xenia()
   .then(data => console.log(data))
 ```
 
-### Xenia#limit(n)
+### limit(n)
 
 Limit the amount of retrieved documents
 
@@ -111,7 +111,7 @@ Limit the amount of retrieved documents
 xenia().limit(15)
 ```
 
-### Xenia#skip(n)
+### skip(n)
 
 Skip the first n documents
 
@@ -121,7 +121,7 @@ Skip the first n documents
 xenia().skip(12)
 ```
 
-### Xenia#sample(n)
+### sample(n)
 
 Return a document sample from the collection
 
@@ -131,7 +131,7 @@ Return a document sample from the collection
 xenia().sample(50)
 ```
 
-### Xenia#project(fields)
+### project(fields)
 
 Include and exclude fields from the result using the $project aggregation pipeline operator. You'll find out that `Xenia#include` and `Xenia#exclude` can be easier to use for most scenarios.
 
@@ -142,7 +142,7 @@ xenia()
   .project({'name': true, '_id': false, 'comments': { 'country': true}})
 ```
 
-### Xenia#include(fieldNames)
+### include(fieldNames)
 
 Whitelist retrieved fields
 
@@ -152,7 +152,7 @@ Whitelist retrieved fields
 xenia().include(['name', 'avatar'])
 ```
 
-### Xenia#exclude(fieldNames)
+### exclude(fieldNames)
 
 Blacklist retrieved fields
 
@@ -162,7 +162,7 @@ Blacklist retrieved fields
 xenia().exclude(['age', 'gender'])
 ```
 
-### Xenia#match(query)
+### match(query)
 
 Performs a match command on the aggregation pipeline
 
@@ -172,7 +172,7 @@ Performs a match command on the aggregation pipeline
 xenia().match({ 'name': 'John', 'status': { '$in' : ['user', 'admin']} })
 ```
 
-### Xenia#redact(query)
+### redact(query)
 
 Performs a redact command on the aggregation pipeline
 
@@ -186,7 +186,7 @@ xenia().redact({ $cond: {
 }})
 ```
 
-### Xenia#unwind(path, includeArrayIndex, preserveNullAndEmptyArrays)
+### unwind(path, includeArrayIndex, preserveNullAndEmptyArrays)
 
 Performs a unwind command on the aggregation pipeline - Deconstructs an array field from the input documents to output a document for each element
 
@@ -198,7 +198,7 @@ Performs a unwind command on the aggregation pipeline - Deconstructs an array fi
 xenia().unwind('$comments')
 ```
 
-### Xenia#group(groups)
+### group(groups)
 
 Group documents
 
@@ -208,7 +208,7 @@ Group documents
 xenia().group({ _id : { month: { $month: '$date' } })
 ```
 
-### Xenia#sort(order)
+### sort(order)
 
 Sort documents by fields
 
@@ -222,7 +222,7 @@ xenia().sort(['name', 1])
 xenia.sort({'name': 1, 'statistics.comments.count': -1})
 ```
 
-### Xenia#join(collection, field, matchingField, name)
+### join(collection, field, matchingField, name)
 
 Creates a new query joining the actual one using the save method from Xenia
 

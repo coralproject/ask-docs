@@ -49,11 +49,10 @@ git clone git@github.com:CoralProject/xenia.git
 
 ## Set up your environment variables
 
-This tells Xenia which database you want to use, sets your port, and sets your database key.
+This tells Xenia which database you want to use, sets your port, and sets your database password.
 
-Make your own copy of the `config/dev.cfg` file (this edited cfg file will contain your own values for things like your database password, and will not be committed back to the repository if you are doing development work on Xenia).
+Make your own copy of the `config/dev.cfg` file (this edited cfg file will contain your own values for things like your database password, and will not be committed back to the repository if you are doing development work on Xenia). Call your config file whatever you like; we'll call it "custom" in this example.
 
-Call your config file whatever you like; we'll call it "custom" in this example.
 ```
 cd $GOPATH/src/github.com/coralproject/xenia
 cp config/dev.cfg config/custom.cfg
@@ -65,10 +64,43 @@ export XENIA_MONGO_HOST=localhost:27017
 export XENIA_MONGO_USER=coral-user
 export XENIA_MONGO_AUTHDB=coral
 export XENIA_MONGO_DB=coral
-export XENIA_MONGO_PASS=xxxx
+
 export XENIA_LOGGING_LEVEL=1
 export XENIA_HOST=:4000
+
+# Use to have the CLI tooling hit the web service.
+export XENIA_WEB_HOST=
+export XENIA_WEB_AUTH=
+
+# Set host to Anvil if configured.
+# export XENIA_ANVIL_HOST=https://HOST
+
+# Use to apply extra key:value pairs to the header
+# export XENIA_HEADERS=key:value,key:value
+
+# DO NOT PUSH TO REPO
+export XENIA_MONGO_PASS=
 ```
+
+Required edits:
+
+* `XENIA_MONGO_HOST`: set to your MongoDB where you will be communicating with.
+    * If you are running MongoDB locally on your machine, you should set this to `localhost:27017`.
+    * If you are pointing to a MongoDB running on a server somewhere, set this to the IP address and port of your MongoDB.
+* `XENIA_MONGO_DB`: the database you are running queries against (`coral`).
+* `XENIA_MONGO_USER`: your MongoDB username.
+* `XENIA_MONGO_PASS`: the password for your MongoDB user.
+* `XENIA_MONGO_AUTHDB`: the database you are authenticating against (in most cases, should be the same `coral` database as XENIA_MONGO_DB).
+
+Optional edits:
+
+* `XENIA_WEB_HOST`: this is required for the CLI tool. It is the address of the Xenia web service (i.e., an instance of Xenia that you are running on a server).
+    * If you are running everything locally, comment this variable out. This means that the CLI tool will connect directly to your local database, instead of connecting to a running web service.
+* `XENIA_HOST`: default is `:4000` if this variable is not set.
+* `XENIA_LOGGING_LEVEL`: default is `2` if this variable is not set.
+* `XENIA_WEB_AUTH`: your Anvil token, if you have Anvil authentication set up. If you do not have authentication set up, leave this commented out.
+* `XENIA_ANVIL_HOST`: the URL to the Anvil host, if you have Anvil authentication set up. If you do not have authentication set up, leave this commented out.
+* `XENIA_HEADERS`: leave this commented out.
 
 Once you've finished editing, source your config file using the source command:
 ```
@@ -119,6 +151,28 @@ Creating collection query_regexs
 Creating collection query_regexs_history
 ```
 
+* **Troubleshooting note #1**: if you get a response that contains `ERROR: Invalid DB provided`, you may have an incorrectly set environment variable. If you are running everything locally and using a local MongoDB, use `printev` to see if `XENIA_WEB_HOST` is set:
+
+```
+printenv XENIA_WEB_HOST
+```
+
+  If you are using a local MongoDB, this should not return a value. If it does return a value, unset the variable using `unset`, and then try step 2 again:
+
+```
+unset XENIA_WEB_HOST
+```
+
+* **Troubleshooting note #2**: instead of the expected output shown above, you may see something like:
+
+```
+Configuring MongoDB
+Creating collection query_sets
+ERROR: collection already exists
+```
+
+  That's okay! It means that your database is already set up with Xenia. Perhaps you imported data that already had configured collections set up. Continue on to step 3.
+
 3) Load all the existing queries:
 ```
 ./xenia query upsert -p scrquery
@@ -153,6 +207,8 @@ Upserting Regex : Upserted
 ```
 
 6) That's it! If you are using MongoChef, you should be able to see your newly created collections, which will look something like this:
+
+![Screenshot](../images/xeniacollections.png)
 
 ## Run the web service
 
@@ -202,6 +258,10 @@ In your browser, you will see some json displayed. In your terminal, you should 
 2016/06/08 13:30:58 context.go:110: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : api : Respond : Completed
 2016/06/08 13:30:58 app.go:126: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : Request : Completed : Status[200] Duration[46.497305ms]
 ```
+
+## Troubleshooting
+
+###
 
 ## Authorization
 
