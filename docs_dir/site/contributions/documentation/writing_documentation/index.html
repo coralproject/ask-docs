@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>Writing documentation - Coral Project Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../site/css/base.css" rel="stylesheet">
+        <link href="../../../site/css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../site/css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../site/css/highlight.css" rel="stylesheet">
+        <link href="../../../site/site/css/base.css" rel="stylesheet">
+        <link href="../../../site/site/css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../site/site/css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../site/site/css/highlight.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Coral Project Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../..">About</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../coral_ecosystem/">Architectural overview</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../quickstart/install/">Installing Coral Ecosystem</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../quickstart/mongodb/">Setting up MongoDB</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cay</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../cay/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../cay/install/">Installation</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Elkhorn</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../elkhorn/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../elkhorn/install/">Installation</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Pillar</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../pillar/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../pillar/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../pillar/api/">API</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Sponge</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../sponge/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/included_packages/">Included packages</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/roadmap/">Roadmap</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/logging/">Logging</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Xenia</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../xenia/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/api/">API and query management</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/tests/">Testing</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Xenia Driver</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../xenia/xenia-driver-js/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/xenia-driver-js-install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/xenia-driver-js-api/">API</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../">Introduction</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contribute <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../">Introduction</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Writing documentation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../reporting_bugs/">Reporting bugs and requesting features</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../supporting_the_community/">Supporting the community</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../contributor_license_agreement/">Contributor License Agreement</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">DEVELOPMENT</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../development/writing_code/">Writing code</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../development/working_with_github/">Development workflow</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../development/code_style/">Coding style</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../faq/">FAQ</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../../">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../reporting_bugs/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#writing-documentation">Writing Documentation</a></li>
+        
+            <li><a href="#getting-the-documentation">Getting the documentation</a></li>
+        
+            <li><a href="#getting-started-with-mkdocs">Getting started with MkDocs</a></li>
+        
+            <li><a href="#how-the-documentation-is-organized">How the documentation is organized</a></li>
+        
+            <li><a href="#writing-style">Writing style</a></li>
+        
+            <li><a href="#terminology">Terminology</a></li>
+        
+            <li><a href="#release-notes">Release notes</a></li>
+        
+            <li><a href="#improving-the-documentation">Improving the documentation</a></li>
+        
+            <li><a href="#translating-documentation">Translating documentation</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="writing-documentation">Writing Documentation</h1>
+<p>This section explains how the community can contribute to the Coral Project documentation.</p>
+<p>You can contribute to the documentation by editing existing documents for clarity or correcting errors. Additionally, any new features or changes to the software should be thoroughly documented. We value clear, consistent, thorough, readable documentation!</p>
+<p>Here is how our documentation works:</p>
+<ul>
+<li>The source documentation lives in GitHub at <a href="https://github.com/coralproject/docs/">https://github.com/coralproject/docs/</a>.</li>
+<li>The documentation is hosted at <a href="https://www.readthedocs.org">Read the Docs</a>.</li>
+<li>When the documentation is updated and pushed to the GitHub repository, this triggers a build of the Read the Docs site.</li>
+</ul>
+<h2 id="getting-the-documentation">Getting the documentation</h2>
+<p>All of the documentation for the Coral Project <a href="https://github.com/coralproject/docs">resides in GitHub</a> in the &ldquo;docs&rdquo; repository.</p>
+<p>To get a local version of the documentation, clone the repository:</p>
+<pre><code>git clone https://github.com/coralproject/docs.git
+</code></pre>
+
+<p>If you haven&rsquo;t worked with Git before, you can find <a href="../TODO">instructions on downloading it here</a>.</p>
+<h2 id="getting-started-with-mkdocs">Getting started with MkDocs</h2>
+<p>The Coral Project&rsquo;s documentation uses the <a href="http://www.mkdocs.org/">MkDocs</a> documentation system, which uses Markdown to format text. The <a href="http://www.mkdocs.org/">MkDocs website</a> contains a lot of good information on writing documentation in MkDocs, and there are plenty of decent Markdown cheatsheets floating around, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">like this one</a>.</p>
+<h2 id="how-the-documentation-is-organized">How the documentation is organized</h2>
+<p>The documentation is organized into several categories:</p>
+<ul>
+<li><strong>Introduction</strong>: This offers a general overview of the Coral Project and its different components.</li>
+<li><strong>Developer Guide</strong>: This provides information for technical users of the Coral Project. It offers installation instructions for the Coral Ecosystem as a whole, as well as installation instructions for each individual component.</li>
+<li><strong>User Guide</strong>: This provides information for end users (publishers, journalists, moderators, readers) on how to use the features of Coral. It includes tutorials and how-to guides.</li>
+<li><strong>Contribute</strong>: This provides information on how to contribute to the Coral Project through open source. There are sections for the developers (how to work with GitHub, etc.), as well as sections for those who want to contribute to other pieces of the Coral Project (such as the documentation!).</li>
+<li><strong>FAQ</strong></li>
+</ul>
+<h2 id="writing-style">Writing style</h2>
+<p>The key thing to remember when writing documentation is to be extremely explicit and detailed. Do not assume knowledge!</p>
+<h3 id="do-not-assume-knowledge">Do not assume knowledge</h3>
+<ul>
+<li>Whenever possible, include an actual instruction.<ul>
+<li>Good:</li>
+<li>If there are command line instructions involved, include the precise command line instruction. Instructions that users can copy/paste into the command line are great!</li>
+</ul>
+</li>
+<li>Show &ldquo;expected results&rdquo; wherever possible. If a command line instruction should return a certain result, show that expected result. If there is a URL you can visit to test whether or not something is working, provide that URL as a link.</li>
+<li>If there are variables to configure, explicitly state the purpose of the variables. This should be explained in a comment in the configuration file, but you should also provide an explanation in your instructions.</li>
+<li>Do not merely explain HOW to do something, but also WHY you are doing it in that way. This makes it easier for users to troubleshoot issues.</li>
+</ul>
+<h3 id="commands-and-code-blocks">Commands and code blocks</h3>
+<ul>
+<li>Enclose commands and code blocks in triple-tick blocks (```). Yes, Markdown supports indentation to delineate code blocks, but the triple-ticks make things more explicit.</li>
+<li>Be sure you are using universal command line commands, not shortcuts available in some shells!<ul>
+<li>Good: <code>mkdir exampledirectory</code></li>
+<li>Bad: <code>md exampledirectory</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="third-party-components">Third-party components</h3>
+<p>Is there a third-party component the user needs to set up (for instance, MongoDB)?</p>
+<ul>
+<li>Don&rsquo;t include all setup instructions, but do link to the setup instructions on the website of the third-party app in question.</li>
+<li>Be sure to detail any specific instructions they will need to integrate this third-party component into the system.</li>
+<li>Currently, much of this &ldquo;third party setup&rdquo; information resides in the &ldquo;Developer Setup&rdquo; document. This reduces duplication if there is a component that needs to be set up for multiple items.</li>
+</ul>
+<h3 id="markup-specific-style">Markup specific style</h3>
+<ul>
+<li>When adding headlines and section dividers, keep in mind that H1 (#) and H2 (##) text shows up in the Table of Contents. H3 (###) and below does not.</li>
+<li>To avoid making the ToC too cluttered, try to only use H2 (##) for key large sections.</li>
+</ul>
+<h3 id="installation-instructions">Installation instructions</h3>
+<ul>
+<li>Be sure to include <em>every single step</em>. Preferably copy paste.</li>
+<li>When working from the command line, include every step in code blocks.</li>
+</ul>
+<h3 id="api-documentation">API documentation</h3>
+<p>When documenting a REST-style API, such as the <a href="../../../pillar/api">Pillar API</a>, there are certain pieces of information to include. The <a href="../../../pillar/api">Pillar API documentation</a> is a useful template.</p>
+<ul>
+<li>Create an initial table that lists endpoints, which contains:<ul>
+<li>The endpoint URL.</li>
+<li>The HTTP verb for that endpoint (GET, POST).</li>
+<li>The basic functionality description for that endpoint. Make this into a targeted link that jumps to the full description for that endpoint.</li>
+</ul>
+</li>
+<li>Create a full description for each endpoint. You can see the <a href="../../../pillar/api/#get-users">Get Users</a> Pillar endpoint for an example). Each description should include:<ul>
+<li>The parameters for the endpoint (include the parameter name, whether it is required or optional, the type, and the description).</li>
+<li>An example call.</li>
+<li>The response for the example call (whether that is a JSON object, or simply a status response).</li>
+</ul>
+</li>
+</ul>
+<h2 id="terminology">Terminology</h2>
+<p>Here are some commonly used terms:</p>
+<h4 id="software-specific">Software specific</h4>
+<ul>
+<li><strong>Coral</strong>: Refers to the Coral product, which includes the three components Trust, Ask, and Talk.</li>
+<li><strong>Coral Project</strong>: Refers to the project of building and crafting the Coral product.</li>
+<li><strong>Coral Ecosystem</strong>: Refers to all of the pieces that make up Coral from a more technical or development perspective: includes all the technical components such as Pillar, Sponge, and Cay.</li>
+</ul>
+<h4 id="users">Users</h4>
+<ul>
+<li><strong>Developers</strong>: Refers to the technical users of Coral who will be installing Coral and working with the backend. Also refers to open-source contributors.</li>
+<li><strong>End Users</strong>: Refers to anyone who will be interacting with the Coral front end. Examples of end users are publishers, moderators, journalists, and readers.</li>
+</ul>
+<h2 id="release-notes">Release notes</h2>
+<h2 id="improving-the-documentation">Improving the documentation</h2>
+<p>Improvements are welcomed! Did you perform an installation, and found some of the language or instructions confusing or missing? Help us fix it!</p>
+<h2 id="translating-documentation">Translating documentation</h2></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../site/js/base.js"></script>
+        <script src="../../../site/js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../site/js/highlight.pack.js"></script>
+        <script src="../../../site/js/jquery-1.10.2.min.js"></script>
+        <script src="../../../site/mkdocs/js/lunr-0.5.7.min.js"></script>
+        <script src="../../../site/mkdocs/js/mustache.min.js"></script>
+        <script src="../../../site/mkdocs/js/require.js"></script>
+        <script src="../../../site/mkdocs/js/search.js"></script>
+        <script src="../../../site/mkdocs/js/text.js"></script>
+        <script src="../../../site/site/js/base.js"></script>
+        <script src="../../../site/site/js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../site/site/js/highlight.pack.js"></script>
+        <script src="../../../site/site/js/jquery-1.10.2.min.js"></script>
+        <script src="../../../site/site/mkdocs/js/lunr-0.5.7.min.js"></script>
+        <script src="../../../site/site/mkdocs/js/mustache.min.js"></script>
+        <script src="../../../site/site/mkdocs/js/require.js"></script>
+        <script src="../../../site/site/mkdocs/js/search.js"></script>
+        <script src="../../../site/site/mkdocs/js/text.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

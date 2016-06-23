@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>Coding style - Coral Project Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../site/css/base.css" rel="stylesheet">
+        <link href="../../../site/css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../site/css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../site/css/highlight.css" rel="stylesheet">
+        <link href="../../../site/site/css/base.css" rel="stylesheet">
+        <link href="../../../site/site/css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../site/site/css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../site/site/css/highlight.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Coral Project Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../..">About</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../coral_ecosystem/">Architectural overview</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../quickstart/install/">Installing Coral Ecosystem</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../quickstart/mongodb/">Setting up MongoDB</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cay</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../cay/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../cay/install/">Installation</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Elkhorn</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../elkhorn/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../elkhorn/install/">Installation</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Pillar</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../pillar/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../pillar/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../pillar/api/">API</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Sponge</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../sponge/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/included_packages/">Included packages</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/roadmap/">Roadmap</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../sponge/logging/">Logging</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Xenia</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../xenia/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/api/">API and query management</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/tests/">Testing</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Xenia Driver</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../xenia/xenia-driver-js/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/xenia-driver-js-install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../xenia/xenia-driver-js-api/">API</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../">Introduction</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contribute <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../">Introduction</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../documentation/writing_documentation/">Writing documentation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../reporting_bugs/">Reporting bugs and requesting features</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../supporting_the_community/">Supporting the community</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../contributor_license_agreement/">Contributor License Agreement</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">DEVELOPMENT</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../writing_code/">Writing code</a>
+</li>
+
+        
+            
+<li >
+    <a href="../working_with_github/">Development workflow</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Coding style</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../faq/">FAQ</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../working_with_github/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../faq/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#coding-style">Coding Style</a></li>
+        
+    
+        <li class="main "><a href="#go-coding-style">Go Coding Style</a></li>
+        
+            <li><a href="#useful-tools-when-developing">Useful Tools when developing</a></li>
+        
+            <li><a href="#resources">Resources</a></li>
+        
+    
+        <li class="main "><a href="#javascript-conventions">Javascript conventions</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="coding-style">Coding Style</h1>
+<h1 id="go-coding-style">Go Coding Style</h1>
+<p>Unless explicitly stated, we follow all coding guidelines from the Go
+community. While some of these standards may seem arbitrary, they somehow seem
+to result in a solid, consistent codebase.</p>
+<p>It is possible that the code base does not currently comply with these
+guidelines. We are not looking for a massive PR that fixes this, since that
+goes against the spirit of the guidelines. All new contributions should make a
+best effort to clean up and make the code base better than they left it.
+Obviously, apply your best judgement. Remember, the goal here is to make the
+code base easier for humans to navigate and understand. Always keep that in
+mind when nudging others to comply.</p>
+<p>The rules:</p>
+<ol>
+<li>All code should be formatted with <code>gofmt -s</code>.</li>
+<li>All code should pass the default levels of
+   <a href="https://github.com/golang/lint"><code>golint</code></a>.</li>
+<li>All code should follow the guidelines covered in <a href="http://golang.org/doc/effective_go.html">Effective
+   Go</a> and <a href="https://github.com/golang/go/wiki/CodeReviewComments">Go Code Review
+   Comments</a>.</li>
+<li>Comment the code. Tell us the why, the history and the context.</li>
+<li>Document <em>all</em> declarations and methods, even private ones. Declare
+   expectations, caveats and anything else that may be important. If a type
+   gets exported, having the comments already there will ensure it&rsquo;s ready.</li>
+<li>Variable name length should be proportional to it&rsquo;s context and no longer.
+   <code>noCommaALongVariableNameLikeThisIsNotMoreClearWhenASimpleCommentWouldDo</code>.
+   In practice, short methods will have short variable names and globals will
+   have longer names.</li>
+<li>No underscores in package names. If you need a compound name, step back,
+   and re-examine why you need a compound name. If you still think you need a
+   compound name, lose the underscore.</li>
+<li>No utils or helpers packages. If a function is not general enough to
+   warrant it&rsquo;s own package, it has not been written generally enough to be a
+   part of a util package. Just leave it unexported and well-documented.</li>
+<li>All tests should run with <code>go test</code> and outside tooling should not be
+   required. No, we don&rsquo;t need another unit testing framework. Assertion
+   packages are acceptable if they provide <em>real</em> incremental value.</li>
+<li>Even though we call these &ldquo;rules&rdquo; above, they are actually just
+    guidelines. Since you&rsquo;ve read all the rules, you now know that.</li>
+</ol>
+<p>If you are having trouble getting into the mood of idiomatic Go, we recommend
+reading through <a href="http://golang.org/doc/effective_go.html">Effective Go</a>. The
+<a href="http://blog.golang.org/">Go Blog</a> is also a great resource. Drinking the
+kool-aid is a lot easier than going thirsty.</p>
+<p><em>Attribution: Go Coding Style adopted from the Docker project.</em></p>
+<h2 id="useful-tools-when-developing">Useful Tools when developing</h2>
+<ul>
+<li>golint</li>
+<li>gofmt</li>
+<li>goimports</li>
+<li>go vet</li>
+<li>errcheck</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/golang/go/wiki/CodeReviewComments">Go Code Review Comments</a></li>
+<li><a href="https://www.youtube.com/watch?v=Y1-RLAl7iOI">Best Practices for Production Environments</a></li>
+<li><a href="http://12factor.net/">12 Factor App</a></li>
+<li><a href="https://speakerdeck.com/farslan/tools-for-working-with-go-code">Tools for working with Go Code</a></li>
+</ul>
+<h1 id="javascript-conventions">Javascript conventions</h1>
+<p>We are currently working under the <a href="https://github.com/airbnb/javascript/tree/master/react">Airbnb js react conventions</a>. </p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../site/js/base.js"></script>
+        <script src="../../../site/js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../site/js/highlight.pack.js"></script>
+        <script src="../../../site/js/jquery-1.10.2.min.js"></script>
+        <script src="../../../site/mkdocs/js/lunr-0.5.7.min.js"></script>
+        <script src="../../../site/mkdocs/js/mustache.min.js"></script>
+        <script src="../../../site/mkdocs/js/require.js"></script>
+        <script src="../../../site/mkdocs/js/search.js"></script>
+        <script src="../../../site/mkdocs/js/text.js"></script>
+        <script src="../../../site/site/js/base.js"></script>
+        <script src="../../../site/site/js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../site/site/js/highlight.pack.js"></script>
+        <script src="../../../site/site/js/jquery-1.10.2.min.js"></script>
+        <script src="../../../site/site/mkdocs/js/lunr-0.5.7.min.js"></script>
+        <script src="../../../site/site/mkdocs/js/mustache.min.js"></script>
+        <script src="../../../site/site/mkdocs/js/require.js"></script>
+        <script src="../../../site/site/mkdocs/js/search.js"></script>
+        <script src="../../../site/site/mkdocs/js/text.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

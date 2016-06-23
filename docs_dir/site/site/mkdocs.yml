@@ -57,4 +57,4 @@ markdown_extensions:
 
 theme: mkdocs
 
-docs_dir: 'docs_dir'
+docs_dir: './'
