@@ -4,6 +4,7 @@ pages:
   - About: 'index.md'
   - Architectural overview: 'coral_ecosystem.md'
 - Developer Guide:
+  - Introduction: 'developer/index.md'
   - Installing Coral Ecosystem: 'quickstart/install.md'
   - Setting up MongoDB: 'quickstart/mongodb.md'
   - Cay:
@@ -32,17 +33,16 @@ pages:
     - Installation: 'xenia/xenia-driver-js-install.md'
     - API: 'xenia/xenia-driver-js-api.md'
 - User Guide:
-  - Introduction: 'contributions/index.md'
+  - Introduction: 'contribute/index.md'
 - Contribute:
-  - Introduction: 'contributions/index.md'
-  - Writing documentation: 'contributions/documentation/writing_documentation.md'
-  - Reporting bugs and requesting features: 'contributions/reporting_bugs.md'
-  - Supporting the community: 'contributions/supporting_the_community.md'
-  - Contributor License Agreement: 'contributions/contributor_license_agreement.md'
-  - DEVELOPMENT:
-    - Writing code: 'contributions/development/writing_code.md'
-    - Development workflow: 'contributions/development/working_with_github.md'
-    - Coding style: 'contributions/development/code_style.md'
+  - Introduction: 'contribute/index.md'
+  - Writing documentation: 'contribute/documentation/writing_documentation.md'
+  - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
+  - Writing code: 'contribute/development/writing_code.md'
+  - Development workflow: 'contribute/development/working_with_github.md'
+  - Coding styleguide: 'contribute/development/code_style.md'
+  - Supporting the community: 'contribute/supporting_the_community.md'
+  - Contributor License Agreement: 'contribute/contributor_license_agreement.md'
 - FAQ: 'faq.md'
 
 
@@ -55,6 +55,6 @@ markdown_extensions:
   - sane_lists
   - smarty
 
-theme: mkdocs
+theme: united
 
 docs_dir: 'docs_dir'

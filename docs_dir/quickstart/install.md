@@ -1,4 +1,8 @@
-# All-in-One Docker Installation
+# All-in-One Docker Compose Installation
+
+The all-in-one Docker Compose installation is a quick, easy, packaged solution that requires few steps and should get all components up and running quickly. The downside is that this may not scale well, as everything is installed on one server. After a certain number of users (perhaps 50 or so), the server could become overloaded.
+
+You can read about the different types of installation options on the [developer introduction page](introduction.md).
 
 ## Before you begin
 
@@ -6,6 +10,12 @@ You must have the following items installed and running:
 
 * **MongoDB Server**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
 * **RabbitMQ**: You can find instructions on installing RabbitMQ [on the RabbitMQ website](https://www.rabbitmq.com/download.html).
+
+You should also have the following resources on your machine before installing:
+
+* Minimum CPU: 2.0 GHz
+* Minimum RAM: 4GB
+* Minimum disk space required: 4GB
 
 ## Install Docker Toolbox
 
