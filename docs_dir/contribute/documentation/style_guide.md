@@ -24,6 +24,7 @@ Is there a third-party component the user needs to set up (for instance, MongoDB
 * Be sure to include _every single step_. Preferably copy paste.
 * When working from the command line, include every step in code blocks.
 
+
 ### API documentation
 
 When documenting a REST-style API, such as the [Pillar API](../../pillar/api), there are certain pieces of information to include. The [Pillar API documentation](../../pillar/api) is a useful template.
