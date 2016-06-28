@@ -16,8 +16,13 @@ We need help with a number of non-programming tasks:
 
 If you are a developer, especially if you know Golang or Node.js, we would love your help in fixing bugs and developing new features and plug-ins.
 
+
+
 * [Write code](development/writing_code.md)
 
 ## Contributing to the community
 
-Also, make sure to play _at least_ three rounds of [Cards Against Community](cards) daily.
+* [Join us in our community forum](https://community.coralproject.net/) to discuss online communities, comment sections, and journalism. Offer suggestions, ask questions!
+* [Sign up to our newsletter](http://tinyletter.com/coralproject).
+* We are also on [Twitter](https://twitter.com/coralproject).
+* Play our [Cards Against Community](cards) card game!

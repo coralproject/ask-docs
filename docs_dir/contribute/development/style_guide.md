@@ -1,4 +1,13 @@
-# Coding Style
+# Coding Style Guide
+
+## Core code principles
+
+In order to serve communities of varying shapes and sizes, all Coral Project software is conceived from the ground up to be:
+
+* __Configurable__: We strive to use configuration to deliver as much business logic, data modeling, and other aspects of our systems as _is practical._ Doing so gives us the ability to quickly configure precise UI experiences, data structures, and data science analysis with minimal need for coding, upgrades, server work, etc. Ultimately, we want the community managers who run our software to feel like they are designing their own house. This means trying things to see how they feel, looking at the results, and quickly making changes based on what they learn. We take our inspiration from the ever-changing, adaptable ecosystems of coral reefs.
+* __Modular__: Coral products can be used together to form a fully functioning community platform, or be used in pieces to complement existing software. In order to accomplish this, we are building core API features, message passing and import/export strategies in everything we do. We are also refining, documenting, and publishing deployment strategies for each of our products both in isolation as well as together as groups of our products configured to work in concert.
+* __Privacy Minded__: There is an implicit act of trust involved in registration for and engagement in an online community. Maintaining that trust is a top priority for us. Privacy for us begins with security concerns, and stretches deep into our product thinking. Whenever information is entered into our systems, we want to make it clear who will be able to see that information and how it will be used. We want to build safe, comfortable places that allow for conversations of varying levels of exposure, without false expectations or nasty surprises.
+* __Secure, Stable and Scalable__: Our deployment recommendations, if followed, provide usable and secure environments. Each piece of our software has internal checks to catch any error states and trigger alarms, as well as external restart mechanisms. All of our platforms have proven records for stability and well-known upgrade paths. We will publish auto-scaling deployment workflows where appropriate for large sites with varying loads.
 
 # Go Coding Style
 
@@ -66,4 +75,4 @@ _Attribution: Go Coding Style adopted from the Docker project._
 
 # Javascript conventions
 
-We are currently working under the [Airbnb js react conventions](https://github.com/airbnb/javascript/tree/master/react). 
+We are currently working under the [Airbnb js react conventions](https://github.com/airbnb/javascript/tree/master/react).

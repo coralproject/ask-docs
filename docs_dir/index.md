@@ -1,46 +1,22 @@
-![Coral Logo](/images/coralWordMark-1.5.png)
+***This is a work in progress. Some sections are missing or incomplete.***
 
-***This is a work in progress. Some sections are missing/incomplete***
+Welcome to the Coral Project documentation! This site aims to familiarize you with the Coral Project, how it works, and how you can help.
 
-The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. 
+## What is the Coral Project?
 
-We believe that if journalism is going to remain relevant and connected to the needs of people who live in a democracy, journalists need to do a better job of listening, validating, factchecking, and responding to experiences, opinions, and ideas. 
+The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. We're creating tools that allow everyone feel safe, respected, and heard.
 
-To do this, we need better tools that make everyone feel safe, respected, and heard. We need to focus our resources on identifying positive contributions as well as making negative ones less prominent.
+If you'd like to learn more about the Coral Project from a high-level perspective, [the main Coral Project website](http://www.coralproject.net) is the best place to do that. You can find information there about the project, our goals, and the individual products.
 
-To achieve these goals, we are:
+## How the documentation is organized
 
-* creating open source software, and
-* creating, refining and disseminating practices, tools, and studies 
+The documentation is organized into sections based on what you want to do with Coral.
 
+* The [Developer Guide](developer) section contains information geared towards a technical audience: those who want to install Coral, those who want to learn about how the various components of Coral fit together,
+* The [User Guide](user_guide) section contains information geared towards a less-technical audience. It has overviews and tutorials for those who want to use the Coral products like Trust, Ask, and Talk. If you're a publisher, moderator, journalist, or reader who wants to learn how to use Coral, this section is for you.
+* The [Contribute](contribute) section contains information for those who want to contribute to the Coral Project. You don't have to be a developer to contribute! There are a number of ways you can help out, which are outlined on the [Introduction](introduction) page.
 
-
-## Core code principles
-
-In order to serve communities of varying shapes and sizes, all Coral Project software is conceived from the ground up to be:
-
-* __Configurable__: We strive to use configuration to deliver as much business logic, data modeling, and other aspects of our systems as _is practical._ Doing so gives us the ability to quickly configure precise UI experiences, data structures, and data science analysis with minimal need for coding, upgrades, server work, etc. Ultimately, we want the community managers who run our software to feel like they are designing their own house. This means trying things to see how they feel, looking at the results, and quickly making changes based on what they learn. We take our inspiration from the ever-changing, adaptable ecosystems of coral reefs.
-* __Modular__: Coral products can be used together to form a fully functioning community platform, or be used in pieces to complement existing software. In order to accomplish this, we are building core API features, message passing and import/export strategies in everything we do. We are also refining, documenting, and publishing deployment strategies for each of our products both in isolation as well as together as groups of our products configured to work in concert.
-* __Privacy Minded__: There is an implicit act of trust involved in registration for and engagement in an online community. Maintaining that trust is a top priority for us. Privacy for us begins with security concerns, and stretches deep into our product thinking. Whenever information is entered into our systems, we want to make it clear who will be able to see that information and how it will be used. We want to build safe, comfortable places that allow for conversations of varying levels of exposure, without false expectations or nasty surprises.
-* __Secure, Stable and Scalable__: Our deployment recommendations, if followed, provide usable and secure environments. Each piece of our software has internal checks to catch any error states and trigger alarms, as well as external restart mechanisms. All of our platforms have proven records for stability and well-known upgrade paths. We will publish auto-scaling deployment workflows where appropriate for large sites with varying loads.
-
-## What's going on and how can I get involved?
-
-We are still actively developing this open presence and we always looking for [contributions](/contributions/index.md). We want to build this project with all of you.
-
-## Under the hood
-
-Coral products are based on the following technologies:
-
-* The [Go](https://golang.org) programming language
-* The [MongoDB](https://www.mongodb.org/) database
-* [React](https://facebook.github.io/react/) and [Redux](https://github.com/rackt/redux)
-* [Webpack](https://webpack.github.io/) and [Babel](https://babeljs.io/)
-* [Docker](https://www.docker.com/)
-
-You can use Docker Compose to [quick start](quickstart/install.md) the Coral System or read more about how the whole ecosystem and [each of its pieces work](coral_ecosystem.md).
-
-
+## Learn more
 
 For more information about us and to see our blog, please visit [our website](https://coralproject.net) and [sign up to our newsletter](http://tinyletter.com/coralproject). We are also on [Twitter](https://twitter.com/coralproject).
 

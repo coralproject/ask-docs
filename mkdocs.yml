@@ -1,10 +1,9 @@
 # If you add a page, you must add it to the index here
 pages:
-- Home:
-  - About: 'index.md'
-  - Architectural overview: 'coral_ecosystem.md'
+- Home: 'index.md'
 - Developer Guide:
   - Introduction: 'developer/index.md'
+  - Architectural overview: 'developer/coral_ecosystem.md'
   - Installing Coral Ecosystem: 'quickstart/install.md'
   - Setting up MongoDB: 'quickstart/mongodb.md'
   - Cay:
@@ -33,16 +32,27 @@ pages:
     - Installation: 'xenia/xenia-driver-js-install.md'
     - API: 'xenia/xenia-driver-js-api.md'
 - User Guide:
-  - Introduction: 'contribute/index.md'
+  - Introduction: 'user/index.md'
+  - Trust:
+    - Overview: 'user/trust.md'
+    - Tutorials: 'user/trust_tutorials.md'
+  - Ask:
+    - Overview: 'user/ask.md'
+    - Tutorials: 'user/ask_tutorials.md'
+  - Talk:
+    - Overview: 'user/talk.md'
+    - Tutorials: 'user/talk_tutorials.md'
 - Contribute:
   - Introduction: 'contribute/index.md'
   - Writing documentation: 'contribute/documentation/writing_documentation.md'
+  - Documentation style guide: 'contribute/documentation/style_guide.md'
   - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
   - Writing code: 'contribute/development/writing_code.md'
   - Development workflow: 'contribute/development/working_with_github.md'
-  - Coding styleguide: 'contribute/development/code_style.md'
+  - Coding style guide: 'contribute/development/style_guide.md'
   - Supporting the community: 'contribute/supporting_the_community.md'
   - Contributor License Agreement: 'contribute/contributor_license_agreement.md'
+  - Coral naming: 'contribute/coral_naming.md'
 - FAQ: 'faq.md'
 
 
