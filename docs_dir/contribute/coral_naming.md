@@ -10,7 +10,7 @@ Cay is our front-end app, which makes sense because a cay is a small, low-elevat
 
 Elkhorn coral is a coral species that builds large branches. These branches create habitats for other species.
 
-This makse sense because Elkhorn is an form composer and embeddable builder: it, too, creates habitats for other species to come into the Coral ecosystem. https://en.wikipedia.org/wiki/Elkhorn_coral
+This makes sense because Elkhorn is an form composer and embeddable builder: it, too, creates habitats for other species to come into the Coral ecosystem. https://en.wikipedia.org/wiki/Elkhorn_coral
 
 ### Pillar
 

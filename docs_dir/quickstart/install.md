@@ -19,7 +19,7 @@ You should also have the following resources on your machine before installing:
 
 ## Install Docker Toolbox
 
-If you do not already have Docker installed, do that first. You can install Docker Toolbox using the Docker instructions [located here](https://docs.docker.com/mac/).
+If you do not already have Docker installed, do that first. You can install Docker Toolbox using the Docker instructions [located here](https://docs.docker.com/).
 
 If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker version`.
 

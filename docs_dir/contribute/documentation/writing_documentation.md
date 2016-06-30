@@ -28,18 +28,18 @@ The documentation is organized into several categories:
 
 # How to obtain, write, and deploy documentation
 
-Our documentation is hosted and deployed through GitHub. This guide will take you step by step through the process of getting the documentation on to your local machine, editing the documentation, and submitting your changes. If you've never worked with git before, it might seem a little intimidating, but we've broken it down for you into manageable chunks.
+Our documentation is hosted and deployed through GitHub. This guide will take you step by step through the process of getting the documentation on to your local machine, editing the documentation, and submitting your changes. If you've never worked with Git before, it might seem a little intimidating, but we've broken it down for you into manageable chunks.
 
 Briefly, the process is as follows:
 
 1. First, you will get the documentation source code, using Git.
 2. Then, you will work on the documentation. You will use Mkdocs and Markdown to write the documentation.
 3. Then, you will push your changes to GitHub.
-4. Finally, someone will deploy the documentation. This is done using a simple Mkdocs commands that builds the documentation and deploys it to GitHub pages.
+4. Finally, you will deploy the documentation. This is done using a simple Mkdocs commands that builds the documentation and deploys it to GitHub pages.
 
 ## Install and set up Git
 
-If you don't already have git installed, you'll want to get that set up first. You'll have to [download and install Git](https://git-scm.com/download). You can read more about Git on [their website](https://git-scm.com/).
+If you don't already have Git installed, you'll want to get that set up first. You'll have to [download and install Git](https://git-scm.com/download). You can read more about Git on [their website](https://git-scm.com/).
 
 You will also have to [create a GitHub account](https://help.github.com/articles/signing-up-for-a-new-github-account/), which is a very straightforward process.
 
@@ -50,11 +50,17 @@ git config --global user.email "you@email.com"
 ```
 Note that user.name should be your real name, not your GitHub username. The email you use in the user.email field will be used to associate your commits with your GitHub account.
 
+## Install MkDocs
+
+The Coral Project's documentation uses the [MkDocs](http://www.mkdocs.org/) documentation system, which uses [Markdown](http://daringfireball.net/projects/markdown/) to format text. Before you can get started on writing and editing the documentation, you will need to have MkDocs installed.
+
+You can [download and install MkDocs](http://www.mkdocs.org/#installation) using the instructions on their website. The [MkDocs website](http://www.mkdocs.org/) also contains a lot of good information on writing documentation in MkDocs, and there are plenty of decent Markdown cheatsheets floating around, [like this one](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
 ## Getting the documentation
 
-All of the documentation for the Coral Project [resides in GitHub](https://github.com/coralproject/docs) in the "docs" repository.
+All of the documentation for the Coral Project [resides in GitHub](https://github.com/coralproject/docs) in the `docs` repository.
 
-To get a local version of the documentation, clone the repository:
+To get a local version of the documentation, clone the repository using this command:
 
 ```
 git clone https://github.com/coralproject/docs.git
@@ -65,8 +71,6 @@ You now have a local copy of the documentation on your local machine, that you c
 **Note**: If you already have a local copy of the documentation repository on your computer, be sure to perform a `git pull` before you start editing. This will ensure that you are working on the most recent available version of the documentation, which will prevent potential merge conflicts when you're ready to commit your changes.
 
 ## Writing and editing the documentation
-
-The Coral Project's documentation uses the [MkDocs](http://www.mkdocs.org/) documentation system, which uses Markdown to format text. The [MkDocs website](http://www.mkdocs.org/) contains a lot of good information on writing documentation in MkDocs, and there are plenty of decent Markdown cheatsheets floating around, [like this one](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 As you are writing the documentation, refer to the [Documentation Style Guide](style_guide) to make sure you are remaining consistent with our current documentation standards, and writing the best and clearest documentation possible.
 

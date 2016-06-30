@@ -5,7 +5,7 @@ pages:
   - Introduction: 'developer/index.md'
   - Architectural overview: 'developer/coral_ecosystem.md'
   - Installing Coral Ecosystem: 'quickstart/install.md'
-  - Setting up MongoDB: 'quickstart/mongodb.md'
+  - Developer tools setup: 'developer/developer_setup.md'
   - Cay:
     - Introduction: 'cay/index.md'
     - Installation: 'cay/install.md'

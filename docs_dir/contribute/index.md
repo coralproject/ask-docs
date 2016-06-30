@@ -14,7 +14,7 @@ We need help with a number of non-programming tasks:
 
 ## Contributing by coding
 
-If you are a developer, especially if you know Golang or Node.js, we would love your help in fixing bugs and developing new features and plug-ins.
+If you are a developer, especially if you know Go or Node.js, we would love your help in fixing bugs and developing new features and plug-ins.
 
 
 
