@@ -24,9 +24,9 @@ These are the four basic principles that guide how we shape and build our code. 
 
 ### Repository naming
 
-You may have noticed that all of the components in the Coral ecosystem (and their corresponding repositories) are named for types of coral. You can read more about why these names were chosen [here](coral_naming). The coral types aren't chosen willy-nilly, but have a meaning that ties into what that component actually does.
+As you may have guessed, each component of Coral is named after a different type of coral. We like to match up some traits of the particular type of coral with the functionality of the component, but that's not always possible.
 
-When you are choosing a name for your project (and its repo), look around for a variety of coral that somehow represents what your project does and how it fits in to the Coral ecosystem. The [Coral Naming](coral_naming) document should offer you some inspiration in that direction.
+Choose a variety of coral to name your repo. Make sure that there isn't already a repo named something similar.
 
 ### Repository descriptions
 
