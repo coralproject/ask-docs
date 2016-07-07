@@ -1,14 +1,14 @@
 # Introduction
 
-Sponge is used to get your existing community (comments, authors, assets, and other entities) into the Coral ecosystem.
+Sponge is a data import service used to get your existing community (comments, authors, assets, and other entities) into the Coral ecosystem.
 
-Sponge is Coral's Data Import Layer. It is an Extract, Transform, and Load command line tool designed to:
+It is an Extract, Transform, and Load command line tool designed to:
 
 * Read data from a foreign source,
 * Translate the schema into Coral conventions, and
 * POST entities to our service layer for insertion.
 
-_Strategy files_ are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about [strategy files here](strategy), including information on their structure and examples.
+Sponge uses strategy files to assist with data import. Strategy files are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about [strategy files here](strategy), including information on their structure and examples.
 
 ## Data import sources supported
 
@@ -43,6 +43,48 @@ Sponge currently only supports importing data from mySQL, PostgreSQL, MongoDB or
       --type="": import or create indexes for only these types of data (default is everything)
 ```
 
-### Roadmap
+## Sponge roadmap
 
-You can find out more about potential upcoming features [on our roadmap](roadmap).
+This document tracks features that are not yet prioritized into issues and releases.
+
+### API Import
+
+Pull data from Http(s) sources
+
+* Disqus - https://disqus.com/api/docs/
+* Wordpress Core - https://codex.wordpress.org/XML-RPC_WordPress_API/Comments
+* Lyvewire - http://answers.livefyre.com/developers/api-reference/
+* Facebook - https://developers.facebook.com/docs/graph-api/reference/v2.5/comment
+
+### Rate Limit Counter
+
+In order to protect source databases, we want to be able to throttle the number of queries sponge is making.
+
+* Keeps a sliding count of how many requests were made in the past time frame based on the strategy.
+* Exposes isOkToQuery() to determine if we are currently at the limit.
+* Each request sends a message to this routine each time a request is made.
+
+### Synchronization
+
+An internal mechanism that regularly polls the source and imports any updates.
+
+#### Basic polling specification
+
+The main loop that keeps the data up to date.  Gets _slices_ of records based on _updated_at_ timestamps to account for changing records.
+
+For each table or api in the strategy:
+
+* Ensure maximum rate limit is not met
+* Determine which slice of data to get next
+	* Find the last updated timestamp in the _log collection_ (or the collection itself?)
+* Use the strategy to request the slice (either db query or api call)
+	* Update the rate limit counter
+* For each record returned
+	* Check to ensure the document isn't already added
+	* If not, add the document and kick off _import actions_
+	* If it's there, update the document
+	* Update the _log collection_
+
+#### Challenges
+
+Data synchronization between complex living systems is a difficult challenge. Approach with caution.

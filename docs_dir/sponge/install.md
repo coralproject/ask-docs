@@ -3,16 +3,16 @@
 ## Before you begin
 
 ### Pillar
-You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running to send the data to. Instructions on installing Pillar [can be found here](/pillar/install.md).
+You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running, where your translated data will be sent. Instructions on installing Pillar [can be found here](/pillar/install.md).
 
 ### External database source
-You will also have your external database source running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.
+You will also have your external database running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.
 
 The external sources we currently support are: PostgreSQL, MySQL, MongoDB, and REST APIs.
 
 ### Vendoring dependencies
 
-You should be vendoring the packages you choose to use. We recommend using [govendor](https://github.com/kardianos/govendor). This tool will vendor from the vendor folder associated with this project repo for the dependencies in use. It is recommended to use a project based repo with a single vendor folder for all your dependencies.
+You should be vendoring the packages you choose to use ("vendoring" is the moving of all third party items such as packages into the `/vendor` directory). We recommend using [govendor](https://github.com/kardianos/govendor). This tool will manage your dependencies from the vendor folder associated with this project repository.
 
 ## Install from source
 
@@ -67,7 +67,7 @@ cp $GOPATH/src/github.com/coralproject/sponge/examples/strategy.json.example $GO
 
 ### Set your environment variables
 
-Setting your environment variables tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar) instance you are pushing data into.
+Setting your environment variables tells Sponge which strategy file you want to use, and the URL for the [Pillar](https://github.com/coralproject/pillar) instance you are pushing data to.
 
 Make your own copy of the `config/dev.cfg` file (you can edit this configuration file with your own values, and then ensure that you don't commit it back to the repository). Call your config file whatever you like; we'll call it "custom" in this example.
 ```
@@ -125,7 +125,7 @@ docker build -t "sponge:latest" -f Dockerfile ./
 
 ### Edit env.list
 
-The env.list file contains environment variables you need to set. Setting your environment variables tells sponge which strategy file you want to use, and which [Pillar](https://github.com/coralproject/pillar) instance you are pushing data into.
+Setting your environment variables tells Sponge which strategy file you want to use, and the URL for the [Pillar](https://github.com/coralproject/pillar) instance you are pushing data to.
 
 ```
 PILLAR_URL=http://192.168.99.100:8080

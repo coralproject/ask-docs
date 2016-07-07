@@ -20,7 +20,7 @@ pages:
     - Introduction: 'sponge/index.md'
     - Installation: 'sponge/install.md'
     - Included packages: 'sponge/included_packages.md'
-    - Roadmap: 'sponge/roadmap.md'
+    - Strategy files: 'sponge/strategy.md'
     - Logging: 'sponge/logging.md'
   - Xenia:
     - Introduction: 'xenia/index.md'

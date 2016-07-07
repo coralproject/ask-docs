@@ -14,7 +14,7 @@ Before you install Pillar, you must have the following items installed and runni
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
     * There are [instructions on importing sample comment data into MongoDB here](../../quickstart/mongodb)
 * **RabbitMQ**: You can find instructions on installing RabbitMQ [on the RabbitMQ website](https://www.rabbitmq.com/download.html).
-* **Xenia**: Xenia is a configurable service layer that publishes endpoints against mongo aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia [here](../../xenia/install).
+* **Xenia**: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia [here](../../xenia/install).
 
 ## Install Pillar from source
 
@@ -45,7 +45,7 @@ package github.com/coralproject/pillar: no buildable Go source files in [directo
 ```
 
 #### Cloning manually
-You can also clone the code manually.
+You can also clone the code manually (this does the same thing as the `go get` command above).
 
 ```
 mkdir $GOPATH/src/github.com/coralproject/pillar
@@ -98,7 +98,7 @@ export MONGODB_SSL="False"
 * For `AMQP_URL`:
     * If your RabbitMQ is a local installation, `AMQP_URL` should be `amqp://localhost:5672/`.
 
-Once you've edited and saved your custom.cfg file, source it:
+Once you've edited and saved your custom.cfg file, source it with the following command:
 
 ```
 source $GOPATH/src/github.com/coralproject/pillar/config/custom.cfg
@@ -132,6 +132,9 @@ git clone https://github.com/coralproject/pillar.git
 ```
 
 Then cd into the Pillar directory.
+```
+cd pillar
+```
 
 ### Start Docker
 
@@ -142,6 +145,7 @@ Start Docker.
   sudo service docker start
   ```
 * On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
+     * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
 
 ### Build Pillar server
 
@@ -160,14 +164,34 @@ sudo docker build -t pillar-server:0.1 .
 The env.list file contains environment variables you need to set. Edit this file to reflect the settings on your own system.
 
 ```
-# TODO: include finished env.list here
+MONGODB_URL="mongodb://localhost:27017/coral"
+AMQP_URL="amqp://localhost:5672/"
+AMQP_EXCHANGE="PillarMQ"
+
+PILLAR_ADDRESS=":8080"
+PILLAR_HOME="/opt/pillar"
+PILLAR_CRON="false"
+PILLAR_CRON_SEARCH="@every 30m"
+PILLAR_CRON_STATS="@every 1m"
+
+XENIA_URL="http://localhost:4000/1.0/exec/"
+XENIA_QUERY_PARAM="?skip=0&limit=100"
+XENIA_AUTH="<auth token>"
+
+MONGODB_ADDRESS="127.0.0.1:27017"
+MONGODB_USERNAME=""
+MONGODB_PASSWORD=""
+MONGODB_DATABASE=""
+MONGODB_SSL="False"
 ```
 
 * For `XENIA_URL`:
-    * If you installed [locally from source](../xenia/install), `XENIA_URL` should be `http://localhost:4000/1.0/exec/`.
+    * If you installed [locally](../xenia/install), `XENIA_URL` should be `http://localhost:4000/1.0/exec/`.
 * For `MONGODB_URL`:
     * If your MongoDB is a local installation, `MONGODB_URL` should be `mongodb://localhost:27017/coral`.
-
+    * If your MongoDB is a local installation, `MONGODB_ADDRESS` should be `127.0.0.1:27017`.
+* For `AMQP_URL`:
+    * If your RabbitMQ is a local installation, `AMQP_URL` should be `amqp://localhost:5672/`.
 
 ### Run Docker
 
