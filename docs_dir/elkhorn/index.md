@@ -2,45 +2,46 @@
 
 [Elkhorn](https://github.com/coralproject/elkhorn) is the form composer and embeddable builder.
 
-![ArchDiagram](../images/arch.png?raw=true "ArchDiagram")
+Elkhorn lets you create forms to solicit feedback from readers. You can then take the resulting forms and embed them in your website. The resulting data you collect is viewable in the [Ask](../ask) interface.
 
-## AskComposer:
+Elkhorn consists of the AskComposer and the embed service.
 
-- ...takes an **Ask spec** in some sort of serialization (JSON or any other), and renders it.
-- ...does not know where the serialized spec came from.
-- ...stores the state of the form (completed fields, current progress, etc)
-- ...persists the state by sending the completed form to a server destination
-- ...may persist partial states locally
+## AskComposer
 
-## Embed Service:
+AskComposer is a component that takes a spec in JSON format and turns it into a reader-facing form.
 
-- ...uses **rollup** (and it's amazing "tree-shaking" feature) to generate a build of minimum size.
+* AskComposer doesn't know where the JSON originates from. In our case, in will come from the Ask interface in Cay, but in theory it could come from anywhere.
+* AskComposer stores the state of the form (completed fields, current progress, etc.).
+* AskComposer persists or saves the state of the form by sending the form to a data storage destination (this could be S3 if you set that up during the installation process, or on your local drive if you've installed this locally without an S3 setup).
+* Partial states may be stored locally, even if S3 has been set up.
 
-## To view forms
+## Embed service
+
+The embed service uses the [rollup](http://rollupjs.org/) module bundler to generate a build of the form.
+
+## Using the generated forms
 
 ### As a standalone page
 
-A full page including the form is rendered from this endpoint:
+The form can be viewed on a full standalone page, using the following URL:
 
 ```
 https://[elkhornserver]/iframe/[form_id]
 ```
 
-### via iFrame
+### Embedded as an iframe
 
-The standalone page link is suitable for an iframe:
+You can take the standalone page link and use it in an iframe, which you can then embed directly into your page:
 
 ```
 <iframe src="https://[elkhornserver]/iframe/[form_id]" width="100%" height="600px"></iframe>
 ```
 
-* Note that the width and height parameters may need to be tweaked.
+* You may have to tweak the width and height parameters.
 
-iframes can be embedded directly into pages
+### Embedded directly into your page
 
-### Rendered directly into a page
-
-We can also render a form directly into a page.  This provides the advantages of native css inheritance as well as all the other issues that come with iframes.
+You can render a form directly into a page, using a `script src` tag. This offers the advantages of native CSS inheritance, in addition to the benefits that come with iframes.
 
 ```
 <div id="ask-form"></div><script src="[filewritelocation]/[formid].js"></script>

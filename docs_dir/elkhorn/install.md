@@ -53,7 +53,8 @@ Now edit the config.json file.
 }
 ```
 
-For `pillarHost`, enter the URL where the service is running. If you installed [locally from source](../pillar/install), `pillarHost` should be `http://localhost:8080`.
+* For `pillarHost`, enter the URL where the service is running. If you installed [locally from source](../pillar/install), `pillarHost` should be `http://localhost:8080`.
+* For `s3`, you can enter the values for your S3 setup. This is where Elkhorn will save
 
 ### Run the app
 
@@ -61,7 +62,7 @@ You can now start Elkhorn by running npm start:
 ```
 npm start
 ```
-Elkhorn will now be running on port 4444. You can now visit Elkhorn by visiting the URL [http://localhost:4444](http://localhost:4444).
+Elkhorn will now be running locally on port 4444. You can now visit Elkhorn by visiting the URL [http://localhost:4444](http://localhost:4444).
 
 
 ## Install as a Docker container
@@ -91,4 +92,4 @@ Run Elkhorn:
 docker run  --name elkhorn -d -p 4444:4444 elkhorn
 ```
 
-Elkhorn will now be running on port 4444.
+Elkhorn will now be running locally on port 4444. You can now visit Elkhorn by visiting the URL [http://localhost:4444](http://localhost:4444).

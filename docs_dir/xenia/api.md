@@ -1,7 +1,7 @@
 
 ## API calls
 
-If you set the authorization header properly in your browser (TODO: how?) you can run the following endpoints:
+If you set the authorization header properly in your browser (TODO) you can run the following endpoints.
 
 1) Get a list of configured queries:
 
@@ -237,7 +237,7 @@ output:
 Upserting Query : Path[./scrquery/basic_var.json]
 ```
 
-By convention, we store core query scripts in the [/xenia/cmd/xenia/scrquery](https://github.com/CoralProject/xenia/tree/master/cmd/xenia/scrquery) folder.  As we develop Coral features, store the .json files there so other members can use them. Eventually, groups of query sets will be refactored to another location, as yet undetermined.
+By convention, we store core query scripts in the [/xenia/cmd/xenia/scrquery](https://github.com/CoralProject/xenia/tree/master/cmd/xenia/scrquery) folder.  As we develop Coral features, store the JSON files there so other developers can use them (eventually, groups of query sets will be refactored to another location, but that's the right folder for the time being).
 
 ```
 cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia/scrquery
@@ -256,9 +256,9 @@ db.query_sets.find()
 
 ## Writing Sets
 
-Writing a set is essentially about creating a MongoDB aggregation pipeline. Xenia has built on top of this by providing extended functionality to make MongoDB more powerful.
+"Writing a set" is essentially about creating a MongoDB aggregation pipeline. Xenia has built on top of this by providing extended functionality to make MongoDB more powerful.
 
-Multi query set with variable substitution and date processing.
+Here is a multi query set with variable substitution and date processing:
 
 ```
 GET
@@ -388,7 +388,7 @@ Use the `*` operator when you need an array. In this example we need to support 
    ]
 }
 
-We you need an array to be substitued.
+When you need an array to be substituted.
 Before: {"field" : {"$in": "#data.*:list.station_id"}}}
 After : {"field" : {"$in": ["42021"]}}
     dataOp : "*"
@@ -412,7 +412,7 @@ Use the index operator when you need a single value. Specify which document in t
    ]
 }
 
-We you need a single value to be substitued, select an index.
+When you need a single value to be substituted, select an index.
 Before: {"field" : "#data.0:list.station_id"}
 After : {"field" : "42021"}
     dataOp : 0

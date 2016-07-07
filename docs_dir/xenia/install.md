@@ -1,6 +1,6 @@
 # Xenia Installation
 
-Xenia is a configurable service layer that publishes endpoints against [mongo aggregation pipeline queries](https://docs.mongodb.org/manual/core/aggregation-introduction/).
+Xenia is a configurable service layer that publishes endpoints against [MongoDB aggregation pipeline queries](https://docs.mongodb.org/manual/core/aggregation-introduction/).
 
 ## Before you begin
 
@@ -151,7 +151,8 @@ Creating collection query_regexs
 Creating collection query_regexs_history
 ```
 
-* **Troubleshooting note #1**: if you get a response that contains `ERROR: Invalid DB provided`, you may have an incorrectly set environment variable. If you are running everything locally and using a local MongoDB, use `printev` to see if `XENIA_WEB_HOST` is set:
+#### Troubleshooting note #1
+If you get a response that contains `ERROR: Invalid DB provided`, you may have an incorrectly set environment variable. If you are running everything locally and using a local MongoDB, use `printev` to see if `XENIA_WEB_HOST` is set:
 
 ```
 printenv XENIA_WEB_HOST
@@ -163,7 +164,8 @@ printenv XENIA_WEB_HOST
 unset XENIA_WEB_HOST
 ```
 
-* **Troubleshooting note #2**: instead of the expected output shown above, you may see something like:
+#### Troubleshooting note #2
+Instead of the expected output shown above, you may see something like:
 
 ```
 Configuring MongoDB
