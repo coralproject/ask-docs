@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../../sponge/roadmap/">Roadmap</a>
+    <a href="../../sponge/strategy/">Strategy files</a>
 </li>
 
         
@@ -468,7 +468,7 @@
 </ul>
 </li>
 <li><strong>RabbitMQ</strong>: You can find instructions on installing RabbitMQ <a href="https://www.rabbitmq.com/download.html">on the RabbitMQ website</a>.</li>
-<li><strong>Xenia</strong>: Xenia is a configurable service layer that publishes endpoints against mongo aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia <a href="../../../xenia/install">here</a>.</li>
+<li><strong>Xenia</strong>: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia <a href="../../../xenia/install">here</a>.</li>
 </ul>
 <h2 id="install-pillar-from-source">Install Pillar from source</h2>
 <h3 id="before-you-begin_1">Before you begin</h3>
@@ -490,7 +490,7 @@
 </code></pre>
 
 <h4 id="cloning-manually">Cloning manually</h4>
-<p>You can also clone the code manually.</p>
+<p>You can also clone the code manually (this does the same thing as the <code>go get</code> command above).</p>
 <pre><code>mkdir $GOPATH/src/github.com/coralproject/pillar
 cd $GOPATH/src/github.com/coralproject/pillar
 
@@ -544,7 +544,7 @@ export MONGODB_SSL=&quot;False&quot;
 </ul>
 </li>
 </ul>
-<p>Once you&rsquo;ve edited and saved your custom.cfg file, source it:</p>
+<p>Once you&rsquo;ve edited and saved your custom.cfg file, source it with the following command:</p>
 <pre><code>source $GOPATH/src/github.com/coralproject/pillar/config/custom.cfg
 </code></pre>
 
@@ -571,12 +571,18 @@ export MONGODB_SSL=&quot;False&quot;
 </code></pre>
 
 <p>Then cd into the Pillar directory.</p>
+<pre><code>cd pillar
+</code></pre>
+
 <h3 id="start-docker">Start Docker</h3>
 <p>Start Docker.</p>
 <ul>
 <li>On the server, you can do this via the command:
   <code>sudo service docker start</code></li>
-<li>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</li>
+<li>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.<ul>
+<li>If, at any point, you see the error message <code>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</code>, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you&rsquo;ve opened up the Docker Quickstart Terminal and are running your Docker commands there.</li>
+</ul>
+</li>
 </ul>
 <h3 id="build-pillar-server">Build Pillar server</h3>
 <p>Build the Pillar server using <code>docker build</code>.</p>
@@ -591,16 +597,39 @@ export MONGODB_SSL=&quot;False&quot;
 
 <h3 id="edit-environment-variables">Edit environment variables</h3>
 <p>The env.list file contains environment variables you need to set. Edit this file to reflect the settings on your own system.</p>
-<pre><code># TODO: include finished env.list here
+<pre><code>MONGODB_URL=&quot;mongodb://localhost:27017/coral&quot;
+AMQP_URL=&quot;amqp://localhost:5672/&quot;
+AMQP_EXCHANGE=&quot;PillarMQ&quot;
+
+PILLAR_ADDRESS=&quot;:8080&quot;
+PILLAR_HOME=&quot;/opt/pillar&quot;
+PILLAR_CRON=&quot;false&quot;
+PILLAR_CRON_SEARCH=&quot;@every 30m&quot;
+PILLAR_CRON_STATS=&quot;@every 1m&quot;
+
+XENIA_URL=&quot;http://localhost:4000/1.0/exec/&quot;
+XENIA_QUERY_PARAM=&quot;?skip=0&amp;limit=100&quot;
+XENIA_AUTH=&quot;&lt;auth token&gt;&quot;
+
+MONGODB_ADDRESS=&quot;127.0.0.1:27017&quot;
+MONGODB_USERNAME=&quot;&quot;
+MONGODB_PASSWORD=&quot;&quot;
+MONGODB_DATABASE=&quot;&quot;
+MONGODB_SSL=&quot;False&quot;
 </code></pre>
 
 <ul>
 <li>For <code>XENIA_URL</code>:<ul>
-<li>If you installed <a href="../../xenia/install">locally from source</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
+<li>If you installed <a href="../../xenia/install">locally</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
 </ul>
 </li>
 <li>For <code>MONGODB_URL</code>:<ul>
 <li>If your MongoDB is a local installation, <code>MONGODB_URL</code> should be <code>mongodb://localhost:27017/coral</code>.</li>
+<li>If your MongoDB is a local installation, <code>MONGODB_ADDRESS</code> should be <code>127.0.0.1:27017</code>.</li>
+</ul>
+</li>
+<li>For <code>AMQP_URL</code>:<ul>
+<li>If your RabbitMQ is a local installation, <code>AMQP_URL</code> should be <code>amqp://localhost:5672/</code>.</li>
 </ul>
 </li>
 </ul>

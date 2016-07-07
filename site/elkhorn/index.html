@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../sponge/roadmap/">Roadmap</a>
+    <a href="../sponge/strategy/">Strategy files</a>
 </li>
 
         
@@ -440,11 +440,11 @@
     
         <li class="main active"><a href="#introduction">Introduction</a></li>
         
-            <li><a href="#askcomposer">AskComposer:</a></li>
+            <li><a href="#askcomposer">AskComposer</a></li>
         
-            <li><a href="#embed-service">Embed Service:</a></li>
+            <li><a href="#embed-service">Embed service</a></li>
         
-            <li><a href="#to-view-forms">To view forms</a></li>
+            <li><a href="#using-the-generated-forms">Using the generated forms</a></li>
         
     
     </ul>
@@ -453,36 +453,34 @@
 
 <h1 id="introduction">Introduction</h1>
 <p><a href="https://github.com/coralproject/elkhorn">Elkhorn</a> is the form composer and embeddable builder.</p>
-<p><img alt="ArchDiagram" src="./../images/arch.png?raw=true" title="ArchDiagram" /></p>
-<h2 id="askcomposer">AskComposer:</h2>
+<p>Elkhorn lets you create forms to solicit feedback from readers. You can then take the resulting forms and embed them in your website. The resulting data you collect is viewable in the <a href="./../ask">Ask</a> interface.</p>
+<p>Elkhorn consists of the AskComposer and the embed service.</p>
+<h2 id="askcomposer">AskComposer</h2>
+<p>AskComposer is a component that takes a spec in JSON format and turns it into a reader-facing form.</p>
 <ul>
-<li>&hellip;takes an <strong>Ask spec</strong> in some sort of serialization (JSON or any other), and renders it.</li>
-<li>&hellip;does not know where the serialized spec came from.</li>
-<li>&hellip;stores the state of the form (completed fields, current progress, etc)</li>
-<li>&hellip;persists the state by sending the completed form to a server destination</li>
-<li>&hellip;may persist partial states locally</li>
+<li>AskComposer doesn&rsquo;t know where the JSON originates from. In our case, in will come from the Ask interface in Cay, but in theory it could come from anywhere.</li>
+<li>AskComposer stores the state of the form (completed fields, current progress, etc.).</li>
+<li>AskComposer persists or saves the state of the form by sending the form to a data storage destination (this could be S3 if you set that up during the installation process, or on your local drive if you&rsquo;ve installed this locally without an S3 setup).</li>
+<li>Partial states may be stored locally, even if S3 has been set up.</li>
 </ul>
-<h2 id="embed-service">Embed Service:</h2>
-<ul>
-<li>&hellip;uses <strong>rollup</strong> (and it&rsquo;s amazing &ldquo;tree-shaking&rdquo; feature) to generate a build of minimum size.</li>
-</ul>
-<h2 id="to-view-forms">To view forms</h2>
+<h2 id="embed-service">Embed service</h2>
+<p>The embed service uses the <a href="http://rollupjs.org/">rollup</a> module bundler to generate a build of the form.</p>
+<h2 id="using-the-generated-forms">Using the generated forms</h2>
 <h3 id="as-a-standalone-page">As a standalone page</h3>
-<p>A full page including the form is rendered from this endpoint:</p>
+<p>The form can be viewed on a full standalone page, using the following URL:</p>
 <pre><code>https://[elkhornserver]/iframe/[form_id]
 </code></pre>
 
-<h3 id="via-iframe">via iFrame</h3>
-<p>The standalone page link is suitable for an iframe:</p>
+<h3 id="embedded-as-an-iframe">Embedded as an iframe</h3>
+<p>You can take the standalone page link and use it in an iframe, which you can then embed directly into your page:</p>
 <pre><code>&lt;iframe src=&quot;https://[elkhornserver]/iframe/[form_id]&quot; width=&quot;100%&quot; height=&quot;600px&quot;&gt;&lt;/iframe&gt;
 </code></pre>
 
 <ul>
-<li>Note that the width and height parameters may need to be tweaked.</li>
+<li>You may have to tweak the width and height parameters.</li>
 </ul>
-<p>iframes can be embedded directly into pages</p>
-<h3 id="rendered-directly-into-a-page">Rendered directly into a page</h3>
-<p>We can also render a form directly into a page.  This provides the advantages of native css inheritance as well as all the other issues that come with iframes.</p>
+<h3 id="embedded-directly-into-your-page">Embedded directly into your page</h3>
+<p>You can render a form directly into a page, using a <code>script src</code> tag. This offers the advantages of native CSS inheritance, in addition to the benefits that come with iframes.</p>
 <pre><code>&lt;div id=&quot;ask-form&quot;&gt;&lt;/div&gt;&lt;script src=&quot;[filewritelocation]/[formid].js&quot;&gt;&lt;/script&gt;
 </code></pre></div>
         </div>

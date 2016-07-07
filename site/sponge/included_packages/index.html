@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../roadmap/">Roadmap</a>
+    <a href="../strategy/">Strategy files</a>
 </li>
 
         
@@ -424,7 +424,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../roadmap/">
+                    <a rel="prev" href="../strategy/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -467,133 +467,29 @@
 <pre><code>import &quot;github.com/coralproject/sponge/pkg/strategy&quot;
 </code></pre>
 
-<p>The Strategy package handles the loading and distribution of configuration related with external sources. It handles the translation from the external database to our Coral schema.</p>
+<p>The Strategy package handles the loading and configuration of data from external sources. It handles the translation from the external database to our Coral schema.</p>
 <h3 id="variables">Variables</h3>
-<pre><code>var pillarURL string
-</code></pre>
-
-<p>URL of where Pillar is currently running.</p>
-<pre><code>var uuid      string
-</code></pre>
-
-<p>Universally Unique Identifier used for the logs.</p>
-<h3 id="fields-in-the-strategy-json-file">Fields in the strategy JSON file</h3>
-<h4 id="name">Name</h4>
-<p>The name of the strategy that we are describing.</p>
-<h4 id="map">Map</h4>
-<p>Contains all the information to map fields from the external source to our local Coral database.</p>
-<h4 id="foreign">Foreign</h4>
-<p>It describes the foreign database source. Right now our supported data sources are mySQL, PostgreSQL, MongoDB, and web services (REST APIs).</p>
-<h4 id="datetimeformat">DateTimeFormat</h4>
-<p>If your source has date/time fields, we need to know how to parse them. In order to tell Sponge how to parse your date/time field, you will write out the date and time <code>2006 Mon Jan 2 15:04:05</code> in the format that it appears in your source database.</p>
-<p>For more information on date and time layouts you can read the Golang documentation on <a href="https://golang.org/pkg/time/#pkg-constants">pkg-constants</a>.</p>
-<h4 id="entities">Entities</h4>
-<p>Entities describes all of the different entities we have in the Coral database and how to perform the transformations.</p>
-<p>Example of an entity:</p>
-<pre><code>&quot;asset&quot;: {
-  &quot;Foreign&quot;: &quot;crnr_asset&quot;,
-  &quot;Local&quot;: &quot;asset&quot;,
-  &quot;Priority&quot;: 1,
-  &quot;OrderBy&quot;: &quot;assetid&quot;,
-  &quot;ID&quot;: &quot;assetid&quot;,
-  &quot;Index&quot;: [
-    {
-      &quot;name&quot;: &quot;asset-url&quot;,
-      &quot;key&quot;: &quot;asseturl&quot;,
-      &quot;unique&quot;: &quot;true&quot;,
-      &quot;dropdups&quot;: &quot;true&quot;
-    }
-  ],
-  &quot;Fields&quot;: [
-    {
-      &quot;foreign&quot;: &quot;assetid&quot;,
-      &quot;local&quot;: &quot;asset_id&quot;,
-      &quot;relation&quot;: &quot;Source&quot;,
-      &quot;type&quot;: &quot;int&quot;
-    },
-    {
-      &quot;foreign&quot;: &quot;asseturl&quot;,
-      &quot;local&quot;: &quot;url&quot;,
-      &quot;relation&quot;: &quot;Passthrough&quot;,
-      &quot;type&quot;: &quot;int&quot;
-    },
-    {
-      &quot;foreign&quot;: &quot;updatedate&quot;,
-      &quot;local&quot;: &quot;date_updated&quot;,
-      &quot;relation&quot;: &quot;ParseTimeDate&quot;,
-      &quot;type&quot;: &quot;dateTime&quot;
-    },
-    {
-      &quot;foreign&quot;: &quot;createdate&quot;,
-      &quot;local&quot;: &quot;date_created&quot;,
-      &quot;relation&quot;: &quot;ParseTimeDate&quot;,
-      &quot;type&quot;: &quot;dateTime&quot;
-    }
-  ],
-  &quot;Endpoint&quot;: &quot;http://localhost:8080/api/import/asset&quot;
-}
-</code></pre>
-
-<h5 id="foreign_1">Foreign</h5>
-<p>The name of the foreign entity.</p>
-<h5 id="local">Local</h5>
-<p>The collection to where we are importing this entity into.</p>
-<h5 id="priority">Priority</h5>
-<p>This is a number that specifies which entity to import first. The first priority starts in Zero.</p>
-<h5 id="orderby">OrderBy</h5>
-<p>A default order by when quering the foreign source.</p>
-<h5 id="id">ID</h5>
-<p>The identifier field for the foreign entity. We use this field when we need to import only some records and not the whole entity.</p>
-<h5 id="endpoint">Endpoint</h5>
-<p>This is the endpoint in the coral system were we are going to push the data into.</p>
-<h5 id="fields">Fields</h5>
-<p>All the fields that are being mapped.</p>
-<h6 id="foreign_2">foreign</h6>
-<p>The name of the field in the foreign entity.</p>
-<h6 id="local_1">local</h6>
-<p>The name of the field in our local database.</p>
-<h6 id="relation">relation</h6>
-<p>The relationship between the foreign field and the local one. We have the following options:</p>
 <ul>
-<li>Passthrough: when the value is the same</li>
-<li>Source: when it needs to be added to our source struct for the local collection (the original identifiers have to go into source)</li>
-<li>ParseTimeDate: when we need to parse the foreign value as date time.</li>
-<li>Constant: when the local field should always be the same value. In this case we will have &ldquo;foreign&rdquo; blank and we will have other field called &ldquo;value&rdquo; with the value of the local field.</li>
-<li>SubDocument: when the local field has an array of documents in one of the fields.</li>
-<li>Status: when the field need to be translated based on the status map that is declared in that same strategy file for the entity.</li>
+<li><code>var pillarURL string</code>: URL that points to the Pillar instance, where the data will be sent.<ul>
+<li>This is initialized by the <code>PILLAR_URL</code> environment variable.</li>
 </ul>
-<h6 id="type">type</h6>
-<p>The type of the value we are converting. This can be one of the following:</p>
-<ul>
-<li>String</li>
-<li>Timedate</li>
+</li>
+<li><code>var uuid string</code>: Universally Unique Identifier used for the logs.</li>
 </ul>
-<h4 id="credentials">Credentials</h4>
-<p>This has the credentials for the source database. It could be a web service or a database (MySQL, PostgreSQL or MongoDB).</p>
-<h5 id="adapter">adapter</h5>
-<p>This tells us which driver we need to use to pull data. Right now, the available options are &ldquo;mysql&rdquo;, &ldquo;postgresql&rdquo;, &ldquo;mongodb&rdquo; or &ldquo;service&rdquo;.</p>
-<h5 id="type_1">type</h5>
-<p>This tells us which type of credential this is. Right now, it is always &ldquo;foreign&rdquo;.</p>
+<p>To read more about strategy JSON files, you can read <a href="../strategy">our page on strategy files</a>.</p>
 <h2 id="source">Source</h2>
 <pre><code>import &quot;github.com/coralproject/sponge/pkg/source&quot;
 </code></pre>
 
-<p>The package &ldquo;Source&rdquo; has the drivers to connect to the external source and retrieve data. The credentials for the external source are setup in the strategy file.</p>
+<p>The Source package contains the drivers that we use to connect to the external source and retrieve data. The credentials for the external source are set up in the <a href="../strategy">strategy file</a>.</p>
 <h3 id="variables_1">Variables</h3>
-<pre><code>var strategy str.Strategy
-</code></pre>
-
-<p>Holds the credentials for the external source as well as all the entities that needs to be extracted.</p>
-<pre><code>var uuid     string
-</code></pre>
-
-<p>Universally Unique Identifier used for the logs.</p>
-<pre><code>var credential str.Credential
-</code></pre>
-
-<p>Credential for the external source (database or web service).</p>
-<h3 id="interface-sourcer">Interface Sourcer</h3>
-<p>This is the interface that needs to be implemented by any driver to databases that want to be included.</p>
+<ul>
+<li><code>var strategy str.Strategy</code>: Holds the credentials for the external source, as well as all the entities that need to be extracted.</li>
+<li><code>var uuid string</code>: Universally Unique Identifier used for the logs.</li>
+<li><code>var credential str.Credential</code>: Credential for the external source (database or web service).</li>
+</ul>
+<h3 id="sourcer-interface">Sourcer interface</h3>
+<p>This is the interface that needs to be implemented by any driver that connects to an external data source.</p>
 <h4 id="func-getdata">func GetData</h4>
 <pre><code>GetData(string, *Options) ([]map[string]interface{}, error)
 </code></pre>
@@ -619,40 +515,27 @@
 </code></pre>
 
 <p>Gets the foreign entity&rsquo;s name for the Coral collection.</p>
-<h3 id="driver-mysql">Driver mySQL</h3>
-<p>Structure mySQL that implements interface Sourcer. It gets data from a mySQL database.</p>
-<h3 id="driver-postgresql">Driver PostgreSQL</h3>
-<p>Structure PostgreSQL that implements interface Sourcer. It gets data from a PostgreSQL database.</p>
-<h3 id="driver-mongodb">Driver MongoDB</h3>
-<p>Structure to hold a connection to a MongoDB that implements interface Sourcer. It gets data from the MongoDB database.</p>
-<h3 id="api">API</h3>
-<p>Structure the way to get data from a web service that implements interface Sourcer.</p>
+<h3 id="mysql-driver">mySQL driver</h3>
+<p>The mySQL driver is contained in the <code>mysql.go</code> file. It has a mySQL struct that implements the Sourcer interface, and enables data extraction from a mySQL database.</p>
+<h3 id="postgresql-driver">PostgreSQL driver</h3>
+<p>The PostgreSQL driver is contained in the <code>postgresql.go</code> file. It has a PostgreSQL struct that implements the Sourcer interface, and enables data extraction from a PostgreSQL database.</p>
+<h3 id="mongodb-driver">MongoDB driver</h3>
+<p>The MongoDB driver is contained in the <code>mongodb.go</code> file. It has a MongoDB struct that implements the Sourcer interface, and enables data extraction from a MongoDB database.</p>
+<h3 id="api-driver">API driver</h3>
+<p>The API driver is contained in the <code>api.go</code> file. It has an API struct that implements the Sourcer interface, and enables data extraction from an API interface.</p>
 <h3 id="how-to-add-a-new-source">How to add a new source</h3>
 <p>If you need to add a new external source, you can implement the Sourcer interface over a structure with the connection to the database.</p>
 <h2 id="fiddler">Fiddler</h2>
 <pre><code>import &quot;github.com/coralproject/sponge/pkg/fiddler&quot;
 </code></pre>
 
-<p>The Fiddler package does the translation from the external database schema into Coral&rsquo;s database, through a translation file called Strategy.</p>
+<p>The Fiddler package performs the translation from the external database schema into Coral&rsquo;s database schema, using a <a href="../strategy">strategy translation file</a>.</p>
 <h3 id="variables_2">Variables</h3>
-<pre><code>var (
-    strategy   str.Strategy
-)
-</code></pre>
-
-<p>Holds the translation to apply to the data.</p>
-<pre><code>var (
-    dateLayout string
-)
-</code></pre>
-
-<p>Date Layout as specified in the translation&rsquo;s file.</p>
-<pre><code>var (
-    uuid       string
-)
-</code></pre>
-
-<p>Universally Unique Identifier used for the logs.</p>
+<ul>
+<li><code>strategy   str.Strategy</code> Holds the translation, in JSON form, to apply to the data.</li>
+<li><code>dateLayout string</code> Date Layout as specified in the strategy file.</li>
+<li><code>uuid string</code> Universally Unique Identifier used for the logs.</li>
+</ul>
 <h3 id="functions">Functions</h3>
 <h4 id="func-getid">func GetID</h4>
 <pre><code>func GetID(modelName string) string
@@ -669,40 +552,24 @@
 </code></pre>
 
 <p>Applies the coral schema to a row of data from the external source.</p>
-<h3 id="examples">Examples</h3>
-<pre><code>TODO
-</code></pre>
-
 <h2 id="coral">Coral</h2>
-<p><strong>Note</strong>: The &ldquo;Coral&rdquo; package is not to be confused with the Coral ecosystem as a whole. In this instance, this is merely the name of a package included in Sponge.</p>
+<p><strong>Note</strong>: The &ldquo;Coral&rdquo; package is not to be confused with the Coral ecosystem as a whole. In this instance, this is merely the name of a package included in the Sponge app.</p>
 <pre><code>import &quot;github.com/coralproject/sponge/pkg/coral&quot;
 </code></pre>
 
-<p>Interact with Pillar endpoints to import data into the Coral system.</p>
+<p>Coral interacts with Pillar endpoints to import data into the Coral system.</p>
 <h3 id="constants">Constants</h3>
-<pre><code>const (
-    retryTimes int    = 3
-    methodGet  string = &quot;GET&quot;
-    methodPost string = &quot;POST&quot;
-  )
-</code></pre>
-
-<p><code>retryTimes</code> determines how many times to retry if it fails.</p>
+<ul>
+<li><code>retryTimes int    = 3</code> Determines how many times to retry communication with Pillar, if it initially fails.</li>
+<li><code>methodGet  string = "GET"</code></li>
+<li><code>methodPost string = "POST"</code></li>
+</ul>
 <h3 id="variables_3">Variables</h3>
-<pre><code>var (
-    endpoints map[string]string // model -&gt; endpoint
-)
-</code></pre>
-
-<p><code>endpoints</code> is a map containing all of the services to send data to. Right now, that is only Pillar.</p>
-<pre><code>var (
-    uuid string
-    str  strategy.Strategy
-)
-</code></pre>
-
-<p><code>uuid</code> is the universal identifier we are using for logging.
-<code>str</code> is the strategy configuration.</p>
+<ul>
+<li><code>endpoints map[string]string</code> <code>endpoints</code> is a map containing all of the services where we can send data. Right now, that is only Pillar.</li>
+<li><code>uuid string</code> Universally Unique Identifier used for the logs.</li>
+<li><code>str  strategy.Strategy</code> Holds the translation, in JSON form, to apply to the data.</li>
+</ul>
 <h3 id="functions_1">Functions</h3>
 <h4 id="func-addrow">func AddRow</h4>
 <pre><code>func AddRow(data map[string]interface{}, tableName string) error
@@ -721,35 +588,31 @@
 
 <p>The Sponge package imports the external source database into the local database. It transforms it and sends it to the Coral system, through Pillar.</p>
 <h3 id="constants_1">Constants</h3>
-<pre><code>const (
-    VersionNumber = 0.1
-)
-</code></pre>
-
-<p><code>VersionNumber</code> provides the version number of Sponge.</p>
+<ul>
+<li><code>VersionNumber = 0.1</code> Provides the version number of Sponge.</li>
+</ul>
 <h3 id="variables_4">Variables</h3>
-<pre><code>var (
-    dbsource source.Sourcer
-    uuid     string
-    options  source.Options
-)
-</code></pre>
-
+<ul>
+<li><code>dbsource source.Sourcer</code></li>
+<li><code>uuid     string</code></li>
+<li><code>options  source.Options</code></li>
+</ul>
 <h3 id="functions_2">Functions</h3>
 <h4 id="func-addoptions">func AddOptions</h4>
 <pre><code>func AddOptions(limit int, offset int, orderby string, query string, types string, importonlyfailed bool, reportOnFailedRecords bool, reportdbfile string)
 </code></pre>
 
 <p><code>AddOptions</code> sets options for how Sponge will run. The options are:</p>
-<pre><code>*   Limit: limit for the query
-*   Offset: offset for the query
-*   Orderby:  order by this field
-*   Query:  we use this field if we want to specific a filter on WHERE for mySQL/PostgreSQL and Find for MongoDB
-*   Types: it specifies which entities to import (default is everything)
-*   Importonlyfailed: import only the documents that are in the report
-*   ReportOnFailedRecords: create a report with all the documents that failed the import
-*   Reportdbfile: name of the file for the report on documents that fail the import
-</code></pre>
+<ul>
+<li><code>Limit</code>: limit for the query</li>
+<li><code>Offset</code>: offset for the query</li>
+<li><code>Orderby</code>:  order by this field</li>
+<li><code>Query</code>:  we use this field if we want to specific a filter on WHERE for mySQL/PostgreSQL and Find for MongoDB</li>
+<li><code>Types</code>: it specifies which entities to import (default is everything)</li>
+<li><code>Importonlyfailed</code>: import only the documents that are in the report</li>
+<li><code>ReportOnFailedRecords</code>: create a report with all the documents that failed the import</li>
+<li><code>Reportdbfile</code>: name of the file for the report on documents that fail the import</li>
+</ul>
 <h4 id="func-import">func Import</h4>
 <pre><code>func Import()
 </code></pre>

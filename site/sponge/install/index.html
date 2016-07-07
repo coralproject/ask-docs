@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../roadmap/">Roadmap</a>
+    <a href="../strategy/">Strategy files</a>
 </li>
 
         
@@ -454,12 +454,12 @@
 <h1 id="installation">Installation</h1>
 <h2 id="before-you-begin">Before you begin</h2>
 <h3 id="pillar">Pillar</h3>
-<p>You will need to have an instance of <a href="http://github.com/coralproject/pillar">Pillar</a> running to send the data to. Instructions on installing Pillar <a href="../../pillar/install/">can be found here</a>.</p>
+<p>You will need to have an instance of <a href="http://github.com/coralproject/pillar">Pillar</a> running, where your translated data will be sent. Instructions on installing Pillar <a href="../../pillar/install/">can be found here</a>.</p>
 <h3 id="external-database-source">External database source</h3>
-<p>You will also have your external database source running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.</p>
+<p>You will also have your external database running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.</p>
 <p>The external sources we currently support are: PostgreSQL, MySQL, MongoDB, and REST APIs.</p>
 <h3 id="vendoring-dependencies">Vendoring dependencies</h3>
-<p>You should be vendoring the packages you choose to use. We recommend using <a href="https://github.com/kardianos/govendor">govendor</a>. This tool will vendor from the vendor folder associated with this project repo for the dependencies in use. It is recommended to use a project based repo with a single vendor folder for all your dependencies.</p>
+<p>You should be vendoring the packages you choose to use (&ldquo;vendoring&rdquo; is the moving of all third party items such as packages into the <code>/vendor</code> directory). We recommend using <a href="https://github.com/kardianos/govendor">govendor</a>. This tool will manage your dependencies from the vendor folder associated with this project repository.</p>
 <h2 id="install-from-source">Install from source</h2>
 <h3 id="before-you-begin_1">Before you begin</h3>
 <p>If you want to install from source, you will need to have Go installed.</p>
@@ -496,7 +496,7 @@ git clone git@github.com:CoralProject/sponge.git
 </code></pre>
 
 <h3 id="set-your-environment-variables">Set your environment variables</h3>
-<p>Setting your environment variables tells sponge which strategy file you want to use, and which <a href="https://github.com/coralproject/pillar">Pillar</a> instance you are pushing data into.</p>
+<p>Setting your environment variables tells Sponge which strategy file you want to use, and the URL for the <a href="https://github.com/coralproject/pillar">Pillar</a> instance you are pushing data to.</p>
 <p>Make your own copy of the <code>config/dev.cfg</code> file (you can edit this configuration file with your own values, and then ensure that you don&rsquo;t commit it back to the repository). Call your config file whatever you like; we&rsquo;ll call it &ldquo;custom&rdquo; in this example.</p>
 <pre><code>cd $GOPATH/src/github.com/coralproject/sponge
 cp config/dev.cfg config/custom.cfg
@@ -539,7 +539,7 @@ go build
 </code></pre>
 
 <h3 id="edit-envlist">Edit env.list</h3>
-<p>The env.list file contains environment variables you need to set. Setting your environment variables tells sponge which strategy file you want to use, and which <a href="https://github.com/coralproject/pillar">Pillar</a> instance you are pushing data into.</p>
+<p>Setting your environment variables tells Sponge which strategy file you want to use, and the URL for the <a href="https://github.com/coralproject/pillar">Pillar</a> instance you are pushing data to.</p>
 <pre><code>PILLAR_URL=http://192.168.99.100:8080
 STRATEGY_CONF=/strategy/strategy_psql.json
 

@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../../sponge/roadmap/">Roadmap</a>
+    <a href="../../sponge/strategy/">Strategy files</a>
 </li>
 
         
@@ -462,7 +462,7 @@
             <div class="col-md-9" role="main">
 
 <h1 id="xenia-installation">Xenia Installation</h1>
-<p>Xenia is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.org/manual/core/aggregation-introduction/">mongo aggregation pipeline queries</a>.</p>
+<p>Xenia is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.org/manual/core/aggregation-introduction/">MongoDB aggregation pipeline queries</a>.</p>
 <h2 id="before-you-begin">Before you begin</h2>
 <p>Before you install Xenia, you will want to have the following installed.</p>
 <h4 id="mongodb">MongoDB</h4>
@@ -586,9 +586,8 @@ Creating collection query_regexs
 Creating collection query_regexs_history
 </code></pre>
 
-<ul>
-<li><strong>Troubleshooting note #1</strong>: if you get a response that contains <code>ERROR: Invalid DB provided</code>, you may have an incorrectly set environment variable. If you are running everything locally and using a local MongoDB, use <code>printev</code> to see if <code>XENIA_WEB_HOST</code> is set:</li>
-</ul>
+<h4 id="troubleshooting-note-1">Troubleshooting note #1</h4>
+<p>If you get a response that contains <code>ERROR: Invalid DB provided</code>, you may have an incorrectly set environment variable. If you are running everything locally and using a local MongoDB, use <code>printev</code> to see if <code>XENIA_WEB_HOST</code> is set:</p>
 <pre><code>printenv XENIA_WEB_HOST
 </code></pre>
 
@@ -596,9 +595,8 @@ Creating collection query_regexs_history
 <pre><code>unset XENIA_WEB_HOST
 </code></pre>
 
-<ul>
-<li><strong>Troubleshooting note #2</strong>: instead of the expected output shown above, you may see something like:</li>
-</ul>
+<h4 id="troubleshooting-note-2">Troubleshooting note #2</h4>
+<p>Instead of the expected output shown above, you may see something like:</p>
 <pre><code>Configuring MongoDB
 Creating collection query_sets
 ERROR: collection already exists

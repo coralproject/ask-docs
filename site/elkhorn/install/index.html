@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../../sponge/roadmap/">Roadmap</a>
+    <a href="../../sponge/strategy/">Strategy files</a>
 </li>
 
         
@@ -495,13 +495,16 @@
 }
 </code></pre>
 
-<p>For <code>pillarHost</code>, enter the URL where the service is running. If you installed <a href="../../pillar/install">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</p>
+<ul>
+<li>For <code>pillarHost</code>, enter the URL where the service is running. If you installed <a href="../../pillar/install">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</li>
+<li>For <code>s3</code>, you can enter the values for your S3 setup. This is where Elkhorn will save</li>
+</ul>
 <h3 id="run-the-app">Run the app</h3>
 <p>You can now start Elkhorn by running npm start:</p>
 <pre><code>npm start
 </code></pre>
 
-<p>Elkhorn will now be running on port 4444. You can now visit Elkhorn by visiting the URL <a href="http://localhost:4444">http://localhost:4444</a>.</p>
+<p>Elkhorn will now be running locally on port 4444. You can now visit Elkhorn by visiting the URL <a href="http://localhost:4444">http://localhost:4444</a>.</p>
 <h2 id="install-as-a-docker-container">Install as a Docker container</h2>
 <h3 id="clone-the-elkhorn-repository_1">Clone the Elkhorn repository</h3>
 <p>Clone the Elkhorn repository:</p>
@@ -521,7 +524,7 @@
 <pre><code>docker run  --name elkhorn -d -p 4444:4444 elkhorn
 </code></pre>
 
-<p>Elkhorn will now be running on port 4444.</p></div>
+<p>Elkhorn will now be running locally on port 4444. You can now visit Elkhorn by visiting the URL <a href="http://localhost:4444">http://localhost:4444</a>.</p></div>
         </div>
 
         <footer class="col-md-12">

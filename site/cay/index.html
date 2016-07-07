@@ -178,7 +178,7 @@
         
             
 <li >
-    <a href="../sponge/roadmap/">Roadmap</a>
+    <a href="../sponge/strategy/">Strategy files</a>
 </li>
 
         
@@ -438,112 +438,19 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#cay-overview">Cay Overview</a></li>
-        
-            <li><a href="#structure-and-development">Structure and development</a></li>
-        
-    
-        <li class="main "><a href="#cay-installation">Cay Installation</a></li>
-        
-    
-        <li class="main "><a href="#install-from-source">Install from source</a></li>
-        
-            <li><a href="#before-you-begin">Before you begin</a></li>
-        
-            <li><a href="#get-the-source">Get the source</a></li>
-        
-            <li><a href="#set-up-configuration-file">Set up configuration file</a></li>
-        
-            <li><a href="#run-the-app">Run the app</a></li>
+        <li class="main active"><a href="#introduction">Introduction</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="cay-overview">Cay Overview</h1>
-<p><a href="https://github.com/coralproject/cay">Cay</a> is the front-end application for the Coral Community Tools.</p>
-<h2 id="structure-and-development">Structure and development</h2>
-<p>The app is a series of React components compiled into modules with <a href="http://webpack.github.io/">webpack</a>.</p>
-<p>The basic idea is that the build process results in a <code>bundle.js</code> file containing all javascript and css. CSS cross-browser issues, ES6 transpilation, minification, etc, is all handled by webpack. <code>bundle.js</code> lives in-memory until build time (<code>npm run build</code>).</p>
-<p>The meat of the application lives in the <code>/src</code> folder. Components are grouped into domains. For instance, everything that has to do with creating, viewing and editing Searches lives in the <code>search</code> folder. This includes redux reducers and action files for that domain.</p>
-<p>Note: the reducers are combined in <code>/src/app/MainReducer.js</code>.</p>
-<h1 id="cay-installation">Cay Installation</h1>
-<h1 id="install-from-source">Install from source</h1>
-<h2 id="before-you-begin">Before you begin</h2>
-<p>Before you begin, be sure you have the following installed and running:</p>
-<ul>
-<li><a href="./../../xenia/install">Xenia</a></li>
-<li><a href="./../../pillar/install">Pillar</a></li>
-</ul>
-<p>In addition, you must have Node.js installed:</p>
-<ul>
-<li><a href="https://nodejs.org/en/download/">Node.js</a><ul>
-<li>You must be running version 5.0.0 or higher of node. You can check your current version of node with the command <code>node --version</code></li>
-<li>We recommend using <a href="https://www.npmjs.com/package/nvm">nvm</a> to manage your node installations.</li>
-</ul>
-</li>
-</ul>
-<h2 id="get-the-source">Get the source</h2>
-<p>Clone the Cay repository onto your machine:</p>
-<pre><code>git clone https://github.com/coralproject/cay.git
-</code></pre>
-
-<p>cd into the Cay directory:</p>
-<pre><code>cd cay
-</code></pre>
-
-<p>Do an npm install to install the node code:</p>
-<pre><code>npm install
-</code></pre>
-
-<h2 id="set-up-configuration-file">Set up configuration file</h2>
-<p>The folder called <code>public</code> has a sample configuration file, called <code>config.sample.json</code>. Copy this file to a new file called <code>config.json</code>, that you will edit:</p>
-<pre><code>cp public/config.sample.json public/config.json
-</code></pre>
-
-<p>Now edit the config.json file.</p>
-<pre><code>  &quot;xeniaHost&quot;: &quot;&quot;,
-  &quot;pillarHost&quot;: &quot;&quot;,
-  &quot;elkhornHost&quot;: &quot;http://localhost:4444&quot;,
-  &quot;environment&quot;: &quot;development&quot;,
-  &quot;brand&quot;: &quot;&quot;,
-  &quot;googleAnalyticsId&quot;: &quot;UA-12345678-9&quot;,
-  &quot;requireLogin&quot;: false,
-  &quot;basicAuthorization&quot;: &quot;&quot;,
-  &quot;features&quot;: {
-    &quot;ask&quot;: false
-  }
-}
-</code></pre>
-
-<p>For <code>xeniaHost</code>, <code>pillarHost</code>, and <code>elkhornHost</code>, enter the URLs where each service is running.</p>
-<ul>
-<li>For <code>xeniaHost</code>:<ul>
-<li>If you installed Xenia <a href="./../xenia/install">locally from source</a>, <code>xeniaHost</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
-</ul>
-</li>
-<li>For <code>pillarHost</code>:<ul>
-<li>If you installed Pillar <a href="./../pillar/install#install-pillar-from-source">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</li>
-<li>If you installed Pillar <a href="./../pillar/install#install-as-docker-container">locally as a Docker container</a>, <code>pillarHost</code> should be <code>http://10.0.4.105:8080</code>. <code>http://10.0.4.105</code> is the URL generated by Docker.</li>
-</ul>
-</li>
-<li>
-<p>For <code>elkhornHost</code>:</p>
-<ul>
-<li>If you installed <a href="./../elkhorn/install">locally from source</a>, <code>elkhornHost</code> should be <code>http://localhost:4444</code>.</li>
-</ul>
-</li>
-<li>
-<p>Under <code>features</code>, for the time being, only &ldquo;ask&rdquo; will have a value of &ldquo;true&rdquo;. Later, we will be adding fields for our additional two products, Trust and Talk. By setting the value to &ldquo;true&rdquo;, you are turning on the features that can be seen in Cay.</p>
-</li>
-</ul>
-<h2 id="run-the-app">Run the app</h2>
-<p>You can now start Cay by running npm start:</p>
-<pre><code>npm start
-</code></pre>
-
-<p>You can now visit Cay by visiting the URL <a href="http://localhost:3000">http://localhost:3000</a>.</p></div>
+<h1 id="introduction">Introduction</h1>
+<p><a href="https://github.com/coralproject/cay">Cay</a> is the front-end application for Coral.</p>
+<p>It&rsquo;s made up of a series of <a href="https://facebook.github.io/react/">React</a> components, compiled into modules with <a href="http://webpack.github.io/">webpack</a>.</p>
+<p>The webpack build process results in a <code>bundle.js</code> file, which contains all Javascript and CSS for Cay. Common issues like CSS cross-browser issues, ES6 transpilation, and minification are all handled by webpack. <code>bundle.js</code> lives in-memory until build time (<code>npm run build</code>).</p>
+<p>The meat of the application lives in the <code>/src</code> folder. Components are grouped into subdirectories based on their &ldquo;domain&rdquo;: for instance, everything that has to do with creating, viewing and editing searches lives in the <code>search</code> folder. Similarly, everything having to do with tags lives in the <code>tags</code> folder.</p>
+<p>The reducers are combined in <code>/src/app/MainReducer.js</code>.</p></div>
         </div>
 
         <footer class="col-md-12">
