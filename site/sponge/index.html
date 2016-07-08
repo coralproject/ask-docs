@@ -68,7 +68,7 @@
                     
                         
 <li >
-    <a href="../developer/coral_ecosystem/">Architectural overview</a>
+    <a href="../developer/architectural_overview/">Architectural overview</a>
 </li>
 
                     
@@ -440,6 +440,8 @@
     
         <li class="main active"><a href="#introduction">Introduction</a></li>
         
+            <li><a href="#composition">Composition</a></li>
+        
             <li><a href="#data-import-sources-supported">Data import sources supported</a></li>
         
             <li><a href="#command-line-tool">Command line tool</a></li>
@@ -460,6 +462,9 @@
 <li>POST entities to our service layer for insertion.</li>
 </ul>
 <p>Sponge uses strategy files to assist with data import. Strategy files are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about <a href="./strategy">strategy files here</a>, including information on their structure and examples.</p>
+<h2 id="composition">Composition</h2>
+<p>Sponge is made up of several different packages, and you can read more about them on the <a href="./included_packages">Included Packages page</a>. They work together as shown in the diagram below:</p>
+<p><img src="/images/sponge-architecture.svg"></p>
 <h2 id="data-import-sources-supported">Data import sources supported</h2>
 <p>Sponge currently only supports importing data from mySQL, PostgreSQL, MongoDB or web services with REST APIs.</p>
 <h2 id="command-line-tool">Command line tool</h2>

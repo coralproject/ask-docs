@@ -68,7 +68,7 @@
                     
                         
 <li >
-    <a href="../../developer/coral_ecosystem/">Architectural overview</a>
+    <a href="../../developer/architectural_overview/">Architectural overview</a>
 </li>
 
                     
@@ -440,19 +440,13 @@
     
         <li class="main active"><a href="#strategy-files">Strategy files</a></li>
         
-    
-        <li class="main "><a href="#fields-in-the-strategyjson-file">Fields in the strategy.json file</a></li>
+            <li><a href="#fields-in-the-strategyjson-file">Fields in the strategy.json file</a></li>
         
-            <li><a href="#name">Name</a></li>
+            <li><a href="#general-fields">General fields</a></li>
         
-            <li><a href="#map">Map</a></li>
+            <li><a href="#entity-fields">Entity fields</a></li>
         
             <li><a href="#credentials">Credentials</a></li>
-        
-    
-        <li class="main "><a href="#examples">Examples</a></li>
-        
-            <li><a href="#washington-post">Washington Post</a></li>
         
     
     </ul>
@@ -463,104 +457,54 @@
 <p>Strategy files are JSON configuration files that contain all the information Sponge needs to extract data from a source, translate it to the Coral schema, and send it on to Pillar and from there to the Coral MongoDB.</p>
 <p>The external data sources we currently support are: PostgreSQL, MySQL, MongoDB, and REST APIs.</p>
 <p>The strategy spec is still being refined. We have examples that you can view in the <a href="https://github.com/coralproject/sponge/tree/master/examples">examples directory</a>.</p>
-<h1 id="fields-in-the-strategyjson-file">Fields in the strategy.json file</h1>
-<h2 id="name">Name</h2>
-<p>The name of the strategy that we are describing.</p>
-<h2 id="map">Map</h2>
-<p>Contains all the information to map fields from the external source to our local coral database.</p>
-<h3 id="foreign">Foreign</h3>
-<p>It describes the foreign database source. Right now we have only &ldquo;mysql&rdquo; available.</p>
-<h3 id="datetimeformat">DateTimeFormat</h3>
-<p>If your source have date time fields, we need to know how to parse them. You should write the representation of 2006 Mon Jan 2 15:04:05 in the desired format. More more info read <a href="https://golang.org/pkg/time/#pkg-constants">pkg-constants</a></p>
-<h3 id="entities">Entities</h3>
-<p>It describe all the different entities we have at the Coral database and how to do its transformations.</p>
-<h4 id="name-of-the-entity">Name of the entity</h4>
-<p>Example:</p>
-<pre><code>&quot;asset&quot;: {
-  &quot;Foreign&quot;: &quot;crnr_asset&quot;,
-  &quot;Local&quot;: &quot;asset&quot;,
-  &quot;Priority&quot;: 1,
-  &quot;OrderBy&quot;: &quot;assetid&quot;,
-  &quot;ID&quot;: &quot;assetid&quot;,
-  &quot;Index&quot;: [
-    {
-      &quot;name&quot;: &quot;asset-url&quot;,
-      &quot;key&quot;: &quot;asseturl&quot;,
-      &quot;unique&quot;: &quot;true&quot;,
-      &quot;dropdups&quot;: &quot;true&quot;
-    }
-  ],
-  &quot;Fields&quot;: [
-    {
-      &quot;foreign&quot;: &quot;assetid&quot;,
-      &quot;local&quot;: &quot;asset_id&quot;,
-      &quot;relation&quot;: &quot;Source&quot;,
-      &quot;type&quot;: &quot;int&quot;
-    },
-    {
-      &quot;foreign&quot;: &quot;asseturl&quot;,
-      &quot;local&quot;: &quot;url&quot;,
-      &quot;relation&quot;: &quot;Passthrough&quot;,
-      &quot;type&quot;: &quot;int&quot;
-    },
-    {
-      &quot;foreign&quot;: &quot;updatedate&quot;,
-      &quot;local&quot;: &quot;date_updated&quot;,
-      &quot;relation&quot;: &quot;ParseTimeDate&quot;,
-      &quot;type&quot;: &quot;dateTime&quot;
-    },
-    {
-      &quot;foreign&quot;: &quot;createdate&quot;,
-      &quot;local&quot;: &quot;date_created&quot;,
-      &quot;relation&quot;: &quot;ParseTimeDate&quot;,
-      &quot;type&quot;: &quot;dateTime&quot;
-    }
-  ],
-  &quot;Endpoint&quot;: &quot;/api/import/asset&quot;
-}
-</code></pre>
-
-<h5 id="foreign_1">Foreign</h5>
-<p>The name of the foreign entity.</p>
-<h5 id="local">Local</h5>
-<p>The collection to where we are importing this entity into.</p>
-<h5 id="priority">Priority</h5>
-<p>This is a number that specifies which entity to import first. The first priority starts in Zero.</p>
-<h5 id="orderby">OrderBy</h5>
-<p>A default order by when quering the foreign source.</p>
-<h5 id="id">ID</h5>
-<p>The identifier field for the foreign entity. We use this field when we need to import only some records and not the whole entity.</p>
-<h5 id="endpoint">Endpoint</h5>
-<p>This is the endpoint in the coral system were we are going to push the data into.</p>
-<h5 id="fields">Fields</h5>
-<p>All the fields that are being mapped.</p>
-<h6 id="foreign_2">Foreign</h6>
-<p>The name of the field in the foreign entity.</p>
-<h6 id="local_1">Local</h6>
-<p>The name of the field in our local database.</p>
-<h6 id="relation">Relation</h6>
-<p>The relationship between the foreign field and the local one. We have this options:
-- Passthrough: when the value is the same
-- Source: when it needs to be added to our source struct for the local collection (the original identifiers have to go into source)
-- ParseTimeDate: when we need to parse the foreign value as date time.
-- Constant: when the local field should always be the same value. In this case we will have &ldquo;foreign&rdquo; blank and we will have other field called &ldquo;value&rdquo; with the value of the local field.
-- SubDocument: when the local field has an array of documents in one of the fields.
-- Status: when the field need to be translated based on the status map that is declared in that same strategy file for the entity.</p>
-<h6 id="type">Type</h6>
-<p>The type of the value we are converting.</p>
+<p>Examples:</p>
 <ul>
-<li>String</li>
-<li>Timedate</li>
+<li><a href="https://github.com/coralproject/sponge/blob/master/examples/strategy_api.json.example">API example</a></li>
+<li><a href="https://github.com/coralproject/sponge/blob/master/examples/strategy_mongo.json.example">MongoDB example</a></li>
+<li><a href="https://github.com/coralproject/sponge/blob/master/examples/strategy_mysql.json.example">mySQL example</a></li>
+<li><a href="https://github.com/coralproject/sponge/blob/master/examples/strategy_psql.json.example">PostgreSQL example</a></li>
+</ul>
+<h2 id="fields-in-the-strategyjson-file">Fields in the strategy.json file</h2>
+<h2 id="general-fields">General fields</h2>
+<ul>
+<li><code>Name</code>: The name of the strategy that we are describing.</li>
+<li><code>Map</code>: Contains all the information to map fields from the external data source to our local Coral database.</li>
+<li><code>Foreign</code>: Describes the type of external database source (for example, &ldquo;mysql&rdquo; or &ldquo;mongodb&rdquo;).</li>
+<li><code>DateTimeFormat</code>: Tells us how to parse date/time fields in the external data source. You should populated this field with the date and time of <code>2006 Mon Jan 2 15:04:05</code>, written in the format that appears in your external database.</li>
+</ul>
+<h2 id="entity-fields">Entity fields</h2>
+<p><code>Entities</code> is a JSON object that describes all of the different entities in the Coral database, and how to perform the transformation for that entity.</p>
+<ul>
+<li><code>Foreign</code>: The name of the foreign entity.</li>
+<li><code>Local</code>: The collection into which we are importing this entity.</li>
+<li><code>Priority</code>: This is a number that specifies which entity to import first (the highest priority is 0).</li>
+<li><code>OrderBy</code>: The field to order the results by when querying the foreign source.</li>
+<li><code>ID</code>: The identifier field for the foreign entity. We use this field when we need to import only some records and not the whole entity.</li>
+<li><code>Endpoint</code>: This is the <a href="../../pillar/api">Pillar endpoint URL</a> where we will push the data.</li>
+<li><code>Fields</code>: All the fields that are being mapped.</li>
+<li><code>foreign</code>: The name of the field in the foreign entity.</li>
+<li><code>local</code>: The name of the field in our local database.</li>
+<li><code>relation</code>: The relationship between the foreign field and the local one. We have this options:<ul>
+<li><code>Passthrough</code>: when the value is the same</li>
+<li><code>Source</code>: when it needs to be added to our source struct for the local collection (the original identifiers have to go into source)</li>
+<li><code>ParseTimeDate</code>: when we need to parse the foreign value as date time.</li>
+<li><code>Constant</code>: when the local field should always be the same value. In this case we will have &ldquo;foreign&rdquo; blank and we will have other field called &ldquo;value&rdquo; with the value of the local field.</li>
+<li><code>SubDocument</code>: when the local field has an array of documents in one of the fields.</li>
+<li><code>Status</code>: when the field need to be translated based on the status map that is declared in that same strategy file for the entity.</li>
+</ul>
+</li>
+<li><code>Type</code>: The type of the value we are converting.<ul>
+<li><code>String</code></li>
+<li><code>Timedate</code></li>
+</ul>
+</li>
 </ul>
 <h2 id="credentials">Credentials</h2>
-<p>This has the credentials for the source database to pull data from. It could be a web service or a database (MySQL, PostgreSQL or MongoDB).</p>
-<h3 id="adapter">adapter</h3>
-<p>It tells us which drivers we need to use to pull data. Right now we have &ldquo;mysql&rdquo;, &ldquo;postgresql&rdquo;, &ldquo;mongodb&rdquo; or &ldquo;service&rdquo;</p>
-<h3 id="type_1">type</h3>
-<p>Right now it is always &ldquo;foreign&rdquo; but it could tell us which type of credential this one is.</p>
-<h1 id="examples">Examples</h1>
-<h2 id="washington-post">Washington Post</h2>
-<p><a href="examples/translations.md">Translations</a></p></div>
+<p>This contains the credentials for the external data source. It could be a REST API or a database (MySQL, PostgreSQL or MongoDB).</p>
+<ul>
+<li><code>adapter</code>: This tells us which driver we need to use to extract data. Right now, the options available are <code>mysql</code>, <code>postgresql</code>, <code>mongodb</code>, or <code>service</code>.</li>
+<li><code>type</code>: Right now this is always <code>foreign</code>, but in future it could tell us what type of credential this is.</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

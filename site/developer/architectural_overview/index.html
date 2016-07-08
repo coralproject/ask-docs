@@ -438,49 +438,37 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#coral-ecosystem">Coral Ecosystem</a></li>
+        <li class="main active"><a href="#architectural-overview">Architectural overview</a></li>
+        
+            <li><a href="#coral-ecosystem">Coral Ecosystem</a></li>
+        
+            <li><a href="#ask">Ask</a></li>
         
             <li><a href="#trust">Trust</a></li>
-        
-            <li><a href="#repositories">Repositories</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="coral-ecosystem">Coral Ecosystem</h1>
+<h1 id="architectural-overview">Architectural overview</h1>
 <p>Over the course of the project, we are building an ecosystem of products, tools and practices. These elements will work together and/or integrate with existing community tools.</p>
-<p><img alt="Architecture" src="../../images/coral-ecosystem-current.png" /></p>
+<h2 id="coral-ecosystem">Coral Ecosystem</h2>
+<p>The Coral Ecosystem consists of five apps working together with the Coral MongoDB database. You can see how these apps communicate with each other in the diagram below.</p>
+<ul>
+<li><a href="../cay">Cay</a> is the front end application for Coral.</li>
+<li><a href="../elkhorn">Elkhorn</a> is the embeddable form builder. Cay sends a form specification in JSON format to Elkhorn, and Elkhorn sends back a rendered reader-facing form.</li>
+<li><a href="../pillar">Pillar</a> is the primary service that interacts with the Coral database. It works with Sponge to import external data, and performs CRUD (Create, Read, Update, Delete) operations on the Coral database.</li>
+<li><a href="../sponge">Sponge</a> is the data import service that extracts data from an external data source, and passes that data on to Pillar.</li>
+<li><a href="../xenia">Xenia</a> is a service layer that performs aggregated pipelines queries on the data in the Coral database.</li>
+</ul>
+<p><img src="/images/coral-architecture.svg"></p>
+<h2 id="ask">Ask</h2>
+<p><a href="../user/ask">Ask</a> is a product that enables editors to create embeddable calls for contributions, including text, photo, video, audio.</p>
+<p><img src="/images/ask-architecture.svg"></p>
 <h2 id="trust">Trust</h2>
-<p>Trust is our <a href="https://coralproject.net/first-product/">first product</a>. It enables newsroom users to identify different kinds of end users in order to take actions (eg. I want to block these trolls on this author; I want to highlight the best commenters on this subject.) It allows newsrooms to make manual or automated lists of users via a series of filters. </p>
-<p>Trust introduces a number of technological components:</p>
-<p><img alt="Trust Architecture" src="../../images/trust-architecture.png" /></p>
-<h2 id="repositories">Repositories</h2>
-<h3 id="sponge">Sponge</h3>
-<p><a href="https://github.com/coralproject/sponge">Sponge</a> is a command line tool to import comments, authors, assets and other entities into the Coral system. It is designed to read data from a foreign <em>source</em>, translate the schema into Coral conventions, and POST entities to <a href="https://github.com/coralproject/pillar">our service layer</a> for inserting.</p>
-<p>Right now the foreign source could be any of the following:</p>
-<ul>
-<li>MySQL</li>
-<li>PostgreSQL</li>
-<li>MongoDB</li>
-<li>Web Service</li>
-</ul>
-<h3 id="pillar">Pillar</h3>
-<p><a href="https://github.com/coralproject/pillar">Pillar</a> is a REST based web-service module written in golang. It provides the following services:</p>
-<ul>
-<li>Imports external data into the Coral data model</li>
-<li>Allows CRUD operation on Coral data model</li>
-<li>Provides simple queries on Coral data model</li>
-</ul>
-<h3 id="xenia">Xenia</h3>
-<p><a href="https://github.com/coralproject/xenia">Xenia</a> is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.org/manual/core/aggregation-introduction/">mongo aggregation pipeline queries</a>.</p>
-<h4 id="xenia-driver">Xenia Driver</h4>
-<p><a href="https://github.com/coralproject/xenia-driver-js">This</a> is a javascript driver for Xenia. It performs queris to xenia from the browser and node.js.</p>
-<h3 id="cay">Cay</h3>
-<p><a href="https://github.com/coralproject/cay">Cay</a> is the front-end tool for the Coral Project.</p>
-<h3 id="elkhorn">Elkhorn</h3>
-<p><a href="https://github.com/coralproject/elkhorn">Elkhorn</a> is the form composer.</p></div>
+<p><a href="../user/trust">Trust</a> is a product that enables newsroom users to identify different kinds of end users in order to take actions (for instance, &ldquo;I want to block these trolls on this author,&rdquo; or &ldquo;I want to highlight the best commenters on this subject&rdquo;). It allows newsrooms to make manual or automated lists of users via a series of filters.</p>
+<p><img src="/images/trust-architecture.svg"></p></div>
         </div>
 
         <footer class="col-md-12">

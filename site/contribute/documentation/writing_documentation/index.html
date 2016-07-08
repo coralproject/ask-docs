@@ -68,7 +68,7 @@
                     
                         
 <li >
-    <a href="../../../developer/coral_ecosystem/">Architectural overview</a>
+    <a href="../../../developer/architectural_overview/">Architectural overview</a>
 </li>
 
                     
@@ -536,16 +536,25 @@ git config --global user.email &quot;you@email.com&quot;
 </code></pre>
 
 <h2 id="deploy-the-documentation">Deploy the documentation</h2>
-<p>Now that the documentation has been updated and committed to the repository, you can deploy the documentation. You can read more about how this works at the <a href="http://www.mkdocs.org/user-guide/deploying-your-docs/">Mkdocs website</a>, but it basically comes down to a single command.</p>
+<p>Now that the documentation has been updated and committed to the repository, you can deploy the documentation. The documentation is hosted on Heroku, so in order to deploy it, we need to first build the files that make up the site, and then push those files up to Heroku.</p>
 <p>First ensure that you have the latest version of the documentation on your local machine:</p>
 <pre><code>git pull
 </code></pre>
 
 <p>Then, run the following command:</p>
-<pre><code>mkdocs gh-deploy --clean
+<pre><code>mkdocs build --clean
 </code></pre>
 
-<p>The <code>gh-deploy</code> command builds the documentation, then uses the <a href="https://github.com/davisp/ghp-import">ghp-import</a> tool to commit them to the <code>gh-pages</code> branch within the <code>docs</code> repository and push the <code>gh-pages</code> branch to GitHub (which publishes the documents to GitHub pages).</p>
+<p>The <code>build</code> command builds the documentation, creating the HTML pages that make up the site, and places those files in the <code>site</code> directory.</p>
+<p>Now you&rsquo;ll add the changed files using Git, in preparation for pushing them to Heroku to deploy them. Add a meaningful commit message.</p>
+<pre><code>git add -A
+git commit -m &quot;Updated writing documentation page&quot;
+</code></pre>
+
+<p>Now you&rsquo;ll push the <code>site</code> directory, containing the pages that make up the website, to Heroku.</p>
+<pre><code>git subtree push --prefix site heroku master
+</code></pre>
+
 <h2 id="translating-documentation">Translating documentation</h2>
 <p>To come.</p></div>
         </div>

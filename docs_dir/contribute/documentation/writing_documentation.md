@@ -109,8 +109,21 @@ mkdocs build --clean
 
 The `build` command builds the documentation, creating the HTML pages that make up the site, and places those files in the `site` directory.
 
-Now you'll push the `site` directory, containing the pages that make up the website, to Heroku. You can do this with the following command:
+Now you'll add the changed files using Git, in preparation for pushing them to Heroku to deploy them. Add a meaningful commit message.
+```
+git add -A
+```
 
+There is one file that you have to "unadd" before you push to Heroku: the `index.php` file. Put briefly, it's a file that Heroku needs to serve up the site, but that the `mkdocs build` process deletes.
+```
+git reset HEAD index.php
+```
+Now commit your changes, adding a meaningful commit message.
+```
+git commit -m "Updated writing documentation page"
+```
+
+Now you'll push the `site` directory, containing the pages that make up the website, to Heroku.
 ```
 git subtree push --prefix site heroku master
 ```
