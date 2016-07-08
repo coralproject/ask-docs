@@ -114,9 +114,9 @@ Now you'll add the changed files using Git, in preparation for pushing them to H
 git add -A
 ```
 
-There is one file that you have to "unadd" before you push to Heroku: the `index.php` file. Put briefly, it's a file that Heroku needs to serve up the site, but that the `mkdocs build` process deletes.
+There is one file that you have to "unadd" before you push to Heroku: the `site/index.php` file. Put briefly, it's a file that Heroku needs to serve up the site, but that the `mkdocs build` process deletes.
 ```
-git reset HEAD index.php
+git reset HEAD site/index.php
 ```
 Now commit your changes, adding a meaningful commit message.
 ```
