@@ -1,11 +1,12 @@
 # Packages included in Sponge
 
 * [Strategy](/strategy) reads the translations file.
-* [Source](#source) does the extraction.
-* [Fiddler](#fiddler) does the transformations.
-* [Coral](#coral) send data to Pillar.
+* [Source](#source) performs the extraction of data from the external data source.
+* [Fiddler](#fiddler) performs the transformation of data.
+* [Coral](#coral) sends data to Pillar.
 * [Sponge](#sponge) ties all the pieces together.
 
+![sponge_diagram](../images/sponge.png)
 
 ## Strategy
 
@@ -13,7 +14,7 @@
 import "github.com/coralproject/sponge/pkg/strategy"
 ```
 
-The Strategy package handles the loading and configuration of data from external sources. It handles the translation from the external database to our Coral schema.
+The Strategy package reads in the external [strategy JSON file](strategy) and creates a structure containing translation information.
 
 ### Variables
 
@@ -29,7 +30,7 @@ To read more about strategy JSON files, you can read [our page on strategy files
 import "github.com/coralproject/sponge/pkg/source"
 ```
 
-The Source package contains the drivers that we use to connect to the external source and retrieve data. The credentials for the external source are set up in the [strategy file](strategy).
+The Source package contains the drivers that we use to connect to the external source and retrieve data. The credentials for the external data source are set up in the [strategy file](strategy).
 
 ### Variables
 
@@ -89,13 +90,13 @@ The API driver is contained in the `api.go` file. It has an API struct that impl
 
 ### How to add a new source
 
-If you need to add a new external source, you can implement the Sourcer interface over a structure with the connection to the database.
+Currently, we offer the four drivers listed above (mySQL, PostgreSQL, MongoDB, and REST API). If you need to add a new type of external source, you can write your own driver. To write your own driver, you will implement the Sourcer interface for your type of external data source. 
 
 ## Fiddler
 ```
 import "github.com/coralproject/sponge/pkg/fiddler"
 ```
-The Fiddler package performs the translation from the external database schema into Coral's database schema, using a [strategy translation file](strategy).
+The Fiddler package performs the translation from the external database schema into Coral's database schema.
 
 ### Variables
 
@@ -170,8 +171,7 @@ Calls the service to create index for "collection".
 ```
 import "github.com/coralproject/sponge/pkg/sponge"
 ```
-
-The Sponge package imports the external source database into the local database. It transforms it and sends it to the Coral system, through Pillar.
+The Sponge package ties together all of the other packages, so that they all communicate and work with each other.
 
 ### Constants
 

@@ -10,6 +10,12 @@ It is an Extract, Transform, and Load command line tool designed to:
 
 Sponge uses strategy files to assist with data import. Strategy files are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about [strategy files here](strategy), including information on their structure and examples.
 
+## Composition
+
+Sponge is made up of several different packages, and you can read more about them on the [Included Packages page](included_packages). They work together as shown in the diagram below:
+
+![sponge_diagram](../images/sponge.png)
+
 ## Data import sources supported
 
 Sponge currently only supports importing data from mySQL, PostgreSQL, MongoDB or web services with REST APIs.
