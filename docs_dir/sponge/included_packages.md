@@ -6,7 +6,7 @@
 * [Coral](#coral) sends data to Pillar.
 * [Sponge](#sponge) ties all the pieces together.
 
-![sponge_diagram](../images/sponge.png)
+<img src="/images/sponge-architecture.svg">
 
 ## Strategy
 
@@ -90,7 +90,7 @@ The API driver is contained in the `api.go` file. It has an API struct that impl
 
 ### How to add a new source
 
-Currently, we offer the four drivers listed above (mySQL, PostgreSQL, MongoDB, and REST API). If you need to add a new type of external source, you can write your own driver. To write your own driver, you will implement the Sourcer interface for your type of external data source. 
+Currently, we offer the four drivers listed above (mySQL, PostgreSQL, MongoDB, and REST API). If you need to add a new type of external source, you can write your own driver. To write your own driver, you will implement the Sourcer interface for your type of external data source.
 
 ## Fiddler
 ```

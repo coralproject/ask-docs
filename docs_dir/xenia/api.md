@@ -1,27 +1,56 @@
 
-## API calls
+# Xenia API
+
+**This section is under construction, and is not currently complete.**
+
+## Endpoints
 
 If you set the authorization header properly in your browser (TODO) you can run the following endpoints.
 
-1) Get a list of configured queries:
+| URL                         | HTTP Verb     | Description             |
+|:--------------------------- |:--------------|:------------------------|
+| /1.0/query                  |GET            |[Get a list of configured queries](#get-a-list-of-configured-queries) |
+| /1.0/query/basic            |GET            |[Get the query set document for the `basic` query set](#import-asset) |
+| /1.0/exec/basic             |GET            |[Execute the query for the `basic` query set](#import-comment) |
+| /1.0/exec/basic_var         |GET            |[Execute the query for the `basic_var` query set with variables](#import-note) |
+| /1.0/exec                   |POST           |[Execute a dynamic query set](#import-user) |
 
+### Get a list of configured queries
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /1.0/query            |GET            |Get a list of configured queries |
+
+#### Parameters
+None
+
+#### Example call
 ```
 GET
 http://localhost:4000/1.0/query
+```
 
-output:
-
+#### Example response
+```
 ["basic","basic_var","top_commenters_by_count"]
 ```
 
-2) Get the query set document for the `basic` query set:
+### Get the query set document for the `basic` query set
 
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /1.0/query/basic            |GET     |Get the query set document for the `basic` query set |
+
+#### Parameters
+None
+
+#### Example call
 ```
 GET
 http://localhost:4000/1.0/query/basic
+```
 
-output:
-
+#### Example response
+```
 {
    "name":"QTEST_basic",
    "desc":"",
@@ -40,15 +69,23 @@ output:
       }
    ]
 }
-
 ```
 
-3) Execute the query for the `basic` query set:
+### Execute the query for the `basic` query set
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /1.0/query            |GET            |Execute the query for the basic query set |
 
+#### Parameters
+None
+
+#### Example call
 ```
 GET
 http://localhost:4000/1.0/exec/basic
+```
 
+```
 set:
 
 {
@@ -69,9 +106,10 @@ set:
       }
    ]
 }
+```
 
-output:
-
+#### Example response
+```
 {
   "results":[
     {
@@ -87,7 +125,15 @@ output:
 }
 ```
 
-4) Execute the query for the `basic_var` query set with variables:
+### Execute the query for the `basic_var` query set with variables
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /1.0/exec/basic_var   |GET            |Execute the query for the `basic_var` query set with variables |
+
+#### Parameters
+| Name          | Required?     | Description            |
+|:------------- |:------------- |:-----------------------|
+| station_id    |Y              |Tag ID                  |
 
 ```
 GET
@@ -158,7 +204,7 @@ Post Data:
 }
 ```
 
-## Query management
+## Query management with the command line tool
 
 Using the Xenia command line tool you can manage query sets.
 
@@ -166,7 +212,7 @@ Using the Xenia command line tool you can manage query sets.
 cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
 ```
 
-1) Get a list of saved queries:
+#### Get a list of saved queries:
 
 ```
 ./xenia query list
@@ -178,7 +224,7 @@ basic_var
 top_commenters_by_count
 ```
 
-3) Look at the details of a query:
+#### Look at the details of a query:
 
 ```
 ./xenia query get -n basic
@@ -205,7 +251,7 @@ output:
 }
 ```
 
-4) Execute a query:
+#### Execute a query:
 
 ```
 ./xenia query exec -n basic
@@ -227,7 +273,7 @@ output:
 }
 ```
 
-5) Add or update a query for use:
+#### Add or update a query for use:
 
 ```
 ./xenia query upsert -p ./scrquery/basic_var.json

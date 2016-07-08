@@ -1,6 +1,8 @@
 # Coral naming
 
-Are you curious about why we've named things the way that we have? As you may have guessed, each component of Coral is named after a different type of coral.
+Are you curious about why we've named things the way that we have? As you may have guessed, each component of Coral is named after a different type of coral. We like to match up some traits of the particular type of coral with the functionality of the component, but that's not always possible.
+
+If you
 
 ### Cay
 

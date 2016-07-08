@@ -1,5 +1,28 @@
 # Xenia Driver API
 
+## List of queries
+
+* [XeniaDriver(baseURL, auth \[, queryParams\] \[, reqParams\])](#xeniadriverbaseurl-auth-queryparams-reqparams)
+* [addQuery(queryData)](#addqueryquerydata)
+* [collection(name)](#collectionname)
+* [exec(queryName, params)](#execqueryname-params)
+* [getQueries()](#getqueries)
+* [getQuery(name)](#getqueryname)
+* [saveQuery(name)](#savequeryname)
+* [deleteQuery(name)](#deletequeryname)
+* [limit(n)](#limitn)
+* [skip(n)](#skipn)
+* [sample(n)](#samplen)
+* [project(fields)](#projectfields)
+* [include(fieldNames)](#includefieldnames)
+* [exclude(fieldNames)](#excludefieldnames)
+* [match(query)](#matchquery)
+* [redact(query)](#redactquery)
+* [unwind(path, includeArrayIndex, preserveNullAndEmptyArrays)](#unwindpath-includearrayindex-preservenullandemptyarrays)
+* [group(groups)](#groupgroups)
+* [sort(order)](#sortorder)
+* [join(collection, field, matchingField, name)](#joincollection-field-matchingfield-name)
+
 ### XeniaDriver(baseURL, auth [, queryParams] [, reqParams])
 
 Creates a new `XeniaDriver` instance

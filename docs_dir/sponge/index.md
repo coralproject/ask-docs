@@ -14,7 +14,7 @@ Sponge uses strategy files to assist with data import. Strategy files are JSON f
 
 Sponge is made up of several different packages, and you can read more about them on the [Included Packages page](included_packages). They work together as shown in the diagram below:
 
-![sponge_diagram](../images/sponge.png)
+<img src="/images/sponge-architecture.svg">
 
 ## Data import sources supported
 

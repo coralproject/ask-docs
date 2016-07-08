@@ -95,7 +95,7 @@ git push origin master
 
 ## Deploy the documentation
 
-Now that the documentation has been updated and committed to the repository, you can deploy the documentation. You can read more about how this works at the [Mkdocs website](http://www.mkdocs.org/user-guide/deploying-your-docs/), but it basically comes down to a single command.
+Now that the documentation has been updated and committed to the repository, you can deploy the documentation. The documentation is hosted on Heroku, so in order to deploy it, we need to first build the files that make up the site, and then push those files up to Heroku.
 
 First ensure that you have the latest version of the documentation on your local machine:
 ```
@@ -104,10 +104,16 @@ git pull
 
 Then, run the following command:
 ```
-mkdocs gh-deploy --clean
+mkdocs build --clean
 ```
 
-The `gh-deploy` command builds the documentation, then uses the [ghp-import](https://github.com/davisp/ghp-import) tool to commit them to the `gh-pages` branch within the `docs` repository and push the `gh-pages` branch to GitHub (which publishes the documents to GitHub pages).
+The `build` command builds the documentation, creating the HTML pages that make up the site, and places those files in the `site` directory.
+
+Now you'll push the `site` directory, containing the pages that make up the website, to Heroku. You can do this with the following command:
+
+```
+git subtree push --prefix site heroku master
+```
 
 ## Translating documentation
 
