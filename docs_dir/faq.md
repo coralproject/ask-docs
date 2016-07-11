@@ -62,7 +62,7 @@ The data in the Trust app refreshes every 24 hours.
 You can learn more about the different installation options on our [developer overview page](developer). The quickest and easiest way to get started is probably the [All-in-One Docker installation](quickstart), but you can read about each available option (and whether it is likely to be the best option for you) on the [developer overview page](developer).
 
 ### Do you have dummy data that we can use?
-Yes. Our dummy data consists of thoroughly scrubbed and anonymized comments data from the Washington Post commenting database.
+Yes. Our dummy data consists of real comments data, thoroughly scrubbed and anonymized.
 
 If you install Coral through the [All-in-One Docker installation](quickstart), you should automatically have the dummy data set up for you in your MongoDB.
 

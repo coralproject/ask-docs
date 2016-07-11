@@ -127,6 +127,12 @@ Now you'll push the `site` directory, containing the pages that make up the webs
 ```
 git subtree push --prefix site heroku master
 ```
+You should see a series of messages from Heroku, ending with this:
+```
+remote: Verifying deploy... done.
+To https://git.heroku.com/coralprojectdocs.git
+   676aaa0..7e019f8  7e019f85487fe84efeb7cebcb33f9dff6782c8fb -> master
+```
 
 ## Translating documentation
 
