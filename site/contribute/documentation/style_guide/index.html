@@ -444,6 +444,8 @@
         
             <li><a href="#do-not-assume-knowledge">Do not assume knowledge</a></li>
         
+            <li><a href="#diagrams">Diagrams</a></li>
+        
             <li><a href="#third-party-components">Third-party components</a></li>
         
             <li><a href="#writing-installation-instructions">Writing installation instructions</a></li>
@@ -472,10 +474,10 @@
 <li>In general, try to write simple, declarative prose. We prefer short, single-clause sentences and brief three-to-five sentence paragraphs. Try to choose vocabulary that is straightforward and precise.</li>
 <li><strong>Pronouns</strong>:<ul>
 <li>Use gender-neutral pronouns (they/their/them) rather than &ldquo;he or she&rdquo;.</li>
-<li>First and second person pronouns are fine. Always use “we” to refer to Coral and “you” to refer to the user.</li>
+<li>First and second person pronouns are fine. Use “we” to refer to Coral and “you” to refer to the user.</li>
 </ul>
 </li>
-<li>Avoid excessive use of &ldquo;i.e.&rdquo;.</li>
+<li>Use &ldquo;for instance&rdquo; or &ldquo;for example&rdquo; instead of &ldquo;i.e.&rdquo;</li>
 <li>Section headers and page headers should follow sentence case formatting (first word capitalized, following words uncapitalized) rather than title case (each word in the header capitalized).</li>
 <li>Whenever possible, include a section at the beginning of the page that describes what is contained within that page (with hyperlinks to the relevant sections). Sure, usually this will also appear on the Table of Contents in the side navigation section, but it&rsquo;s also useful to have it displayed within the text itself.</li>
 </ul>
@@ -488,10 +490,38 @@
 </ul>
 </li>
 <li>If there are command line instructions involved, include the precise command line instruction. Instructions that users can copy/paste into the command line are great!</li>
-<li>Show &ldquo;expected results&rdquo; wherever possible. If a command line instruction should return a certain result, show that expected result. If there is a URL you can visit to test whether or not something is working, provide that URL as a link.</li>
+<li>Show &ldquo;expected results&rdquo; wherever possible.<ul>
+<li>If a command line instruction should return a certain result, show that expected result.</li>
+<li>If the result output is quite long, show a key portion of it to avoid cluttering the page.</li>
+<li>If there is a URL you can visit to test whether or not something is working, provide that URL as a link.</li>
+</ul>
+</li>
 <li>If there are variables to configure, explicitly state the purpose of the variables. This should be explained in a comment in the configuration file, but you should also provide an explanation in your instructions.</li>
 <li>Do not merely explain HOW to do something, but also, whenever possible, WHY you are doing it in that way. This makes it easier for users to troubleshoot issues.</li>
 </ul>
+<h3 id="diagrams">Diagrams</h3>
+<p>Architectural diagrams to show application structure and process flow are really useful. You can view examples on the <a href="../../../developer/architectural_overview">architectural overview</a> page.</p>
+<p>We use the application <a href="https://www.draw.io">draw.io</a> to draw our diagrams. It&rsquo;s easy and free: just go to the site, select &ldquo;Create New Diagram,&rdquo; and get started.</p>
+<ul>
+<li>Use the &ldquo;Basic&rdquo; blank diagram template.</li>
+<li>Application components are represented using the &ldquo;rounded rectangle&rdquo; shape.</li>
+<li>Databases are represented with the &ldquo;cylinder&rdquo; shape.</li>
+<li>Labels for the application components use Helvetica font, size 18 pt, center aligned.</li>
+<li>Double-headed arrows or single-headed arrows are used to show data flow. Each arrow should be accompanied by a text label that explains what data is being transferred and/or what request is being made.</li>
+</ul>
+<h4 id="exporting-diagrams">Exporting diagrams</h4>
+<p>When you export the diagram for use in the documentation, export it both as an SVG and as an XML. The XML will be the file that future contributors can edit, and the SVG will be the image displayed on the documentation page.</p>
+<ul>
+<li>For both XML and SVG, keep the default values in the &ldquo;Export&rdquo; window.</li>
+<li>At the &ldquo;Save as&rdquo; window, choose &ldquo;Download.&rdquo;</li>
+<li>Move the SVG into the <a href="https://github.com/coralproject/docs/tree/master/docs_dir/images">images directory</a>.</li>
+<li>Move the XML into the <a href="https://github.com/coralproject/docs/tree/master/docs_dir/diagrams">diagrams directory</a>.</li>
+</ul>
+<h4 id="embedding-diagrams">Embedding diagrams</h4>
+<p>When embedding diagrams, use the Markdown image tag:</p>
+<pre><code>![TestDiagram](/images/testdiagram.svg)
+</code></pre>
+
 <h3 id="third-party-components">Third-party components</h3>
 <p>Is there a third-party component the user needs to set up (for instance, MongoDB)?</p>
 <ul>
@@ -588,7 +618,8 @@
 <ul>
 <li>When adding headlines and section dividers, keep in mind that the Table of Contents displayed in the side navigation bar to the left is only two levels deep. So, H1 (#) and H2 (##) text will show up in the Table of Contents. H3 (###) and below will not.</li>
 <li>To avoid making the Table of Contents too cluttered, try to only use H2 (##) for key large sections.</li>
-</ul></div>
+</ul>
+<p><em>Attribution: Style Guide adapted from the Docker project documentation.</em></p></div>
         </div>
 
         <footer class="col-md-12">
