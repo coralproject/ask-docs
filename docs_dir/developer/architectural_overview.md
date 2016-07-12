@@ -12,7 +12,8 @@ The Coral Ecosystem consists of five apps working together with the Coral MongoD
 * [Sponge](sponge) is the data import service that extracts data from an external data source, and passes that data on to Pillar.
 * [Xenia](xenia) is a service layer that performs aggregated pipelines queries on the data in the Coral database.
 
-<img src="/images/coral-architecture.svg">
+![coral-architecture](/images/coral-architecture.svg)
+
 
 ## Ask
 
