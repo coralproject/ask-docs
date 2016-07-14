@@ -868,8 +868,67 @@ https://localhost:8080/api/form_submission/search
 ```
 
 #### Example response
+
 ```
 Status: 200 OK
+```
+
+```
+Body: [
+  {
+    "id": "577c197810780b3401e7a3af",
+    "form_id": "577c18f4a969c805f7f8c889",
+    "status": "",
+    "replies": [
+      {
+        "widget_id": "1",
+        "identity": false,
+        "answer": "Gophers everywhere",
+        "edited": null,
+        "question": "Is there anybody out there?",
+        "props": {
+          "a": "B",
+          "c": 4
+        }
+      },
+      {
+        "widget_id": "2",
+        "identity": true,
+        "answer": "Dave",
+        "edited": null,
+        "question": "Name",
+        "props": {
+          "a": "B",
+          "c": 4
+        }
+      },
+      {
+        "widget_id": "3",
+        "identity": true,
+        "answer": "D@ve.name",
+        "edited": null,
+        "question": "Email",
+        "props": {
+          "a": "B",
+          "c": 4
+        }
+      }
+    ],
+    "flags": [],
+    "header": {
+      "description": "of the rest of your life",
+      "title": "This is the first form"
+    },
+    "footer": {
+      "conditions": "lots of conditions"
+    },
+    "finishedScreen": null,
+    "created_by": null,
+    "updated_by": null,
+    "date_created": "2016-07-01T21:31:45-06:00",
+    "date_updated": "2016-07-01T21:31:45-06:00"
+  }
+]
 ```
 
 ### Get form gallery
