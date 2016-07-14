@@ -75,6 +75,7 @@
 | /api/form_submission/{id}/flag/{flag}       |PUT           |[Add flag to form submission](#add-flag-to-form-submission) |
 | /api/form_submission/{id}/flag/{flag}       |DELETE           |[Delete flag from form submission](#delete-flag-from-form-submission) |
 | /api/form_submission/{id}       |DELETE           |[Delete form submission](#delete-form-submission) |
+| /api/form_submission/search       |POST           |[Search a string on the answers of the form submissions](#search-form-submissions) |
 
 ## Form galleries endpoints
 | URL                             | HTTP Verb     | Description             |
@@ -846,6 +847,88 @@ https://localhost:8080/api/form_submission/123
 #### Example response
 ```
 Status: 200 OK
+```
+
+### Search form submissions
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /api/form_submission/search  |POST          |Search form submissions  |
+
+
+#### Example call
+```
+POST
+https://localhost:8080/api/form_submission/search
+```
+
+```
+{
+  "search": "Gophers"
+}
+```
+
+#### Example response
+
+```
+Status: 200 OK
+```
+
+```
+Body: [
+  {
+    "id": "577c197810780b3401e7a3af",
+    "form_id": "577c18f4a969c805f7f8c889",
+    "status": "",
+    "replies": [
+      {
+        "widget_id": "1",
+        "identity": false,
+        "answer": "Gophers everywhere",
+        "edited": null,
+        "question": "Is there anybody out there?",
+        "props": {
+          "a": "B",
+          "c": 4
+        }
+      },
+      {
+        "widget_id": "2",
+        "identity": true,
+        "answer": "Dave",
+        "edited": null,
+        "question": "Name",
+        "props": {
+          "a": "B",
+          "c": 4
+        }
+      },
+      {
+        "widget_id": "3",
+        "identity": true,
+        "answer": "D@ve.name",
+        "edited": null,
+        "question": "Email",
+        "props": {
+          "a": "B",
+          "c": 4
+        }
+      }
+    ],
+    "flags": [],
+    "header": {
+      "description": "of the rest of your life",
+      "title": "This is the first form"
+    },
+    "footer": {
+      "conditions": "lots of conditions"
+    },
+    "finishedScreen": null,
+    "created_by": null,
+    "updated_by": null,
+    "date_created": "2016-07-01T21:31:45-06:00",
+    "date_updated": "2016-07-01T21:31:45-06:00"
+  }
+]
 ```
 
 ### Get form gallery
