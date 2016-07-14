@@ -75,6 +75,7 @@
 | /api/form_submission/{id}/flag/{flag}       |PUT           |[Add flag to form submission](#add-flag-to-form-submission) |
 | /api/form_submission/{id}/flag/{flag}       |DELETE           |[Delete flag from form submission](#delete-flag-from-form-submission) |
 | /api/form_submission/{id}       |DELETE           |[Delete form submission](#delete-form-submission) |
+| /api/form_submission/search       |POST           |[Search a string on the answers of the form submissions](#search-form-submissions) |
 
 ## Form galleries endpoints
 | URL                             | HTTP Verb     | Description             |
@@ -841,6 +842,29 @@ Status: 200 OK
 ```
 DELETE
 https://localhost:8080/api/form_submission/123
+```
+
+#### Example response
+```
+Status: 200 OK
+```
+
+### Search form submissions
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /api/form_submission/search  |POST          |Search form submissions  |
+
+
+#### Example call
+```
+POST
+https://localhost:8080/api/form_submission/search
+```
+
+```
+{
+  "search": "Gophers"
+}
 ```
 
 #### Example response
