@@ -68,7 +68,7 @@
                     
                         
 <li >
-    <a href="../../developer/coral_ecosystem/">Architectural overview</a>
+    <a href="../../developer/architectural_overview/">Architectural overview</a>
 </li>
 
                     
@@ -438,39 +438,113 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#api-calls">API calls</a></li>
+        <li class="main active"><a href="#xenia-api">Xenia API</a></li>
         
-    
-        <li class="main "><a href="#query-management">Query management</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
         
-            <li><a href="#direct-mongo-access-optional">Direct Mongo access (optional)</a></li>
+            <li><a href="#query-management-with-the-command-line-tool">Query management with the command line tool</a></li>
         
-    
-        <li class="main "><a href="#writing-sets">Writing Sets</a></li>
+            <li><a href="#writing-sets">Writing Sets</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="api-calls">API calls</h2>
+<h1 id="xenia-api">Xenia API</h1>
+<p><strong>This section is under construction, and is not currently complete.</strong></p>
+<h2 id="endpoints">Endpoints</h2>
 <p>If you set the authorization header properly in your browser (TODO) you can run the following endpoints.</p>
-<p>1) Get a list of configured queries:</p>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query</td>
+<td align="left">GET</td>
+<td align="left"><a href="#get-a-list-of-configured-queries">Get a list of configured queries</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/query/basic</td>
+<td align="left">GET</td>
+<td align="left"><a href="#import-asset">Get the query set document for the <code>basic</code> query set</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/exec/basic</td>
+<td align="left">GET</td>
+<td align="left"><a href="#import-comment">Execute the query for the <code>basic</code> query set</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/exec/basic_var</td>
+<td align="left">GET</td>
+<td align="left"><a href="#import-note">Execute the query for the <code>basic_var</code> query set with variables</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/exec</td>
+<td align="left">POST</td>
+<td align="left"><a href="#import-user">Execute a dynamic query set</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-a-list-of-configured-queries">Get a list of configured queries</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query</td>
+<td align="left">GET</td>
+<td align="left">Get a list of configured queries</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters">Parameters</h4>
+<p>None</p>
+<h4 id="example-call">Example call</h4>
 <pre><code>GET
 http://localhost:4000/1.0/query
-
-output:
-
-[&quot;basic&quot;,&quot;basic_var&quot;,&quot;top_commenters_by_count&quot;]
 </code></pre>
 
-<p>2) Get the query set document for the <code>basic</code> query set:</p>
+<h4 id="example-response">Example response</h4>
+<pre><code>[&quot;basic&quot;,&quot;basic_var&quot;,&quot;top_commenters_by_count&quot;]
+</code></pre>
+
+<h3 id="get-the-query-set-document-for-the-basic-query-set">Get the query set document for the <code>basic</code> query set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query/basic</td>
+<td align="left">GET</td>
+<td align="left">Get the query set document for the <code>basic</code> query set</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_1">Parameters</h4>
+<p>None</p>
+<h4 id="example-call_1">Example call</h4>
 <pre><code>GET
 http://localhost:4000/1.0/query/basic
+</code></pre>
 
-output:
-
-{
+<h4 id="example-response_1">Example response</h4>
+<pre><code>{
    &quot;name&quot;:&quot;QTEST_basic&quot;,
    &quot;desc&quot;:&quot;&quot;,
    &quot;enabled&quot;:true,
@@ -488,14 +562,33 @@ output:
       }
    ]
 }
-
 </code></pre>
 
-<p>3) Execute the query for the <code>basic</code> query set:</p>
+<h3 id="execute-the-query-for-the-basic-query-set">Execute the query for the <code>basic</code> query set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query</td>
+<td align="left">GET</td>
+<td align="left">Execute the query for the basic query set</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_2">Parameters</h4>
+<p>None</p>
+<h4 id="example-call_2">Example call</h4>
 <pre><code>GET
 http://localhost:4000/1.0/exec/basic
+</code></pre>
 
-set:
+<pre><code>set:
 
 {
    &quot;name&quot;:&quot;basic&quot;,
@@ -515,10 +608,10 @@ set:
       }
    ]
 }
+</code></pre>
 
-output:
-
-{
+<h4 id="example-response_2">Example response</h4>
+<pre><code>{
   &quot;results&quot;:[
     {
       &quot;Name&quot;:&quot;basic&quot;,
@@ -533,7 +626,40 @@ output:
 }
 </code></pre>
 
-<p>4) Execute the query for the <code>basic_var</code> query set with variables:</p>
+<h3 id="execute-the-query-for-the-basic_var-query-set-with-variables">Execute the query for the <code>basic_var</code> query set with variables</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/exec/basic_var</td>
+<td align="left">GET</td>
+<td align="left">Execute the query for the <code>basic_var</code> query set with variables</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Required?</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">station_id</td>
+<td align="left">Y</td>
+<td align="left">Tag ID</td>
+</tr>
+</tbody>
+</table>
 <pre><code>GET
 http://localhost:4000/1.0/exec/basic_var?station_id=42021
 
@@ -600,12 +726,12 @@ Post Data:
 }
 </code></pre>
 
-<h2 id="query-management">Query management</h2>
+<h2 id="query-management-with-the-command-line-tool">Query management with the command line tool</h2>
 <p>Using the Xenia command line tool you can manage query sets.</p>
 <pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
 </code></pre>
 
-<p>1) Get a list of saved queries:</p>
+<h4 id="get-a-list-of-saved-queries">Get a list of saved queries:</h4>
 <pre><code>./xenia query list
 
 output:
@@ -615,7 +741,7 @@ basic_var
 top_commenters_by_count
 </code></pre>
 
-<p>3) Look at the details of a query:</p>
+<h4 id="look-at-the-details-of-a-query">Look at the details of a query:</h4>
 <pre><code>./xenia query get -n basic
 
 output:
@@ -640,7 +766,7 @@ output:
 }
 </code></pre>
 
-<p>4) Execute a query:</p>
+<h4 id="execute-a-query">Execute a query:</h4>
 <pre><code>./xenia query exec -n basic
 
 output:
@@ -660,7 +786,7 @@ output:
 }
 </code></pre>
 
-<p>5) Add or update a query for use:</p>
+<h4 id="add-or-update-a-query-for-use">Add or update a query for use:</h4>
 <pre><code>./xenia query upsert -p ./scrquery/basic_var.json
 
 output:

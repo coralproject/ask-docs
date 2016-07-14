@@ -9,8 +9,8 @@ The key thing to remember when writing documentation is to be extremely explicit
 * In general, try to write simple, declarative prose. We prefer short, single-clause sentences and brief three-to-five sentence paragraphs. Try to choose vocabulary that is straightforward and precise.
 * **Pronouns**:
     * Use gender-neutral pronouns (they/their/them) rather than "he or she".
-    * First and second person pronouns are fine. Always use “we” to refer to Coral and “you” to refer to the user.
-* Avoid excessive use of "i.e.".
+    * First and second person pronouns are fine. Use “we” to refer to Coral and “you” to refer to the user.
+* Use "for instance" or "for example" instead of "i.e."
 * Section headers and page headers should follow sentence case formatting (first word capitalized, following words uncapitalized) rather than title case (each word in the header capitalized).
 * Whenever possible, include a section at the beginning of the page that describes what is contained within that page (with hyperlinks to the relevant sections). Sure, usually this will also appear on the Table of Contents in the side navigation section, but it's also useful to have it displayed within the text itself.
 
@@ -21,9 +21,42 @@ The key thing to remember when writing documentation is to be extremely explicit
     * Bad: "Clone the repository to your machine."
     * Good: "Clone the docs repository to your local machine, using the command `git clone https://github.com/coralproject/docs.git`"
 * If there are command line instructions involved, include the precise command line instruction. Instructions that users can copy/paste into the command line are great!
-* Show "expected results" wherever possible. If a command line instruction should return a certain result, show that expected result. If there is a URL you can visit to test whether or not something is working, provide that URL as a link.
+* Show "expected results" wherever possible.
+    * If a command line instruction should return a certain result, show that expected result.
+    * If the result output is quite long, show a key portion of it to avoid cluttering the page.
+    * If there is a URL you can visit to test whether or not something is working, provide that URL as a link.
 * If there are variables to configure, explicitly state the purpose of the variables. This should be explained in a comment in the configuration file, but you should also provide an explanation in your instructions.
 * Do not merely explain HOW to do something, but also, whenever possible, WHY you are doing it in that way. This makes it easier for users to troubleshoot issues.
+
+### Diagrams
+
+Architectural diagrams to show application structure and process flow are really useful. You can view examples on the [architectural overview](../../developer/architectural_overview) page.
+
+We use the application [draw.io](https://www.draw.io) to draw our diagrams. It's easy and free: just go to the site, select "Create New Diagram," and get started.
+
+* Use the "Basic" blank diagram template.
+* Application components are represented using the "rounded rectangle" shape.
+* Databases are represented with the "cylinder" shape.
+* Labels for the application components use Helvetica font, size 18 pt, center aligned.
+* Double-headed arrows or single-headed arrows are used to show data flow. Each arrow should be accompanied by a text label that explains what data is being transferred and/or what request is being made.
+
+#### Exporting diagrams
+When you export the diagram for use in the documentation, export it both as an SVG and as an XML. The XML will be the file that future contributors can edit, and the SVG will be the image displayed on the documentation page.
+
+* For both XML and SVG, keep the default values in the "Export" window.
+* At the "Save as" window, choose "Download."
+* Move the SVG into the [images directory](https://github.com/coralproject/docs/tree/master/docs_dir/images).
+* Move the XML into the [diagrams directory](https://github.com/coralproject/docs/tree/master/docs_dir/diagrams).
+
+#### Embedding diagrams
+When embedding diagrams, use the Markdown image tag:
+```
+![TestDiagram](/images/testdiagram.svg)
+```
+
+
+
+
 
 ### Third-party components
 
@@ -119,3 +152,5 @@ Be sure to include descriptive alt-text for the graphic. This greatly helps user
 ### Headers
 * When adding headlines and section dividers, keep in mind that the Table of Contents displayed in the side navigation bar to the left is only two levels deep. So, H1 (#) and H2 (##) text will show up in the Table of Contents. H3 (###) and below will not.
 * To avoid making the Table of Contents too cluttered, try to only use H2 (##) for key large sections.
+
+_Attribution: Style Guide adapted from the Docker project documentation._

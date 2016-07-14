@@ -95,7 +95,7 @@ git push origin master
 
 ## Deploy the documentation
 
-Now that the documentation has been updated and committed to the repository, you can deploy the documentation. You can read more about how this works at the [Mkdocs website](http://www.mkdocs.org/user-guide/deploying-your-docs/), but it basically comes down to a single command.
+Now that the documentation has been updated and committed to the repository, you can deploy the documentation. The documentation is hosted on Heroku, so in order to deploy it, we need to first build the files that make up the site, and then push those files up to Heroku.
 
 First ensure that you have the latest version of the documentation on your local machine:
 ```
@@ -104,10 +104,35 @@ git pull
 
 Then, run the following command:
 ```
-mkdocs gh-deploy --clean
+mkdocs build --clean
 ```
 
-The `gh-deploy` command builds the documentation, then uses the [ghp-import](https://github.com/davisp/ghp-import) tool to commit them to the `gh-pages` branch within the `docs` repository and push the `gh-pages` branch to GitHub (which publishes the documents to GitHub pages).
+The `build` command builds the documentation, creating the HTML pages that make up the site, and places those files in the `site` directory.
+
+Now you'll add the changed files using Git, in preparation for pushing them to Heroku to deploy them. Add a meaningful commit message.
+```
+git add -A
+```
+
+There is one file that you have to "unadd" before you push to Heroku: the `site/index.php` file. Put briefly, it's a file that Heroku needs to serve up the site, but that the `mkdocs build` process deletes.
+```
+git reset HEAD site/index.php
+```
+Now commit your changes, adding a meaningful commit message.
+```
+git commit -m "Updated writing documentation page"
+```
+
+Now you'll push the `site` directory, containing the pages that make up the website, to Heroku.
+```
+git subtree push --prefix site heroku master
+```
+You should see a series of messages from Heroku, ending with this:
+```
+remote: Verifying deploy... done.
+To https://git.heroku.com/coralprojectdocs.git
+   676aaa0..7e019f8  7e019f85487fe84efeb7cebcb33f9dff6782c8fb -> master
+```
 
 ## Translating documentation
 

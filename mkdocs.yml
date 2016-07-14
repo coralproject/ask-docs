@@ -3,7 +3,7 @@ pages:
 - Home: 'index.md'
 - Developer Guide:
   - Introduction: 'developer/index.md'
-  - Architectural overview: 'developer/coral_ecosystem.md'
+  - Architectural overview: 'developer/architectural_overview.md'
   - Installing Coral Ecosystem: 'quickstart/install.md'
   - Developer tools setup: 'developer/developer_setup.md'
   - Cay:
