@@ -301,6 +301,12 @@
         
             
 <li >
+    <a href="../../user/ask_install/">Installation</a>
+</li>
+
+        
+            
+<li >
     <a href="../../user/ask_tutorials/">Tutorials</a>
 </li>
 
@@ -739,6 +745,11 @@
 <td align="left">/api/form_submission/{id}</td>
 <td align="left">DELETE</td>
 <td align="left"><a href="#delete-form-submission">Delete form submission</a></td>
+</tr>
+<tr>
+<td align="left">/api/form_submission/search</td>
+<td align="left">POST</td>
+<td align="left"><a href="#search-form-submissions">Search a string on the answers of the form submissions</a></td>
 </tr>
 </tbody>
 </table>
@@ -1860,6 +1871,94 @@ https://localhost:8080/api/form_submission/123
 <pre><code>Status: 200 OK
 </code></pre>
 
+<h3 id="search-form-submissions">Search form submissions</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/api/form_submission/search</td>
+<td align="left">POST</td>
+<td align="left">Search form submissions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-call_35">Example call</h4>
+<pre><code>POST
+https://localhost:8080/api/form_submission/search
+</code></pre>
+
+<pre><code>{
+  &quot;search&quot;: &quot;Gophers&quot;
+}
+</code></pre>
+
+<h4 id="example-response_35">Example response</h4>
+<pre><code>Status: 200 OK
+</code></pre>
+
+<pre><code>Body: [
+  {
+    &quot;id&quot;: &quot;577c197810780b3401e7a3af&quot;,
+    &quot;form_id&quot;: &quot;577c18f4a969c805f7f8c889&quot;,
+    &quot;status&quot;: &quot;&quot;,
+    &quot;replies&quot;: [
+      {
+        &quot;widget_id&quot;: &quot;1&quot;,
+        &quot;identity&quot;: false,
+        &quot;answer&quot;: &quot;Gophers everywhere&quot;,
+        &quot;edited&quot;: null,
+        &quot;question&quot;: &quot;Is there anybody out there?&quot;,
+        &quot;props&quot;: {
+          &quot;a&quot;: &quot;B&quot;,
+          &quot;c&quot;: 4
+        }
+      },
+      {
+        &quot;widget_id&quot;: &quot;2&quot;,
+        &quot;identity&quot;: true,
+        &quot;answer&quot;: &quot;Dave&quot;,
+        &quot;edited&quot;: null,
+        &quot;question&quot;: &quot;Name&quot;,
+        &quot;props&quot;: {
+          &quot;a&quot;: &quot;B&quot;,
+          &quot;c&quot;: 4
+        }
+      },
+      {
+        &quot;widget_id&quot;: &quot;3&quot;,
+        &quot;identity&quot;: true,
+        &quot;answer&quot;: &quot;D@ve.name&quot;,
+        &quot;edited&quot;: null,
+        &quot;question&quot;: &quot;Email&quot;,
+        &quot;props&quot;: {
+          &quot;a&quot;: &quot;B&quot;,
+          &quot;c&quot;: 4
+        }
+      }
+    ],
+    &quot;flags&quot;: [],
+    &quot;header&quot;: {
+      &quot;description&quot;: &quot;of the rest of your life&quot;,
+      &quot;title&quot;: &quot;This is the first form&quot;
+    },
+    &quot;footer&quot;: {
+      &quot;conditions&quot;: &quot;lots of conditions&quot;
+    },
+    &quot;finishedScreen&quot;: null,
+    &quot;created_by&quot;: null,
+    &quot;updated_by&quot;: null,
+    &quot;date_created&quot;: &quot;2016-07-01T21:31:45-06:00&quot;,
+    &quot;date_updated&quot;: &quot;2016-07-01T21:31:45-06:00&quot;
+  }
+]
+</code></pre>
+
 <h3 id="get-form-gallery">Get form gallery</h3>
 <table>
 <thead>
@@ -1881,12 +1980,12 @@ https://localhost:8080/api/form_submission/123
 <ul>
 <li><code>id</code>: form gallery id</li>
 </ul>
-<h4 id="example-call_35">Example call</h4>
+<h4 id="example-call_36">Example call</h4>
 <pre><code>GET
 https://localhost:8080/api/form_gallery/123
 </code></pre>
 
-<h4 id="example-response_35">Example response</h4>
+<h4 id="example-response_36">Example response</h4>
 <pre><code>Status: 200 OK
 </code></pre>
 
@@ -1911,12 +2010,12 @@ https://localhost:8080/api/form_gallery/123
 <ul>
 <li><code>form_id</code>: form gallery id</li>
 </ul>
-<h4 id="example-call_36">Example call</h4>
+<h4 id="example-call_37">Example call</h4>
 <pre><code>GET
 https://localhost:8080/api/form_galleries/123
 </code></pre>
 
-<h4 id="example-response_36">Example response</h4>
+<h4 id="example-response_37">Example response</h4>
 <pre><code>Status: 200 OK
 </code></pre>
 
@@ -1941,12 +2040,12 @@ https://localhost:8080/api/form_galleries/123
 <ul>
 <li><code>form_id</code>: form gallery id</li>
 </ul>
-<h4 id="example-call_37">Example call</h4>
+<h4 id="example-call_38">Example call</h4>
 <pre><code>GET
 https://localhost:8080/api/form_galleries/form/123
 </code></pre>
 
-<h4 id="example-response_37">Example response</h4>
+<h4 id="example-response_38">Example response</h4>
 <pre><code>Status: 200 OK
 </code></pre>
 
@@ -1974,12 +2073,12 @@ https://localhost:8080/api/form_galleries/form/123
 <li><code>answer_id</code>: answer id</li>
 </ul>
 <h4 id="message-body_15">Message body</h4>
-<h4 id="example-call_38">Example call</h4>
+<h4 id="example-call_39">Example call</h4>
 <pre><code>GET
 https://localhost:8080/api/form_gallery/123/add/456/789
 </code></pre>
 
-<h4 id="example-response_38">Example response</h4>
+<h4 id="example-response_39">Example response</h4>
 <pre><code>Status: 200 OK
 </code></pre>
 
@@ -2006,12 +2105,12 @@ https://localhost:8080/api/form_gallery/123/add/456/789
 <li><code>submission_id</code>: submission id</li>
 <li><code>answer_id</code>: answer id</li>
 </ul>
-<h4 id="example-call_39">Example call</h4>
+<h4 id="example-call_40">Example call</h4>
 <pre><code>GET
 https://localhost:8080/api/form_gallery/123/remove/456/789
 </code></pre>
 
-<h4 id="example-response_39">Example response</h4>
+<h4 id="example-response_40">Example response</h4>
 <pre><code>Status: 200 OK
 </code></pre></div>
         </div>

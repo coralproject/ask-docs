@@ -56,7 +56,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -133,19 +133,19 @@
         
             
 <li >
-    <a href="../">Introduction</a>
-</li>
-
-        
-            
-<li class="active">
-    <a href="./">Installation</a>
+    <a href="../../pillar/">Introduction</a>
 </li>
 
         
             
 <li >
-    <a href="../api/">API</a>
+    <a href="../../pillar/install/">Installation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pillar/api/">API</a>
 </li>
 
         
@@ -257,13 +257,13 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../user/">Introduction</a>
+    <a href="../">Introduction</a>
 </li>
 
                     
@@ -274,13 +274,13 @@
         
             
 <li >
-    <a href="../../user/trust/">Overview</a>
+    <a href="../trust/">Overview</a>
 </li>
 
         
             
 <li >
-    <a href="../../user/trust_tutorials/">Tutorials</a>
+    <a href="../trust_tutorials/">Tutorials</a>
 </li>
 
         
@@ -295,19 +295,19 @@
         
             
 <li >
-    <a href="../../user/ask/">Overview</a>
+    <a href="../ask/">Overview</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Installation</a>
 </li>
 
         
             
 <li >
-    <a href="../../user/ask_install/">Installation</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../user/ask_tutorials/">Tutorials</a>
+    <a href="../ask_tutorials/">Tutorials</a>
 </li>
 
         
@@ -322,13 +322,13 @@
         
             
 <li >
-    <a href="../../user/talk/">Overview</a>
+    <a href="../talk/">Overview</a>
 </li>
 
         
             
 <li >
-    <a href="../../user/talk_tutorials/">Tutorials</a>
+    <a href="../talk_tutorials/">Tutorials</a>
 </li>
 
         
@@ -425,12 +425,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../">
+                    <a rel="next" href="../ask/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../api/">
+                    <a rel="prev" href="../ask_tutorials/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -444,143 +444,128 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#pillar-installation">Pillar Installation</a></li>
+        <li class="main active"><a href="#ask-docker-compose-installation">Ask Docker Compose Installation</a></li>
         
             <li><a href="#before-you-begin">Before you begin</a></li>
         
-            <li><a href="#install-pillar-from-source">Install Pillar from source</a></li>
+            <li><a href="#install-docker-toolbox">Install Docker Toolbox</a></li>
         
-            <li><a href="#install-as-docker-container">Install as Docker Container</a></li>
+            <li><a href="#set-up-your-external-storage-system">Set up your external storage system</a></li>
         
-            <li><a href="#shutting-pillar-down">Shutting Pillar down</a></li>
+            <li><a href="#get-the-source-code">Get the source code</a></li>
+        
+            <li><a href="#set-environment-variables">Set environment variables</a></li>
+        
+            <li><a href="#start-docker">Start Docker</a></li>
+        
+            <li><a href="#spin-up-the-docker-container">Spin up the Docker container</a></li>
+        
+            <li><a href="#access-ask">Access Ask</a></li>
+        
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        
+            <li><a href="#uninstalling-docker-images">Uninstalling Docker images</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="pillar-installation">Pillar Installation</h1>
-<p>If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can <a href="../../quickstart/install/">find instructions to do that here</a>.</p>
-<p>When installing Pillar by itself, you can choose between installing Pillar as a Docker container, or installing from source.</p>
+<h1 id="ask-docker-compose-installation">Ask Docker Compose Installation</h1>
+<p>You can install the Ask product through a straightforward Docker Compose installation. This installs only the parts of Coral that are required for Ask.</p>
+<h2 id="before-you-begin">Before you begin</h2>
+<p>You must have the following items installed and running:</p>
 <ul>
-<li><a href="#install-pillar-from-source">Install Pillar from source</a></li>
-<li><a href="#install-as-docker-container">Install Pillar as a Docker container</a></li>
+<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.</li>
 </ul>
-<h3 id="before-you-begin">Before you begin</h3>
-<p>Before you install Pillar, you must have the following items installed and running:</p>
+<p>You should also have the following resources on your machine before installing:</p>
 <ul>
-<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.<ul>
-<li>There are <a href="../../../quickstart/mongodb">instructions on importing sample comment data into MongoDB here</a></li>
+<li>Minimum CPU: 2.0 GHz</li>
+<li>Minimum RAM: 4GB</li>
+<li>Minimum disk space: 4GB</li>
 </ul>
+<h2 id="install-docker-toolbox">Install Docker Toolbox</h2>
+<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox using the Docker instructions <a href="https://docs.docker.com/">located here</a>.</p>
+<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker version</code>.</p>
+<h2 id="set-up-your-external-storage-system">Set up your external storage system</h2>
+<p>Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.</p>
+<p>There are a few different options available for the external storage system you can use.</p>
+<ul>
+<li><strong>Amazon S3</strong>: Amazon S3 is a storage system that is relatively easy to set up and use, and scales well: it allows many concurrent users to access the files.</li>
+<li><strong>Local file system</strong>: If you don&rsquo;t set up an external storage system, Ask will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Ask for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.</li>
+</ul>
+<h3 id="amazon-s3">Amazon S3</h3>
+<p><a href="https://aws.amazon.com/s3/">Amazon S3</a> is a good option for your external storage system because it is fast, handles concurrency, and will scale well.</p>
+<p>The setup of S3 is straightforward, and Amazon has good documentation. For the purposes of setting S3 up for Ask, you can follow Amazon&rsquo;s instructions <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html">here</a>.</p>
+<ol>
+<li>Follow the directions for <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html">Sign Up for Amazon S3</a> and <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a>. There is no need to continue further to the demos for &ldquo;Add an Object to a Bucket&rdquo; and beyond: those are simply examples showing you how to use S3.</li>
+</ol>
+<ul>
+<li>For my example, I named my bucket &ldquo;ask-bucket-test&rdquo; and chose region &ldquo;Northern California&rdquo; (which corresponds to us-west-2).</li>
+<li>During the sign up process, you will create an AWS Access Key. Hang on to that information (you have the option to download it).</li>
+</ul>
+<ol>
+<li>
+<p>Once you have signed up and set up a bucket, go to your <a href="https://console.aws.amazon.com/s3">S3 console</a> to set up your permissions under &ldquo;Security Credentials.&rdquo;</p>
 </li>
-<li><strong>RabbitMQ</strong>: You can find instructions on installing RabbitMQ <a href="https://www.rabbitmq.com/download.html">on the RabbitMQ website</a>.</li>
-<li><strong>Xenia</strong>: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia <a href="../../../xenia/install">here</a>.</li>
-</ul>
-<h2 id="install-pillar-from-source">Install Pillar from source</h2>
-<h3 id="before-you-begin_1">Before you begin</h3>
-<p>If you want to install from source, you will need to have Go installed.</p>
-<p>You can install <a href="https://golang.org/dl/">install Go from their website</a>. The <a href="https://golang.org/doc/install">installation and setup instructions</a> on the Go website are quite good. Ensure that you have exported your $GOPATH environment variable, as detailed in the <a href="https://golang.org/doc/install">installation instructions</a>.</p>
-<p>If you are not on a version of Go that is 1.7 or higher, you will also have to set the GO15VENDOREXPERIMENT flag.</p>
-<pre><code>export GO15VENDOREXPERIMENT=1
+<li>
+<p>Ensure that under &ldquo;Permissions,&rdquo; the only Grantee is you. This means that nobody but you can access your bucket (using your AWS Access Key).</p>
+</li>
+</ol>
+<p>You&rsquo;re all set! You can now use your AWS Access Key to connect Ask to your S3 bucket (you&rsquo;ll set this up in the <a href="#set-environment-variables">Set environment variables</a> section below). If you didn&rsquo;t save your AWS Access Key during the set up process, you can go to the &ldquo;Security Credentials&rdquo; section and create a new one.</p>
+<h2 id="get-the-source-code">Get the source code</h2>
+<p>Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.</p>
+<pre><code>git clone https://github.com/coralproject/ask.git
 </code></pre>
 
-<p><em>If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script.</em></p>
-<h3 id="get-the-source-code">Get the source code</h3>
-<p>You can install the source code via using the <code>go get</code> command, or by manually cloning the code.</p>
-<h4 id="using-the-go-get-command">Using the go get command</h4>
-<pre><code>go get github.com/coralproject/pillar
+<p>Then cd into the <code>ask/docker</code> directory.</p>
+<pre><code>cd ask/docker
 </code></pre>
 
-<p>If you see a message about &ldquo;no buildable Go source files&rdquo; as shown below, you can ignore it. It simply means that there are no buildable source files in the uppermost pillar directory (though there are buildable source files in subdirectories).</p>
-<pre><code>package github.com/coralproject/pillar: no buildable Go source files in [directory]
-</code></pre>
+<h2 id="set-environment-variables">Set environment variables</h2>
+<p>The <code>env.conf</code> file contains environment variables you need to set. Setting your environment variables tells Docker which IP address your Coral front end will have, as well as other information such as your MongoDB username and password.</p>
+<pre><code>export FRONTEND_HOST=xxx
 
-<h4 id="cloning-manually">Cloning manually</h4>
-<p>You can also clone the code manually (this does the same thing as the <code>go get</code> command above).</p>
-<pre><code>mkdir $GOPATH/src/github.com/coralproject/pillar
-cd $GOPATH/src/github.com/coralproject/pillar
+export AUTH_TOKEN_VALUE='Basic xxx'
+export GAID_VALUE=xxx
 
-git clone https://github.com/coralproject/pillar.git
-</code></pre>
+export MONGO_USER=xxx
+export MONGO_PASS=xxx
+export MONGO_DB=xxx
+export MONGO_AUTHDB=xxx
 
-<h3 id="set-your-environment-variables">Set your environment variables</h3>
-<p>Setting your environment variables tells Pillar the URLs and other information for communicating with MongoDB, RabbitMQ, and Xenia.</p>
-<p>Make your own copy of the <code>config/dev.cfg</code> file (you can edit this configuration file with your own values, and then ensure that you don&rsquo;t commit it back to the repository). Call your config file whatever you like; we&rsquo;ll call it &ldquo;custom&rdquo; in this example.</p>
-<pre><code>cd $GOPATH/src/github.com/coralproject/pillar
-cp config/dev.cfg config/custom.cfg
-</code></pre>
+export RABBIT_USER=xxx
+export RABBIT_PASS=xxx
 
-<p>Now edit the values in your custom.cfg file:</p>
-<pre><code>#Resources
-export MONGODB_URL=&quot;mongodb://localhost:27017/coral&quot;
-export AMQP_URL=&quot;amqp://localhost:5672/&quot;
-export AMQP_EXCHANGE=&quot;PillarMQ&quot;
-
-#Pillar
-export PILLAR_ADDRESS=&quot;:8080&quot;
-export PILLAR_HOME=&quot;/opt/pillar&quot;
-export PILLAR_CRON=&quot;false&quot;
-export PILLAR_CRON_SEARCH=&quot;@every 30m&quot;
-export PILLAR_CRON_STATS=&quot;@every 1m&quot;
-
-#Xenia
-export XENIA_URL=&quot;http://localhost:4000/1.0/exec/&quot;
-export XENIA_QUERY_PARAM=&quot;?skip=0&amp;limit=100&quot;
-export XENIA_AUTH=&quot;&lt;auth token&gt;&quot;
-
-# Stats
-export MONGODB_ADDRESS=&quot;127.0.0.1:27017&quot;
-export MONGODB_USERNAME=&quot;&quot;
-export MONGODB_PASSWORD=&quot;&quot;
-export MONGODB_DATABASE=&quot;&quot;
-export MONGODB_SSL=&quot;False&quot;
+export S3_BUCKET=xxx
+export AWS_REGION=xxx
+export AWS_ACCESS_KEY_ID=xxx
+export AWS_ACCESS_KEY=xxx
 </code></pre>
 
 <ul>
-<li>For <code>XENIA_URL</code>:<ul>
-<li>If you installed <a href="../../xenia/install">locally from source</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
+<li><code>FRONTEND_HOST</code>: set to your desired IP address for the front end. For this example, we will use <code>192.168.99.100</code>.</li>
 </ul>
-</li>
-<li>For <code>MONGODB_URL</code>:<ul>
-<li>If your MongoDB is a local installation, <code>MONGODB_URL</code> should be <code>mongodb://localhost:27017/coral</code>.</li>
-</ul>
-</li>
-<li>For <code>AMQP_URL</code>:<ul>
-<li>If your RabbitMQ is a local installation, <code>AMQP_URL</code> should be <code>amqp://localhost:5672/</code>.</li>
-</ul>
-</li>
-</ul>
-<p>Once you&rsquo;ve edited and saved your custom.cfg file, source it with the following command:</p>
-<pre><code>source $GOPATH/src/github.com/coralproject/pillar/config/custom.cfg
-</code></pre>
-
-<h3 id="run-pillar">Run Pillar</h3>
-<pre><code>$GOPATH/bin/pillar
-</code></pre>
-
-<p>You should see:</p>
-<pre><code>[negroni] listening on :8080
-</code></pre>
-
-<h2 id="install-as-docker-container">Install as Docker Container</h2>
-<h3 id="install-docker">Install Docker</h3>
-<p>You can find more information on installing Docker on your machine <a href="https://docs.docker.com/engine/installation/">on the Docker website</a>.</p>
+<p>MongoDB:</p>
 <ul>
-<li>On the server, you can install Docker with the following command:</li>
+<li><code>MONGO_USER</code>: set to the username for your MongoDB</li>
+<li><code>MONGO_PASS</code>: set to the password for your MongoDB</li>
+<li><code>MONGO_DB</code>: set to the name of your MongoDB (in this instance, &ldquo;coral&rdquo;)</li>
+<li><code>MONGO_AUTHDB</code>: set to the admin user of your database</li>
 </ul>
-<pre><code>sudo yum install docker
-</code></pre>
-
-<h3 id="clone-the-pillar-repository">Clone the Pillar repository</h3>
-<p>Clone the Pillar repository:</p>
-<pre><code>git clone https://github.com/coralproject/pillar.git
-</code></pre>
-
-<p>Then cd into the Pillar directory.</p>
-<pre><code>cd pillar
-</code></pre>
-
-<h3 id="start-docker">Start Docker</h3>
+<p>Amazon S3:</p>
+<ul>
+<li><code>S3_BUCKET</code>: set to the name of your S3 bucket (in this example, <code>ask-bucket-test</code>)</li>
+<li><code>AWS_REGION</code>: set to the AWS region that you selected in your S3 setup. You can find it in your S3 console URL. In this example, it is <code>us-west-2</code>.</li>
+<li><code>AWS_ACCESS_KEY</code>: set to your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the &ldquo;Security Credentials&rdquo; area of your S3 console.</li>
+<li><code>AWS_ACCESS_KEY</code>: set to your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the &ldquo;Security Credentials&rdquo; area of your S3 console.</li>
+</ul>
+<p>Optional edits:</p>
+<ul>
+<li><code>GAID_VALUE=xxxx</code>: If you&rsquo;re using Google Analytics, set your token at <code>export GAID_VALUE=xxxx</code>. Otherwise, delete or comment out this line.</li>
+<li><code>export AUTH_TOKEN_VALUE=xxxx</code>: If you&rsquo;re using a custom auth token, set that at <code>export AUTH_TOKEN_VALUE=xxxx</code>. Otherwise, delete or comment out this line.</li>
+</ul>
+<h2 id="start-docker">Start Docker</h2>
 <p>Start Docker.</p>
 <ul>
 <li>On the server, you can do this via the command:
@@ -590,99 +575,70 @@ export MONGODB_SSL=&quot;False&quot;
 </ul>
 </li>
 </ul>
-<h3 id="build-pillar-server">Build Pillar server</h3>
-<p>Build the Pillar server using <code>docker build</code>.</p>
-<pre><code>docker build -t pillar-server:0.1 .
+<p>Ensure you are in the <code>ask/docker</code> directory.</p>
+<h2 id="spin-up-the-docker-container">Spin up the Docker container</h2>
+<p>First, run the following command to export your edited variables and set the environment variables.</p>
+<pre><code>source env.conf
 </code></pre>
 
-<ul>
-<li>If you are building on the server, you may have to use <code>sudo</code>:</li>
-</ul>
-<pre><code>sudo docker build -t pillar-server:0.1 .
+<p>The very first time that you spin up the Docker container, this will be a multi-step process:</p>
+<p>1. Spin up the Docker container:</p>
+<pre><code>docker-compose -f docker-compose.yml up -d
 </code></pre>
 
-<h3 id="edit-environment-variables">Edit environment variables</h3>
-<p>The env.list file contains environment variables you need to set. Edit this file to reflect the settings on your own system.</p>
-<pre><code>MONGODB_URL=&quot;mongodb://localhost:27017/coral&quot;
-AMQP_URL=&quot;amqp://localhost:5672/&quot;
-AMQP_EXCHANGE=&quot;PillarMQ&quot;
-
-PILLAR_ADDRESS=&quot;:8080&quot;
-PILLAR_HOME=&quot;/opt/pillar&quot;
-PILLAR_CRON=&quot;false&quot;
-PILLAR_CRON_SEARCH=&quot;@every 30m&quot;
-PILLAR_CRON_STATS=&quot;@every 1m&quot;
-
-XENIA_URL=&quot;http://localhost:4000/1.0/exec/&quot;
-XENIA_QUERY_PARAM=&quot;?skip=0&amp;limit=100&quot;
-XENIA_AUTH=&quot;&lt;auth token&gt;&quot;
-
-MONGODB_ADDRESS=&quot;127.0.0.1:27017&quot;
-MONGODB_USERNAME=&quot;&quot;
-MONGODB_PASSWORD=&quot;&quot;
-MONGODB_DATABASE=&quot;&quot;
-MONGODB_SSL=&quot;False&quot;
+<p>The <code>docker-compose.yml</code> file contained in the <code>ask/docker</code> directory contains all the instructions that Docker Compose needs to set up the Ask product.</p>
+<p>2. Docker will now download and install a number of Docker images. This may take a few minutes.</p>
+<p>3. Once all Docker images have been downloaded, you&rsquo;ll see something like the following in your terminal:</p>
+<pre><code>Creating network &quot;docker_default&quot; with the default driver
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+Creating docker_proxy_1
 </code></pre>
 
-<ul>
-<li>For <code>XENIA_URL</code>:<ul>
-<li>If you installed <a href="../../xenia/install">locally</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
-</ul>
-</li>
-<li>For <code>MONGODB_URL</code>:<ul>
-<li>If your MongoDB is a local installation, <code>MONGODB_URL</code> should be <code>mongodb://localhost:27017/coral</code>.</li>
-<li>If your MongoDB is a local installation, <code>MONGODB_ADDRESS</code> should be <code>127.0.0.1:27017</code>.</li>
-</ul>
-</li>
-<li>For <code>AMQP_URL</code>:<ul>
-<li>If your RabbitMQ is a local installation, <code>AMQP_URL</code> should be <code>amqp://localhost:5672/</code>.</li>
-</ul>
-</li>
-</ul>
-<h3 id="run-docker">Run Docker</h3>
-<p>First, find the Image ID for the Pillar server:</p>
-<pre><code>docker images
+<p>4. If this is your first time installing Ask, you&rsquo;ll now have to shut everything down with the Docker <code>down</code> command. This up-down-up sequence initializes authentication on MongoDB.</p>
+<pre><code>docker-compose -f docker-compose.yml down
 </code></pre>
 
-<ul>
-<li>If you are running on a server, you may have to use <code>sudo</code>.</li>
-</ul>
-<p>This shows you the Image ID:</p>
-<pre><code>REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-pillar-server       0.1                 24b7acf7a4b3        4 hours ago         771 MB
-golang              1.6                 024309f28934        8 days ago          744.1 MB
+<p>5. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).</p>
+<pre><code>docker-compose -f docker-compose.yml up -d
 </code></pre>
 
-<p>Then run the docker run command with the Image ID:</p>
-<pre><code>docker run --env-file env.list --publish 8080:8080 24b7acf7a4b3
-</code></pre>
-
-<p>You should see the following:</p>
-<pre><code>[negroni] listening on :8080
-</code></pre>
-
-<h3 id="test-it-out">Test it out</h3>
-<p>To see if Pillar is working correctly, visit this url: <a href="http://10.0.4.105:8080/about">http://10.0.4.105:8080/about</a>. <code>http://10.0.4.105</code> is the URL generated by Docker for Pillar.</p>
-<p>If things are running properly, you should see this text:</p>
-<pre><code>{&quot;App&quot;:&quot;Coral Pillar Web Service&quot;,&quot;Version&quot;:&quot;Version - 0.0.1&quot;}
-</code></pre>
-
-<h2 id="shutting-pillar-down">Shutting Pillar down</h2>
-<h3 id="shutting-pillar-down-when-running-from-source">Shutting Pillar down when running from source</h3>
-<p>If you installed and ran Pillar from source using the command <code>$GOPATH/bin/pillar</code>, you can shut it down by using the Ctrl + C command.</p>
-<h3 id="shutting-pillar-down-when-running-as-a-docker-container">Shutting Pillar down when running as a Docker container</h3>
-<p>To shut Pillar down when running as Docker container, first find the container ID (if you are running on a server, you may have to use <code>sudo</code>):</p>
+<h2 id="access-ask">Access Ask</h2>
+<p>You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as <code>FRONTEND_HOST</code> in the <code>env.conf</code> setup above. In this example, we set it to <a href="http://192.168.99.100">http://192.168.99.100</a>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="viewing-running-docker-containers">Viewing running Docker containers</h3>
+<p>To see all of the Docker containers currently running, use the command <code>docker ps</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/ps/">Docker website</a>).</p>
 <pre><code>docker ps
 </code></pre>
 
-<p>Find the container ID for Pillar:</p>
-<pre><code>CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
-b30f4fa5f497        coralproject/pillar      &quot;/bin/sh -c /go/bin/p&quot;   3 days ago          Up 3 days           0.0.0.0:32776-&gt;8080/tcp                                                                      proxy_pillarapp_1
+<p>You should have all of the following containers running:</p>
+<ul>
+<li>nginx:stable-alpine</li>
+<li>coralproject/cay:release</li>
+<li>coralproject/elkhorn</li>
+<li>coralproject/pillar:release</li>
+<li>coralproject/mongodata</li>
+</ul>
+<h3 id="viewing-installed-docker-images">Viewing installed Docker images</h3>
+<p>To see all of the Docker images you have installed, use the command <code>docker images</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/images/">Docker website</a>).</p>
+<pre><code>docker images
 </code></pre>
 
-<p>Run <code>docker stop</code> with the container ID (if you are running on a server, you may have to use <code>sudo</code>):</p>
-<pre><code>docker stop b30f4fa5f497
-</code></pre></div>
+<h3 id="viewing-docker-logs">Viewing Docker logs</h3>
+<p>To view Docker logs for a container, use the command <code>docker logs &lt;container id&gt;</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/logs/">Docker website</a>).</p>
+<p>First you have to find the container id:</p>
+<pre><code>docker ps
+</code></pre>
+
+<p>Then use the container id to view the logs:</p>
+<pre><code>docker logs e0bbd7be19c7
+</code></pre>
+
+<h3 id="operating-system-requirements">Operating system requirements</h3>
+<p>On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.</p>
+<h2 id="uninstalling-docker-images">Uninstalling Docker images</h2></div>
         </div>
 
         <footer class="col-md-12">

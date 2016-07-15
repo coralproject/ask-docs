@@ -301,6 +301,12 @@
         
             
 <li >
+    <a href="../../../user/ask_install/">Installation</a>
+</li>
+
+        
+            
+<li >
     <a href="../../../user/ask_tutorials/">Tutorials</a>
 </li>
 
@@ -444,6 +450,8 @@
         
             <li><a href="#do-not-assume-knowledge">Do not assume knowledge</a></li>
         
+            <li><a href="#images">Images</a></li>
+        
             <li><a href="#diagrams">Diagrams</a></li>
         
             <li><a href="#third-party-components">Third-party components</a></li>
@@ -499,6 +507,17 @@
 <li>If there are variables to configure, explicitly state the purpose of the variables. This should be explained in a comment in the configuration file, but you should also provide an explanation in your instructions.</li>
 <li>Do not merely explain HOW to do something, but also, whenever possible, WHY you are doing it in that way. This makes it easier for users to troubleshoot issues.</li>
 </ul>
+<h3 id="images">Images</h3>
+<p>When you need to add a graphic, try to make the file-size as small as possible. If you need help reducing file-size of a high-resolution image, feel free to contact us for help. Usually, graphics should go in the same directory as the .md file that references them, or in a subdirectory for images if one already exists.</p>
+<p>The preferred file format for graphics is PNG, but GIF and JPG are also acceptable.</p>
+<p>If you are referring to a specific part of the UI in an image, use call-outs (circles and arrows or lines) to highlight what you’re referring to. Line width for call-outs should not exceed five pixels. The preferred color for call-outs is red.</p>
+<p>Be sure to include descriptive alt-text for the graphic. This greatly helps users with accessibility issues.</p>
+<ul>
+<li>The color used for highlighting rectangles and arrows is Hex Color #00C7FC. This offers a good contrast with the Coral theme colors.</li>
+<li>When taking screenshots to use as illustrative images, include a decent amount of &ldquo;surrounding area&rdquo; to provide context and geography for the feature you&rsquo;re discussing. A screenshot of a button, for instance, isn&rsquo;t very useful when you can&rsquo;t figure out where the button is located.</li>
+</ul>
+<h4 id="sizing-images">Sizing images</h4>
+<p>Your screenshots should be actual size. If you have a Retina or other high resolution display, you may encounter issues when taking screenshots (namely, a screenshot that appears &ldquo;actual size&rdquo; when viewed on your machine will become double sized when embedded into a web page). Mac users can find instructions on how to fix this problem <a href="http://apple.stackexchange.com/a/189256">on this StackExchange page</a> (it involves creating an Automator workflow file).</p>
 <h3 id="diagrams">Diagrams</h3>
 <p>Architectural diagrams to show application structure and process flow are really useful. You can view examples on the <a href="../../../developer/architectural_overview">architectural overview</a> page.</p>
 <p>We use the application <a href="https://www.draw.io">draw.io</a> to draw our diagrams. It&rsquo;s easy and free: just go to the site, select &ldquo;Create New Diagram,&rdquo; and get started.</p>
@@ -574,7 +593,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="images">Images</h4>
+<h4 id="images_1">Images</h4>
 <ul>
 <li>Each step (or very nearly each step) should have an image illustrating that step, and potentially showing the location of a button or field. If you do not have an image illustrating that step, you should have a pretty good reason not to have it.</li>
 </ul>
@@ -596,15 +615,6 @@
 <li><strong>End Users</strong>: Refers to anyone who will be interacting with the Coral front end. Examples of end users are publishers, moderators, journalists, and readers.</li>
 </ul>
 <h2 id="markup-specific-style">Markup specific style</h2>
-<h3 id="graphics">Graphics</h3>
-<p>When you need to add a graphic, try to make the file-size as small as possible. If you need help reducing file-size of a high-resolution image, feel free to contact us for help. Usually, graphics should go in the same directory as the .md file that references them, or in a subdirectory for images if one already exists.</p>
-<p>The preferred file format for graphics is PNG, but GIF and JPG are also acceptable.</p>
-<p>If you are referring to a specific part of the UI in an image, use call-outs (circles and arrows or lines) to highlight what you’re referring to. Line width for call-outs should not exceed five pixels. The preferred color for call-outs is red.</p>
-<p>Be sure to include descriptive alt-text for the graphic. This greatly helps users with accessibility issues.</p>
-<ul>
-<li>The color used for highlighting rectangles and arrows is Hex Color #00C7FC. This offers a good contrast with the Coral theme colors.</li>
-<li>When taking screenshots to use as illustrative images, include a decent amount of &ldquo;surrounding area&rdquo; to provide context and geography for the feature you&rsquo;re discussing. A screenshot of a button, for instance, isn&rsquo;t very useful when you can&rsquo;t figure out where the button is located.</li>
-</ul>
 <h3 id="commands-and-code-blocks">Commands and code blocks</h3>
 <ul>
 <li>Enclose commands and code blocks in triple-tick blocks (```). Yes, Markdown supports indentation to delineate code blocks, but the triple-ticks make things more explicit.</li>

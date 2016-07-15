@@ -301,6 +301,12 @@
         
             
 <li >
+    <a href="../../user/ask_install/">Installation</a>
+</li>
+
+        
+            
+<li >
     <a href="../../user/ask_tutorials/">Tutorials</a>
 </li>
 
@@ -543,6 +549,19 @@ Creating proxy_xeniaapp_1
 Creating proxy_pillarapp_1
 Creating proxy_cayapp_1
 Creating proxy_proxy_1
+</code></pre>
+
+<p><strong>Note</strong>: If this is your first time spinning up the Docker container, be aware that there is a large chunk of dummy data being downloaded as well. This happens behind the scenes, so it isn&rsquo;t as easy to tell whether or not it is done. You can check on its progress by looking at the logs.</p>
+<p>First you have to find the container id for proxy_mongodata_1:</p>
+<pre><code>docker ps
+</code></pre>
+
+<p>Then use the container id to view the logs:</p>
+<pre><code>docker logs e0bbd7be19c7
+</code></pre>
+
+<p>If it has finished downloading, you should see something like:</p>
+<pre><code>.
 </code></pre>
 
 <p>4. Now, shut everything down with the Docker <code>down</code> command. This up-down-up sequence initializes authentication on MongoDB.</p>
