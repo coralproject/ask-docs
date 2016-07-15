@@ -28,6 +28,23 @@ The key thing to remember when writing documentation is to be extremely explicit
 * If there are variables to configure, explicitly state the purpose of the variables. This should be explained in a comment in the configuration file, but you should also provide an explanation in your instructions.
 * Do not merely explain HOW to do something, but also, whenever possible, WHY you are doing it in that way. This makes it easier for users to troubleshoot issues.
 
+### Images
+
+When you need to add a graphic, try to make the file-size as small as possible. If you need help reducing file-size of a high-resolution image, feel free to contact us for help. Usually, graphics should go in the same directory as the .md file that references them, or in a subdirectory for images if one already exists.
+
+The preferred file format for graphics is PNG, but GIF and JPG are also acceptable.
+
+If you are referring to a specific part of the UI in an image, use call-outs (circles and arrows or lines) to highlight what you’re referring to. Line width for call-outs should not exceed five pixels. The preferred color for call-outs is red.
+
+Be sure to include descriptive alt-text for the graphic. This greatly helps users with accessibility issues.
+
+* The color used for highlighting rectangles and arrows is Hex Color #00C7FC. This offers a good contrast with the Coral theme colors.
+* When taking screenshots to use as illustrative images, include a decent amount of "surrounding area" to provide context and geography for the feature you're discussing. A screenshot of a button, for instance, isn't very useful when you can't figure out where the button is located.
+
+#### Sizing images
+
+Your screenshots should be actual size. If you have a Retina or other high resolution display, you may encounter issues when taking screenshots (namely, a screenshot that appears "actual size" when viewed on your machine will become double sized when embedded into a web page). Mac users can find instructions on how to fix this problem [on this StackExchange page](http://apple.stackexchange.com/a/189256) (it involves creating an Automator workflow file).
+
 ### Diagrams
 
 Architectural diagrams to show application structure and process flow are really useful. You can view examples on the [architectural overview](../../developer/architectural_overview) page.
@@ -127,19 +144,6 @@ Here are some commonly used terms:
 * **End Users**: Refers to anyone who will be interacting with the Coral front end. Examples of end users are publishers, moderators, journalists, and readers.
 
 ## Markup specific style
-
-### Graphics
-
-When you need to add a graphic, try to make the file-size as small as possible. If you need help reducing file-size of a high-resolution image, feel free to contact us for help. Usually, graphics should go in the same directory as the .md file that references them, or in a subdirectory for images if one already exists.
-
-The preferred file format for graphics is PNG, but GIF and JPG are also acceptable.
-
-If you are referring to a specific part of the UI in an image, use call-outs (circles and arrows or lines) to highlight what you’re referring to. Line width for call-outs should not exceed five pixels. The preferred color for call-outs is red.
-
-Be sure to include descriptive alt-text for the graphic. This greatly helps users with accessibility issues.
-
-* The color used for highlighting rectangles and arrows is Hex Color #00C7FC. This offers a good contrast with the Coral theme colors.
-* When taking screenshots to use as illustrative images, include a decent amount of "surrounding area" to provide context and geography for the feature you're discussing. A screenshot of a button, for instance, isn't very useful when you can't figure out where the button is located.
 
 
 ### Commands and code blocks

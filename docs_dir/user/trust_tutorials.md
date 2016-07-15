@@ -38,7 +38,12 @@ We are going to create and save a list of commenters who have a high percentage 
 
 1) Open the "Create a Search" page by clicking the wrench symbol on the side navigation bar.
 
+<img src="/images/identifytrolls1.png" alt="IdentifyTrollsScreenshot1" width="200">
+
 ![IdentifyTrollsScreenshot1](../images/identifytrolls1.png "IdentifyTrollsScreenshot1")
+
+![SaveAsSVGScreenshot](../images/saveassvg.png)
+<img src="/images/saveassvg.png" alt="IdentifyTrollsScreenshot1" width="500">
 
 2) In the "Filters" section, choose "Section" in the drop down. This will trigger the display of a second drop down, which will let you choose which section you want to filter in (in this case, the "national" section).
 

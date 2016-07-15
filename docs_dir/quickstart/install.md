@@ -100,6 +100,23 @@ Creating proxy_cayapp_1
 Creating proxy_proxy_1
 ```
 
+**Note**: If this is your first time spinning up the Docker container, be aware that there is a large chunk of dummy data being downloaded as well. This happens behind the scenes, so it isn't as easy to tell whether or not it is done. You can check on its progress by looking at the logs.
+
+First you have to find the container id for proxy_mongodata_1:
+```
+docker ps
+```
+
+Then use the container id to view the logs:
+```
+docker logs e0bbd7be19c7
+```
+
+If it has finished downloading, you should see something like:
+```
+.
+```
+
 4\. Now, shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
 ```
 docker-compose -f docker-compose.yml down

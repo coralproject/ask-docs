@@ -38,6 +38,7 @@ pages:
     - Tutorials: 'user/trust_tutorials.md'
   - Ask:
     - Overview: 'user/ask.md'
+    - Installation: 'user/ask_install.md'
     - Tutorials: 'user/ask_tutorials.md'
   - Talk:
     - Overview: 'user/talk.md'
