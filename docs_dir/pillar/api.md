@@ -731,6 +731,10 @@ Status: 200 OK
 #### Parameters
 
 * `form_id`: form id
+* `skip`: : skip the first n submissions
+* `limit`: limit how many submissions returns
+* `orderby`: order by date, ascendent (asc) or descendent (dsc)
+* `filterby`: filter by a specific flag
 
 #### Example call
 ```
@@ -739,8 +743,76 @@ https://localhost:8080/api/form_submissions/123
 ```
 
 #### Example response
+
 ```
-Status: 200 OK
+{
+    "counts": {
+        "search_by_flag": {
+            "test_the_flag": 1,
+            "something_else": 1
+        },
+        "total_search": 1,
+        "total_submissions": 2
+    },
+    "submissions": [
+        {
+            "id": "5751ef7310780b96f002a3af",
+            "form_id": "5751ef7310780b96f002a3ad",
+            "status": "",
+            "replies": [
+                {
+                    "widget_id": "1",
+                    "identity": false,
+                    "answer": "Gophers everywhere",
+                    "edited": "This is an edit! Purple Monkey Dishwasher.",
+                    "question": "Is there anybody out there?",
+                    "props": {
+                        "a": "B",
+                        "c": 4
+                    }
+                },
+                {
+                    "widget_id": "2",
+                    "identity": false,
+                    "answer": "Dave",
+                    "edited": "This is an edit! Purple Monkey Dishwasher.",
+                    "question": "Name",
+                    "props": {
+                        "a": "B",
+                        "c": 4
+                    }
+                },
+                {
+                    "widget_id": "3",
+                    "identity": false,
+                    "answer": "D@ve.name",
+                    "edited": "This is an edit! Purple Monkey Dishwasher.",
+                    "question": "Email",
+                    "props": {
+                        "a": "B",
+                        "c": 4
+                    }
+                }
+            ],
+            "flags": [
+                "test_the_flag",
+                "something_else"
+            ],
+            "header": {
+                "description": "of the rest of your life",
+                "title": "This is the first form"
+            },
+            "footer": {
+                "conditions": "lots of conditions"
+            },
+            "finishedScreen": null,
+            "created_by": "",
+            "updated_by": "",
+            "date_created": "2016-06-03T16:58:27.56-04:00",
+            "date_updated": "2016-06-03T16:58:27.56-04:00"
+        }
+    ]
+}
 ```
 
 ### Get form submission
