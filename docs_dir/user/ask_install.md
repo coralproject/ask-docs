@@ -20,14 +20,14 @@ If you do not already have Docker installed, do that first. You can install Dock
 
 If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker version`.
 
-## Set up your external storage system
+## Set up your external storage system (optional)
 
 Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.
 
-There are a few different options available for the external storage system you can use.
+There are currently a couple of different options available for the external storage system you can use.
 
 * **Amazon S3**: Amazon S3 is a storage system that is relatively easy to set up and use, and scales well: it allows many concurrent users to access the files.
-* **Local file system**: If you don't set up an external storage system, Ask will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Ask for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.
+* **Local file system**: If you don't set up an external storage system in the [set environment variables](#set-environment-variables) step, Ask will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Ask for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.
 
 ### Amazon S3
 

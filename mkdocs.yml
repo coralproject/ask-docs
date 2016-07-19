@@ -6,43 +6,17 @@ pages:
   - Architectural overview: 'developer/architectural_overview.md'
   - Installing Coral Ecosystem: 'quickstart/install.md'
   - Developer tools setup: 'developer/developer_setup.md'
-  - Cay:
-    - Introduction: 'cay/index.md'
-    - Installation: 'cay/install.md'
-  - Elkhorn:
-    - Introduction: 'elkhorn/index.md'
-    - Installation: 'elkhorn/install.md'
-  - Pillar:
-    - Introduction: 'pillar/index.md'
-    - Installation: 'pillar/install.md'
-    - API: 'pillar/api.md'
-  - Sponge:
-    - Introduction: 'sponge/index.md'
-    - Installation: 'sponge/install.md'
-    - Included packages: 'sponge/included_packages.md'
-    - Strategy files: 'sponge/strategy.md'
-    - Logging: 'sponge/logging.md'
-  - Xenia:
-    - Introduction: 'xenia/index.md'
-    - Installation: 'xenia/install.md'
-    - API and query management: 'xenia/api.md'
-    - Testing: 'xenia/tests.md'
-  - Xenia Driver:
-    - Introduction: 'xenia/xenia-driver-js.md'
-    - Installation: 'xenia/xenia-driver-js-install.md'
-    - API: 'xenia/xenia-driver-js-api.md'
+  - Cay: 'cay/index.md'
+  - Elkhorn: 'elkhorn/index.md'
+  - Pillar: 'pillar/index.md'
+  - Sponge: 'sponge/index.md'
+  - Xenia: 'xenia/index.md'
+  - Xenia Driver: 'xenia/xenia-driver-js.md'
 - User Guide:
   - Introduction: 'user/index.md'
-  - Trust:
-    - Overview: 'user/trust.md'
-    - Tutorials: 'user/trust_tutorials.md'
-  - Ask:
-    - Overview: 'user/ask.md'
-    - Installation: 'user/ask_install.md'
-    - Tutorials: 'user/ask_tutorials.md'
-  - Talk:
-    - Overview: 'user/talk.md'
-    - Tutorials: 'user/talk_tutorials.md'
+  - Trust: 'user/trust.md'
+  - Ask: 'user/ask.md'
+  - Talk: 'user/talk.md'
 - Contribute:
   - Introduction: 'contribute/index.md'
   - Writing documentation: 'contribute/documentation/writing_documentation.md'
@@ -66,6 +40,6 @@ markdown_extensions:
   - sane_lists
   - smarty
 
-theme: united
+theme: mkdocs
 
 docs_dir: 'docs_dir'

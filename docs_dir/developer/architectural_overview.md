@@ -26,3 +26,7 @@ The Coral Ecosystem consists of five apps working together with the Coral MongoD
 [Trust](user/trust) is a product that enables newsroom users to identify different kinds of end users in order to take actions (for instance, "I want to block these trolls on this author," or "I want to highlight the best commenters on this subject"). It allows newsrooms to make manual or automated lists of users via a series of filters.
 
 <img src="/images/trust-architecture.svg">
+
+## Talk
+
+Talk is still in development.
