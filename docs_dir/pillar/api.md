@@ -735,6 +735,7 @@ Status: 200 OK
 * `limit`: limit how many submissions returns
 * `orderby`: order by date, ascendent (asc) or descendent (dsc)
 * `filterby`: filter by a specific flag using regular expressions. If you want to match all the submissions that do not have a specific flag use `^(?!test_the_flag)`
+* `search`: search string to search through submissions's replies.answer
 
 #### Example call
 ```
@@ -817,8 +818,8 @@ https://localhost:8080/api/form_submissions/123
 
 where
 
-* `search_by_flag` : brings a count on all the tags for the specific filter for that form id
-* `total_search`: count all the submissions for the specific filter for that form id
+* `search_by_flag` : brings a count on all the tags for for the specific search (without filtering by flag) for that form id
+* `total_search`: count all the submissions for the specific search (without filtering by flag) for that form id
 * `total_submissions`: count all the submissions for that form id
 
 
