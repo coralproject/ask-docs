@@ -730,11 +730,11 @@ Status: 200 OK
 
 #### Parameters
 
-* `form_id`: form id
+* `form_id`: get only the submissions for a form id
 * `skip`: : skip the first n submissions
 * `limit`: limit how many submissions returns
 * `orderby`: order by date, ascendent (asc) or descendent (dsc)
-* `filterby`: filter by a specific flag
+* `filterby`: filter by a specific flag using regular expressions. If you want to match all the submissions that do not have a specific flag use `^(?!test_the_flag)`
 
 #### Example call
 ```
@@ -814,6 +814,13 @@ https://localhost:8080/api/form_submissions/123
     ]
 }
 ```
+
+where
+
+* `search_by_flag` : brings a count on all the tags for the specific filter for that form id
+* `total_search`: count all the submissions for the specific filter for that form id
+* `total_submissions`: count all the submissions for that form id
+
 
 ### Get form submission
 | URL                  | HTTP Verb     | Functionality   |
