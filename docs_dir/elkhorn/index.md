@@ -67,7 +67,7 @@ You can render a form directly into a page, using a `script src` tag. This offer
 
 Before you begin, be sure you have the following installed and running:
 
-* [Pillar](../../pillar#pillar-installation)
+* [Pillar](../../pillar/#pillar-installation)
 
 In addition, you must have Node.js installed:
 

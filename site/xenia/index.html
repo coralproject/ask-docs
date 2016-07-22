@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../contribute/development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../contribute/development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../contribute/supporting_the_community/">Supporting the community</a>
+    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../contribute/coral_naming/">Coral naming</a>
+    <a href="../contribute/code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -267,12 +255,12 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#xenia">Xenia</a></li>
+        <li class="main active"><a href="#introduction">Introduction</a></li>
         
             <li><a href="#straightforward-query-creation">Straightforward query creation</a></li>
         
     
-        <li class="main "><a href="#xenia-installation">Xenia Installation</a></li>
+        <li class="main "><a href="#xenia-installation">Xenia installation</a></li>
         
             <li><a href="#before-you-begin">Before you begin</a></li>
         
@@ -307,13 +295,13 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="xenia">Xenia</h1>
+<h1 id="introduction">Introduction</h1>
 <p><a href="https://github.com/coralproject/xenia">Xenia</a> is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.com/manual/core/aggregation-pipeline/">MongoDB aggregation pipeline</a> queries.</p>
 <p>Aggregation pipelines are chainable, allowing for the output of one endpoint to be fed into the next. Xenia provides a request syntax to allow for this, giving the requesting application an added dimension of flexibility via query control.</p>
 <p>Similarly, output documents from multiple pipelines can be bundled together. This is particularly useful in the noSQL/document database paradigm, in which joins are not natively supported.</p>
 <h3 id="straightforward-query-creation">Straightforward query creation</h3>
 <p>Xenia moves the query logic out of the application code. Front end developers, data analysts, and anyone else familiar with the simple, declarative <a href="https://docs.mongodb.com/manual/reference/aggregation/">MongoDB aggregation syntax</a> can adjust the data requests, and create or update endpoints.</p>
-<h1 id="xenia-installation">Xenia Installation</h1>
+<h1 id="xenia-installation">Xenia installation</h1>
 <p>Xenia is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.org/manual/core/aggregation-introduction/">MongoDB aggregation pipeline queries</a>.</p>
 <h2 id="before-you-begin">Before you begin</h2>
 <p>Before you install Xenia, you will want to have the following installed.</p>
@@ -343,7 +331,7 @@
 <pre><code>mkdir $GOPATH/src/github.com/coralproject/xenia
 cd $GOPATH/src/github.com/coralproject/xenia
 
-git clone git@github.com:CoralProject/xenia.git
+git clone https://github.com/coralproject/xenia.git
 </code></pre>
 
 <h2 id="set-up-your-environment-variables">Set up your environment variables</h2>
@@ -407,7 +395,7 @@ export XENIA_MONGO_PASS=
 
 <h2 id="build-the-cli-tool">Build the CLI tool</h2>
 <p>Xenia has a CLI tool that allows you to manage endpoints and perform other actions.</p>
-<p>To build to the tool:</p>
+<p>To build the tool:</p>
 <pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
 go build
 </code></pre>
@@ -522,7 +510,7 @@ MONGO_HOST=localhost:27017
 </code></pre>
 
 <p>4) You can test your web service by going to the following URL in your browser: <a href="http://localhost:4000/1.0/query">http://localhost:4000/1.0/query</a>.</p>
-<p>In your browser, you will see some json displayed. In your terminal, you should see something like:</p>
+<p>In your browser, you will see some JSON displayed. In your terminal, you should see something like:</p>
 <pre><code>2016/06/08 13:30:58 app.go:104: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : Request : Started : Method[GET] URL[/1.0/query] RADDR[[::1]:62121]
 2016/06/08 13:30:58 context.go:65: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : api : Respond : Started : Code[200]
 2016/06/08 13:30:58 context.go:72: USER : startup : api : Respond : Setting user headers : Access-Control-Allow-Origin:*
@@ -783,7 +771,23 @@ output:
 }
 </code></pre>
 
-<p>5) You can execute a dynamic query set:</p>
+<h3 id="execute-a-dynamic-query-set">Execute a dynamic query set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/exec</td>
+<td align="left">POST</td>
+<td align="left">Execute a dynamic query set</td>
+</tr>
+</tbody>
+</table>
 <pre><code>POST
 http://localhost:4000/1.0/exec
 

@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../contribute/development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../contribute/development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../contribute/supporting_the_community/">Supporting the community</a>
+    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../contribute/coral_naming/">Coral naming</a>
+    <a href="../contribute/code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -270,9 +258,17 @@
         <li class="main active"><a href="#introduction">Introduction</a></li>
         
     
-        <li class="main "><a href="#cay-installation">Cay Installation</a></li>
+        <li class="main "><a href="#cay-installation">Cay installation</a></li>
         
-            <li><a href="#install-from-source">Install from source</a></li>
+            <li><a href="#installing-from-source">Installing from source</a></li>
+        
+            <li><a href="#before-you-begin">Before you begin</a></li>
+        
+            <li><a href="#get-the-source">Get the source</a></li>
+        
+            <li><a href="#set-up-configuration-file">Set up configuration file</a></li>
+        
+            <li><a href="#run-the-app">Run the app</a></li>
         
     
     </ul>
@@ -285,13 +281,13 @@
 <p>The webpack build process results in a <code>bundle.js</code> file, which contains all Javascript and CSS for Cay. Common issues like CSS cross-browser issues, ES6 transpilation, and minification are all handled by webpack. <code>bundle.js</code> lives in-memory until build time (<code>npm run build</code>).</p>
 <p>The meat of the application lives in the <code>/src</code> folder. Components are grouped into subdirectories based on their &ldquo;domain&rdquo;: for instance, everything that has to do with creating, viewing and editing searches lives in the <code>search</code> folder. Similarly, everything having to do with tags lives in the <code>tags</code> folder.</p>
 <p>The reducers are combined in <code>/src/app/MainReducer.js</code>.</p>
-<h1 id="cay-installation">Cay Installation</h1>
-<h2 id="install-from-source">Install from source</h2>
+<h1 id="cay-installation">Cay installation</h1>
+<h3 id="installing-from-source">Installing from source</h3>
 <h3 id="before-you-begin">Before you begin</h3>
 <p>Before you begin, be sure you have the following installed and running:</p>
 <ul>
-<li><a href="./../../xenia/install">Xenia</a></li>
-<li><a href="./../../pillar/install">Pillar</a></li>
+<li><a href="./../../xenia/#xenia-installation">Xenia</a></li>
+<li><a href="./../../pillar/#pillar-installation">Pillar</a></li>
 </ul>
 <p>In addition, you must have Node.js installed:</p>
 <ul>
@@ -310,7 +306,7 @@
 <pre><code>cd cay
 </code></pre>
 
-<p>Do an npm install to install the node code:</p>
+<p>And perform an <code>npm install</code>:</p>
 <pre><code>npm install
 </code></pre>
 
@@ -319,41 +315,52 @@
 <pre><code>cp public/config.sample.json public/config.json
 </code></pre>
 
-<p>Now edit the config.json file.</p>
-<pre><code>  &quot;xeniaHost&quot;: &quot;&quot;,
+<p>Now, edit the config.json file.</p>
+<pre><code>{
+  &quot;xeniaHost&quot;: &quot;&quot;,
   &quot;pillarHost&quot;: &quot;&quot;,
-  &quot;elkhornHost&quot;: &quot;http://localhost:4444&quot;,
+  &quot;elkhornHost&quot;: &quot;&quot;,
+  &quot;elkhornStaticHost&quot;: &quot;&quot;,
   &quot;environment&quot;: &quot;development&quot;,
   &quot;brand&quot;: &quot;&quot;,
   &quot;googleAnalyticsId&quot;: &quot;UA-12345678-9&quot;,
   &quot;requireLogin&quot;: false,
   &quot;basicAuthorization&quot;: &quot;&quot;,
   &quot;features&quot;: {
-    &quot;ask&quot;: false
+    &quot;trust&quot;: true,
+    &quot;ask&quot;: true
   }
 }
 </code></pre>
 
-<p>For <code>xeniaHost</code>, <code>pillarHost</code>, and <code>elkhornHost</code>, enter the URLs where each service is running.</p>
+<p>Required edits:</p>
 <ul>
-<li>For <code>xeniaHost</code>:<ul>
-<li>If you installed Xenia <a href="./../xenia/install">locally from source</a>, <code>xeniaHost</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
+<li><code>xeniaHost</code>: The URL where Xenia is running.<ul>
+<li>If you installed Xenia <a href="./../xenia/#xenia-installation">locally from source</a>, <code>xeniaHost</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
 </ul>
 </li>
-<li>For <code>pillarHost</code>:<ul>
-<li>If you installed Pillar <a href="./../pillar/install#install-pillar-from-source">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</li>
-<li>If you installed Pillar <a href="./../pillar/install#install-as-docker-container">locally as a Docker container</a>, <code>pillarHost</code> should be <code>http://10.0.4.105:8080</code>. <code>http://10.0.4.105</code> is the URL generated by Docker.</li>
+<li><code>pillarHost</code>: The URL where Pillar is running.<ul>
+<li>If you installed Pillar <a href="./../pillar/#install-pillar-from-source">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</li>
+<li>If you installed Pillar <a href="./../pillar/#install-as-docker-container">locally as a Docker container</a>, <code>pillarHost</code> should be <code>http://10.0.4.105:8080</code>. <code>http://10.0.4.105</code> is the URL generated by Docker.</li>
 </ul>
 </li>
-<li>
-<p>For <code>elkhornHost</code>:</p>
+<li><code>elkhornHost</code>: The URL where Elkhorn is running.<ul>
+<li>If you installed <a href="./../elkhorn/#elkhorn-installation">locally from source</a>, <code>elkhornHost</code> should be <code>http://localhost:4444</code>.</li>
+</ul>
+</li>
+<li><code>features</code>: The fields in features allow to toggle the features for the different products on and off.<ul>
+<li><code>trust</code>: When set to <code>true</code>, this will show Trust functionality (such as &ldquo;Create a Search.&rdquo;) When set to <code>false</code>, it will hide Trust functionality. If this is not set, it will default to <code>true</code>.</li>
+<li><code>ask</code>: When set to <code>true</code>, this will show Ask functionality (such as &ldquo;Create Form.&rdquo;) When set to <code>false</code>, it will hide Ask functionality.</li>
+</ul>
+</li>
+</ul>
+<p>Optional edits:</p>
 <ul>
-<li>If you installed <a href="./../elkhorn/install">locally from source</a>, <code>elkhornHost</code> should be <code>http://localhost:4444</code>.</li>
-</ul>
-</li>
-<li>
-<p>Under <code>features</code>, for the time being, only &ldquo;ask&rdquo; will have a value of &ldquo;true&rdquo;. Later, we will be adding fields for our additional two products, Trust and Talk. By setting the value to &ldquo;true&rdquo;, you are turning on the features that can be seen in Cay.</p>
-</li>
+<li><code>environment</code>:</li>
+<li><code>brand</code>:</li>
+<li><code>googleAnalyticsId</code>:</li>
+<li><code>requireLogin</code>:</li>
+<li><code>basicAuthorization</code>:</li>
 </ul>
 <h3 id="run-the-app">Run the app</h3>
 <p>You can now start Cay by running npm start:</p>

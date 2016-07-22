@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../contribute/development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../contribute/development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../contribute/supporting_the_community/">Supporting the community</a>
+    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../contribute/coral_naming/">Coral naming</a>
+    <a href="../contribute/code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -267,12 +255,12 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main active"><a href="#introduction">Introduction</a></li>
         
             <li><a href="#key-points">Key Points</a></li>
         
     
-        <li class="main "><a href="#pillar-installation">Pillar Installation</a></li>
+        <li class="main "><a href="#pillar-installation">Pillar installation</a></li>
         
             <li><a href="#before-you-begin">Before you begin</a></li>
         
@@ -283,7 +271,7 @@
             <li><a href="#shutting-pillar-down">Shutting Pillar down</a></li>
         
     
-        <li class="main "><a href="#api-overview">API Overview</a></li>
+        <li class="main "><a href="#pillar-api">Pillar API</a></li>
         
             <li><a href="#import-endpoints">Import endpoints</a></li>
         
@@ -306,7 +294,7 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
+<h1 id="introduction">Introduction</h1>
 <p><a href="https://github.com/coralproject/pillar">Pillar</a> is a REST based API written in Go. It provides the following services:</p>
 <ul>
 <li>Imports external data (working with Sponge) into the Coral database.</li>
@@ -335,7 +323,7 @@
 <p>All import endpoints <code>upsert</code> data. This means that when you import an entry, it will overwrite the information for that entry if the entry already exists. This prevents duplications and other problems.</p>
 </li>
 </ul>
-<h1 id="pillar-installation">Pillar Installation</h1>
+<h1 id="pillar-installation">Pillar installation</h1>
 <p>If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can <a href="../quickstart/install/">find instructions to do that here</a>.</p>
 <p>When installing Pillar by itself, you can choose between installing Pillar as a Docker container, or installing from source.</p>
 <ul>
@@ -350,7 +338,7 @@
 </ul>
 </li>
 <li><strong>RabbitMQ</strong>: You can find instructions on installing RabbitMQ <a href="https://www.rabbitmq.com/download.html">on the RabbitMQ website</a>.</li>
-<li><strong>Xenia</strong>: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia <a href="./../../xenia/install">here</a>.</li>
+<li><strong>Xenia</strong>: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia <a href="./../../xenia/#xenia-installation">here</a>.</li>
 </ul>
 <h2 id="install-pillar-from-source">Install Pillar from source</h2>
 <h3 id="before-you-begin_1">Before you begin</h3>
@@ -412,16 +400,17 @@ export MONGODB_DATABASE=&quot;&quot;
 export MONGODB_SSL=&quot;False&quot;
 </code></pre>
 
+<p>Required edits:</p>
 <ul>
-<li>For <code>XENIA_URL</code>:<ul>
-<li>If you installed <a href="./../xenia/install">locally from source</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
+<li><code>XENIA_URL</code>: The URL where Xenia is running.<ul>
+<li>If you installed Xenia <a href="./../xenia/#xenia-installation">locally from source</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
 </ul>
 </li>
-<li>For <code>MONGODB_URL</code>:<ul>
+<li><code>MONGODB_URL</code>: The URL where your MongoDB is running.<ul>
 <li>If your MongoDB is a local installation, <code>MONGODB_URL</code> should be <code>mongodb://localhost:27017/coral</code>.</li>
 </ul>
 </li>
-<li>For <code>AMQP_URL</code>:<ul>
+<li><code>AMQP_URL</code>: The URL where your RabbitMQ is running.<ul>
 <li>If your RabbitMQ is a local installation, <code>AMQP_URL</code> should be <code>amqp://localhost:5672/</code>.</li>
 </ul>
 </li>
@@ -439,8 +428,9 @@ export MONGODB_SSL=&quot;False&quot;
 </code></pre>
 
 <h2 id="install-as-docker-container">Install as Docker Container</h2>
-<h3 id="install-docker">Install Docker</h3>
-<p>You can find more information on installing Docker on your machine <a href="https://docs.docker.com/engine/installation/">on the Docker website</a>.</p>
+<h3 id="install-docker-toolbox">Install Docker Toolbox</h3>
+<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.</p>
+<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
 <ul>
 <li>On the server, you can install Docker with the following command:</li>
 </ul>
@@ -500,17 +490,21 @@ MONGODB_DATABASE=&quot;&quot;
 MONGODB_SSL=&quot;False&quot;
 </code></pre>
 
+<p>Required edits:</p>
 <ul>
-<li>For <code>XENIA_URL</code>:<ul>
-<li>If you installed <a href="./../xenia/install">locally</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
+<li><code>XENIA_URL</code>: The URL where Xenia is running.<ul>
+<li>If you installed Xenia <a href="./../xenia/#xenia-installation">locally from source</a>, <code>XENIA_URL</code> should be <code>http://localhost:4000/1.0/exec/</code>.</li>
 </ul>
 </li>
-<li>For <code>MONGODB_URL</code>:<ul>
+<li><code>MONGODB_URL</code>: The URL where your MongoDB is running.<ul>
 <li>If your MongoDB is a local installation, <code>MONGODB_URL</code> should be <code>mongodb://localhost:27017/coral</code>.</li>
+</ul>
+</li>
+<li><code>MONGO_ADDRESS</code>: The address where your MongoDB is running.<ul>
 <li>If your MongoDB is a local installation, <code>MONGODB_ADDRESS</code> should be <code>127.0.0.1:27017</code>.</li>
 </ul>
 </li>
-<li>For <code>AMQP_URL</code>:<ul>
+<li><code>AMQP_URL</code>: The URL where your RabbitMQ is running.<ul>
 <li>If your RabbitMQ is a local installation, <code>AMQP_URL</code> should be <code>amqp://localhost:5672/</code>.</li>
 </ul>
 </li>
@@ -560,7 +554,7 @@ b30f4fa5f497        coralproject/pillar      &quot;/bin/sh -c /go/bin/p&quot;   
 <pre><code>docker stop b30f4fa5f497
 </code></pre>
 
-<h1 id="api-overview">API Overview</h1>
+<h1 id="pillar-api">Pillar API</h1>
 <p><strong>This section is under construction, and is not currently complete.</strong></p>
 <ul>
 <li>
@@ -1798,18 +1792,136 @@ https://localhost:8080/api/form_submission/123/status/completed
 </tbody>
 </table>
 <h4 id="parameters_29">Parameters</h4>
-<ul>
-<li><code>form_id</code>: form id</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th align="left">Required?</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">form_id</td>
+<td align="left">Y</td>
+<td align="left">Number</td>
+<td align="left">Form id for which we want to see the submissions</td>
+</tr>
+<tr>
+<td align="left">skip</td>
+<td align="left">Y</td>
+<td align="left">Number</td>
+<td align="left">Skip the first <em>n</em> submissions</td>
+</tr>
+<tr>
+<td align="left">limit</td>
+<td align="left">N</td>
+<td align="left">Number</td>
+<td align="left">Limit to <em>n</em> submission returns</td>
+</tr>
+<tr>
+<td align="left">orderby</td>
+<td align="left">N</td>
+<td align="left"><code>asc</code> or <code>dsc</code></td>
+<td align="left">Order by ascending date (<code>asc</code>) or descending date (<code>dsc</code>)</td>
+</tr>
+<tr>
+<td align="left">filterby</td>
+<td align="left">N</td>
+<td align="left">Regex string (example: <code>^(?!test_the_flag)</code>)</td>
+<td align="left">Filter by a specific flag using regular expressions. If you want to match all the submissions that do not have a specific flag, use <code>^(?!test_the_flag)</code></td>
+</tr>
+<tr>
+<td align="left">search</td>
+<td align="left">N</td>
+<td align="left">String</td>
+<td align="left">String to search through submissions <code>replies.answer</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="example-call_29">Example call</h4>
 <pre><code>GET
 https://localhost:8080/api/form_submissions/123
 </code></pre>
 
 <h4 id="example-response_29">Example response</h4>
-<pre><code>Status: 200 OK
+<pre><code>{
+    &quot;counts&quot;: {
+        &quot;search_by_flag&quot;: {
+            &quot;test_the_flag&quot;: 1,
+            &quot;something_else&quot;: 1
+        },
+        &quot;total_search&quot;: 1,
+        &quot;total_submissions&quot;: 2
+    },
+    &quot;submissions&quot;: [
+        {
+            &quot;id&quot;: &quot;5751ef7310780b96f002a3af&quot;,
+            &quot;form_id&quot;: &quot;5751ef7310780b96f002a3ad&quot;,
+            &quot;status&quot;: &quot;&quot;,
+            &quot;replies&quot;: [
+                {
+                    &quot;widget_id&quot;: &quot;1&quot;,
+                    &quot;identity&quot;: false,
+                    &quot;answer&quot;: &quot;Gophers everywhere&quot;,
+                    &quot;edited&quot;: &quot;This is an edit! Purple Monkey Dishwasher.&quot;,
+                    &quot;question&quot;: &quot;Is there anybody out there?&quot;,
+                    &quot;props&quot;: {
+                        &quot;a&quot;: &quot;B&quot;,
+                        &quot;c&quot;: 4
+                    }
+                },
+                {
+                    &quot;widget_id&quot;: &quot;2&quot;,
+                    &quot;identity&quot;: false,
+                    &quot;answer&quot;: &quot;Dave&quot;,
+                    &quot;edited&quot;: &quot;This is an edit! Purple Monkey Dishwasher.&quot;,
+                    &quot;question&quot;: &quot;Name&quot;,
+                    &quot;props&quot;: {
+                        &quot;a&quot;: &quot;B&quot;,
+                        &quot;c&quot;: 4
+                    }
+                },
+                {
+                    &quot;widget_id&quot;: &quot;3&quot;,
+                    &quot;identity&quot;: false,
+                    &quot;answer&quot;: &quot;D@ve.name&quot;,
+                    &quot;edited&quot;: &quot;This is an edit! Purple Monkey Dishwasher.&quot;,
+                    &quot;question&quot;: &quot;Email&quot;,
+                    &quot;props&quot;: {
+                        &quot;a&quot;: &quot;B&quot;,
+                        &quot;c&quot;: 4
+                    }
+                }
+            ],
+            &quot;flags&quot;: [
+                &quot;test_the_flag&quot;,
+                &quot;something_else&quot;
+            ],
+            &quot;header&quot;: {
+                &quot;description&quot;: &quot;of the rest of your life&quot;,
+                &quot;title&quot;: &quot;This is the first form&quot;
+            },
+            &quot;footer&quot;: {
+                &quot;conditions&quot;: &quot;lots of conditions&quot;
+            },
+            &quot;finishedScreen&quot;: null,
+            &quot;created_by&quot;: &quot;&quot;,
+            &quot;updated_by&quot;: &quot;&quot;,
+            &quot;date_created&quot;: &quot;2016-06-03T16:58:27.56-04:00&quot;,
+            &quot;date_updated&quot;: &quot;2016-06-03T16:58:27.56-04:00&quot;
+        }
+    ]
+}
 </code></pre>
 
+<p>where</p>
+<ul>
+<li><code>search_by_flag</code> : brings a count on all the tags for for the specific search (without filtering by flag) for that form id</li>
+<li><code>total_search</code>: count all the submissions for the specific search (without filtering by flag) for that form id</li>
+<li><code>total_submissions</code>: count all the submissions for that form id</li>
+</ul>
 <h3 id="get-form-submission">Get form submission</h3>
 <table>
 <thead>
@@ -1981,6 +2093,49 @@ https://localhost:8080/api/form_submission/123
 </tr>
 </tbody>
 </table>
+<h4 id="parameters_35">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th align="left">Required?</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">form_id</td>
+<td align="left">Y</td>
+<td align="left">Number</td>
+<td align="left">Form id for which we want to see the submissions</td>
+</tr>
+<tr>
+<td align="left">skip</td>
+<td align="left">Y</td>
+<td align="left">Number</td>
+<td align="left">Skip the first <em>n</em> submissions</td>
+</tr>
+<tr>
+<td align="left">limit</td>
+<td align="left">N</td>
+<td align="left">Number</td>
+<td align="left">Limit to <em>n</em> submission returns</td>
+</tr>
+<tr>
+<td align="left">orderby</td>
+<td align="left">N</td>
+<td align="left"><code>asc</code> or <code>dsc</code></td>
+<td align="left">Order by ascending date (<code>asc</code>) or descending date (<code>dsc</code>)</td>
+</tr>
+<tr>
+<td align="left">filterby</td>
+<td align="left">N</td>
+<td align="left">Regex string (example: <code>^(?!test_the_flag)</code>)</td>
+<td align="left">Filter by a specific flag using regular expressions. If you want to match all the submissions that do not have a specific flag, use <code>^(?!test_the_flag)</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="example-call_35">Example call</h4>
 <pre><code>POST
 https://localhost:8080/api/form_submission/search
@@ -2069,7 +2224,7 @@ https://localhost:8080/api/form_submission/search
 </tr>
 </tbody>
 </table>
-<h4 id="parameters_35">Parameters</h4>
+<h4 id="parameters_36">Parameters</h4>
 <ul>
 <li><code>id</code>: form gallery id</li>
 </ul>
@@ -2099,7 +2254,7 @@ https://localhost:8080/api/form_gallery/123
 </tr>
 </tbody>
 </table>
-<h4 id="parameters_36">Parameters</h4>
+<h4 id="parameters_37">Parameters</h4>
 <ul>
 <li><code>form_id</code>: form gallery id</li>
 </ul>
@@ -2129,7 +2284,7 @@ https://localhost:8080/api/form_galleries/123
 </tr>
 </tbody>
 </table>
-<h4 id="parameters_37">Parameters</h4>
+<h4 id="parameters_38">Parameters</h4>
 <ul>
 <li><code>form_id</code>: form gallery id</li>
 </ul>
@@ -2159,7 +2314,7 @@ https://localhost:8080/api/form_galleries/form/123
 </tr>
 </tbody>
 </table>
-<h4 id="parameters_38">Parameters</h4>
+<h4 id="parameters_39">Parameters</h4>
 <ul>
 <li><code>id</code>: form gallery id</li>
 <li><code>submission_id</code>: submission id</li>
@@ -2192,7 +2347,7 @@ https://localhost:8080/api/form_gallery/123/add/456/789
 </tr>
 </tbody>
 </table>
-<h4 id="parameters_39">Parameters</h4>
+<h4 id="parameters_40">Parameters</h4>
 <ul>
 <li><code>id</code>: form gallery id</li>
 <li><code>submission_id</code>: submission id</li>

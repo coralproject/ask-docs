@@ -2,7 +2,7 @@
 
 The all-in-one Docker Compose installation is a quick, easy, packaged solution that requires few steps and should get all components up and running quickly. The downside is that this may not scale well, as everything is installed on one server. After a certain number of users (perhaps 50 or so), the server could become overloaded.
 
-You can read about the different types of installation options on the [developer introduction page](introduction.md).
+You can read about the different types of installation options on the [developer introduction page](developer).
 
 ## Before you begin
 

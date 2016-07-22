@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../contribute/development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../contribute/development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../contribute/supporting_the_community/">Supporting the community</a>
+    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../contribute/coral_naming/">Coral naming</a>
+    <a href="../contribute/code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -278,9 +266,11 @@
             <li><a href="#using-the-generated-forms">Using the generated forms</a></li>
         
     
-        <li class="main "><a href="#elkhorn-installation">Elkhorn Installation</a></li>
+        <li class="main "><a href="#elkhorn-installation">Elkhorn installation</a></li>
         
             <li><a href="#install-from-source">Install from source</a></li>
+        
+            <li><a href="#set-up-your-external-storage-system-optional">Set up your external storage system (optional)</a></li>
         
             <li><a href="#install-as-a-docker-container">Install as a Docker container</a></li>
         
@@ -321,6 +311,7 @@
 <li>The Embed Service receives the form submission data from the embedded forms on the partner sites, and passes this data on to Pillar.</li>
 </ul>
 <h2 id="using-the-generated-forms">Using the generated forms</h2>
+<p>You can read more information about generating forms on the <a href="./../user/ask/#ask-components">Ask</a> user page.</p>
 <h3 id="as-a-standalone-page">As a standalone page</h3>
 <p>The form can be viewed on a full standalone page, using the following URL:</p>
 <pre><code>https://[elkhornserver]/iframe/[form_id]
@@ -342,12 +333,12 @@
 <ul>
 <li>The div does need to be named &ldquo;ask-form&rdquo;: the name is hardcoded.</li>
 </ul>
-<h1 id="elkhorn-installation">Elkhorn Installation</h1>
+<h1 id="elkhorn-installation">Elkhorn installation</h1>
 <h2 id="install-from-source">Install from source</h2>
 <h3 id="before-you-begin">Before you begin</h3>
 <p>Before you begin, be sure you have the following installed and running:</p>
 <ul>
-<li><a href="./../../pillar/install">Pillar</a></li>
+<li><a href="./../../pillar/#pillar-installation">Pillar</a></li>
 </ul>
 <p>In addition, you must have Node.js installed:</p>
 <ul>
@@ -357,16 +348,42 @@
 </ul>
 </li>
 </ul>
+<h2 id="set-up-your-external-storage-system-optional">Set up your external storage system (optional)</h2>
+<p>Elkhorn uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.</p>
+<p>There are currently a couple of different options available for the external storage system you can use.</p>
+<ul>
+<li><strong>Amazon S3</strong>: Amazon S3 is a storage system that is relatively easy to set up and use, and scales well: it allows many concurrent users to access the files.</li>
+<li><strong>Local file system</strong>: If you don&rsquo;t set up an external storage system in the <a href="#set-environment-variables">set environment variables</a> step, Elkhorn will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Elkhorn for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.</li>
+</ul>
+<h3 id="amazon-s3">Amazon S3</h3>
+<p><a href="https://aws.amazon.com/s3/">Amazon S3</a> is a good option for your external storage system because it is fast, handles concurrency, and will scale well.</p>
+<p>The setup of S3 is straightforward, and Amazon has good documentation. For the purposes of setting S3 up for Ask, you can follow Amazon&rsquo;s instructions <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html">here</a>.</p>
+<ol>
+<li>Follow the directions for <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html">Sign Up for Amazon S3</a> and <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a>. There is no need to continue further to the demos for &ldquo;Add an Object to a Bucket&rdquo; and beyond: those are simply examples showing you how to use S3.</li>
+</ol>
+<ul>
+<li>For my example, I named my bucket &ldquo;ask-bucket-test&rdquo; and chose region &ldquo;Northern California&rdquo; (which corresponds to us-west-2).</li>
+<li>During the sign up process, you will create an AWS Access Key. Hang on to that information (you have the option to download it).</li>
+</ul>
+<ol>
+<li>
+<p>Once you have signed up and set up a bucket, go to your <a href="https://console.aws.amazon.com/s3">S3 console</a> to set up your permissions under &ldquo;Security Credentials.&rdquo;</p>
+</li>
+<li>
+<p>Ensure that under &ldquo;Permissions,&rdquo; the only Grantee is you. This means that nobody but you can access your bucket (using your AWS Access Key).</p>
+</li>
+</ol>
+<p>You&rsquo;re all set! You can now use your AWS Access Key to connect Elkhorn to your S3 bucket (you&rsquo;ll set this up in the <a href="#set-up-configuration-file">Set up configuration file</a> section below). If you didn&rsquo;t save your AWS Access Key during the set up process, you can go to the &ldquo;Security Credentials&rdquo; section and create a new one.</p>
 <h3 id="clone-the-elkhorn-repository">Clone the Elkhorn repository</h3>
 <p>Clone the Elkhorn repository:</p>
 <pre><code>git clone https://github.com/coralproject/elkhorn.git
 </code></pre>
 
-<p>Then cd into the Elkhorn directory.</p>
+<p>Then cd into the Elkhorn directory:</p>
 <pre><code>cd elkhorn
 </code></pre>
 
-<p>Build Elkhorn.</p>
+<p>And perform an <code>npm install</code>:</p>
 <pre><code>npm install
 </code></pre>
 
@@ -388,10 +405,23 @@
 }
 </code></pre>
 
+<p>Required edits:</p>
 <ul>
-<li>For <code>pillarHost</code>, enter the URL where the service is running. If you installed <a href="./../pillar/install">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</li>
-<li>For <code>s3</code>, you can enter the values for your S3 setup. This is where Elkhorn will save</li>
+<li><code>pillarHost</code>: The URL where Pillar is running.<ul>
+<li>If you installed Pillar <a href="./../pillar/#install-pillar-from-source">locally from source</a>, <code>pillarHost</code> should be <code>http://localhost:8080</code>.</li>
+<li>If you installed Pillar <a href="./../pillar/#install-as-docker-container">locally as a Docker container</a>, <code>pillarHost</code> should be <code>http://10.0.4.105:8080</code>. <code>http://10.0.4.105</code> is the URL generated by Docker.</li>
 </ul>
+</li>
+<li><code>s3</code>: If you <a href="#amazon-s3">set up Amazon S3</a> above, here is where you will enter that information. If you leave these fields blank, Elkhorn will default to using your local file system for external storage.<ul>
+<li><code>bucket</code>: The name of your S3 bucket (in the example setup above, <code>ask-bucket-test</code>)</li>
+<li><code>region</code>: The AWS region that you selected in your S3 setup. You can find it in your S3 console URL. In the example setup above, it is <code>us-west-2</code>.</li>
+<li><code>accessKeyId</code>: Your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the &ldquo;Security Credentials&rdquo; area of your S3 console.</li>
+<li><code>secretAccessKey</code>: Your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the &ldquo;Security Credentials&rdquo; area of your S3 console.</li>
+</ul>
+</li>
+</ul>
+<p>Optional edits:
+* <code>basicAuthorization</code>:</p>
 <h3 id="run-the-app">Run the app</h3>
 <p>You can now start Elkhorn by running npm start:</p>
 <pre><code>npm start
@@ -399,12 +429,15 @@
 
 <p>Elkhorn will now be running locally on port 4444. You can now visit Elkhorn by visiting the URL <a href="http://localhost:4444">http://localhost:4444</a>.</p>
 <h2 id="install-as-a-docker-container">Install as a Docker container</h2>
+<h3 id="install-docker-toolbox">Install Docker Toolbox</h3>
+<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.</p>
+<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
 <h3 id="clone-the-elkhorn-repository_1">Clone the Elkhorn repository</h3>
 <p>Clone the Elkhorn repository:</p>
 <pre><code>git clone https://github.com/coralproject/elkhorn.git
 </code></pre>
 
-<p>Then cd into the Elkhorn directory.</p>
+<p>Then cd into the Elkhorn directory:</p>
 <pre><code>cd elkhorn
 </code></pre>
 

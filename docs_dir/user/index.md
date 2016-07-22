@@ -16,12 +16,12 @@ We have a User Guide for each Coral product (Trust, Ask, and Talk).
 
 ### Trust
 * [Trust overview](trust)
-* [Trust tutorials](trust#trust-tutorials)
+* [Trust tutorials](trust/#trust-tutorials)
 
 ### Ask
 * [Ask overview](ask)
-* [Ask installation](ask#ask-installation)
-* [Ask tutorials](ask#ask-tutorials)
+* [Ask installation](ask/#ask-installation)
+* [Ask tutorials](ask/#ask-tutorials)
 
 ### Talk
 Talk is still in development.

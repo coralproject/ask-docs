@@ -56,7 +56,7 @@ sponge --flag [command]
 ## Before you begin
 
 ### Pillar
-You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running, where your translated data will be sent. Instructions on installing Pillar [can be found here](/pillar#pillar-installation).
+You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running, where your translated data will be sent. Instructions on installing Pillar [can be found here](/pillar/#pillar-installation).
 
 ### External database source
 You will also have your external database running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.

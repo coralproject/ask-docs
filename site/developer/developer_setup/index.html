@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../../contribute/development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../contribute/development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../../contribute/supporting_the_community/">Supporting the community</a>
+    <a href="../../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../../contribute/coral_naming/">Coral naming</a>
+    <a href="../../contribute/code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -312,20 +300,26 @@ git config --global user.email &quot;you@email.com&quot;
 <li>We recommend using <a href="https://www.npmjs.com/package/nvm">nvm</a> to manage your node installations.</li>
 </ul>
 <h2 id="docker">Docker</h2>
-<p>If you want to install Coral or Coral components using Docker, you will have to install Docker.</p>
-<p>You can install Docker Toolbox using the Docker instructions <a href="https://docs.docker.com/">located here</a>.</p>
-<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker version</code>.)</p>
+<p>If you want to install Coral or Coral components using Docker, you will have to install Docker Toolbox.</p>
+<p>You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox page</a>.</p>
+<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
+<ul>
+<li>On the server, you can install Docker with the following command:</li>
+</ul>
+<pre><code>sudo yum install docker
+</code></pre>
+
 <h2 id="mongodb">MongoDB</h2>
 <h3 id="using-sample-data-with-mongodb">Using sample data with MongoDB</h3>
-<p>If you are installing locally, you will want to have a local MongoDB running with sample data. When you install the all-in-one Docker Compose installation, this portion is taken care of for you. However, if you are running from source, for example, you will want to set up your local MongoDB and import sample data.</p>
-<h3 id="download-a-sample-data-dump">Download a sample data dump</h3>
-<p>We have provided an anonymized comments data dump for MongoDB, available to downlaod here: <a href="../link here">MongoDB data dump</a>.
+<p>If you are installing locally, you will want to have a local MongoDB running with sample data. When you install the all-in-one Docker Compose installation, this portion is taken care of for you.</p>
+<p>However, if you are running from source, for example, you will want to set up your local MongoDB and import sample data.</p>
+<p>Additionally, if you ran into any problems with the automatic MongoDB setup portion of the installation, you can follow these instructions to import the data and set up your MongoDB manually.</p>
+<h3 id="download-the-sample-data-dump">Download the sample data dump</h3>
+<p>We have provided an anonymized comments data dump for MongoDB, available to download here: <a href="https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz">MongoDB data dump</a>.
 This data dump is 100MB. Download it to your computer.</p>
 <h3 id="download-and-install-mongodb">Download and install MongoDB</h3>
 <p>First, download and set up MongoDB. The MongoDB website offers <a href="https://docs.mongodb.com/manual/installation/">instructions on how to download and install</a>.</p>
 <p>A nice GUI tool you can use with MongoDB is <a href="http://3t.io/mongochef/download/">MongoChef</a>, and it&rsquo;s quite easy to install and set up.</p>
-<h3 id="create-your-local-coral-database">Create your local coral database</h3>
-<p>TODO: add here</p>
 <h3 id="import-data">Import data</h3>
 <p>The simplest way to do this is from the command line. First ensure you have MongoDB running.</p>
 <p>Then, take the dump.tar.gz file you downloaded, place it in a folder, and extract it. Copy the directory path to the coral directory within the extracted file.</p>
@@ -333,7 +327,7 @@ This data dump is 100MB. Download it to your computer.</p>
 <pre><code>mongorestore -d coral /yourpath/dump/coral/
 </code></pre>
 
-<p>This will import all the data from the data dump into your own local MongoDB.</p></div>
+<p>This will import all the data from the data dump into your own local MongoDB. You&rsquo;re all set!</p></div>
             
         </div>
 

@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../../reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../../development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../../supporting_the_community/">Supporting the community</a>
+    <a href="../../reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../../coral_naming/">Coral naming</a>
+    <a href="../../code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -251,7 +239,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../reporting_bugs/">
+                        <a rel="prev" href="../../development/writing_code/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -331,12 +319,17 @@
 <li>Do not merely explain HOW to do something, but also, whenever possible, WHY you are doing it in that way. This makes it easier for users to troubleshoot issues.</li>
 </ul>
 <h3 id="images">Images</h3>
-<p>When you need to add a graphic, try to make the file-size as small as possible. If you need help reducing file-size of a high-resolution image, feel free to contact us for help. Usually, graphics should go in the same directory as the .md file that references them, or in a subdirectory for images if one already exists.</p>
-<p>The preferred file format for graphics is PNG, but GIF and JPG are also acceptable.</p>
-<p>If you are referring to a specific part of the UI in an image, use call-outs (circles and arrows or lines) to highlight what you’re referring to. Line width for call-outs should not exceed five pixels. The preferred color for call-outs is red.</p>
-<p>Be sure to include descriptive alt-text for the graphic. This greatly helps users with accessibility issues.</p>
 <ul>
-<li>The color used for highlighting rectangles and arrows is Hex Color #00C7FC. This offers a good contrast with the Coral theme colors.</li>
+<li>When you need to add an image, try to make the file size as small as possible.</li>
+<li>Images should go in the <code>images</code> directory.</li>
+<li>The preferred file format for images is PNG, but GIF and JPG are also acceptable.</li>
+<li>Use arrows or rectangles to highlight the specific area of the UI you are referring to. While red is a popular color for these notations, be sure that it doesn&rsquo;t blend in with the Coral colors. Use blue if necessary.</li>
+<li>Include a descriptive alt-text for the graphic, to aid with accessibility. This is included in the Markdown code in the brackets.</li>
+</ul>
+<pre><code>![TrustLoginScreen](/images/trustloginscreen.png)
+</code></pre>
+
+<ul>
 <li>When taking screenshots to use as illustrative images, include a decent amount of &ldquo;surrounding area&rdquo; to provide context and geography for the feature you&rsquo;re discussing. A screenshot of a button, for instance, isn&rsquo;t very useful when you can&rsquo;t figure out where the button is located.</li>
 </ul>
 <h4 id="sizing-images">Sizing images</h4>
@@ -394,19 +387,16 @@
 </li>
 </ul>
 <h3 id="user-guide-documentation">User Guide documentation</h3>
-<p>When documenting <a href="../../user_guide">User Guides</a>, it is important to remember that the people reading them may not have in-depth technical knowledge. Keep your audience in mind.</p>
+<p>When documenting <a href="../../user">User Guides</a>, it is important to remember that the people reading them may not have in-depth technical knowledge. Keep your audience in mind.</p>
 <h3 id="writing-user-guide-tutorials">Writing User Guide tutorials</h3>
 <ul>
 <li>Tutorials take the reader by the hand through a series of steps to create or achieve something.</li>
 <li>Tutorials should be <em>results oriented</em>: by the end of the tutorial, the user will have achieved something.</li>
-<li>The important thing in a tutorial is to help the reader achieve something useful, preferably as early as possible, in order to give them confidence.</li>
-<li>Explain the nature of the problem we’re solving, so that the reader understands what we’re trying to achieve. Don’t feel that you need to begin with explanations of how things work - what matters is what the reader does, not what you explain. It can be helpful to refer back to what you’ve done and explain afterwards.</li>
 </ul>
 <h4 id="structure">Structure</h4>
 <ul>
-<li>The tutorials for each product are all contained on a single page. View the <a href="../../trust_tutorials">Trust tutorial page</a> for an example.</li>
-<li>At the top of the tutorial page is a list of the tutorials available on that page. Each has a description in the form of a user story (i.e., &ldquo;I would like to&hellip;&rdquo;).</li>
-<li>A tutorial is not a general overview of the functionality of the product, but a specific how-to that fulfills a user story. The general overview of the product&rsquo;s functionality belows on the Overview page for that product.</li>
+<li>The tutorials for each product are all contained on the product page under the &ldquo;Tutorials&rdquo; section.</li>
+<li>At the top of the Product page is a list of the tutorials available on that page. Each has a description in the form of a user story (i.e., &ldquo;I would like to&hellip;&rdquo;).</li>
 <li>The goal of a tutorial is to walk the user through a scenario (such as &ldquo;identify trolls within the Business section&rdquo;), that they can then tailor to their own needs (&ldquo;identify trolls within the Health section&rdquo;).</li>
 </ul>
 <h4 id="format">Format</h4>
@@ -415,10 +405,6 @@
 <li>You do not have to use the Markdown &ldquo;numbered list&rdquo; formatting (in which the numbered list is written <code>1.</code> for auto-formatting). In fact, it is probably better if you don&rsquo;t: things get a bit wonky when you start inserting images in between the numbered steps.</li>
 </ul>
 </li>
-</ul>
-<h4 id="images_1">Images</h4>
-<ul>
-<li>Each step (or very nearly each step) should have an image illustrating that step, and potentially showing the location of a button or field. If you do not have an image illustrating that step, you should have a pretty good reason not to have it.</li>
 </ul>
 <h2 id="terminology">Terminology</h2>
 <ul>
@@ -452,7 +438,7 @@
 <li>When adding headlines and section dividers, keep in mind that the Table of Contents displayed in the side navigation bar to the left is only two levels deep. So, H1 (#) and H2 (##) text will show up in the Table of Contents. H3 (###) and below will not.</li>
 <li>To avoid making the Table of Contents too cluttered, try to only use H2 (##) for key large sections.</li>
 </ul>
-<p><em>Attribution: Style Guide adapted from the Docker project documentation.</em></p></div>
+<p><em>Attribution: Style Guide adapted from the Django project documentation.</em></p></div>
             
         </div>
 

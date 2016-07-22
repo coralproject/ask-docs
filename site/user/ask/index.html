@@ -185,19 +185,7 @@
                         
                             
 <li >
-    <a href="../../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../../contribute/development/writing_code/">Writing code</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../contribute/development/working_with_github/">Development workflow</a>
 </li>
 
                         
@@ -209,7 +197,7 @@
                         
                             
 <li >
-    <a href="../../contribute/supporting_the_community/">Supporting the community</a>
+    <a href="../../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
 </li>
 
                         
@@ -221,7 +209,7 @@
                         
                             
 <li >
-    <a href="../../contribute/coral_naming/">Coral naming</a>
+    <a href="../../contribute/code_of_conduct/">Code of Conduct</a>
 </li>
 
                         
@@ -273,20 +261,28 @@
         
             <li><a href="#who-is-ask-for">Who is Ask for?</a></li>
         
-            <li><a href="#components">Components</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+        
+    
+        <li class="main "><a href="#ask-components">Ask components</a></li>
+        
+            <li><a href="#create-form">Create form</a></li>
+        
+            <li><a href="#embedding-the-generated-form">Embedding the generated form</a></li>
+        
+            <li><a href="#view-forms">View forms</a></li>
         
     
         <li class="main "><a href="#ask-installation">Ask installation</a></li>
+        
+    
+        <li class="main "><a href="#ask-installation-basic-demo-setup">Ask installation: basic demo setup</a></li>
         
             <li><a href="#before-you-begin">Before you begin</a></li>
         
             <li><a href="#install-docker-toolbox">Install Docker Toolbox</a></li>
         
-            <li><a href="#set-up-your-external-storage-system-optional">Set up your external storage system (optional)</a></li>
-        
             <li><a href="#get-the-source-code">Get the source code</a></li>
-        
-            <li><a href="#set-environment-variables">Set environment variables</a></li>
         
             <li><a href="#start-docker">Start Docker</a></li>
         
@@ -294,7 +290,37 @@
         
             <li><a href="#access-ask">Access Ask</a></li>
         
-            <li><a href="#troubleshooting">Troubleshooting</a></li>
+    
+        <li class="main "><a href="#ask-installation-advanced-setup">Ask installation: advanced setup</a></li>
+        
+            <li><a href="#before-you-begin_1">Before you begin</a></li>
+        
+            <li><a href="#install-docker-toolbox_1">Install Docker Toolbox</a></li>
+        
+            <li><a href="#set-up-your-external-storage-system-optional">Set up your external storage system (optional)</a></li>
+        
+            <li><a href="#get-the-source-code_1">Get the source code</a></li>
+        
+            <li><a href="#set-environment-variables">Set environment variables</a></li>
+        
+            <li><a href="#start-docker_1">Start Docker</a></li>
+        
+            <li><a href="#spin-up-the-docker-container_1">Spin up the Docker container</a></li>
+        
+            <li><a href="#access-ask_1">Access Ask</a></li>
+        
+    
+        <li class="main "><a href="#troubleshooting">Troubleshooting</a></li>
+        
+            <li><a href="#viewing-running-docker-containers">Viewing running Docker containers</a></li>
+        
+            <li><a href="#viewing-installed-docker-images">Viewing installed Docker images</a></li>
+        
+            <li><a href="#viewing-docker-logs">Viewing Docker logs</a></li>
+        
+            <li><a href="#removing-docker-images">Removing Docker images</a></li>
+        
+            <li><a href="#removing-old-docker-machines">Removing old Docker machines</a></li>
         
     
         <li class="main "><a href="#ask-tutorials">Ask tutorials</a></li>
@@ -312,18 +338,20 @@
 
 <h1 id="ask">Ask</h1>
 <h2 id="what-is-ask">What is Ask?</h2>
-<p>Ask is a tool enables editors to create embeddable calls for contributions, including text, photo, video, audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.</p>
+<p>Ask is a tool enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.</p>
 <h2 id="who-is-ask-for">Who is Ask for?</h2>
 <ul>
 <li><strong>Engagement editors and journalists</strong>: People who invite, manage, and publish user-generated content in order to improve the quality of the journalism.</li>
 <li><strong>End users</strong>: People who consume content and contribute their own knowledge and experiences, in order to improve the quality of the coverage so that it is closer to their own needs and experiences.</li>
 <li><strong>Publishers</strong>: People who want to understand the value of engaging more deeply with segments of the users, in order to better assess how and why to invest smartly in community.</li>
 </ul>
-<h2 id="components">Components</h2>
+<h2 id="architecture">Architecture</h2>
 <p><img alt="ask-architecture" src="../../images/ask-architecture.svg" /></p>
-<h3 id="form-builder">Form builder</h3>
+<h1 id="ask-components">Ask components</h1>
+<h2 id="create-form">Create form</h2>
+<p>The form builder is located under &ldquo;Create Form.&rdquo;</p>
 <h4 id="question-fields">Question fields</h4>
-<p>Ask allows for multiple field types to be added to a form. All fields are validated.</p>
+<p>Ask allows for multiple input field types to be added to a form. All fields are validated, except for phone number. Each input field also has the option to add a description.</p>
 <ul>
 <li><strong>Short Answer</strong>: Provides a single line text input area. You can set the character limits.</li>
 <li><strong>Long Answer</strong>: Provides a paragraph text input area. You can set the character limits.</li>
@@ -333,8 +361,49 @@
 <li><strong>Date</strong></li>
 <li><strong>Phone number</strong></li>
 </ul>
+<h4 id="additional-fields">Additional fields</h4>
+<p>The form also has options for:</p>
+<ul>
+<li>A customizable &ldquo;thank you&rdquo; message after submitting.</li>
+<li>Adding text without an entry field to the top of the form (a &ldquo;headline&rdquo; and instructions or description).</li>
+<li>Terms and conditions that will appear as text at the bottom of the form.</li>
+</ul>
+<h2 id="embedding-the-generated-form">Embedding the generated form</h2>
+<p>Once a form has been saved, an embed code is generated. You can then use this code to embed the form into your own page. Three options are presented for using the forms:</p>
+<h4 id="embed-code">Embed code</h4>
+<p>You can render a form directly into a page, using a <code>script src</code> tag. This offers the advantages of native CSS inheritance (as iframes won&rsquo;t inherit any CSS from the parent page). Note that the div-id does need to be <code>ask-form</code>: the name is hardcoded.</p>
+<pre><code>&lt;div id=&quot;ask-form&quot;&gt;&lt;/div&gt;&lt;script src=&quot;[filewritelocation]/[formid].js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<h4 id="embed-code-iframe">Embed code (iframe)</h4>
+<p>You can take the standalone page link and use it in an iframe, which you can then embed directly into your page. You may have to tweak the width and height parameters.</p>
+<pre><code>&lt;iframe src=&quot;https://[elkhornserver]/iframe/[form_id]&quot; width=&quot;100%&quot; height=&quot;600px&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+
+<h4 id="standalone-form">Standalone form</h4>
+<p>The &ldquo;Standalone Form&rdquo; button takes you to the form as a standalone page that you can link to.</p>
+<h2 id="view-forms">View forms</h2>
+<p>The &ldquo;View forms&rdquo; area allows you the create, edit, and view forms, as well as view the submissions made to your forms.</p>
+<p>You can:</p>
+<ul>
+<li>see which forms are currently active.</li>
+<li>see the number of submissions.</li>
+<li>sort and search forms by creator/status/date created/words used in the questions.</li>
+</ul>
 <h1 id="ask-installation">Ask installation</h1>
 <p>You can install the Ask product through a straightforward Docker Compose installation. This installs only the parts of Coral that are required for Ask.</p>
+<p>There are two options currently available for installing Ask:</p>
+<ul>
+<li><strong><a href="#ask-installation-basic-demo-setup">Basic demo setup</a></strong>: The first option is an extremely simple demo setup: all variables are hardcoded, so all you have to do is run a few simple commands to get up and running on your laptop.<ul>
+<li>This is a good option if you just want to install and demo Ask.</li>
+</ul>
+</li>
+<li><strong><a href="#ask-installation-advanced-setup">Advanced setup</a></strong>: The second option is still simple, but has a few more steps where you can set some variables and customize your setup (for instance, set up your own S3 bucket instead of using our hardcoded demo S3 bucket).<ul>
+<li>This is a good option if you want to do more with Ask than just a basic demo.</li>
+</ul>
+</li>
+</ul>
+<h1 id="ask-installation-basic-demo-setup">Ask installation: basic demo setup</h1>
 <h2 id="before-you-begin">Before you begin</h2>
 <p>You must have the following items installed and running:</p>
 <ul>
@@ -346,9 +415,82 @@
 <li>Minimum RAM: 4GB</li>
 <li>Minimum disk space: 4GB</li>
 </ul>
+<h3 id="operating-system-requirements">Operating system requirements</h3>
+<p>On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.</p>
+<h3 id="browser-requirements">Browser requirements</h3>
+<p>We currently support Chrome and Firefox.</p>
 <h2 id="install-docker-toolbox">Install Docker Toolbox</h2>
-<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox using the Docker instructions <a href="https://docs.docker.com/">located here</a>.</p>
-<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker version</code>.</p>
+<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.</p>
+<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
+<h2 id="get-the-source-code">Get the source code</h2>
+<p>Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.</p>
+<pre><code>git clone https://github.com/coralproject/ask.git
+</code></pre>
+
+<p>Then cd into the <code>ask/docker</code> directory.</p>
+<pre><code>cd ask/docker
+</code></pre>
+
+<h2 id="start-docker">Start Docker</h2>
+<p>Start Docker.</p>
+<ul>
+<li>On the server, you can do this via the command:
+  <code>sudo service docker start</code></li>
+<li>
+<p>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</p>
+<ul>
+<li>If, at any point, you see the error message <code>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</code>, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you&rsquo;ve opened up the Docker Quickstart Terminal and are running your Docker commands there.</li>
+</ul>
+</li>
+<li>
+<p>You may have to use the command <code>eval $(docker-machine env)</code> before proceeding to get Docker to work.</p>
+</li>
+</ul>
+<p>Ensure you are in the <code>ask/docker</code> directory.</p>
+<h2 id="spin-up-the-docker-container">Spin up the Docker container</h2>
+<p>The very first time that you spin up the Docker container, this will be a multi-step process:</p>
+<p>1. Spin up the Docker container:</p>
+<pre><code>docker-compose -f ask-basic-local.yaml up -d
+</code></pre>
+
+<p>The <code>ask-basic-local.yaml</code> file contained in the <code>ask/docker</code> directory contains all the instructions that Docker Compose needs to set up the Ask product.</p>
+<p>2. Docker will now download and install a number of Docker images. This may take a few minutes.</p>
+<p>3. Once all Docker images have been downloaded, you&rsquo;ll see something like the following in your terminal:</p>
+<pre><code>Creating network &quot;docker_default&quot; with the default driver
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+Creating docker_proxy_1
+</code></pre>
+
+<p>4. If this is your first time installing Ask, you&rsquo;ll now have to shut everything down with the Docker <code>down</code> command. This up-down-up sequence initializes authentication on MongoDB.</p>
+<pre><code>docker-compose -f ask-basic-local.yaml down
+</code></pre>
+
+<p>5. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).</p>
+<pre><code>docker-compose -f ask-basic-local.yaml up -d
+</code></pre>
+
+<h2 id="access-ask">Access Ask</h2>
+<p>You can now use Ask by accessing the front end URL in your browser. In this basic demo setup, we have set it to <a href="http://192.168.99.100">http://192.168.99.100</a>.</p>
+<h1 id="ask-installation-advanced-setup">Ask installation: advanced setup</h1>
+<h2 id="before-you-begin_1">Before you begin</h2>
+<p>You must have the following items installed and running:</p>
+<ul>
+<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.</li>
+</ul>
+<p>You should also have the following resources on your machine before installing:</p>
+<ul>
+<li>Minimum CPU: 2.0 GHz</li>
+<li>Minimum RAM: 4GB</li>
+<li>Minimum disk space: 4GB</li>
+</ul>
+<h3 id="operating-system-requirements_1">Operating system requirements</h3>
+<p>On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.</p>
+<h2 id="install-docker-toolbox_1">Install Docker Toolbox</h2>
+<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.</p>
+<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
 <h2 id="set-up-your-external-storage-system-optional">Set up your external storage system (optional)</h2>
 <p>Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.</p>
 <p>There are currently a couple of different options available for the external storage system you can use.</p>
@@ -375,7 +517,7 @@
 </li>
 </ol>
 <p>You&rsquo;re all set! You can now use your AWS Access Key to connect Ask to your S3 bucket (you&rsquo;ll set this up in the <a href="#set-environment-variables">Set environment variables</a> section below). If you didn&rsquo;t save your AWS Access Key during the set up process, you can go to the &ldquo;Security Credentials&rdquo; section and create a new one.</p>
-<h2 id="get-the-source-code">Get the source code</h2>
+<h2 id="get-the-source-code_1">Get the source code</h2>
 <p>Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.</p>
 <pre><code>git clone https://github.com/coralproject/ask.git
 </code></pre>
@@ -386,20 +528,13 @@
 
 <h2 id="set-environment-variables">Set environment variables</h2>
 <p>The <code>env.conf</code> file contains environment variables you need to set. Setting your environment variables tells Docker which IP address your Coral front end will have, as well as other information such as your MongoDB username and password.</p>
-<pre><code>export FRONTEND_HOST=xxx
+<pre><code>export FRONTEND_HOST=192.168.99.100
 
-export AUTH_TOKEN_VALUE='Basic xxx'
-export GAID_VALUE=xxx
-
-export MONGO_USER=xxx
-export MONGO_PASS=xxx
-export MONGO_DB=xxx
-export MONGO_AUTHDB=xxx
-
-export S3_BUCKET=xxx
-export AWS_REGION=xxx
-export AWS_ACCESS_KEY_ID=xxx
-export AWS_ACCESS_KEY=xxx
+# mongo:
+export MONGO_AUTHDB=admin
+export MONGO_USER=coral-user
+export MONGO_PASS=welcome
+export MONGO_DB=coral
 </code></pre>
 
 <ul>
@@ -412,30 +547,31 @@ export AWS_ACCESS_KEY=xxx
 <li><code>MONGO_DB</code>: set to the name of your MongoDB (in this instance, &ldquo;coral&rdquo;)</li>
 <li><code>MONGO_AUTHDB</code>: set to the admin user of your database</li>
 </ul>
-<p>Amazon S3:</p>
+<p>Amazon S3 (optional):</p>
 <ul>
 <li><code>S3_BUCKET</code>: set to the name of your S3 bucket (in this example, <code>ask-bucket-test</code>)</li>
 <li><code>AWS_REGION</code>: set to the AWS region that you selected in your S3 setup. You can find it in your S3 console URL. In this example, it is <code>us-west-2</code>.</li>
 <li><code>AWS_ACCESS_KEY</code>: set to your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the &ldquo;Security Credentials&rdquo; area of your S3 console.</li>
 <li><code>AWS_ACCESS_KEY</code>: set to your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the &ldquo;Security Credentials&rdquo; area of your S3 console.</li>
 </ul>
-<p>Optional edits:</p>
-<ul>
-<li><code>GAID_VALUE=xxxx</code>: If you&rsquo;re using Google Analytics, set your token at <code>export GAID_VALUE=xxxx</code>. Otherwise, delete or comment out this line.</li>
-<li><code>export AUTH_TOKEN_VALUE=xxxx</code>: If you&rsquo;re using a custom auth token, set that at <code>export AUTH_TOKEN_VALUE=xxxx</code>. Otherwise, delete or comment out this line.</li>
-</ul>
-<h2 id="start-docker">Start Docker</h2>
+<h2 id="start-docker_1">Start Docker</h2>
 <p>Start Docker.</p>
 <ul>
 <li>On the server, you can do this via the command:
   <code>sudo service docker start</code></li>
-<li>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.<ul>
+<li>
+<p>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</p>
+<ul>
 <li>If, at any point, you see the error message <code>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</code>, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you&rsquo;ve opened up the Docker Quickstart Terminal and are running your Docker commands there.</li>
 </ul>
 </li>
+<li>
+<p>You may have to use the command <code>eval $(docker-machine env)</code> before proceeding to get Docker to work.</p>
+</li>
 </ul>
 <p>Ensure you are in the <code>ask/docker</code> directory.</p>
-<h2 id="spin-up-the-docker-container">Spin up the Docker container</h2>
+<h2 id="_1"></h2>
+<h2 id="spin-up-the-docker-container_1">Spin up the Docker container</h2>
 <p>First, run the following command to export your edited variables and set the environment variables.</p>
 <pre><code>source env.conf
 </code></pre>
@@ -464,10 +600,10 @@ Creating docker_proxy_1
 <pre><code>docker-compose -f docker-compose.yml up -d
 </code></pre>
 
-<h2 id="access-ask">Access Ask</h2>
+<h2 id="access-ask_1">Access Ask</h2>
 <p>You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as <code>FRONTEND_HOST</code> in the <code>env.conf</code> setup above. In this example, we set it to <a href="http://192.168.99.100">http://192.168.99.100</a>.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="viewing-running-docker-containers">Viewing running Docker containers</h3>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="viewing-running-docker-containers">Viewing running Docker containers</h2>
 <p>To see all of the Docker containers currently running, use the command <code>docker ps</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/ps/">Docker website</a>).</p>
 <pre><code>docker ps
 </code></pre>
@@ -480,12 +616,12 @@ Creating docker_proxy_1
 <li>coralproject/pillar:release</li>
 <li>coralproject/mongodata</li>
 </ul>
-<h3 id="viewing-installed-docker-images">Viewing installed Docker images</h3>
+<h2 id="viewing-installed-docker-images">Viewing installed Docker images</h2>
 <p>To see all of the Docker images you have installed, use the command <code>docker images</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/images/">Docker website</a>).</p>
 <pre><code>docker images
 </code></pre>
 
-<h3 id="viewing-docker-logs">Viewing Docker logs</h3>
+<h2 id="viewing-docker-logs">Viewing Docker logs</h2>
 <p>To view Docker logs for a container, use the command <code>docker logs &lt;container id&gt;</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/logs/">Docker website</a>).</p>
 <p>First you have to find the container id:</p>
 <pre><code>docker ps
@@ -495,13 +631,22 @@ Creating docker_proxy_1
 <pre><code>docker logs e0bbd7be19c7
 </code></pre>
 
-<h3 id="operating-system-requirements">Operating system requirements</h3>
-<p>On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.</p>
+<h2 id="removing-docker-images">Removing Docker images</h2>
+<p>There are a few reasons you might want to remove Docker images. You may wish to ensure that you are getting the latest build of the image. Or maybe something has gone awry with one or more of the images, and you just want to perform a fresh install of all images.</p>
+<p>To remove all Docker images, use this command:</p>
+<pre><code>docker rmi $(docker images -q)
+</code></pre>
+
+<h2 id="removing-old-docker-machines">Removing old Docker machines</h2>
+<p>Another option for a &ldquo;fresh install&rdquo; is to remove old Docker machines. You could try this in combination with <a href="#removing-docker-images">removing Docker images</a> and then reinstalling Ask to see if that fixes your issue.</p>
+<pre><code>docker rm -f $(docker ps -a -q)
+</code></pre>
+
 <h1 id="ask-tutorials">Ask tutorials</h1>
 <h2 id="what-would-you-like-to-do">What would you like to do?</h2>
 <ul>
-<li><a href="#identify-most-liked-comments-tutorial">Create a form inviting user submissions</a>: I would like to find the most liked comments based on keyword/topic searches, so that I can do a round up (for instance, &ldquo;best comments written about the Zika virus”).</li>
-<li><a href="#identify-high-quality-comments-tutorial">Publish a gallery of user responses</a>: I would like to identify commenters who leave high-quality comments that appear to be expert, so that potential sources can be identified.</li>
+<li><a href="#identify-most-liked-comments-tutorial">Create a form inviting user submissions</a></li>
+<li><a href="#identify-high-quality-comments-tutorial">Publish a gallery of user responses</a></li>
 </ul>
 <h2 id="create-a-form-inviting-user-submissions">Create a form inviting user submissions</h2>
 <h2 id="publish-a-gallery-of-user-responses">Publish a gallery of user responses</h2></div>

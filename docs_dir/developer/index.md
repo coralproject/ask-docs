@@ -34,11 +34,11 @@ This will install each component on a separate server, which allows for scaling 
 
 If you choose this option, you can visit the installation page for each Coral component, which has installation instructions for Docker and source.
 
-* [Cay installation instructions](../cay/install.md)
-* [Elkhorn installation instructions](../elkhorn/install.md)
-* [Pillar installation instructions](../pillar/install.md)
-* [Sponge installation instructions](../sponge/install.md)
-* [Xenia installation instructions](../xenia/install.md)
+* [Cay installation instructions](../cay/#cay-installation)
+* [Elkhorn installation instructions](../elkhorn/#elkhorn-installation)
+* [Pillar installation instructions](../pillar/#pillar-installation)
+* [Sponge installation instructions](../sponge/#sponge-installation)
+* [Xenia installation instructions](../xenia/#xenia-installation)
 
 **_Probably best for you if:_**
 
@@ -51,11 +51,11 @@ This option will have you install each component individually from source code, 
 
 If you choose this option, you can visit the installation page for each Coral component, which has installation instructions for Docker and source.
 
-* [Cay installation instructions](../cay/install.md)
-* [Elkhorn installation instructions](../elkhorn/install.md)
-* [Pillar installation instructions](../pillar/install.md)
-* [Sponge installation instructions](../sponge/install.md)
-* [Xenia installation instructions](../xenia/install.md)
+* [Cay installation instructions](../cay/#cay-installation)
+* [Elkhorn installation instructions](../elkhorn/#elkhorn-installation)
+* [Pillar installation instructions](../pillar/#pillar-installation)
+* [Sponge installation instructions](../sponge/#sponge-installation)
+* [Xenia installation instructions](../xenia/#xenia-installation)
 
 **_Probably best for you if:_**
 

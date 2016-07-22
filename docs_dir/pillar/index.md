@@ -38,7 +38,7 @@ Before you install Pillar, you must have the following items installed and runni
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
     * There are [instructions on importing sample comment data into MongoDB here](../../quickstart/mongodb)
 * **RabbitMQ**: You can find instructions on installing RabbitMQ [on the RabbitMQ website](https://www.rabbitmq.com/download.html).
-* **Xenia**: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia [here](../../xenia#xenia-installation).
+* **Xenia**: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia [here](../../xenia/#xenia-installation).
 
 ## Install Pillar from source
 
