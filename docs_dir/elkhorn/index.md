@@ -332,7 +332,7 @@ We've included a variety of question field types in Elkhorn that can be used in 
 * **Date**
 * **Phone number**
 
-However, you may find that there is a question field we haven't included yet that you'd like to have. You can create your own, and then [add it to our code base](../development) so others can use it too!
+However, you may find that there is a question field we haven't included yet that you'd like to have. You can create your own, and then [add it to our code base](../contribute) so others can use it too!
 
 ## How to create a new question field
 

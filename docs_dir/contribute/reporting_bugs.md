@@ -26,4 +26,4 @@ When submitting a feature request, try to adhere to these guidelines:
 
  * Describe clearly what the feature is and how you’d like to see it implemented.
  * Explain why you’d like the feature.
- * If the feature can be developed as a plug-in or extension to Coral, consider [developing it yourself](development) as a plug-in and adding it to our code base.
+ * If the feature can be developed as a plug-in or extension to Coral, consider [developing it yourself](writing_code) as a plug-in and adding it to our code base.

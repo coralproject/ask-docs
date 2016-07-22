@@ -4,7 +4,7 @@
 
 The Trust product is a tool that allows journalistic organizations to filter through and create metrics based on individual comment behavior, and also add qualitative information. This information can be used to help journalistic organizations take next steps to better utilize and strengthen their communities.
 
-The [tutorials page](trust_tutorials) will help guide you through accomplishing goals like the following:
+The [tutorials section](#trust-tutorials) will help guide you through accomplishing goals like the following:
 
 * I would like to find the most liked comments based on keyword/topic searches, so that I can do a round up (for instance, "best comments written about the Zika virus”).
 * I would like to identify commenters who leave high-quality comments that appear to be expert, so that potential sources can be identified.
@@ -19,19 +19,10 @@ Trust is comprised of the following sections:
 * Community Explorer
 * Lists
 * Settings
-* Login/Authentication
-
-### Dashboard
-
-### Community Explorer
-
-### Lists
-
-### Settings
 
 # Trust tutorials
 
-This is where you can find tutorials on how to best utilize the Trust product.
+This is where you can find tutorials on how to use Trust. **This section is still in development as Trust evolves.**
 
 Do you have a tutorial you'd like to see here? Please [get in touch and let us know about it](../contribute/supporting_the_community), or better still, [add it yourself!](../contribute/writing_documentation)
 

@@ -2,7 +2,7 @@
 
 ## What is Ask?
 
-Ask is a tool enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.
+Ask is a tool that enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.
 
 ## Who is Ask for?
 
@@ -370,11 +370,4 @@ docker rm -f $(docker ps -a -q)
 
 # Ask tutorials
 
-## What would you like to do?
-
-* [Create a form inviting user submissions](#identify-most-liked-comments-tutorial)
-* [Publish a gallery of user responses](#identify-high-quality-comments-tutorial)
-
-## Create a form inviting user submissions
-
-## Publish a gallery of user responses
+We are still developing our Ask tutorials.

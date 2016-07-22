@@ -5,8 +5,8 @@ The key thing to remember when writing documentation is to be extremely explicit
 ### Writing style
 
 * When in doubt about a grammatical or syntactical point, refer to the [Associated Press's (AP) Style Guide](http://en.wikipedia.org/wiki/AP_Stylebook).
-* Though we value good style, please don’t get too hung up on using correct style. We’d rather have you submit good information that doesn’t conform to the guide than no information at all.
-* In general, try to write simple, declarative prose. We prefer short, single-clause sentences and brief three-to-five sentence paragraphs. Try to choose vocabulary that is straightforward and precise.
+* Though we value good style, please don’t worry too much about getting everything perfect when contributing to the documentation. We prefer imperfectly styled documentation to no documentation at all.
+* In general, try to write in short, simple, clear sentences. Brief, three-to-five sentence paragraphs are easy to read and scan.
 * **Pronouns**:
     * Use gender-neutral pronouns (they/their/them) rather than "he or she".
     * First and second person pronouns are fine. Use “we” to refer to Coral and “you” to refer to the user.
@@ -89,13 +89,13 @@ Is there a third-party component the user needs to set up (for instance, MongoDB
 
 ### Writing API documentation
 
-When documenting a REST-style API, such as the [Pillar API](../../pillar/api), there are certain pieces of information to include. The [Pillar API documentation](../../pillar/api) is a useful template.
+When documenting a REST-style API, such as the [Pillar API](../pillar/#pillar-api), there are certain pieces of information to include. The [Pillar API documentation](../pillar/#pillar-api) is a useful template.
 
 * Create an initial table that lists endpoints, which contains:
     * The endpoint URL.
     * The HTTP verb for that endpoint (GET, POST).
     * The basic functionality description for that endpoint. Make this into a targeted link that jumps to the full description for that endpoint.
-* Create a full description for each endpoint. You can see the [Get Users](../../pillar/api/#get-users) Pillar endpoint for an example). Each description should include:
+* Create a full description for each endpoint. You can see the [Import User](../pillar/#import-user) Pillar endpoint for an example). Each description should include:
     * The parameters for the endpoint (include the parameter name, whether it is required or optional, the type, and the description).
     * An example call.
     * The response for the example call (whether that is a JSON object, or simply a status response).
@@ -150,4 +150,4 @@ Here are some commonly used terms:
 * When adding headlines and section dividers, keep in mind that the Table of Contents displayed in the side navigation bar to the left is only two levels deep. So, H1 (#) and H2 (##) text will show up in the Table of Contents. H3 (###) and below will not.
 * To avoid making the Table of Contents too cluttered, try to only use H2 (##) for key large sections.
 
-_Attribution: Style Guide adapted from the Django project documentation._
+_Attribution: Style Guide adapted from the Django project documentation and Docker project documentation._

@@ -1,10 +1,6 @@
 # Writing Code
 
-So you’d like to write some code to improve the Coral Project? Splendid! A few things you can contribute are:
-
-* Bug fixes.
-* New features.
-* Plugins.
+So you’d like to write some code to improve the Coral Project? Splendid! A few things you can contribute are bug fixes, new features, and plug-ins or extensions.
 
 ## Before you begin
 
@@ -13,11 +9,11 @@ Before you begin, ensure that the work you're going to be doing has a GitHub iss
 * If there isn't already someone working on it, then leave a comment to let everyone know that you are starting work on it.
 * If someone is already working on it, consider collaborating with them.
 
-If there isn't already an GitHub issue, then create an issue for it. You can find more information on writing a detailed issue [here](../reporting_bugs.md).
+If there isn't already an GitHub issue, then create an issue for it. You can find more information on writing a detailed issue [here](reporting_bugs).
 
 ## Coding style guide
 
-As you're working, refer to our [coding style guide](style_guide) to make sure your code conforms to our standards.
+As you're working, refer to our [coding style guide](coding_style_guide) to make sure your code conforms to our standards.
 
 # Working With GitHub
 

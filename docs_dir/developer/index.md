@@ -6,7 +6,7 @@ If you are a developer who is interested in contributing to our code, great! You
 
 # The Coral Ecosystem
 
-Coral is made up of a number of component apps that work together to power three products (Trust, Ask, and Talk). You can read more about how this ecosystem fits together [here](../coral_ecosystem).
+Coral is made up of a number of component apps that work together to power three products (Trust, Ask, and Talk). You can read more about how this ecosystem fits together [here](../architectural_overview).
 
 # Installation
 
@@ -21,7 +21,7 @@ You should also have the following resources on your machine before installing:
 * Minimum RAM: 4GB
 * Minimum disk space required: 4GB
 
-You can find instructions on how to install Coral as a single Docker Compose installation [here](../quickstart/install.md).
+You can find instructions on how to install Coral as a single Docker Compose installation [here](../quickstart/install).
 
 **_Probably best for you if:_**
 
@@ -59,4 +59,4 @@ If you choose this option, you can visit the installation page for each Coral co
 
 **_Probably best for you if:_**
 
-* You are a developer that wants to work on Coral and potentially [contribute to our code base](../contribute/development/writing_code.md) (thank you!).
+* You are a developer that wants to work on Coral and potentially [contribute to our code base](../contribute/writing_code) (thank you!).

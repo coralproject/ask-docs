@@ -13,7 +13,7 @@ Here is, briefly, how our documentation works:
 
 ## Style Guide
 
-There is a separate page for the [documentation style guide](style_guide), that covers guidelines for how to organize and write instructions and tutorials, how to format text for consistency, and terminology.
+There is a separate page for the [documentation style guide](docs_style_guide), that covers guidelines for how to organize and write instructions and tutorials, how to format text for consistency, and terminology.
 
 ## How the documentation is organized
 
@@ -73,7 +73,7 @@ You now have a local copy of the documentation on your local machine, that you c
 
 The documents you'll be editing are located in the `docs_dir` directory.
 
-As you are writing and editing the documentation, refer to the [Documentation Style Guide](style_guide) to make sure you are remaining consistent with our current documentation standards, and writing the best and clearest documentation possible.
+As you are writing and editing the documentation, refer to the [Documentation Style Guide](docs_style_guide) to make sure you are remaining consistent with our current documentation standards, and writing the best and clearest documentation possible.
 
 ## Commit your changes
 

@@ -24,7 +24,7 @@ If you'd like to see more about how Pillar fits into the Coral Ecosystem, you ca
 
 # Pillar installation
 
-If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions to do that here](../quickstart/install.md).
+If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions to do that here](../quickstart/install).
 
 When installing Pillar by itself, you can choose between installing Pillar as a Docker container, or installing from source.
 
