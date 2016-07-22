@@ -42,21 +42,30 @@ You can [download and install Node.js from their website](https://nodejs.org/en/
 
 ## Docker
 
-If you want to install Coral or Coral components using Docker, you will have to install Docker.
+If you want to install Coral or Coral components using Docker, you will have to install Docker Toolbox.
 
-You can install Docker Toolbox using the Docker instructions [located here](https://docs.docker.com/).
+You can install Docker Toolbox from the [Docker Toolbox page](https://www.docker.com/products/docker-toolbox).
 
-If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker version`.)
+If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose version`.
+
+* On the server, you can install Docker with the following command:
+```
+sudo yum install docker
+```
 
 ## MongoDB
 
 ### Using sample data with MongoDB
 
-If you are installing locally, you will want to have a local MongoDB running with sample data. When you install the all-in-one Docker Compose installation, this portion is taken care of for you. However, if you are running from source, for example, you will want to set up your local MongoDB and import sample data.
+If you are installing locally, you will want to have a local MongoDB running with sample data. When you install the all-in-one Docker Compose installation, this portion is taken care of for you.
 
-### Download a sample data dump
+However, if you are running from source, for example, you will want to set up your local MongoDB and import sample data.
 
-We have provided an anonymized comments data dump for MongoDB, available to downlaod here: [MongoDB data dump](link here).
+Additionally, if you ran into any problems with the automatic MongoDB setup portion of the installation, you can follow these instructions to import the data and set up your MongoDB manually.
+
+### Download the sample data dump
+
+We have provided an anonymized comments data dump for MongoDB, available to download here: [MongoDB data dump](https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz).
 This data dump is 100MB. Download it to your computer.
 
 ### Download and install MongoDB
@@ -64,10 +73,6 @@ This data dump is 100MB. Download it to your computer.
 First, download and set up MongoDB. The MongoDB website offers [instructions on how to download and install](https://docs.mongodb.com/manual/installation/).
 
 A nice GUI tool you can use with MongoDB is [MongoChef](http://3t.io/mongochef/download/), and it's quite easy to install and set up.
-
-### Create your local coral database
-
-TODO: add here
 
 ### Import data
 
@@ -80,4 +85,4 @@ Then, run the below command (filling in your own directory path):
 mongorestore -d coral /yourpath/dump/coral/
 ```
 
-This will import all the data from the data dump into your own local MongoDB.
+This will import all the data from the data dump into your own local MongoDB. You're all set!

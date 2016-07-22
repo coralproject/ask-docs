@@ -2,14 +2,14 @@
 
 This section explains how the community can contribute to the Coral Project documentation.
 
-You can contribute to the documentation by editing existing documents for clarity or correcting errors. Additionally, any new features or changes to the software should be thoroughly documented. We value clear, consistent, thorough, readable documentation!
+You can contribute to the documentation by editing existing documents for clarity or correcting errors. Additionally, any new features or changes to the software should be thoroughly documented.
 
 Here is, briefly, how our documentation works:
 
 * The source documentation lives in GitHub at [https://github.com/coralproject/docs/](https://github.com/coralproject/docs/).
-* The documentation is hosted on [GitHub pages](https://pages.github.com/).
+* The documentation is hosted on [Heroku](http://coralprojectdocs.herokuapp.com/).
 * The documentation is built using [MkDocs](http://www.mkdocs.org/), a Markdown-based static site generator (geared towards building project documentation).
-* The document is deployed using a simple Mkdocs command that builds the documentation and deploys it to GitHub pages.
+* The document is deployed using a simple Mkdocs command that builds the documentation, and then the resulting generated site is pushed to Heroku.
 
 ## Style Guide
 
@@ -21,7 +21,6 @@ The documentation is organized into several categories:
 
 * **Introduction**: This offers a general overview of the Coral Project and its different components.
 * **Developer Guide**: This provides information for technical users of the Coral Project. It offers installation instructions for the Coral Ecosystem as a whole, as well as installation instructions for each individual component.
-    * **Release Notes** also live within the Developer Guide section.
 * **User Guide**: This provides information for end users (publishers, journalists, moderators, readers) on how to use the features of Coral. It includes tutorials and how-to guides.
 * **Contribute**: This provides information on how to contribute to the Coral Project through open source. There are sections for the developers (how to work with GitHub, etc.), as well as sections for those who want to contribute to other pieces of the Coral Project (such as the documentation!).
 * **FAQ**
@@ -35,7 +34,7 @@ Briefly, the process is as follows:
 1. First, you will get the documentation source code, using Git.
 2. Then, you will work on the documentation. You will use Mkdocs and Markdown to write the documentation.
 3. Then, you will push your changes to GitHub.
-4. Finally, you will deploy the documentation. This is done using a simple Mkdocs commands that builds the documentation and deploys it to GitHub pages.
+4. Finally, you will deploy the documentation. The documentation is deployed using a simple Mkdocs command that builds the documentation, and then the resulting generated site is pushed to Heroku.
 
 ## Install and set up Git
 
@@ -72,7 +71,9 @@ You now have a local copy of the documentation on your local machine, that you c
 
 ## Writing and editing the documentation
 
-As you are writing the documentation, refer to the [Documentation Style Guide](style_guide) to make sure you are remaining consistent with our current documentation standards, and writing the best and clearest documentation possible.
+The documents you'll be editing are located in the `docs_dir` directory.
+
+As you are writing and editing the documentation, refer to the [Documentation Style Guide](style_guide) to make sure you are remaining consistent with our current documentation standards, and writing the best and clearest documentation possible.
 
 ## Commit your changes
 
@@ -133,7 +134,3 @@ remote: Verifying deploy... done.
 To https://git.heroku.com/coralprojectdocs.git
    676aaa0..7e019f8  7e019f85487fe84efeb7cebcb33f9dff6782c8fb -> master
 ```
-
-## Translating documentation
-
-To come.

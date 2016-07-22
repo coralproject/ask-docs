@@ -8,11 +8,11 @@ It is an Extract, Transform, and Load command line tool designed to:
 * Translate the schema into Coral conventions, and
 * POST entities to our service layer for insertion.
 
-Sponge uses strategy files to assist with data import. Strategy files are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about [strategy files here](strategy), including information on their structure and examples.
+Sponge uses strategy files to assist with data import. Strategy files are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about [strategy files here](#strategy-files), including information on their structure and examples.
 
 ## Composition
 
-Sponge is made up of several different packages, and you can read more about them on the [Included Packages page](included_packages). They work together as shown in the diagram below:
+Sponge is made up of several different packages, and you can read more about them on the [included packages section](#packages-included-in-sponge). They work together as shown in the diagram below:
 
 <img src="/images/sponge-architecture.svg">
 
@@ -24,37 +24,39 @@ Sponge currently only supports importing data from mySQL, PostgreSQL, MongoDB or
 
 ### Usage:
 
-  sponge --flag [command]
+```
+sponge --flag [command]
+```
 
 ### Available Commands:
 
-  * import      Import data to the coral database
-  * index       Work with indexes in the coral database
-  * show        Read the report on errors
-  * version     Print the version number of Sponge
-  * all         Import and Create Indexes
+* `import`: Import data to the coral database.
+* `index`: Work with indexes in the coral database.
+* `show`: Read the report on errors.
+* `version`: Print the version number of Sponge.
+* `all`: Import and Create Indexes.
 
 ### Flags
 
 ```      
-      --dbname="report.db": set the name for the db to read
-      --filepath="report.db": set the file path for the report on errors (default is report.db)
-  -h, --help[=false]: help for sponge
-      --limit=9999999999: number of rows that we are going to import (default is 9999999999)
-      --offset=0: offset for rows to import (default is 0)
-      --onlyfails[=false]: import only the the records that failed in the last import(default is import all)
-      --orderby="": order by field on the external source (default is not ordered)
-      --query="": query on the external table (where condition on mysql, query document on mongodb). It only works with a specific --type. Example updated_date >'2003-12-31 01:02:03'
-      --report[=false]: create report on records that fail importing (default is do not report)
-      --type="": import or create indexes for only these types of data (default is everything)
+--dbname="report.db": set the name for the db to read
+--filepath="report.db": set the file path for the report on errors (default is report.db)
+-h, --help[=false]: help for sponge
+--limit=9999999999: number of rows that we are going to import (default is 9999999999)
+--offset=0: offset for rows to import (default is 0)
+--onlyfails[=false]: import only the the records that failed in the last import(default is import all)
+--orderby="": order by field on the external source (default is not ordered)
+--query="": query on the external table (where condition on mysql, query document on mongodb). It only works with a specific --type. Example updated_date >'2003-12-31 01:02:03'
+--report[=false]: create report on records that fail importing (default is do not report)
+--type="": import or create indexes for only these types of data (default is everything)
 ```
 
-# Installation  
+# Sponge installation  
 
 ## Before you begin
 
 ### Pillar
-You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running, where your translated data will be sent. Instructions on installing Pillar [can be found here](/pillar/install.md).
+You will need to have an instance of [Pillar](http://github.com/coralproject/pillar) running, where your translated data will be sent. Instructions on installing Pillar [can be found here](/pillar#pillar-installation).
 
 ### External database source
 You will also have your external database running. This external database is the source of your existing comment data that will be extracted by Sponge and sent to Pillar, which will then load it into the Coral ecosystem.
@@ -100,12 +102,12 @@ You can also clone the code manually.
 mkdir $GOPATH/src/github.com/coralproject/sponge
 cd $GOPATH/src/github.com/coralproject/sponge
 
-git clone git@github.com:CoralProject/sponge.git
+git clone https://github.com/coralproject/sponge.git
 ```
 
 ### Set up your strategy.json file
 
-You can read about [strategy files in depth here](strategy).
+You can read about [strategy files in depth here](#strategy-files).
 
 The strategy.json file tells Sponge how to do the transformation between the publisher's existing data and the Coral data schema. It also tells us how to connect to the external publisher's source data. We currently support the following sources: PostgreSQL, MySQL, MongoDB, and REST APIs.
 
@@ -132,8 +134,8 @@ export STRATEGY_CONF=/path/to/my/strategy.json
 export PILLAR_URL=http://localhost:8080
 ```
 
-* The `STRATEGY_CONF` variable specifies the path to your strategy.json file.
-* The `PILLAR_URL` variable specifies the URL where your Pillar instance is running. If you installed Pillar locally from source, this will probably be `http://localhost:8080`.
+* `STRATEGY_CONF`: Specifies the path to your strategy.json file.
+* `PILLAR_URL`: Specifies the URL where your Pillar instance is running. If you installed Pillar locally from source, this will probably be `http://localhost:8080`.
 
 Once you've edited and saved your custom.cfg file, source it:
 
@@ -168,7 +170,7 @@ Then run the CLI tool
 
 ### Building image
 
-To build the docker image run this command:
+To build the docker image, run this command:
 
 ```
 docker build -t "sponge:latest" -f Dockerfile ./
@@ -200,14 +202,18 @@ WS_useragent= ""
 WS_attributes= ""
 ```
 
-* The `STRATEGY_CONF` variable specifies the path to your strategy.json file.
-* The `PILLAR_URL` variable specifies the URL where your Pillar instance is running. If you installed Pillar as a Docker container, this will probably be `http://192.168.99.100:8080`.
+Required edits:
+
+* `STRATEGY_CONF`: Specifies the path to your strategy.json file.
+* `PILLAR_URL`: Specifies the URL where your Pillar instance is running. If you installed Pillar locally from source, this will probably be `http://localhost:8080`.
 
 ### Running the container
 
-It will start importing everything setup in the [strategy file](strategy).
+Spinning up the container will start importing everything setup in the [strategy file](#strategy-files).
 
-```docker run --env-file env.list -d sponge```
+```
+docker run --env-file env.list -d sponge
+```
 
 # Packages included in Sponge
 
@@ -225,7 +231,7 @@ It will start importing everything setup in the [strategy file](strategy).
 import "github.com/coralproject/sponge/pkg/strategy"
 ```
 
-The Strategy package reads in the external [strategy JSON file](strategy) and creates a structure containing translation information.
+The Strategy package reads in the external [strategy JSON file](#strategy-files) and creates a structure containing translation information.
 
 ### Variables
 
@@ -233,7 +239,7 @@ The Strategy package reads in the external [strategy JSON file](strategy) and cr
     * This is initialized by the `PILLAR_URL` environment variable.
 * `var uuid string`: Universally Unique Identifier used for the logs.
 
-To read more about strategy JSON files, you can read [our page on strategy files](strategy).
+To read more about strategy JSON files, you can read [our section on strategy files](#strategy-files).
 
 ## Source
 
@@ -241,7 +247,7 @@ To read more about strategy JSON files, you can read [our page on strategy files
 import "github.com/coralproject/sponge/pkg/source"
 ```
 
-The Source package contains the drivers that we use to connect to the external source and retrieve data. The credentials for the external data source are set up in the [strategy file](strategy).
+The Source package contains the drivers that we use to connect to the external source and retrieve data. The credentials for the external data source are set up in the [strategy file](#strategy-files).
 
 ### Variables
 
@@ -257,31 +263,31 @@ This is the interface that needs to be implemented by any driver that connects t
 ```
 GetData(string, *Options) ([]map[string]interface{}, error)
 ```
-Returns all the data (query by options in Options) in the format []map[string]interface{}
+Returns all the data (query by options in Options) in the format `[]map[string]interface{}`
 
 #### func IsWebService
 ```
 IsWebService() bool
 ```
-Returns true if the implementation of sourcer is a web service.
+Returns true if the implementation of Sourcer is a web service.
 
 #### func New
 ```
 func New(d string) (Sourcer, error)
 ```
-Depending on the parameter, it returns a structure with the connection to the external source that implements the interface Sourcer.
+Returns a structure with the connection to the external source that implements the interface Sourcer.
 
 #### func GetEntities
 ```
 func GetEntities() ([]string, error)
 ```
-Gets all the entities' names from the source
+Gets all of the entity names from the external data source.
 
 #### func GetforeignEntity
 ```
 func GetForeignEntity(name string) string
 ```
-Gets the foreign entity's name for the Coral collection.
+Gets a single foreign entity's name.
 
 ### mySQL driver
 
@@ -366,14 +372,14 @@ Coral interacts with Pillar endpoints to import data into the Coral system.
 ```
 func AddRow(data map[string]interface{}, tableName string) error
 ```
-Adds data to the collection "tableName".
+Adds data to the collection `tableName`.
 
 #### func CreateIndex
 
 ```
 func CreateIndex(collection string) error
 ```
-Calls the service to create index for "collection".
+Calls the service to create index for `collection`.
 
 ## Sponge
 
@@ -403,14 +409,14 @@ func AddOptions(limit int, offset int, orderby string, query string, types strin
 ```
 `AddOptions` sets options for how Sponge will run. The options are:
 
-*	`Limit`: limit for the query
-*	`Offset`: offset for the query
-*	`Orderby`:  order by this field
-*	`Query`:  we use this field if we want to specific a filter on WHERE for mySQL/PostgreSQL and Find for MongoDB
-*	`Types`: it specifies which entities to import (default is everything)
-*	`Importonlyfailed`: import only the documents that are in the report
-*	`ReportOnFailedRecords`: create a report with all the documents that failed the import
-*	`Reportdbfile`: name of the file for the report on documents that fail the import
+*	`Limit`: Limit for the query.
+*	`Offset`: Offset for the query.
+*	`Orderby`:  Order by this field
+*	`Query`:  We use this field if we want to specific a filter on WHERE for mySQL/PostgreSQL and Find for MongoDB.
+*	`Types`: Specifies which entities to import (the default is "everything").
+*	`Importonlyfailed`: Import only the documents that are in the report.
+*	`ReportOnFailedRecords`: Create a report with all the documents that failed the import.
+*	`Reportdbfile`: Name of the file for the report on documents that fail the import.
 
 #### func Import
 
@@ -424,7 +430,7 @@ Gets data, transforms it and sends it to Pillar. It bases everything on the STRA
 ```
 func CreateIndex(collection string)
 ```
-Creates index on the collection 'collection'. This feature creates indexes on the Coral database, depending on data in the strategy file.
+Creates index on the collection `collection`. This feature creates indexes on the Coral database, depending on the data in the strategy file.
 
 For example:
 ```
@@ -461,7 +467,7 @@ Examples:
 * `Name`: The name of the strategy that we are describing.
 * `Map`: Contains all the information to map fields from the external data source to our local Coral database.
 * `Foreign`: Describes the type of external database source (for example, "mysql" or "mongodb").
-* `DateTimeFormat`: Tells us how to parse date/time fields in the external data source. You should populated this field with the date and time of `2006 Mon Jan 2 15:04:05`, written in the format that appears in your external database.
+* `DateTimeFormat`: Tells us how to parse date/time fields in the external data source. You should populate this field with the date and time of `2006 Mon Jan 2 15:04:05`, written in the format that appears in your external database.
 
 ## Entity fields
 `Entities` is a JSON object that describes all of the different entities in the Coral database, and how to perform the transformation for that entity.
@@ -471,17 +477,17 @@ Examples:
 * `Priority`: This is a number that specifies which entity to import first (the highest priority is 0).
 * `OrderBy`: The field to order the results by when querying the foreign source.
 * `ID`: The identifier field for the foreign entity. We use this field when we need to import only some records and not the whole entity.
-* `Endpoint`: This is the [Pillar endpoint URL](../pillar/api) where we will push the data.
+* `Endpoint`: This is the [Pillar endpoint URL](../pillar#pillar-api) where we will push the data.
 * `Fields`: All the fields that are being mapped.
 * `foreign`: The name of the field in the foreign entity.
 * `local`: The name of the field in our local database.
-* `relation`: The relationship between the foreign field and the local one. We have this options:
-    * `Passthrough`: when the value is the same
-    * `Source`: when it needs to be added to our source struct for the local collection (the original identifiers have to go into source)
-    * `ParseTimeDate`: when we need to parse the foreign value as date time.
-    * `Constant`: when the local field should always be the same value. In this case we will have "foreign" blank and we will have other field called "value" with the value of the local field.
-    * `SubDocument`: when the local field has an array of documents in one of the fields.
-    * `Status`: when the field need to be translated based on the status map that is declared in that same strategy file for the entity.
+* `relation`: The relationship between the foreign field and the local one. We have the following options:
+    * `Passthrough`: When the value is the same.
+    * `Source`: When it needs to be added to our source struct for the local collection (the original identifiers have to go into source).
+    * `ParseTimeDate`: When we need to parse the foreign value as date time.
+    * `Constant`: When the local field should always be the same value. In this case we will have "foreign" blank and we will have other field called "value" with the value of the local field.
+    * `SubDocument`: When the local field has an array of documents in one of the fields.
+    * `Status`: When the field need to be translated based on the status map that is declared in that same strategy file for the entity.
 * `Type`: The type of the value we are converting.
     * `String`
     * `Timedate`
@@ -498,16 +504,16 @@ We are using (Ardanlabs Log's package)[https://github.com/ardanlabs/kit/tree/mas
 
 ### Logging levels:
 
-* `Dev`: to be outputted in development environment only.
-* `User` (prod): to be outputted in dev and production environments.
+* `Dev`: To be outputted in development environment only.
+* `User` (prod): To be outputted in dev and production environments.
 
 ### All logs should contain:
 
-* context uuid to identify a particular execution (aka, run of Sponge or a Request/Response execution from a web server)
-* the name of the function that is executing
-* a readable message including relevant data
+* Context uuid to identify a particular execution (aka, run of Sponge or a Request/Response execution from a web server).
+* The name of the function that is executing.
+* A readable message including relevant data.
 
-Logs should write to stdout so that they can be flexibly directed.
+Logs should write to `stdout` so that they can be flexibly directed.
 
 # Roadmap
 
@@ -515,7 +521,7 @@ There are features we would like to incorporate into Sponge at a future date, bu
 
 ### API Import
 
-Pull data from Http(s) sources:
+Pull data from HTTP(S) sources:
 
 * Disqus - https://disqus.com/api/docs/
 * Wordpress Core - https://codex.wordpress.org/XML-RPC_WordPress_API/Comments

@@ -30,15 +30,16 @@ The key thing to remember when writing documentation is to be extremely explicit
 
 ### Images
 
-When you need to add a graphic, try to make the file-size as small as possible. If you need help reducing file-size of a high-resolution image, feel free to contact us for help. Usually, graphics should go in the same directory as the .md file that references them, or in a subdirectory for images if one already exists.
+* When you need to add an image, try to make the file size as small as possible.
+* Images should go in the `images` directory.
+* The preferred file format for images is PNG, but GIF and JPG are also acceptable.
+* Use arrows or rectangles to highlight the specific area of the UI you are referring to. While red is a popular color for these notations, be sure that it doesn't blend in with the Coral colors. Use blue if necessary.
+* Include a descriptive alt-text for the graphic, to aid with accessibility. This is included in the Markdown code in the brackets.
 
-The preferred file format for graphics is PNG, but GIF and JPG are also acceptable.
+```
+![TrustLoginScreen](/images/trustloginscreen.png)
+```
 
-If you are referring to a specific part of the UI in an image, use call-outs (circles and arrows or lines) to highlight what you’re referring to. Line width for call-outs should not exceed five pixels. The preferred color for call-outs is red.
-
-Be sure to include descriptive alt-text for the graphic. This greatly helps users with accessibility issues.
-
-* The color used for highlighting rectangles and arrows is Hex Color #00C7FC. This offers a good contrast with the Coral theme colors.
 * When taking screenshots to use as illustrative images, include a decent amount of "surrounding area" to provide context and geography for the feature you're discussing. A screenshot of a button, for instance, isn't very useful when you can't figure out where the button is located.
 
 #### Sizing images
@@ -72,9 +73,6 @@ When embedding diagrams, use the Markdown image tag:
 ```
 
 
-
-
-
 ### Third-party components
 
 Is there a third-party component the user needs to set up (for instance, MongoDB)?
@@ -104,27 +102,22 @@ When documenting a REST-style API, such as the [Pillar API](../../pillar/api), t
 
 ### User Guide documentation
 
-When documenting [User Guides](../user_guide), it is important to remember that the people reading them may not have in-depth technical knowledge. Keep your audience in mind.
+When documenting [User Guides](../user), it is important to remember that the people reading them may not have in-depth technical knowledge. Keep your audience in mind.
 
 ### Writing User Guide tutorials
 
 * Tutorials take the reader by the hand through a series of steps to create or achieve something.
 * Tutorials should be _results oriented_: by the end of the tutorial, the user will have achieved something.
-* The important thing in a tutorial is to help the reader achieve something useful, preferably as early as possible, in order to give them confidence.
-* Explain the nature of the problem we’re solving, so that the reader understands what we’re trying to achieve. Don’t feel that you need to begin with explanations of how things work - what matters is what the reader does, not what you explain. It can be helpful to refer back to what you’ve done and explain afterwards.
 
 #### Structure
-* The tutorials for each product are all contained on a single page. View the [Trust tutorial page](../trust_tutorials) for an example.
-* At the top of the tutorial page is a list of the tutorials available on that page. Each has a description in the form of a user story (i.e., "I would like to...").
-* A tutorial is not a general overview of the functionality of the product, but a specific how-to that fulfills a user story. The general overview of the product's functionality belows on the Overview page for that product.
+
+* The tutorials for each product are all contained on the product page under the "Tutorials" section.
+* At the top of the Product page is a list of the tutorials available on that page. Each has a description in the form of a user story (i.e., "I would like to...").
 * The goal of a tutorial is to walk the user through a scenario (such as "identify trolls within the Business section"), that they can then tailor to their own needs ("identify trolls within the Health section").
 
 #### Format
 * Tutorials follow a numbered step-by-step format.
     * You do not have to use the Markdown "numbered list" formatting (in which the numbered list is written `1.` for auto-formatting). In fact, it is probably better if you don't: things get a bit wonky when you start inserting images in between the numbered steps.
-
-#### Images
-* Each step (or very nearly each step) should have an image illustrating that step, and potentially showing the location of a button or field. If you do not have an image illustrating that step, you should have a pretty good reason not to have it.
 
 ## Terminology
 
@@ -157,4 +150,4 @@ Here are some commonly used terms:
 * When adding headlines and section dividers, keep in mind that the Table of Contents displayed in the side navigation bar to the left is only two levels deep. So, H1 (#) and H2 (##) text will show up in the Table of Contents. H3 (###) and below will not.
 * To avoid making the Table of Contents too cluttered, try to only use H2 (##) for key large sections.
 
-_Attribution: Style Guide adapted from the Docker project documentation._
+_Attribution: Style Guide adapted from the Django project documentation._

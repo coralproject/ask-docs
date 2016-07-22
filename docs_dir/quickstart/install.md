@@ -17,11 +17,19 @@ You should also have the following resources on your machine before installing:
 * Minimum RAM: 4GB
 * Minimum disk space required: 4GB
 
+### Operating system requirements
+On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.
+
 ## Install Docker Toolbox
 
-If you do not already have Docker installed, do that first. You can install Docker Toolbox using the Docker instructions [located here](https://docs.docker.com/).
+If you do not already have Docker installed, do that first. You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
 
-If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker version`.
+If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose version`.
+
+* On the server, you can install Docker with the following command:
+```
+sudo yum install docker
+```
 
 ## Get the source code
 
@@ -64,7 +72,7 @@ export STRATEGY_CONF=/usr/local/strategy.json
 
 Required edits:
 
-* `FRONTEND_HOST`: set to your desired IP address for the front end. For this example, we will use `192.168.99.100`.
+* `FRONTEND_HOST`: set to your desired IP address for the front end. For this example, we will use `192.168.99.100`, which is the default Docker machine IP for local machine installs.
 
 Optional edits:
 
@@ -112,9 +120,16 @@ Then use the container id to view the logs:
 docker logs e0bbd7be19c7
 ```
 
-If it has finished downloading, you should see something like:
+If it has not finished downloading, you'll see this as the final line in the logs:
 ```
-.
+Notice: doownloading dump from https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz
+```
+
+If it has finished downloading, you should see this among the final lines in the logs:
+```
+2016-07-21T00:42:33.024+0000 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-07-21T00:42:33.025+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2016-07-21T00:42:33.031+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
 ```
 
 4\. Now, shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
@@ -170,7 +185,20 @@ Then use the container id to view the logs:
 docker logs e0bbd7be19c7
 ```
 
-### Operating system requirements
-On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.
+## Removing Docker images
 
-## Uninstalling Docker images
+There are a few reasons you might want to remove Docker images. You may wish to ensure that you are getting the latest build of the image. Or maybe something has gone awry with one or more of the images, and you just want to perform a fresh install of all images.
+
+To remove all Docker images, use this command:
+
+```
+docker rmi $(docker images -q)
+```
+
+## Removing old Docker machines
+
+Another option for a "fresh install" is to remove old Docker machines. You could try this in combination with [removing Docker images](#removing-docker-images) and then reinstalling Ask to see if that fixes your issue.
+
+```
+docker rm -f $(docker ps -a -q)
+```

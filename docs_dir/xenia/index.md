@@ -1,4 +1,4 @@
-# Xenia
+# Introduction
 
 [Xenia](https://github.com/coralproject/xenia) is a configurable service layer that publishes endpoints against [MongoDB aggregation pipeline](https://docs.mongodb.com/manual/core/aggregation-pipeline/) queries.
 
@@ -10,7 +10,7 @@ Similarly, output documents from multiple pipelines can be bundled together. Thi
 
 Xenia moves the query logic out of the application code. Front end developers, data analysts, and anyone else familiar with the simple, declarative [MongoDB aggregation syntax](https://docs.mongodb.com/manual/reference/aggregation/) can adjust the data requests, and create or update endpoints.
 
-# Xenia Installation
+# Xenia installation
 
 Xenia is a configurable service layer that publishes endpoints against [MongoDB aggregation pipeline queries](https://docs.mongodb.org/manual/core/aggregation-introduction/).
 
@@ -56,7 +56,7 @@ You can also clone the code manually.
 mkdir $GOPATH/src/github.com/coralproject/xenia
 cd $GOPATH/src/github.com/coralproject/xenia
 
-git clone git@github.com:CoralProject/xenia.git
+git clone https://github.com/coralproject/xenia.git
 ```
 
 ## Set up your environment variables
@@ -123,7 +123,7 @@ source $GOPATH/src/github.com/coralproject/xenia/config/custom.cfg
 
 Xenia has a CLI tool that allows you to manage endpoints and perform other actions.
 
-To build to the tool:
+To build the tool:
 
 ```
 cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
@@ -264,7 +264,7 @@ MONGO_HOST=localhost:27017
 
 4) You can test your web service by going to the following URL in your browser: [http://localhost:4000/1.0/query](http://localhost:4000/1.0/query).
 
-In your browser, you will see some json displayed. In your terminal, you should see something like:
+In your browser, you will see some JSON displayed. In your terminal, you should see something like:
 ```
 2016/06/08 13:30:58 app.go:104: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : Request : Started : Method[GET] URL[/1.0/query] RADDR[[::1]:62121]
 2016/06/08 13:30:58 context.go:65: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : api : Respond : Started : Code[200]
@@ -457,7 +457,11 @@ output:
 }
 ```
 
-5) You can execute a dynamic query set:
+### Execute a dynamic query set
+| URL                  | HTTP Verb     | Functionality   |
+|:-------------------- |:--------------|:----------------|
+| /1.0/exec      |POST            |Execute a dynamic query set |
+
 
 ```
 POST

@@ -30,9 +30,7 @@ Choose a variety of coral to name your repo. Make sure that there isn't already 
 
 ### Repository descriptions
 
-The description of a repo tells the public what is contained in the repo itself. If you have multiple repositories for the same project, it's better to describe what is contained in the repo itself instead of describing the project.
-
-Repo descriptions should be clear, concise, and descriptive. Descriptions are listed under each repository title on an organization’s GitHub page. Anyone who scans the GitHub page should be able to determine what a repo does, just by looking at the description.
+The description of a repo tells the public what is contained in the repo itself. If you have multiple repositories for the same project, it's better to describe what is contained in the repo itself instead of describing the project. Repo descriptions should be clear, concise, and descriptive.
 
 If your repo is not in active development, it’s helpful to let users know this so they don’t make contributions to a non-active repository. We suggest adding the word DEPRECATED before your repo description.
 
@@ -72,14 +70,10 @@ We use the [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/t
 
 Code commenting is crucial to maintaining a readable code base that future developers can understand and build upon. You can find a nice [primer on good commenting practice here](http://www.hongkiat.com/blog/source-code-comment-styling-tips/).
 
-* Provide the why, the history, and context.
-    * Why: Why are you writing the code in exactly the way that you are?
-    * History: What historical decisions or factors went into writing the code in this way?
-    * Context: Are there any other factors we should know about that went into writing or developing this piece of code?
-* Document _all_ declarations and methods, even private ones. Declare expectations, caveats and anything else that may be important. If a type gets exported, having the comments already there will ensure it's ready.
-* **Keep everything readable:** Remember that the comments will be read by humans. Keep it simple, brief, and clear.
-* **Whitespace is important:**
-* **Comment while coding:**
+* Document _all_ declarations and methods, even private ones. Explain expectations, caveats and any other information that could be important.
+* Keep everything readable: simple, brief, and clear.
+* Whitespace is important.
+* Comment while you code.
 
 ## Resources
 

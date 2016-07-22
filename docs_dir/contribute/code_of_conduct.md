@@ -12,7 +12,7 @@ We commit to enforce and evolve this code over the duration of the project.
 
 
 
-## Expected behavior:
+## Expected behavior
 
 
 
@@ -35,7 +35,7 @@ We commit to enforce and evolve this code over the duration of the project.
 
 
 
-## Unacceptable behavior:
+## Unacceptable behavior
 
 
 

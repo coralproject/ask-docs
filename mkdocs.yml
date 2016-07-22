@@ -21,13 +21,11 @@ pages:
   - Introduction: 'contribute/index.md'
   - Writing documentation: 'contribute/documentation/writing_documentation.md'
   - Documentation style guide: 'contribute/documentation/style_guide.md'
-  - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
   - Writing code: 'contribute/development/writing_code.md'
-  - Development workflow: 'contribute/development/working_with_github.md'
   - Coding style guide: 'contribute/development/style_guide.md'
-  - Supporting the community: 'contribute/supporting_the_community.md'
+  - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
   - Contributor License Agreement: 'contribute/contributor_license_agreement.md'
-  - Coral naming: 'contribute/coral_naming.md'
+  - Code of Conduct: 'contribute/code_of_conduct.md'
 - FAQ: 'faq.md'
 
 
@@ -43,3 +41,6 @@ markdown_extensions:
 theme: mkdocs
 
 docs_dir: 'docs_dir'
+
+#extra_css:
+#  - css/extra.css

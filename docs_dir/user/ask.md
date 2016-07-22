@@ -2,7 +2,7 @@
 
 ## What is Ask?
 
-Ask is a tool enables editors to create embeddable calls for contributions, including text, photo, video, audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.
+Ask is a tool enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.
 
 ## Who is Ask for?
 
@@ -10,15 +10,19 @@ Ask is a tool enables editors to create embeddable calls for contributions, incl
 * **End users**: People who consume content and contribute their own knowledge and experiences, in order to improve the quality of the coverage so that it is closer to their own needs and experiences.
 * **Publishers**: People who want to understand the value of engaging more deeply with segments of the users, in order to better assess how and why to invest smartly in community.
 
-## Components
+## Architecture
 
 ![ask-architecture](/images/ask-architecture.svg)
 
-### Form builder
+# Ask components
+
+## Create form
+
+The form builder is located under "Create Form."
 
 #### Question fields
 
-Ask allows for multiple field types to be added to a form. All fields are validated.
+Ask allows for multiple input field types to be added to a form. All fields are validated, except for phone number. Each input field also has the option to add a description.
 
 * **Short Answer**: Provides a single line text input area. You can set the character limits.
 * **Long Answer**: Provides a paragraph text input area. You can set the character limits.
@@ -28,9 +32,55 @@ Ask allows for multiple field types to be added to a form. All fields are valida
 * **Date**
 * **Phone number**
 
+#### Additional fields
+
+The form also has options for:
+
+* A customizable "thank you" message after submitting.
+* Adding text without an entry field to the top of the form (a "headline" and instructions or description).
+* Terms and conditions that will appear as text at the bottom of the form.
+
+## Embedding the generated form
+
+Once a form has been saved, an embed code is generated. You can then use this code to embed the form into your own page. Three options are presented for using the forms:
+
+#### Embed code
+You can render a form directly into a page, using a `script src` tag. This offers the advantages of native CSS inheritance (as iframes won't inherit any CSS from the parent page). Note that the div-id does need to be `ask-form`: the name is hardcoded.
+```
+<div id="ask-form"></div><script src="[filewritelocation]/[formid].js"></script>
+```
+
+#### Embed code (iframe)
+You can take the standalone page link and use it in an iframe, which you can then embed directly into your page. You may have to tweak the width and height parameters.
+```
+<iframe src="https://[elkhornserver]/iframe/[form_id]" width="100%" height="600px"></iframe>
+```
+
+#### Standalone form
+The "Standalone Form" button takes you to the form as a standalone page that you can link to.
+
+## View forms
+
+The "View forms" area allows you the create, edit, and view forms, as well as view the submissions made to your forms.
+
+You can:
+
+* see which forms are currently active.
+* see the number of submissions.
+* sort and search forms by creator/status/date created/words used in the questions.
+
 # Ask installation
 
 You can install the Ask product through a straightforward Docker Compose installation. This installs only the parts of Coral that are required for Ask.
+
+There are two options currently available for installing Ask:
+
+* **[Basic demo setup](#ask-installation-basic-demo-setup)**: The first option is an extremely simple demo setup: all variables are hardcoded, so all you have to do is run a few simple commands to get up and running on your laptop.
+    * This is a good option if you just want to install and demo Ask.
+* **[Advanced setup](#ask-installation-advanced-setup)**: The second option is still simple, but has a few more steps where you can set some variables and customize your setup (for instance, set up your own S3 bucket instead of using our hardcoded demo S3 bucket).
+    * This is a good option if you want to do more with Ask than just a basic demo.
+
+# Ask installation: basic demo setup
 
 ## Before you begin
 
@@ -44,11 +94,102 @@ You should also have the following resources on your machine before installing:
 * Minimum RAM: 4GB
 * Minimum disk space: 4GB
 
+### Operating system requirements
+On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.
+
+### Browser requirements
+We currently support Chrome and Firefox.
+
 ## Install Docker Toolbox
 
-If you do not already have Docker installed, do that first. You can install Docker Toolbox using the Docker instructions [located here](https://docs.docker.com/).
+If you do not already have Docker installed, do that first. You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
 
-If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker version`.
+If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose version`.
+
+## Get the source code
+
+Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
+```
+git clone https://github.com/coralproject/ask.git
+```
+Then cd into the `ask/docker` directory.
+```
+cd ask/docker
+```
+
+## Start Docker
+
+Start Docker.
+
+* On the server, you can do this via the command:
+  ```
+  sudo service docker start
+  ```
+* On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
+     * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+
+* You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+
+Ensure you are in the `ask/docker` directory.
+
+## Spin up the Docker container
+
+The very first time that you spin up the Docker container, this will be a multi-step process:
+
+1\. Spin up the Docker container:
+```
+docker-compose -f ask-basic-local.yaml up -d
+```
+The `ask-basic-local.yaml` file contained in the `ask/docker` directory contains all the instructions that Docker Compose needs to set up the Ask product.
+
+2\. Docker will now download and install a number of Docker images. This may take a few minutes.
+
+3\. Once all Docker images have been downloaded, you'll see something like the following in your terminal:
+```
+Creating network "docker_default" with the default driver
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+Creating docker_proxy_1
+```
+
+4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
+```
+docker-compose -f ask-basic-local.yaml down
+```
+
+5\. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).
+```
+docker-compose -f ask-basic-local.yaml up -d
+```
+
+## Access Ask
+
+You can now use Ask by accessing the front end URL in your browser. In this basic demo setup, we have set it to [http://192.168.99.100](http://192.168.99.100).
+
+# Ask installation: advanced setup
+
+## Before you begin
+
+You must have the following items installed and running:
+
+* **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
+
+You should also have the following resources on your machine before installing:
+
+* Minimum CPU: 2.0 GHz
+* Minimum RAM: 4GB
+* Minimum disk space: 4GB
+
+### Operating system requirements
+On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.
+
+## Install Docker Toolbox
+
+If you do not already have Docker installed, do that first. You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
+
+If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose version`.
 
 ## Set up your external storage system (optional)
 
@@ -92,20 +233,13 @@ cd ask/docker
 The `env.conf` file contains environment variables you need to set. Setting your environment variables tells Docker which IP address your Coral front end will have, as well as other information such as your MongoDB username and password.
 
 ```
-export FRONTEND_HOST=xxx
+export FRONTEND_HOST=192.168.99.100
 
-export AUTH_TOKEN_VALUE='Basic xxx'
-export GAID_VALUE=xxx
-
-export MONGO_USER=xxx
-export MONGO_PASS=xxx
-export MONGO_DB=xxx
-export MONGO_AUTHDB=xxx
-
-export S3_BUCKET=xxx
-export AWS_REGION=xxx
-export AWS_ACCESS_KEY_ID=xxx
-export AWS_ACCESS_KEY=xxx
+# mongo:
+export MONGO_AUTHDB=admin
+export MONGO_USER=coral-user
+export MONGO_PASS=welcome
+export MONGO_DB=coral
 ```
 
 * `FRONTEND_HOST`: set to your desired IP address for the front end. For this example, we will use `192.168.99.100`.
@@ -117,17 +251,12 @@ MongoDB:
 * `MONGO_DB`: set to the name of your MongoDB (in this instance, "coral")
 * `MONGO_AUTHDB`: set to the admin user of your database
 
-Amazon S3:
+Amazon S3 (optional):
 
 * `S3_BUCKET`: set to the name of your S3 bucket (in this example, `ask-bucket-test`)
 * `AWS_REGION`: set to the AWS region that you selected in your S3 setup. You can find it in your S3 console URL. In this example, it is `us-west-2`.
 * `AWS_ACCESS_KEY`: set to your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
 * `AWS_ACCESS_KEY`: set to your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
-
-Optional edits:
-
-* `GAID_VALUE=xxxx`: If you're using Google Analytics, set your token at `export GAID_VALUE=xxxx`. Otherwise, delete or comment out this line.
-* `export AUTH_TOKEN_VALUE=xxxx`: If you're using a custom auth token, set that at `export AUTH_TOKEN_VALUE=xxxx`. Otherwise, delete or comment out this line.
 
 ## Start Docker
 
@@ -140,7 +269,11 @@ Start Docker.
 * On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
      * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
 
+* You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+
 Ensure you are in the `ask/docker` directory.
+
+##
 
 ## Spin up the Docker container
 
@@ -183,9 +316,9 @@ docker-compose -f docker-compose.yml up -d
 
 You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as `FRONTEND_HOST` in the `env.conf` setup above. In this example, we set it to [http://192.168.99.100](http://192.168.99.100).
 
-## Troubleshooting
+# Troubleshooting
 
-### Viewing running Docker containers
+## Viewing running Docker containers
 To see all of the Docker containers currently running, use the command `docker ps` (you can read more about this command and its options at the [Docker website](https://docs.docker.com/engine/reference/commandline/ps/)).
 ```
 docker ps
@@ -198,13 +331,13 @@ You should have all of the following containers running:
 * coralproject/pillar:release
 * coralproject/mongodata
 
-### Viewing installed Docker images
+## Viewing installed Docker images
 To see all of the Docker images you have installed, use the command `docker images` (you can read more about this command and its options at the [Docker website](https://docs.docker.com/engine/reference/commandline/images/)).
 ```
 docker images
 ```
 
-### Viewing Docker logs
+## Viewing Docker logs
 To view Docker logs for a container, use the command `docker logs <container id>` (you can read more about this command and its options at the [Docker website](https://docs.docker.com/engine/reference/commandline/logs/)).
 
 First you have to find the container id:
@@ -217,15 +350,30 @@ Then use the container id to view the logs:
 docker logs e0bbd7be19c7
 ```
 
-### Operating system requirements
-On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.
+## Removing Docker images
+
+There are a few reasons you might want to remove Docker images. You may wish to ensure that you are getting the latest build of the image. Or maybe something has gone awry with one or more of the images, and you just want to perform a fresh install of all images.
+
+To remove all Docker images, use this command:
+
+```
+docker rmi $(docker images -q)
+```
+
+## Removing old Docker machines
+
+Another option for a "fresh install" is to remove old Docker machines. You could try this in combination with [removing Docker images](#removing-docker-images) and then reinstalling Ask to see if that fixes your issue.
+
+```
+docker rm -f $(docker ps -a -q)
+```
 
 # Ask tutorials
 
 ## What would you like to do?
 
-* [Create a form inviting user submissions](#identify-most-liked-comments-tutorial): I would like to find the most liked comments based on keyword/topic searches, so that I can do a round up (for instance, "best comments written about the Zika virus”).
-* [Publish a gallery of user responses](#identify-high-quality-comments-tutorial): I would like to identify commenters who leave high-quality comments that appear to be expert, so that potential sources can be identified.
+* [Create a form inviting user submissions](#identify-most-liked-comments-tutorial)
+* [Publish a gallery of user responses](#identify-high-quality-comments-tutorial)
 
 ## Create a form inviting user submissions
 

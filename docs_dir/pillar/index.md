@@ -1,4 +1,4 @@
-# Overview
+# Introduction
 
 [Pillar](https://github.com/coralproject/pillar) is a REST based API written in Go. It provides the following services:
 
@@ -22,7 +22,7 @@ If you'd like to see more about how Pillar fits into the Coral Ecosystem, you ca
 
 * All import endpoints `upsert` data. This means that when you import an entry, it will overwrite the information for that entry if the entry already exists. This prevents duplications and other problems.
 
-# Pillar Installation
+# Pillar installation
 
 If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions to do that here](../quickstart/install.md).
 
@@ -38,7 +38,7 @@ Before you install Pillar, you must have the following items installed and runni
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
     * There are [instructions on importing sample comment data into MongoDB here](../../quickstart/mongodb)
 * **RabbitMQ**: You can find instructions on installing RabbitMQ [on the RabbitMQ website](https://www.rabbitmq.com/download.html).
-* **Xenia**: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia [here](../../xenia/install).
+* **Xenia**: Xenia is a configurable service layer that publishes endpoints against MongoDB aggregation pipeline queries. It is part of the Coral ecosystem. You can find instructions on how to install Xenia [here](../../xenia#xenia-installation).
 
 ## Install Pillar from source
 
@@ -115,11 +115,13 @@ export MONGODB_DATABASE=""
 export MONGODB_SSL="False"
 ```
 
-* For `XENIA_URL`:
-    * If you installed [locally from source](../xenia/install), `XENIA_URL` should be `http://localhost:4000/1.0/exec/`.
-* For `MONGODB_URL`:
+Required edits:
+
+* `XENIA_URL`: The URL where Xenia is running.
+    * If you installed Xenia [locally from source](../xenia/#xenia-installation), `XENIA_URL` should be `http://localhost:4000/1.0/exec/`.
+* `MONGODB_URL`: The URL where your MongoDB is running.
     * If your MongoDB is a local installation, `MONGODB_URL` should be `mongodb://localhost:27017/coral`.
-* For `AMQP_URL`:
+* `AMQP_URL`: The URL where your RabbitMQ is running.
     * If your RabbitMQ is a local installation, `AMQP_URL` should be `amqp://localhost:5672/`.
 
 Once you've edited and saved your custom.cfg file, source it with the following command:
@@ -140,8 +142,11 @@ You should see:
 
 ## Install as Docker Container
 
-### Install Docker
-You can find more information on installing Docker on your machine [on the Docker website](https://docs.docker.com/engine/installation/).
+### Install Docker Toolbox
+
+If you do not already have Docker installed, do that first. You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
+
+If you do have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose version`.
 
 * On the server, you can install Docker with the following command:
 ```
@@ -209,12 +214,15 @@ MONGODB_DATABASE=""
 MONGODB_SSL="False"
 ```
 
-* For `XENIA_URL`:
-    * If you installed [locally](../xenia/install), `XENIA_URL` should be `http://localhost:4000/1.0/exec/`.
-* For `MONGODB_URL`:
+Required edits:
+
+* `XENIA_URL`: The URL where Xenia is running.
+    * If you installed Xenia [locally from source](../xenia/#xenia-installation), `XENIA_URL` should be `http://localhost:4000/1.0/exec/`.
+* `MONGODB_URL`: The URL where your MongoDB is running.
     * If your MongoDB is a local installation, `MONGODB_URL` should be `mongodb://localhost:27017/coral`.
+* `MONGO_ADDRESS`: The address where your MongoDB is running.
     * If your MongoDB is a local installation, `MONGODB_ADDRESS` should be `127.0.0.1:27017`.
-* For `AMQP_URL`:
+* `AMQP_URL`: The URL where your RabbitMQ is running.
     * If your RabbitMQ is a local installation, `AMQP_URL` should be `amqp://localhost:5672/`.
 
 ### Run Docker
@@ -273,7 +281,7 @@ Run `docker stop` with the container ID (if you are running on a server, you may
 docker stop b30f4fa5f497
 ```
 
-# API Overview
+# Pillar API
 
 **This section is under construction, and is not currently complete.**
 
@@ -1005,7 +1013,14 @@ Status: 200 OK
 
 #### Parameters
 
-* `form_id`: form id
+| Parameters  | Required? | Value            | Description     |
+|:------------|:----------|:----------------|:----------------|
+| form_id     |Y          |Number         |Form id for which we want to see the submissions     |
+| skip        |Y          |Number         |Skip the first _n_ submissions      |
+| limit       |N          |Number         |Limit to _n_ submission returns      |
+| orderby     |N          |`asc` or `dsc` |Order by ascending date (`asc`) or descending date (`dsc`)   |
+| filterby    |N          |Regex string (example: `^(?!test_the_flag)`) |Filter by a specific flag using regular expressions. If you want to match all the submissions that do not have a specific flag, use `^(?!test_the_flag)`  |
+| search      |N          |String          |String to search through submissions `replies.answer` |
 
 #### Example call
 ```
@@ -1015,8 +1030,81 @@ https://localhost:8080/api/form_submissions/123
 
 #### Example response
 ```
-Status: 200 OK
+{
+    "counts": {
+        "search_by_flag": {
+            "test_the_flag": 1,
+            "something_else": 1
+        },
+        "total_search": 1,
+        "total_submissions": 2
+    },
+    "submissions": [
+        {
+            "id": "5751ef7310780b96f002a3af",
+            "form_id": "5751ef7310780b96f002a3ad",
+            "status": "",
+            "replies": [
+                {
+                    "widget_id": "1",
+                    "identity": false,
+                    "answer": "Gophers everywhere",
+                    "edited": "This is an edit! Purple Monkey Dishwasher.",
+                    "question": "Is there anybody out there?",
+                    "props": {
+                        "a": "B",
+                        "c": 4
+                    }
+                },
+                {
+                    "widget_id": "2",
+                    "identity": false,
+                    "answer": "Dave",
+                    "edited": "This is an edit! Purple Monkey Dishwasher.",
+                    "question": "Name",
+                    "props": {
+                        "a": "B",
+                        "c": 4
+                    }
+                },
+                {
+                    "widget_id": "3",
+                    "identity": false,
+                    "answer": "D@ve.name",
+                    "edited": "This is an edit! Purple Monkey Dishwasher.",
+                    "question": "Email",
+                    "props": {
+                        "a": "B",
+                        "c": 4
+                    }
+                }
+            ],
+            "flags": [
+                "test_the_flag",
+                "something_else"
+            ],
+            "header": {
+                "description": "of the rest of your life",
+                "title": "This is the first form"
+            },
+            "footer": {
+                "conditions": "lots of conditions"
+            },
+            "finishedScreen": null,
+            "created_by": "",
+            "updated_by": "",
+            "date_created": "2016-06-03T16:58:27.56-04:00",
+            "date_updated": "2016-06-03T16:58:27.56-04:00"
+        }
+    ]
+}
 ```
+
+where
+
+* `search_by_flag` : brings a count on all the tags for for the specific search (without filtering by flag) for that form id
+* `total_search`: count all the submissions for the specific search (without filtering by flag) for that form id
+* `total_submissions`: count all the submissions for that form id
 
 ### Get form submission
 | URL                  | HTTP Verb     | Functionality   |
@@ -1128,6 +1216,16 @@ Status: 200 OK
 | URL                  | HTTP Verb     | Functionality   |
 |:-------------------- |:--------------|:----------------|
 | /api/form_submission/search  |POST          |Search form submissions  |
+
+#### Parameters
+
+| Parameters  | Required? | Value            | Description     |
+|:------------|:----------|:----------------|:----------------|
+| form_id     |Y          |Number         |Form id for which we want to see the submissions     |
+| skip        |Y          |Number         |Skip the first _n_ submissions      |
+| limit       |N          |Number         |Limit to _n_ submission returns      |
+| orderby     |N          |`asc` or `dsc` |Order by ascending date (`asc`) or descending date (`dsc`)   |
+| filterby    |N          | Regex string (example: `^(?!test_the_flag)`) |Filter by a specific flag using regular expressions. If you want to match all the submissions that do not have a specific flag, use `^(?!test_the_flag)`  |
 
 
 #### Example call
