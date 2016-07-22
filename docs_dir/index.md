@@ -55,9 +55,7 @@ Talk is still in development.
 
 # How can I contribute?
 
-We want your ideas, your requests, your experiences, your bug reports, your skills, your code. Join our large community of contributors by clicking below.
-
-| I want to contribute code | I want to contribute ideas |
+We want your ideas, your requests, your experiences, your bug reports, your skills, your code. [Join our community of contributors](contribute).
 
 
 # How the documentation is organized
