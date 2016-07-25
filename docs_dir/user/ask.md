@@ -135,7 +135,7 @@ Start Docker.
 
 Ensure you are in the `ask/docker` directory.
 
-## Set FRONTEND_HOST variable (Linux only)
+## Set frontend URL variables (Linux only)
 
 If you're not on Linux, you can skip this step and go on to [spinning up the Docker container](#spin-up-the-docker-container).
 
