@@ -286,7 +286,7 @@
         
             <li><a href="#start-docker">Start Docker</a></li>
         
-            <li><a href="#set-frontend_host-variable-linux-only">Set FRONTEND_HOST variable (Linux only)</a></li>
+            <li><a href="#set-frontend-url-variables-linux-only">Set frontend URL variables (Linux only)</a></li>
         
             <li><a href="#spin-up-the-docker-container">Spin up the Docker container</a></li>
         
@@ -452,7 +452,7 @@
 </li>
 </ul>
 <p>Ensure you are in the <code>ask/docker</code> directory.</p>
-<h2 id="set-frontend_host-variable-linux-only">Set FRONTEND_HOST variable (Linux only)</h2>
+<h2 id="set-frontend-url-variables-linux-only">Set frontend URL variables (Linux only)</h2>
 <p>If you&rsquo;re not on Linux, you can skip this step and go on to <a href="#spin-up-the-docker-container">spinning up the Docker container</a>.</p>
 <p>If you are on Linux, you will have to manually edit a few variables in the <code>ask-basic-local.yaml</code> file. This is because the current basic demo setup is geared toward Macs, and the Docker Machine IP for local installations on Mac is different from the IP for Linux machines.</p>
 <p>Basically, anywhere that you see <code>192.168.99.100</code> in the <code>ask-basic-local.yaml</code> file, you want to change it to <code>127.0.0.1</code>.</p>
