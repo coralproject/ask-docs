@@ -360,7 +360,7 @@ git config --global user.email &quot;you@email.com&quot;
 
 <p>The <code>build</code> command builds the documentation, creating the HTML pages that make up the site, and places those files in the <code>site</code> directory.</p>
 <p>Now you&rsquo;ll add the changed files using Git, in preparation for pushing them to Heroku to deploy them. Add a meaningful commit message.</p>
-<pre><code>git add -A
+<pre><code>git add site
 </code></pre>
 
 <p>There is one file that you have to &ldquo;unadd&rdquo; before you push to Heroku: the <code>site/index.php</code> file. Put briefly, it&rsquo;s a file that Heroku needs to serve up the site, but that the <code>mkdocs build</code> process deletes.</p>

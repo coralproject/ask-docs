@@ -282,11 +282,11 @@
         
             <li><a href="#before-you-begin">Before you begin</a></li>
         
-            <li><a href="#install-docker-toolbox">Install Docker Toolbox</a></li>
-        
             <li><a href="#get-the-source-code">Get the source code</a></li>
         
             <li><a href="#start-docker">Start Docker</a></li>
+        
+            <li><a href="#set-frontend_host-variable-linux-only">Set FRONTEND_HOST variable (Linux only)</a></li>
         
             <li><a href="#spin-up-the-docker-container">Spin up the Docker container</a></li>
         
@@ -296,8 +296,6 @@
         <li class="main "><a href="#ask-installation-advanced-setup">Ask installation: advanced setup</a></li>
         
             <li><a href="#before-you-begin_1">Before you begin</a></li>
-        
-            <li><a href="#install-docker-toolbox_1">Install Docker Toolbox</a></li>
         
             <li><a href="#set-up-your-external-storage-system-optional">Set up your external storage system (optional)</a></li>
         
@@ -313,6 +311,8 @@
         
     
         <li class="main "><a href="#troubleshooting">Troubleshooting</a></li>
+        
+            <li><a href="#old-version-of-docker">Old version of Docker</a></li>
         
             <li><a href="#viewing-running-docker-containers">Viewing running Docker containers</a></li>
         
@@ -403,9 +403,21 @@
 </ul>
 <h1 id="ask-installation-basic-demo-setup">Ask installation: basic demo setup</h1>
 <h2 id="before-you-begin">Before you begin</h2>
-<p>You must have the following items installed and running:</p>
+<p>You must have the following items installed:</p>
 <ul>
-<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.</li>
+<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.<ul>
+<li>Make sure MongoDB is running before you proceed: use the command <code>mongod</code> to start running MongoDB as a daemon.</li>
+</ul>
+</li>
+<li><strong>Docker Toolbox</strong>: You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.<ul>
+<li>If you already have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose --version</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="operating-system-requirements">Operating system requirements</h3>
+<ul>
+<li><strong>Mac OS X</strong>: We support OS X El Capitan (10.11) or newer.</li>
+<li><strong>Ubuntu</strong>: We support Ubuntu 15.10 or newer.</li>
 </ul>
 <p>You should also have the following resources on your machine before installing:</p>
 <ul>
@@ -413,13 +425,8 @@
 <li>Minimum RAM: 4GB</li>
 <li>Minimum disk space: 4GB</li>
 </ul>
-<h3 id="operating-system-requirements">Operating system requirements</h3>
-<p>On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.</p>
 <h3 id="browser-requirements">Browser requirements</h3>
 <p>We currently support Chrome and Firefox.</p>
-<h2 id="install-docker-toolbox">Install Docker Toolbox</h2>
-<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.</p>
-<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
 <h2 id="get-the-source-code">Get the source code</h2>
 <p>Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.</p>
 <pre><code>git clone https://github.com/coralproject/ask.git
@@ -445,6 +452,16 @@
 </li>
 </ul>
 <p>Ensure you are in the <code>ask/docker</code> directory.</p>
+<h2 id="set-frontend_host-variable-linux-only">Set FRONTEND_HOST variable (Linux only)</h2>
+<p>If you&rsquo;re not on Linux, you can skip this step and go on to <a href="#spin-up-the-docker-container">spinning up the Docker container</a>.</p>
+<p>If you are on Linux, you will have to manually edit a few variables in the <code>ask-basic-local.yaml</code> file. This is because the current basic demo setup is geared toward Macs, and the Docker Machine IP for local installations on Mac is different from the IP for Linux machines.</p>
+<p>Basically, anywhere that you see <code>192.168.99.100</code> in the <code>ask-basic-local.yaml</code> file, you want to change it to <code>127.0.0.1</code>.</p>
+<p>Open up your <code>ask-basic-local.yaml</code> file and set these variables:</p>
+<ul>
+<li><code>PILLAR_URL</code> (under &ldquo;cayapp&rdquo;): Set to <code>http://127.0.0.1:8080</code>.</li>
+<li><code>ELKHORN_URL</code> (under &ldquo;cayapp&rdquo;): Set to <code>http://127.0.0.1:4444</code>.</li>
+<li><code>PILLAR_URL</code> (under &ldquo;elkhorn&rdquo;): Set to <code>http://127.0.0.1:8080</code>.</li>
+</ul>
 <h2 id="spin-up-the-docker-container">Spin up the Docker container</h2>
 <p>The very first time that you spin up the Docker container, this will be a multi-step process:</p>
 <p>1. Spin up the Docker container:</p>
@@ -452,6 +469,10 @@
 </code></pre>
 
 <p>The <code>ask-basic-local.yaml</code> file contained in the <code>ask/docker</code> directory contains all the instructions that Docker Compose needs to set up the Ask product.</p>
+<p><strong>Troubleshooting note</strong>: If you see an error, such as the one below, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command <code>docker-compose --version</code>.</p>
+<pre><code>Unsupported config option for services service: 'mongodata'
+</code></pre>
+
 <p>2. Docker will now download and install a number of Docker images. This may take a few minutes.</p>
 <p>3. Once all Docker images have been downloaded, you&rsquo;ll see something like the following in your terminal:</p>
 <pre><code>Creating network &quot;docker_default&quot; with the default driver
@@ -471,12 +492,28 @@ Creating docker_proxy_1
 </code></pre>
 
 <h2 id="access-ask">Access Ask</h2>
-<p>You can now use Ask by accessing the front end URL in your browser. In this basic demo setup, we have set it to <a href="http://192.168.99.100">http://192.168.99.100</a>.</p>
+<p>You can now use Ask by accessing the front end URL in your browser.</p>
+<ul>
+<li>On Mac, the default Docker Machine IP for laptops is <code>192.168.99.100</code>: <a href="http://192.168.99.100">http://192.168.99.100</a></li>
+<li>On Linux, this should be set to <code>127.0.0.1</code> or a private IP address: <a href="http://127.0.0.1">http://127.0.0.1</a></li>
+</ul>
 <h1 id="ask-installation-advanced-setup">Ask installation: advanced setup</h1>
 <h2 id="before-you-begin_1">Before you begin</h2>
 <p>You must have the following items installed and running:</p>
 <ul>
-<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.</li>
+<li><strong>MongoDB</strong>: You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.<ul>
+<li>Make sure MongoDB is running before you proceed: use the command <code>mongod</code> to start running MongoDB as a daemon.</li>
+</ul>
+</li>
+<li><strong>Docker Toolbox</strong>: You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.<ul>
+<li>If you already have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose --version</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="operating-system-requirements_1">Operating system requirements</h3>
+<ul>
+<li><strong>Mac OS X</strong>: We support OS X El Capitan (10.11) or newer.</li>
+<li><strong>Ubuntu</strong>: We support Ubuntu 15.10 or newer.</li>
 </ul>
 <p>You should also have the following resources on your machine before installing:</p>
 <ul>
@@ -484,11 +521,8 @@ Creating docker_proxy_1
 <li>Minimum RAM: 4GB</li>
 <li>Minimum disk space: 4GB</li>
 </ul>
-<h3 id="operating-system-requirements_1">Operating system requirements</h3>
-<p>On Mac, we support OS X El Capitan (10.11) or newer. If you are on an older OS, you may have to upgrade.</p>
-<h2 id="install-docker-toolbox_1">Install Docker Toolbox</h2>
-<p>If you do not already have Docker installed, do that first. You can install Docker Toolbox from the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox product page</a>.</p>
-<p>If you do have Docker installed, you&rsquo;ll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command <code>docker-compose version</code>.</p>
+<h3 id="browser-requirements_1">Browser requirements</h3>
+<p>We currently support Chrome and Firefox.</p>
 <h2 id="set-up-your-external-storage-system-optional">Set up your external storage system (optional)</h2>
 <p>Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.</p>
 <p>There are currently a couple of different options available for the external storage system you can use.</p>
@@ -536,7 +570,11 @@ export MONGO_DB=coral
 </code></pre>
 
 <ul>
-<li><code>FRONTEND_HOST</code>: set to your desired IP address for the front end. For this example, we will use <code>192.168.99.100</code>.</li>
+<li><code>FRONTEND_HOST</code>: set to your desired IP address for the front end.<ul>
+<li>On Mac, the default Docker Machine IP for laptops is <code>192.168.99.100</code>.</li>
+<li>On Linux, this should be set to <code>127.0.0.1</code> or a private IP address.</li>
+</ul>
+</li>
 </ul>
 <p>MongoDB:</p>
 <ul>
@@ -568,7 +606,6 @@ export MONGO_DB=coral
 </li>
 </ul>
 <p>Ensure you are in the <code>ask/docker</code> directory.</p>
-<h2 id="_1"></h2>
 <h2 id="spin-up-the-docker-container_1">Spin up the Docker container</h2>
 <p>First, run the following command to export your edited variables and set the environment variables.</p>
 <pre><code>source env.conf
@@ -580,6 +617,10 @@ export MONGO_DB=coral
 </code></pre>
 
 <p>The <code>docker-compose.yml</code> file contained in the <code>ask/docker</code> directory contains all the instructions that Docker Compose needs to set up the Ask product.</p>
+<p><strong>Troubleshooting note</strong>: If you see an error, such as the one below, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command <code>docker-compose --version</code>.</p>
+<pre><code>Unsupported config option for services service: 'mongodata'
+</code></pre>
+
 <p>2. Docker will now download and install a number of Docker images. This may take a few minutes.</p>
 <p>3. Once all Docker images have been downloaded, you&rsquo;ll see something like the following in your terminal:</p>
 <pre><code>Creating network &quot;docker_default&quot; with the default driver
@@ -599,8 +640,18 @@ Creating docker_proxy_1
 </code></pre>
 
 <h2 id="access-ask_1">Access Ask</h2>
-<p>You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as <code>FRONTEND_HOST</code> in the <code>env.conf</code> setup above. In this example, we set it to <a href="http://192.168.99.100">http://192.168.99.100</a>.</p>
+<p>You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as <code>FRONTEND_HOST</code> in the <code>env.conf</code> setup above.</p>
+<ul>
+<li>On Mac, the default Docker Machine IP for laptops is <code>192.168.99.100</code>: <a href="http://192.168.99.100">http://192.168.99.100</a></li>
+<li>On Linux, this should be set to <code>127.0.0.1</code> or a private IP address: <a href="http://127.0.0.1">http://127.0.0.1</a></li>
+</ul>
 <h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="old-version-of-docker">Old version of Docker</h2>
+<p>If you see an error while running the Docker Compose commands, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command <code>docker-compose --version</code>.
+Example error:</p>
+<pre><code>Unsupported config option for services service: 'mongodata'
+</code></pre>
+
 <h2 id="viewing-running-docker-containers">Viewing running Docker containers</h2>
 <p>To see all of the Docker containers currently running, use the command <code>docker ps</code> (you can read more about this command and its options at the <a href="https://docs.docker.com/engine/reference/commandline/ps/">Docker website</a>).</p>
 <pre><code>docker ps
