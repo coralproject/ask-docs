@@ -14,6 +14,10 @@ Ask is a tool that enables editors to create embeddable calls for contributions,
 
 ![ask-architecture](/images/ask-architecture.svg)
 
+## Roadmap
+
+Version 1.0 of Ask will be released Q3 of 2016.
+
 # Ask components
 
 ## Create form

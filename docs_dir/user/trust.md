@@ -11,6 +11,10 @@ The [tutorials section](#trust-tutorials) will help guide you through accomplish
 * I would like to identify new commenters who leave comments that get a lot of likes, so I can welcome them personally.
 * I would like to identify trolls on certain topics or authors, so that their comments on these subjects can automatically be moved to pre-moderation/create notifications for moderators to pay attention.
 
+## Roadmap
+
+The Trust beta will be released Q3 of 2016.
+
 ## Trust sections
 
 Trust is comprised of the following sections:
