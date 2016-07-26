@@ -108,7 +108,7 @@ You should also have the following resources on your machine before installing:
 * Minimum disk space: 4GB
 
 ### Browser requirements
-We currently support Chrome and Firefox.
+We currently support Chrome.
 
 ## Get the source code
 
@@ -225,7 +225,7 @@ You should also have the following resources on your machine before installing:
 * Minimum disk space: 4GB
 
 ### Browser requirements
-We currently support Chrome and Firefox.
+We currently support Chrome.
 
 ## Set up your external storage system (optional)
 
