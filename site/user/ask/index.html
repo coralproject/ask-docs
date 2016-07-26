@@ -310,7 +310,7 @@
             <li><a href="#access-ask_1">Access Ask</a></li>
         
     
-        <li class="main "><a href="#troubleshooting">Troubleshooting</a></li>
+        <li class="main "><a href="#troubleshooting_2">Troubleshooting</a></li>
         
             <li><a href="#old-version-of-docker">Old version of Docker</a></li>
         
@@ -323,6 +323,8 @@
             <li><a href="#removing-docker-images">Removing Docker images</a></li>
         
             <li><a href="#removing-old-docker-machines">Removing old Docker machines</a></li>
+        
+            <li><a href="#other-issues-while-installing">Other issues while installing</a></li>
         
     
         <li class="main "><a href="#ask-tutorials">Ask tutorials</a></li>
@@ -418,6 +420,7 @@
 <ul>
 <li><strong>Mac OS X</strong>: We support OS X El Capitan (10.11) or newer.</li>
 <li><strong>Ubuntu</strong>: We support Ubuntu 15.10 or newer.</li>
+<li><strong>Windows</strong>: We support Windows 7 or newer.</li>
 </ul>
 <p>You should also have the following resources on your machine before installing:</p>
 <ul>
@@ -441,17 +444,18 @@
 <ul>
 <li>On the server, you can do this via the command:
   <code>sudo service docker start</code></li>
-<li>
-<p>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</p>
+<li>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</li>
+</ul>
+<h3 id="troubleshooting">Troubleshooting</h3>
 <ul>
+<li>You may have to use the command <code>eval $(docker-machine env)</code> before proceeding to get Docker to work.</li>
 <li>If, at any point, you see the error message <code>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</code>, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you&rsquo;ve opened up the Docker Quickstart Terminal and are running your Docker commands there.</li>
+<li>If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).</li>
 </ul>
-</li>
-<li>
-<p>You may have to use the command <code>eval $(docker-machine env)</code> before proceeding to get Docker to work.</p>
-</li>
-</ul>
-<p>Ensure you are in the <code>ask/docker</code> directory.</p>
+<pre><code>(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+</code></pre>
+
 <h2 id="set-frontend-url-variables-linux-only">Set frontend URL variables (Linux only)</h2>
 <p>If you&rsquo;re not on Linux, you can skip this step and go on to <a href="#spin-up-the-docker-container">spinning up the Docker container</a>.</p>
 <p>If you are on Linux, you will have to manually edit a few variables in the <code>ask-basic-local.yaml</code> file. This is because the current basic demo setup is geared toward Macs, and the Docker Machine IP for local installations on Mac is different from the IP for Linux machines.</p>
@@ -463,6 +467,7 @@
 <li><code>PILLAR_URL</code> (under &ldquo;elkhorn&rdquo;): Set to <code>http://127.0.0.1:8080</code>.</li>
 </ul>
 <h2 id="spin-up-the-docker-container">Spin up the Docker container</h2>
+<p>Ensure you are in the <code>ask/docker</code> directory.</p>
 <p>The very first time that you spin up the Docker container, this will be a multi-step process:</p>
 <p>1. Spin up the Docker container:</p>
 <pre><code>docker-compose -f ask-basic-local.yaml up -d
@@ -480,7 +485,6 @@ Creating docker_mongodata_1
 Creating docker_pillarapp_1
 Creating docker_elkhorn_1
 Creating docker_cayapp_1
-Creating docker_proxy_1
 </code></pre>
 
 <p>4. If this is your first time installing Ask, you&rsquo;ll now have to shut everything down with the Docker <code>down</code> command. This up-down-up sequence initializes authentication on MongoDB.</p>
@@ -514,6 +518,7 @@ Creating docker_proxy_1
 <ul>
 <li><strong>Mac OS X</strong>: We support OS X El Capitan (10.11) or newer.</li>
 <li><strong>Ubuntu</strong>: We support Ubuntu 15.10 or newer.</li>
+<li><strong>Windows</strong>: We support Windows 7 or newer.</li>
 </ul>
 <p>You should also have the following resources on your machine before installing:</p>
 <ul>
@@ -595,18 +600,20 @@ export MONGO_DB=coral
 <ul>
 <li>On the server, you can do this via the command:
   <code>sudo service docker start</code></li>
-<li>
-<p>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</p>
+<li>On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type &ldquo;docker quickstart&rdquo; into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.</li>
+</ul>
+<h3 id="troubleshooting_1">Troubleshooting</h3>
 <ul>
+<li>You may have to use the command <code>eval $(docker-machine env)</code> before proceeding to get Docker to work.</li>
 <li>If, at any point, you see the error message <code>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</code>, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you&rsquo;ve opened up the Docker Quickstart Terminal and are running your Docker commands there.</li>
+<li>If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).</li>
 </ul>
-</li>
-<li>
-<p>You may have to use the command <code>eval $(docker-machine env)</code> before proceeding to get Docker to work.</p>
-</li>
-</ul>
-<p>Ensure you are in the <code>ask/docker</code> directory.</p>
+<pre><code>(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+</code></pre>
+
 <h2 id="spin-up-the-docker-container_1">Spin up the Docker container</h2>
+<p>Ensure you are in the <code>ask/docker</code> directory.</p>
 <p>First, run the following command to export your edited variables and set the environment variables.</p>
 <pre><code>source env.conf
 </code></pre>
@@ -623,12 +630,10 @@ export MONGO_DB=coral
 
 <p>2. Docker will now download and install a number of Docker images. This may take a few minutes.</p>
 <p>3. Once all Docker images have been downloaded, you&rsquo;ll see something like the following in your terminal:</p>
-<pre><code>Creating network &quot;docker_default&quot; with the default driver
-Creating docker_mongodata_1
+<pre><code>Creating docker_mongodata_1
 Creating docker_pillarapp_1
 Creating docker_elkhorn_1
 Creating docker_cayapp_1
-Creating docker_proxy_1
 </code></pre>
 
 <p>4. If this is your first time installing Ask, you&rsquo;ll now have to shut everything down with the Docker <code>down</code> command. This up-down-up sequence initializes authentication on MongoDB.</p>
@@ -645,7 +650,7 @@ Creating docker_proxy_1
 <li>On Mac, the default Docker Machine IP for laptops is <code>192.168.99.100</code>: <a href="http://192.168.99.100">http://192.168.99.100</a></li>
 <li>On Linux, this should be set to <code>127.0.0.1</code> or a private IP address: <a href="http://127.0.0.1">http://127.0.0.1</a></li>
 </ul>
-<h1 id="troubleshooting">Troubleshooting</h1>
+<h1 id="troubleshooting_2">Troubleshooting</h1>
 <h2 id="old-version-of-docker">Old version of Docker</h2>
 <p>If you see an error while running the Docker Compose commands, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command <code>docker-compose --version</code>.
 Example error:</p>
@@ -689,6 +694,16 @@ Example error:</p>
 <h2 id="removing-old-docker-machines">Removing old Docker machines</h2>
 <p>Another option for a &ldquo;fresh install&rdquo; is to remove old Docker machines. You could try this in combination with <a href="#removing-docker-images">removing Docker images</a> and then reinstalling Ask to see if that fixes your issue.</p>
 <pre><code>docker rm -f $(docker ps -a -q)
+</code></pre>
+
+<h2 id="other-issues-while-installing">Other issues while installing</h2>
+<ul>
+<li>You may have to use the command <code>eval $(docker-machine env)</code> after you&rsquo;ve started Docker in order to get Docker to work.</li>
+<li>If, at any point, you see the error message <code>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</code>, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you&rsquo;ve opened up the Docker Quickstart Terminal and are running your Docker commands there.</li>
+<li>If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).</li>
+</ul>
+<pre><code>(default) Check network to re-create if needed...
+(default) Waiting for an IP...
 </code></pre>
 
 <h1 id="ask-tutorials">Ask tutorials</h1>
