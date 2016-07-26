@@ -99,6 +99,7 @@ You must have the following items installed:
 
 * **Mac OS X**: We support OS X El Capitan (10.11) or newer.
 * **Ubuntu**: We support Ubuntu 15.10 or newer.
+* **Windows**: We support Windows 7 or newer.
 
 You should also have the following resources on your machine before installing:
 
@@ -129,11 +130,17 @@ Start Docker.
   sudo service docker start
   ```
 * On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
-     * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+
+### Troubleshooting
 
 * You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
 
-Ensure you are in the `ask/docker` directory.
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+```
 
 ## Set frontend URL variables (Linux only)
 
@@ -150,6 +157,8 @@ Open up your `ask-basic-local.yaml` file and set these variables:
 * `PILLAR_URL` (under "elkhorn"): Set to `http://127.0.0.1:8080`.
 
 ## Spin up the Docker container
+
+Ensure you are in the `ask/docker` directory.
 
 The very first time that you spin up the Docker container, this will be a multi-step process:
 
@@ -173,7 +182,6 @@ Creating docker_mongodata_1
 Creating docker_pillarapp_1
 Creating docker_elkhorn_1
 Creating docker_cayapp_1
-Creating docker_proxy_1
 ```
 
 4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
@@ -208,6 +216,7 @@ You must have the following items installed and running:
 
 * **Mac OS X**: We support OS X El Capitan (10.11) or newer.
 * **Ubuntu**: We support Ubuntu 15.10 or newer.
+* **Windows**: We support Windows 7 or newer.
 
 You should also have the following resources on your machine before installing:
 
@@ -296,13 +305,21 @@ Start Docker.
   sudo service docker start
   ```
 * On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
-     * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+
+### Troubleshooting
 
 * You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
 
-Ensure you are in the `ask/docker` directory.
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+```
 
 ## Spin up the Docker container
+
+Ensure you are in the `ask/docker` directory.
 
 First, run the following command to export your edited variables and set the environment variables.
 ```
@@ -326,12 +343,10 @@ Unsupported config option for services service: 'mongodata'
 
 3\. Once all Docker images have been downloaded, you'll see something like the following in your terminal:
 ```
-Creating network "docker_default" with the default driver
 Creating docker_mongodata_1
 Creating docker_pillarapp_1
 Creating docker_elkhorn_1
 Creating docker_cayapp_1
-Creating docker_proxy_1
 ```
 
 4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
@@ -409,6 +424,17 @@ Another option for a "fresh install" is to remove old Docker machines. You could
 
 ```
 docker rm -f $(docker ps -a -q)
+```
+
+## Other issues while installing
+
+* You may have to use the command `eval $(docker-machine env)` after you've started Docker in order to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
+
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
 ```
 
 # Ask tutorials
