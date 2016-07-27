@@ -24,7 +24,6 @@ pages:
   - Writing code: 'contribute/writing_code.md'
   - Coding style guide: 'contribute/coding_style_guide.md'
   - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
-  - Contributor License Agreement: 'contribute/contributor_license_agreement.md'
   - Code of Conduct: 'contribute/code_of_conduct.md'
 - FAQ: 'faq.md'
 
