@@ -3,6 +3,7 @@
 Before reporting a bug or requesting a new feature, make sure you've done these first:
 
  * Check that someone hasn’t already filed the bug or feature request by searching the "Issues" for the repo in question, or in the "Reef" repository.
+ * If it's for Ask, check the features in [https://trello.com/b/hAtt6ujX/ask](our Trello board).
  * Don’t reopen issues that have been marked “wontfix” by a core developer.
 
 ## Reporting bugs
@@ -21,6 +22,12 @@ Add as much additional information as you can, such as code snippets, logs, and 
 If your bug or feature request involves the user interface, include screenshots in your ticket. Try to make the screenshots small enough to only show the relevant area of the screen, but large enough to provide context for that area.
 
 ## Requesting features
+
+We want your help in deciding what to build! We have a section of our community dedicated to each of our main software products: 
+
+[https://community.coralproject.net/c/the-coral-project/product-trust](Trust)
+[https://community.coralproject.net/c/the-coral-project/product-ask](Ask)
+[https://community.coralproject.net/c/the-coral-project/product-talk](Talk)
 
 When submitting a feature request, try to adhere to these guidelines:
 
