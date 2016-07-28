@@ -308,15 +308,14 @@ git config --global user.email &quot;you@email.com&quot;
 <p>If you are installing locally, you will want to have a local MongoDB running with sample data. When you install the all-in-one Docker Compose installation, this portion is taken care of for you.</p>
 <p>However, if you are running from source, for example, you will want to set up your local MongoDB and import sample data.</p>
 <p>Additionally, if you ran into any problems with the automatic MongoDB setup portion of the installation, you can follow these instructions to import the data and set up your MongoDB manually.</p>
-<h3 id="download-the-sample-data-dump">Download the sample data dump</h3>
-<p>We have provided an anonymized comments data dump for MongoDB, available to download here: <a href="https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz">MongoDB data dump</a>.
-This data dump is 100MB. Download it to your computer.</p>
 <h3 id="download-and-install-mongodb">Download and install MongoDB</h3>
 <p>First, download and set up MongoDB. The MongoDB website offers <a href="https://docs.mongodb.com/manual/installation/">instructions on how to download and install</a>.</p>
 <p>A nice GUI tool you can use with MongoDB is <a href="http://3t.io/mongochef/download/">MongoChef</a>, and it&rsquo;s quite easy to install and set up.</p>
+<h3 id="download-the-sample-data-dump">Download the sample data dump</h3>
+<p>We have provided a sample data dump for MongoDB, available to download here: <a href="https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz">MongoDB data dump</a>.</p>
 <h3 id="import-data">Import data</h3>
-<p>The simplest way to do this is from the command line. First ensure you have MongoDB running.</p>
-<p>Then, take the dump.tar.gz file you downloaded, place it in a folder, and extract it. Copy the directory path to the coral directory within the extracted file.</p>
+<p>The simplest way to do this is from the command line. First, ensure you have MongoDB running.</p>
+<p>Then, take the dump.tar.gz file you downloaded, place it in a folder, and extract it. Copy the path to the coral directory within the extracted file.</p>
 <p>Then, run the below command (filling in your own directory path):</p>
 <pre><code>mongorestore -d coral /yourpath/dump/coral/
 </code></pre>
