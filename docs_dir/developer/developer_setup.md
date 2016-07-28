@@ -63,22 +63,21 @@ However, if you are running from source, for example, you will want to set up yo
 
 Additionally, if you ran into any problems with the automatic MongoDB setup portion of the installation, you can follow these instructions to import the data and set up your MongoDB manually.
 
-### Download the sample data dump
-
-We have provided an anonymized comments data dump for MongoDB, available to download here: [MongoDB data dump](https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz).
-This data dump is 100MB. Download it to your computer.
-
 ### Download and install MongoDB
 
 First, download and set up MongoDB. The MongoDB website offers [instructions on how to download and install](https://docs.mongodb.com/manual/installation/).
 
 A nice GUI tool you can use with MongoDB is [MongoChef](http://3t.io/mongochef/download/), and it's quite easy to install and set up.
 
+### Download the sample data dump
+
+We have provided a sample data dump for MongoDB, available to download here: [MongoDB data dump](https://s3.amazonaws.com/coral-demo-dataset/dump.tar.gz).
+
 ### Import data
 
-The simplest way to do this is from the command line. First ensure you have MongoDB running.
+The simplest way to do this is from the command line. First, ensure you have MongoDB running.
 
-Then, take the dump.tar.gz file you downloaded, place it in a folder, and extract it. Copy the directory path to the coral directory within the extracted file.
+Then, take the dump.tar.gz file you downloaded, place it in a folder, and extract it. Copy the path to the coral directory within the extracted file.
 
 Then, run the below command (filling in your own directory path):
 ```
