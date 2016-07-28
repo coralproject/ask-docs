@@ -18,9 +18,9 @@ Ask is a tool that enables editors to create embeddable calls for contributions,
 
 Version 1.0 of Ask will be released Q3 of 2016.
 
-# Ask components
+## Ask components
 
-## Create form
+### Create form
 
 The form builder is located under "Create Form."
 
@@ -44,7 +44,7 @@ The form also has options for:
 * Adding text without an entry field to the top of the form (a "headline" and instructions or description).
 * Terms and conditions that will appear as text at the bottom of the form.
 
-## Embedding the generated form
+### Embedding the generated form
 
 Once a form has been saved, an embed code is generated. You can then use this code to embed the form into your own page. Three options are presented for using the forms:
 
@@ -63,7 +63,7 @@ You can take the standalone page link and use it in an iframe, which you can the
 #### Standalone form
 The "Standalone Form" button takes you to the form as a standalone page that you can link to.
 
-## View forms
+### View forms
 
 The "View forms" area allows you the create, edit, and view forms, as well as view the submissions made to your forms.
 
@@ -80,13 +80,21 @@ You can install the Ask product through a straightforward Docker Compose install
 There are two options currently available for installing Ask:
 
 * **[Basic demo setup](#ask-installation-basic-demo-setup)**: The first option is an extremely simple demo setup: all variables are hardcoded, so all you have to do is run a few simple commands to get up and running on your laptop.
-    * This is a good option if you just want to install and demo Ask.
+    * **_Probably best for you if:_** you just want to install and demo Ask.
 * **[Advanced setup](#ask-installation-advanced-setup)**: The second option is still simple, but has a few more steps where you can set some variables and customize your setup (for instance, set up your own S3 bucket instead of using our hardcoded demo S3 bucket).
-    * This is a good option if you want to do more with Ask than just a basic demo.
+    * **_Probably best for you if:_** you want to do more with Ask than just a basic demo.
 
 # Ask installation: basic demo setup
 
-## Before you begin
+We currently support Mac, Linux, and Windows. Choose your operating system to view installation instructions.
+
+* **[Mac OS X](#basic-demo-setup-mac)**: We support OS X El Capitan (10.11) or newer.
+* **[Linux](#basic-demo-setup-linux)**: We support Ubuntu 15.10 or newer.
+* **[Windows](#basic-demo-setup-windows)**: We support Windows 7 or newer.
+
+## Basic demo setup: Mac OS X
+
+### Before you begin
 
 You must have the following items installed:
 
@@ -95,22 +103,16 @@ You must have the following items installed:
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
-### Operating system requirements
-
-* **Mac OS X**: We support OS X El Capitan (10.11) or newer.
-* **Ubuntu**: We support Ubuntu 15.10 or newer.
-* **Windows**: We support Windows 7 or newer.
-
 You should also have the following resources on your machine before installing:
 
 * Minimum CPU: 2.0 GHz
 * Minimum RAM: 4GB
 * Minimum disk space: 4GB
 
-### Browser requirements
+#### Browser requirements
 We currently support Chrome.
 
-## Get the source code
+### Get the source code
 
 Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
 ```
@@ -121,7 +123,7 @@ Then cd into the `ask/docker` directory.
 cd ask/docker
 ```
 
-## Start Docker
+### Start Docker
 
 Start Docker.
 
@@ -131,7 +133,7 @@ Start Docker.
   ```
 * On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
 
-### Troubleshooting
+#### Troubleshooting
 
 * You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
 * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
@@ -142,21 +144,7 @@ Start Docker.
 (default) Waiting for an IP...
 ```
 
-## Set frontend URL variables (Linux only)
-
-If you're not on Linux, you can skip this step and go on to [spinning up the Docker container](#spin-up-the-docker-container).
-
-If you are on Linux, you will have to manually edit a few variables in the `ask-basic-local.yaml` file. This is because the current basic demo setup is geared toward Macs, and the Docker Machine IP for local installations on Mac is different from the IP for Linux machines.
-
-Basically, anywhere that you see `192.168.99.100` in the `ask-basic-local.yaml` file, you want to change it to `127.0.0.1`.
-
-Open up your `ask-basic-local.yaml` file and set these variables:
-
-* `PILLAR_URL` (under "cayapp"): Set to `http://127.0.0.1:8080`.
-* `ELKHORN_URL` (under "cayapp"): Set to `http://127.0.0.1:4444`.
-* `PILLAR_URL` (under "elkhorn"): Set to `http://127.0.0.1:8080`.
-
-## Spin up the Docker container
+### Spin up the Docker container
 
 Ensure you are in the `ask/docker` directory.
 
@@ -194,16 +182,228 @@ docker-compose -f ask-basic-local.yaml down
 docker-compose -f ask-basic-local.yaml up -d
 ```
 
-## Access Ask
+### Access Ask
 
 You can now use Ask by accessing the front end URL in your browser.
 
-* On Mac, the default Docker Machine IP for laptops is `192.168.99.100`: [http://192.168.99.100](http://192.168.99.100)
-* On Linux, this should be set to `127.0.0.1` or a private IP address: [http://127.0.0.1](http://127.0.0.1)
+* On Mac, the default Docker Machine IP for local machines is `192.168.99.100`: [http://192.168.99.100](http://192.168.99.100)
+
+## Basic demo setup: Linux
+
+### Before you begin
+
+You must have the following items installed:
+
+* **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
+    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
+* **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
+    * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
+
+You should also have the following resources on your machine before installing:
+
+* Minimum CPU: 2.0 GHz
+* Minimum RAM: 4GB
+* Minimum disk space: 4GB
+
+#### Browser requirements
+We currently support Chrome.
+
+### Get the source code
+
+Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
+```
+git clone https://github.com/coralproject/ask.git
+```
+Then cd into the `ask/docker` directory.
+```
+cd ask/docker
+```
+
+### Start Docker
+
+Start Docker.
+
+* On the server, you can do this via the command:
+  ```
+  sudo service docker start
+  ```
+* On your local machine, you can start Docker via the Docker Quickstart Terminal. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
+
+#### Troubleshooting
+
+* You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
+
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+```
+
+### Set frontend URL variables
+
+On Linux, you will have to manually edit a few variables in the `ask-basic-local.yaml` file. This is because the current basic demo setup is geared toward Macs, and the Docker Machine IP for local installations on Mac is different from the IP for Linux machines.
+
+Basically, anywhere that you see `192.168.99.100` in the `ask-basic-local.yaml` file, you want to change it to `127.0.0.1`.
+
+Open up your `ask-basic-local.yaml` file and set these variables:
+
+* `PILLAR_URL` (under "cayapp"): Set to `http://127.0.0.1:8080`.
+* `ELKHORN_URL` (under "cayapp"): Set to `http://127.0.0.1:4444`.
+* `PILLAR_URL` (under "elkhorn"): Set to `http://127.0.0.1:8080`.
+
+### Spin up the Docker container
+
+Ensure you are in the `ask/docker` directory.
+
+The very first time that you spin up the Docker container, this will be a multi-step process:
+
+1\. Spin up the Docker container:
+```
+docker-compose -f ask-basic-local.yaml up -d
+```
+The `ask-basic-local.yaml` file contained in the `ask/docker` directory contains all the instructions that Docker Compose needs to set up the Ask product.
+
+**Troubleshooting note**: If you see an error, such as the one below, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command `docker-compose --version`.
+```
+Unsupported config option for services service: 'mongodata'
+```
+
+2\. Docker will now download and install a number of Docker images. This may take a few minutes.
+
+3\. Once all Docker images have been downloaded, you'll see something like the following in your terminal:
+```
+Creating network "docker_default" with the default driver
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+```
+
+4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
+```
+docker-compose -f ask-basic-local.yaml down
+```
+
+5\. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).
+```
+docker-compose -f ask-basic-local.yaml up -d
+```
+
+### Access Ask
+
+You can now use Ask by accessing the front end URL in your browser.
+
+* On Linux, this should be set to `127.0.0.1` (the URL we set back in the [setting frontend URL variables](#set-frontend-URL-variables) step): [http://127.0.0.1](http://127.0.0.1)
+
+## Basic demo setup: Windows
+
+### Before you begin
+
+You must have the following items installed:
+
+* **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
+    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
+* **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
+    * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
+
+You should also have the following resources on your machine before installing:
+
+* Minimum CPU: 2.0 GHz
+* Minimum RAM: 4GB
+* Minimum disk space: 4GB
+
+#### Browser requirements
+We currently support Chrome.
+
+### Get the source code
+
+Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
+```
+git clone https://github.com/coralproject/ask.git
+```
+Then cd into the `ask/docker` directory.
+```
+cd ask/docker
+```
+
+### Start Docker
+
+Start Docker.
+
+* On the server, you can do this via the command:
+  ```
+  sudo service docker start
+  ```
+* On your local machine, you can start Docker via the Docker Quickstart Terminal. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
+
+#### Troubleshooting
+
+* You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
+
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+```
+
+### Spin up the Docker container
+
+Ensure you are in the `ask/docker` directory.
+
+The very first time that you spin up the Docker container, this will be a multi-step process:
+
+1\. Spin up the Docker container:
+```
+docker-compose -f ask-basic-local.yaml up -d
+```
+The `ask-basic-local.yaml` file contained in the `ask/docker` directory contains all the instructions that Docker Compose needs to set up the Ask product.
+
+**Troubleshooting note**: If you see an error, such as the one below, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command `docker-compose --version`.
+```
+Unsupported config option for services service: 'mongodata'
+```
+
+2\. Docker will now download and install a number of Docker images. This may take a few minutes.
+
+3\. Once all Docker images have been downloaded, you'll see something like the following in your terminal:
+```
+Creating network "docker_default" with the default driver
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+```
+
+4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
+```
+docker-compose -f ask-basic-local.yaml down
+```
+
+5\. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).
+```
+docker-compose -f ask-basic-local.yaml up -d
+```
+
+### Access Ask
+
+You can now use Ask by accessing the front end URL in your browser.
+
+* On Windows, this should be set to `127.0.0.1` by default: [http://127.0.0.1](http://127.0.0.1)
+
 
 # Ask installation: advanced setup
 
-## Before you begin
+We currently support Mac, Linux, and Windows. Choose your operating system to view installation instructions.
+
+* **[Mac OS X](#basic-demo-setup-mac)**: We support OS X El Capitan (10.11) or newer.
+* **[Linux](#basic-demo-setup-linux)**: We support Ubuntu 15.10 or newer.
+* **[Windows](#basic-demo-setup-windows)**: We support Windows 7 or newer.
+
+## Advanced setup: Mac OS X
+
+### Before you begin
 
 You must have the following items installed and running:
 
@@ -212,22 +412,16 @@ You must have the following items installed and running:
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
-### Operating system requirements
-
-* **Mac OS X**: We support OS X El Capitan (10.11) or newer.
-* **Ubuntu**: We support Ubuntu 15.10 or newer.
-* **Windows**: We support Windows 7 or newer.
-
 You should also have the following resources on your machine before installing:
 
 * Minimum CPU: 2.0 GHz
 * Minimum RAM: 4GB
 * Minimum disk space: 4GB
 
-### Browser requirements
+#### Browser requirements
 We currently support Chrome.
 
-## Set up your external storage system (optional)
+### Set up your external storage system (optional)
 
 Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.
 
@@ -236,7 +430,7 @@ There are currently a couple of different options available for the external sto
 * **Amazon S3**: Amazon S3 is a storage system that is relatively easy to set up and use, and scales well: it allows many concurrent users to access the files.
 * **Local file system**: If you don't set up an external storage system in the [set environment variables](#set-environment-variables) step, Ask will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Ask for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.
 
-### Amazon S3
+#### Amazon S3
 
 [Amazon S3](https://aws.amazon.com/s3/) is a good option for your external storage system because it is fast, handles concurrency, and will scale well.
 
@@ -253,7 +447,7 @@ The setup of S3 is straightforward, and Amazon has good documentation. For the p
 
 You're all set! You can now use your AWS Access Key to connect Ask to your S3 bucket (you'll set this up in the [Set environment variables](#set-environment-variables) section below). If you didn't save your AWS Access Key during the set up process, you can go to the "Security Credentials" section and create a new one.
 
-## Get the source code
+### Get the source code
 
 Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
 ```
@@ -264,7 +458,7 @@ Then cd into the `ask/docker` directory.
 cd ask/docker
 ```
 
-## Set environment variables
+### Set environment variables
 
 The `env.conf` file contains environment variables you need to set. Setting your environment variables tells Docker which IP address your Coral front end will have, as well as other information such as your MongoDB username and password.
 
@@ -280,7 +474,6 @@ export MONGO_DB=coral
 
 * `FRONTEND_HOST`: set to your desired IP address for the front end.
     * On Mac, the default Docker Machine IP for laptops is `192.168.99.100`.
-    * On Linux, this should be set to `127.0.0.1` or a private IP address.
 
 MongoDB:
 
@@ -296,7 +489,7 @@ Amazon S3 (optional):
 * `AWS_ACCESS_KEY`: set to your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
 * `AWS_ACCESS_KEY`: set to your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
 
-## Start Docker
+### Start Docker
 
 Start Docker.
 
@@ -306,7 +499,7 @@ Start Docker.
   ```
 * On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
 
-### Troubleshooting
+#### Troubleshooting
 
 * You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
 * If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
@@ -317,7 +510,7 @@ Start Docker.
 (default) Waiting for an IP...
 ```
 
-## Spin up the Docker container
+### Spin up the Docker container
 
 Ensure you are in the `ask/docker` directory.
 
@@ -359,12 +552,325 @@ docker-compose -f docker-compose.yml down
 docker-compose -f docker-compose.yml up -d
 ```
 
-## Access Ask
+### Access Ask
 
 You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as `FRONTEND_HOST` in the `env.conf` setup above.
 
 * On Mac, the default Docker Machine IP for laptops is `192.168.99.100`: [http://192.168.99.100](http://192.168.99.100)
-* On Linux, this should be set to `127.0.0.1` or a private IP address: [http://127.0.0.1](http://127.0.0.1)
+
+## Advanced setup: Linux
+
+### Before you begin
+
+You must have the following items installed and running:
+
+* **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
+    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
+* **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
+    * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
+
+You should also have the following resources on your machine before installing:
+
+* Minimum CPU: 2.0 GHz
+* Minimum RAM: 4GB
+* Minimum disk space: 4GB
+
+#### Browser requirements
+We currently support Chrome.
+
+### Set up your external storage system (optional)
+
+Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.
+
+There are currently a couple of different options available for the external storage system you can use.
+
+* **Amazon S3**: Amazon S3 is a storage system that is relatively easy to set up and use, and scales well: it allows many concurrent users to access the files.
+* **Local file system**: If you don't set up an external storage system in the [set environment variables](#set-environment-variables) step, Ask will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Ask for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.
+
+#### Amazon S3
+
+[Amazon S3](https://aws.amazon.com/s3/) is a good option for your external storage system because it is fast, handles concurrency, and will scale well.
+
+The setup of S3 is straightforward, and Amazon has good documentation. For the purposes of setting S3 up for Ask, you can follow Amazon's instructions [here](http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html).
+
+1. Follow the directions for [Sign Up for Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html) and [Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html). There is no need to continue further to the demos for "Add an Object to a Bucket" and beyond: those are simply examples showing you how to use S3.
+
+* For my example, I named my bucket "ask-bucket-test" and chose region "Northern California" (which corresponds to us-west-2).
+* During the sign up process, you will create an AWS Access Key. Hang on to that information (you have the option to download it).
+
+2. Once you have signed up and set up a bucket, go to your [S3 console](https://console.aws.amazon.com/s3) to set up your permissions under "Security Credentials."
+
+3. Ensure that under "Permissions," the only Grantee is you. This means that nobody but you can access your bucket (using your AWS Access Key).
+
+You're all set! You can now use your AWS Access Key to connect Ask to your S3 bucket (you'll set this up in the [Set environment variables](#set-environment-variables) section below). If you didn't save your AWS Access Key during the set up process, you can go to the "Security Credentials" section and create a new one.
+
+### Get the source code
+
+Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
+```
+git clone https://github.com/coralproject/ask.git
+```
+Then cd into the `ask/docker` directory.
+```
+cd ask/docker
+```
+
+### Set environment variables
+
+The `env.conf` file contains environment variables you need to set. Setting your environment variables tells Docker which IP address your Coral front end will have, as well as other information such as your MongoDB username and password.
+
+```
+export FRONTEND_HOST=192.168.99.100
+
+# mongo:
+export MONGO_AUTHDB=admin
+export MONGO_USER=coral-user
+export MONGO_PASS=welcome
+export MONGO_DB=coral
+```
+
+* `FRONTEND_HOST`: set to your desired IP address for the front end.
+    * On Linux, this should be set to `127.0.0.1` or a private IP address.
+
+MongoDB:
+
+* `MONGO_USER`: set to the username for your MongoDB
+* `MONGO_PASS`: set to the password for your MongoDB
+* `MONGO_DB`: set to the name of your MongoDB (in this instance, "coral")
+* `MONGO_AUTHDB`: set to the admin user of your database
+
+Amazon S3 (optional):
+
+* `S3_BUCKET`: set to the name of your S3 bucket (in this example, `ask-bucket-test`)
+* `AWS_REGION`: set to the AWS region that you selected in your S3 setup. You can find it in your S3 console URL. In this example, it is `us-west-2`.
+* `AWS_ACCESS_KEY`: set to your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
+* `AWS_ACCESS_KEY`: set to your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
+
+### Start Docker
+
+Start Docker.
+
+* On the server, you can do this via the command:
+  ```
+  sudo service docker start
+  ```
+* On your local machine, you can start Docker via the Docker Quickstart Terminal. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
+
+#### Troubleshooting
+
+* You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
+
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+```
+
+### Spin up the Docker container
+
+Ensure you are in the `ask/docker` directory.
+
+First, run the following command to export your edited variables and set the environment variables.
+```
+source env.conf
+```
+
+The very first time that you spin up the Docker container, this will be a multi-step process:
+
+1\. Spin up the Docker container:
+```
+docker-compose -f docker-compose.yml up -d
+```
+The `docker-compose.yml` file contained in the `ask/docker` directory contains all the instructions that Docker Compose needs to set up the Ask product.
+
+**Troubleshooting note**: If you see an error, such as the one below, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command `docker-compose --version`.
+```
+Unsupported config option for services service: 'mongodata'
+```
+
+2\. Docker will now download and install a number of Docker images. This may take a few minutes.
+
+3\. Once all Docker images have been downloaded, you'll see something like the following in your terminal:
+```
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+```
+
+4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
+```
+docker-compose -f docker-compose.yml down
+```
+
+5\. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).
+```
+docker-compose -f docker-compose.yml up -d
+```
+
+### Access Ask
+
+You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as `FRONTEND_HOST` in the `env.conf` setup above.
+
+* On Linux, this should be set to `127.0.0.1` or a private IP address (the IP you set when [setting your environment variables](#set-environment-variables)): [http://127.0.0.1](http://127.0.0.1)
+
+## Advanced setup: Windows
+
+### Before you begin
+
+You must have the following items installed and running:
+
+* **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
+    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
+* **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
+    * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
+
+You should also have the following resources on your machine before installing:
+
+* Minimum CPU: 2.0 GHz
+* Minimum RAM: 4GB
+* Minimum disk space: 4GB
+
+#### Browser requirements
+We currently support Chrome.
+
+### Set up your external storage system (optional)
+
+Ask uses an external storage system as a cache to store pre-built bundled files of your created form. This allows the forms to be quickly served up when embedded on your page. Each bundled file runs about ~100KB, and there is one bundled file per form.
+
+There are currently a couple of different options available for the external storage system you can use.
+
+* **Amazon S3**: Amazon S3 is a storage system that is relatively easy to set up and use, and scales well: it allows many concurrent users to access the files.
+* **Local file system**: If you don't set up an external storage system in the [set environment variables](#set-environment-variables) step, Ask will default to using your local file system for storage. This can be a good option if you are developing locally, or just installing Ask for demo purposes. If you want to scale, however, this can get unwieldy, and it will be best to set up a storage system that is fast and handles concurrency well.
+
+#### Amazon S3
+
+[Amazon S3](https://aws.amazon.com/s3/) is a good option for your external storage system because it is fast, handles concurrency, and will scale well.
+
+The setup of S3 is straightforward, and Amazon has good documentation. For the purposes of setting S3 up for Ask, you can follow Amazon's instructions [here](http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html).
+
+1. Follow the directions for [Sign Up for Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html) and [Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html). There is no need to continue further to the demos for "Add an Object to a Bucket" and beyond: those are simply examples showing you how to use S3.
+
+* For my example, I named my bucket "ask-bucket-test" and chose region "Northern California" (which corresponds to us-west-2).
+* During the sign up process, you will create an AWS Access Key. Hang on to that information (you have the option to download it).
+
+2. Once you have signed up and set up a bucket, go to your [S3 console](https://console.aws.amazon.com/s3) to set up your permissions under "Security Credentials."
+
+3. Ensure that under "Permissions," the only Grantee is you. This means that nobody but you can access your bucket (using your AWS Access Key).
+
+You're all set! You can now use your AWS Access Key to connect Ask to your S3 bucket (you'll set this up in the [Set environment variables](#set-environment-variables) section below). If you didn't save your AWS Access Key during the set up process, you can go to the "Security Credentials" section and create a new one.
+
+### Get the source code
+
+Clone the Ask repository. This repository contains a number of setup files that you can edit, and will help you easily spin up a Docker container.
+```
+git clone https://github.com/coralproject/ask.git
+```
+Then cd into the `ask/docker` directory.
+```
+cd ask/docker
+```
+
+### Set environment variables
+
+The `env.conf` file contains environment variables you need to set. Setting your environment variables tells Docker which IP address your Coral front end will have, as well as other information such as your MongoDB username and password.
+
+```
+export FRONTEND_HOST=192.168.99.100
+
+# mongo:
+export MONGO_AUTHDB=admin
+export MONGO_USER=coral-user
+export MONGO_PASS=welcome
+export MONGO_DB=coral
+```
+
+* `FRONTEND_HOST`: set to your desired IP address for the front end.
+    * On Windows, this should be set to `127.0.0.1` or a private IP address.
+
+MongoDB:
+
+* `MONGO_USER`: set to the username for your MongoDB
+* `MONGO_PASS`: set to the password for your MongoDB
+* `MONGO_DB`: set to the name of your MongoDB (in this instance, "coral")
+* `MONGO_AUTHDB`: set to the admin user of your database
+
+Amazon S3 (optional):
+
+* `S3_BUCKET`: set to the name of your S3 bucket (in this example, `ask-bucket-test`)
+* `AWS_REGION`: set to the AWS region that you selected in your S3 setup. You can find it in your S3 console URL. In this example, it is `us-west-2`.
+* `AWS_ACCESS_KEY`: set to your AWS Access Key ID that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
+* `AWS_ACCESS_KEY`: set to your AWS Access Key that you received when you set up S3. You can also create a new key and key ID in the "Security Credentials" area of your S3 console.
+
+### Start Docker
+
+Start Docker.
+
+* On the server, you can do this via the command:
+  ```
+  sudo service docker start
+  ```
+* On your local machine, you can start Docker via the Docker Quickstart Terminal. This will usually be in your Applications folder, or (if on Mac) you can type "docker quickstart" into Spotlight to find it quickly. The Docker Quickstart Terminal will open a new terminal window, running Docker, that you will then use to run the rest of the Docker related commands below.
+
+#### Troubleshooting
+
+* You may have to use the command `eval $(docker-machine env)` before proceeding to get Docker to work.
+* If, at any point, you see the error message `Cannot connect to the Docker daemon. Is the docker daemon running on this host?`, this probably means that you are not running Docker commands within the Docker Quickstart Terminal. Make sure that you've opened up the Docker Quickstart Terminal and are running your Docker commands there.
+* If you see an error like the one below, try closing and reopening Docker Quickstart Terminal again, or simply waiting (sometimes it can take a few moments).
+
+```
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+```
+
+### Spin up the Docker container
+
+Ensure you are in the `ask/docker` directory.
+
+First, run the following command to export your edited variables and set the environment variables.
+```
+source env.conf
+```
+
+The very first time that you spin up the Docker container, this will be a multi-step process:
+
+1\. Spin up the Docker container:
+```
+docker-compose -f docker-compose.yml up -d
+```
+The `docker-compose.yml` file contained in the `ask/docker` directory contains all the instructions that Docker Compose needs to set up the Ask product.
+
+**Troubleshooting note**: If you see an error, such as the one below, make sure that your Docker Compose installation is version 1.7 or above. You can check your version using the command `docker-compose --version`.
+```
+Unsupported config option for services service: 'mongodata'
+```
+
+2\. Docker will now download and install a number of Docker images. This may take a few minutes.
+
+3\. Once all Docker images have been downloaded, you'll see something like the following in your terminal:
+```
+Creating docker_mongodata_1
+Creating docker_pillarapp_1
+Creating docker_elkhorn_1
+Creating docker_cayapp_1
+```
+
+4\. If this is your first time installing Ask, you'll now have to shut everything down with the Docker `down` command. This up-down-up sequence initializes authentication on MongoDB.
+```
+docker-compose -f docker-compose.yml down
+```
+
+5\. Finally, start the Docker container back up. In future, you can simply use this command to start your Docker container (instead of bringing Docker up, then down, then up again).
+```
+docker-compose -f docker-compose.yml up -d
+```
+
+### Access Ask
+
+You can now use Ask by accessing the front end URL in your browser. This is the URL you specified as `FRONTEND_HOST` in the `env.conf` setup above.
+
+* On Windows, this should be set to `127.0.0.1` or a private IP address (the IP you set when [setting your environment variables](#set-environment-variables)): [http://127.0.0.1](http://127.0.0.1)
 
 # Troubleshooting
 
