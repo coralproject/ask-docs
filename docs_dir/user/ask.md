@@ -10,6 +10,8 @@ Ask is a tool that enables editors to create embeddable calls for contributions,
 * **End users**: People who consume content and contribute their own knowledge and experiences, in order to improve the quality of the coverage so that it is closer to their own needs and experiences.
 * **Publishers**: People who want to understand the value of engaging more deeply with segments of the users, in order to better assess how and why to invest smartly in community.
 
+We've created a guide on how to write a well-considered form. [You can read it here.](https://coralproject.net/forms-audience-engagement/)
+
 ## Architecture
 
 ![ask-architecture](/images/ask-architecture.svg)
@@ -945,4 +947,4 @@ docker rm -f $(docker ps -a -q)
 
 # Ask tutorials
 
-We are still developing our Ask tutorials.
+We are still developing our Ask tutorials. In the meantime, you can read our guide on [how to approach asking your readers for information.](https://coralproject.net/forms-audience-engagement/)

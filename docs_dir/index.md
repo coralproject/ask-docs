@@ -2,7 +2,7 @@ Welcome to the Coral Project documentation! This site aims to familiarize you wi
 
 # What is the Coral Project?
 
-The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. We're creating tools that allow everyone feel safe, respected, and heard. It consists of [three products](#coral-products): [Ask](#ask), [Trust](#trust), and [Talk](#talk).
+The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. We're creating tools that allow everyone feel safe, respected, and heard. It consists of [four products](#coral-products): [Ask](#ask), [Trust](#trust), [Talk](#talk), and [Guides](#guides).
 
 If you'd like to learn more about the Coral Project from a high-level perspective, [the main Coral Project website](https://www.coralproject.net) is the best place to do that. You can find information there about the project, our goals, and the individual products.
 
@@ -48,6 +48,9 @@ Read more about Trust on our [Trust user guide](user/trust) page. You can curren
 
 ## Talk
 Talk is still in development. The beta will be released in Q4 of 2016.
+
+## Guides
+Strong community is about more than software. Our guides will help everyone in the newsroom be intentional about their community choices, whatever technology you use. We are currently covering these issues on our [blog](https://coralproject.net); the complete guides will be released in Q1 2017.
 
 # Product roadmap
 
