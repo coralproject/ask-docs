@@ -6,6 +6,42 @@ It's made up of a series of [React](https://facebook.github.io/react/) component
 
 The webpack build process results in a `bundle.js` file, which contains all Javascript and CSS for Cay. Common issues like CSS cross-browser issues, ES6 transpilation, and minification are all handled by webpack. `bundle.js` lives in-memory until build time (`npm run build`).
 
+## Source code folder structure
+
+```
+.
++-- .github
++-- assets               -> nginx config
++-- css
++-- dist                 -> built files
++-- fonts
++-- lang
++-- public               -> images and config
+   config.json           -> environment variables and such
+   data_config.json      -> filters and dimension defs
++-- src
+|  +-- app               -> top-level route views connected to Redux
+|    +-- layout
+|    AppActions.js
+|    AppReducer.js
+|    MainReducer.js
+     ... other page-level (stateful) components
+|  +-- auth
+|  +-- comments          -> any UI and redux for Comments
+|  +-- components        -> re-usable generic UI components
+|  +-- explorer          -> data visualization explorer domain
+|  +-- filters           -> any UI and redux for Filters
+|  +-- search            -> any UI and redux for Searches
+|  +-- i18n              -> internationalization wrappers
+|  +-- tags              -> any UI and redux for Tags
+|  +-- users             -> any UI and redux for Users
+index.js                 -> entry point for app
+settings.js              -> colors for the app
+store.js                 -> redux store
+
++-- test                 -> mirrors the src folder
+```
+
 The meat of the application lives in the `/src` folder. Components are grouped into subdirectories based on their "domain": for instance, everything that has to do with creating, viewing and editing searches lives in the `search` folder. Similarly, everything having to do with tags lives in the `tags` folder.
 
 The reducers are combined in `/src/app/MainReducer.js`.
