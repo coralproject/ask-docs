@@ -22,6 +22,10 @@ If you'd like to see more about how Pillar fits into the Coral Ecosystem, you ca
 
 * All import endpoints `upsert` data. This means that when you import an entry, it will overwrite the information for that entry if the entry already exists. This prevents duplications and other problems.
 
+### GoDoc source code documentation
+
+Pillar has automatically generated [GoDoc generated documentation](https://godoc.org/github.com/coralproject/pillar) available, which you can view [here](https://godoc.org/github.com/coralproject/pillar). GoDoc generates documentation from Go source code.
+
 # Pillar installation
 
 If you want to install Pillar as part of an all-in-one installation of the Coral Ecosystem, you can [find instructions to do that here](../quickstart/install).

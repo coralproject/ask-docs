@@ -10,6 +10,10 @@ It is an Extract, Transform, and Load command line tool designed to:
 
 Sponge uses strategy files to assist with data import. Strategy files are JSON files that are used to tell Sponge where to get the data, and how to translate it. You can read more about [strategy files here](#strategy-files), including information on their structure and examples.
 
+### GoDoc source code documentation
+
+Sponge has automatically generated [GoDoc generated documentation](https://godoc.org/github.com/coralproject/sponge) available, which you can view [here](https://godoc.org/github.com/coralproject/sponge). GoDoc generates documentation from Go source code.
+
 ## Composition
 
 Sponge is made up of several different packages, and you can read more about them on the [included packages section](#packages-included-in-sponge). They work together as shown in the diagram below:
