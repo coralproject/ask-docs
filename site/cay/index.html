@@ -251,6 +251,8 @@
     
         <li class="main active"><a href="#introduction">Introduction</a></li>
         
+            <li><a href="#source-code-folder-structure">Source code folder structure</a></li>
+        
     
         <li class="main "><a href="#cay-installation">Cay installation</a></li>
         
@@ -273,6 +275,40 @@
 <p><a href="https://github.com/coralproject/cay">Cay</a> is the front-end application for Coral.</p>
 <p>It&rsquo;s made up of a series of <a href="https://facebook.github.io/react/">React</a> components, compiled into modules with <a href="http://webpack.github.io/">webpack</a>.</p>
 <p>The webpack build process results in a <code>bundle.js</code> file, which contains all Javascript and CSS for Cay. Common issues like CSS cross-browser issues, ES6 transpilation, and minification are all handled by webpack. <code>bundle.js</code> lives in-memory until build time (<code>npm run build</code>).</p>
+<h2 id="source-code-folder-structure">Source code folder structure</h2>
+<pre><code>.
++-- .github
++-- assets               -&gt; nginx config
++-- css
++-- dist                 -&gt; built files
++-- fonts
++-- lang
++-- public               -&gt; images and config
+   config.json           -&gt; environment variables and such
+   data_config.json      -&gt; filters and dimension defs
++-- src
+|  +-- app               -&gt; top-level route views connected to Redux
+|    +-- layout
+|    AppActions.js
+|    AppReducer.js
+|    MainReducer.js
+     ... other page-level (stateful) components
+|  +-- auth
+|  +-- comments          -&gt; any UI and redux for Comments
+|  +-- components        -&gt; re-usable generic UI components
+|  +-- explorer          -&gt; data visualization explorer domain
+|  +-- filters           -&gt; any UI and redux for Filters
+|  +-- search            -&gt; any UI and redux for Searches
+|  +-- i18n              -&gt; internationalization wrappers
+|  +-- tags              -&gt; any UI and redux for Tags
+|  +-- users             -&gt; any UI and redux for Users
+index.js                 -&gt; entry point for app
+settings.js              -&gt; colors for the app
+store.js                 -&gt; redux store
+
++-- test                 -&gt; mirrors the src folder
+</code></pre>
+
 <p>The meat of the application lives in the <code>/src</code> folder. Components are grouped into subdirectories based on their &ldquo;domain&rdquo;: for instance, everything that has to do with creating, viewing and editing searches lives in the <code>search</code> folder. Similarly, everything having to do with tags lives in the <code>tags</code> folder.</p>
 <p>The reducers are combined in <code>/src/app/MainReducer.js</code>.</p>
 <h1 id="cay-installation">Cay installation</h1>
