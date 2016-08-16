@@ -2,6 +2,10 @@
 
 [Xenia-driver-js](https://github.com/coralproject/xenia-driver-js) is a JavaScript library that performs queries to [Xenia](https://github.com/coralproject/xenia) from the browser, or from a Node.js application.
 
+## Example data visualization
+
+During a Hackathon event, one of our Coral Project developers put together an example data visualization, built using the [d3.js](https://d3js.org/) JavaScript library. You can view [the example here](http://coralproject.github.io/hackathon/datavis.html), and see the code the developer used [on GitHub](https://github.com/coralproject/hackathon/blob/gh-pages/datavis.html).
+
 # Xenia Driver installation
 
 ```

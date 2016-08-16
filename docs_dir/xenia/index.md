@@ -10,6 +10,10 @@ Similarly, output documents from multiple pipelines can be bundled together. Thi
 
 Xenia moves the query logic out of the application code. Front end developers, data analysts, and anyone else familiar with the simple, declarative [MongoDB aggregation syntax](https://docs.mongodb.com/manual/reference/aggregation/) can adjust the data requests, and create or update endpoints.
 
+### Xenia recipes
+
+During a Hackathon event, one of the Coral Project developers put together a set of interactive Xenia recipes. You can view those and play around with them [here](http://coralproject.github.io/hackathon/recipes.html).
+
 # Xenia installation
 
 Xenia is a configurable service layer that publishes endpoints against [MongoDB aggregation pipeline queries](https://docs.mongodb.org/manual/core/aggregation-introduction/).
