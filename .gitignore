@@ -2,3 +2,4 @@
 site/index.php
 docsync/iron.json
 docsync/config.sh
+docsync/*.zip
