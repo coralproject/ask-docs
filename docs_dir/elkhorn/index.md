@@ -230,7 +230,8 @@ https://localhost:4444/create
 ```
 #### Example message body
 ```
-.
+{"target":"#ask-form","theme":{"headerBackground":"#FFFFFF","headerText":"#222222","headerIntroText":"#444444","formBackground":"#FFFFFF","footerBackground":"#FFFFFF","requiredAsterisk":"#939393","inputBackground":"#FFFFFF","inputText":"#222222","footerText":"#222222","fieldTitleText":"#222222","progressBar":"#44AA44","progressBarBackground":"#CCCCCC","submitButtonBackground":"#F67D6E","submitButtonText":"#FFFFFF","selectedItemBackground":"#2E343B","selectedItemText":"#FAFAFA"},"settings":{"saveDestination":"http://10.0.1.195:8080/api/form_submission/","showFieldNumbers":true,"isActive":false,"inactiveMessage":"We are not currently accepting submissions. Thank you."},"header":{"title":"A form about drinks","description":"Tell us all about your favorite beverages.","heading":"What is your favorite drink?"},"footer":{"conditions":""},"finishedScreen":{"title":"Thanks.","description":"Thank you for helping us with our journalism. We read all submissions, and will be in touch if we have any more questions."},"steps":[{"id":"b42cb533-5506-4fb0-a9d3-2b6e740ff6b6","name":"first_step","createdAt":1471970980762,"widgets":[{"title":"A simple question","friendlyType":"Short Answer","type":"field","component":"TextField","identity":false,"wrapper":{},"props":{},"id":"0970a788-db9a-4595-9e44-5d3b99549a60"},{"title":"Another question","friendlyType":"Long Answer","type":"field","component":"TextArea","identity":false,"wrapper":{},"props":{},"id":"11218a75-0cce-4869-829a-cf7d877460a0"}]}],"status":"closed"}
+Raw
 ```
 
 #### Example response
