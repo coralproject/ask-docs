@@ -101,7 +101,6 @@ We currently support Mac, Linux, and Windows. Choose your operating system to vi
 You must have the following items installed:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
-    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
@@ -197,7 +196,6 @@ You can now use Ask by accessing the front end URL in your browser.
 You must have the following items installed:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
-    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
@@ -305,7 +303,6 @@ You can now use Ask by accessing the front end URL in your browser.
 You must have the following items installed:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
-    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
@@ -410,7 +407,6 @@ We currently support Mac, Linux, and Windows. Choose your operating system to vi
 You must have the following items installed and running:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
-    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
@@ -567,7 +563,6 @@ You can now use Ask by accessing the front end URL in your browser. This is the 
 You must have the following items installed and running:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
-    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
@@ -724,7 +719,6 @@ You can now use Ask by accessing the front end URL in your browser. This is the 
 You must have the following items installed and running:
 
 * **MongoDB**: You can find instructions on installing MongoDB [on the MongoDB website](https://docs.mongodb.com/getting-started/shell/).
-    * Make sure MongoDB is running before you proceed: use the command `mongod` to start running MongoDB as a daemon.
 * **Docker Toolbox**: You can install Docker Toolbox from the [Docker Toolbox product page](https://www.docker.com/products/docker-toolbox).
     * If you already have Docker installed, you'll want to make sure that you have Docker Compose version 1.7 or later. You can check your version using the command `docker-compose --version`.
 
