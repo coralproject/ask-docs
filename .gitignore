@@ -1,5 +1,5 @@
 .DS_Store
-site/index.php
+site/
 docsync/iron.json
 docsync/config.sh
 docsync/*.zip
