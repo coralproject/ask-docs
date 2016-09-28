@@ -4,6 +4,9 @@ This is the documentation for The Coral Project, and it is a work in progress. P
 
 You can view the Coral Project documentation at [https://coralprojectdocs.herokuapp.com](https://coralprojectdocs.herokuapp.com).
 
+## Editing Documentation
+Make all documentation changes to the markdown files in the `docs_dir` directory.
+
 ## Building Documentation
 
 Documentation is build via [mkdocs](http://www.mkdocs.org). To build the documentation:
