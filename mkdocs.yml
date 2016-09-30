@@ -28,8 +28,11 @@ pages:
 - FAQ: 'faq.md'
 
 
-# Do not edit in PRs below here
+# Do not edit in PRs below here if you're a contributor
 site_name: Coral Project Docs
+
+google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
+
 
 markdown_extensions:
   - admonition
