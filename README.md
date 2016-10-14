@@ -7,13 +7,11 @@ Please report bugs and corrections via [Github issues](https://github.com/coralp
 Our live documentation lives at [https://docs.coralproject.net](https://docs.coralproject.net).
 
 
-## Coral Team Notes and Instructions to edit the Docs
+## [REVISION AND QA NEEDED] Coral Team Notes and Instructions to edit the Docs
 
------------
 
 Make all documentation changes to the markdown files in the `docs_dir` directory.
 
-## Building Docs
 
 Documentation is build via [mkdocs](http://www.mkdocs.org). To build the documentation:
 
