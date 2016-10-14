@@ -12,7 +12,7 @@ The Trust product is a tool that allows journalistic organizations to filter thr
 
 Read more about Trust on our [Trust user guide](user/trust) page. You can currently install Trust as part of our [all in one Docker installation](quickstart/install).
 
-> Version: Beta release: Q3 2016
+> Version: Beta release: Q3 2016 
 
 ## Talk
 Talk is still in development. The beta will be released in Q4 of 2016.

@@ -30,7 +30,12 @@ pages:
 
 
 # Do not edit in PRs below here if you're a contributor
+
+docs_dir: 'docs_dir'
+
 site_name: Coral Project Docs
+
+
 
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
@@ -41,9 +46,9 @@ markdown_extensions:
   - sane_lists
   - smarty
 
-theme: journal
+theme_dir: themes/cinder
 
-docs_dir: 'docs_dir'
+extra_css:
+    - css/extra.css
 
-#extra_css:
-#  - css/extra.css
+

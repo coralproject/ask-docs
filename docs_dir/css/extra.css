@@ -1,0 +1,23 @@
+a {
+    color: #F66447;
+}
+a:hover, a:focus {
+    color: #F66447;
+}
+
+.navbar-default .navbar-brand {
+    color: #F66447;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #F66447;
+
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: #F66447;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    color: #F66447;
+}
