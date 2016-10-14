@@ -1,6 +1,7 @@
 # If you add a page, you must add it to the index here
 pages:
 - Home: 'index.md'
+- Products: products.md
 - Developer Guide:
   - Introduction: 'developer/index.md'
   - Architectural overview: 'developer/architectural_overview.md'

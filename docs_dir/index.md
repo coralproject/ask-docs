@@ -6,6 +6,8 @@ The Coral Project is an open source project to help publishers of all sizes buil
 
 If you'd like to learn more about the Coral Project from a high-level perspective, [the main Coral Project website](https://www.coralproject.net) is the best place to do that. You can find information there about the project, our goals, and the individual products.
 
+Check the [product roadmap](products#roadmap)
+
 ## Why Coral?
 
 We’ve designed our products to meet essential needs of journalism through effective online communities.
@@ -34,37 +36,11 @@ We’ve designed our products to meet essential needs of journalism through effe
 * Interact with the newsroom
 * Avoid harassment
 
-# Coral products
-
-## Ask
-Ask is a tool that enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.
-
-Read more about Ask and how to install it on our [Ask user guide](user/ask) page.
-
-## Trust
-The Trust product is a tool that allows journalistic organizations to filter through and create metrics based on individual comment behavior, and also add qualitative information. This information can be used to help journalistic organizations take next steps to better utilize and strengthen their communities.
-
-Read more about Trust on our [Trust user guide](user/trust) page. You can currently install Trust as part of our [all in one Docker installation](quickstart/install).
-
-## Talk
-Talk is still in development. The beta will be released in Q4 of 2016.
 
 ## Guides
 Strong community is about more than software. Our guides will help everyone in the newsroom be intentional about their community choices, whatever technology you use. We are currently covering these issues on our [blog](https://coralproject.net); the complete guides will be released in Q1 2017.
 
-# Product roadmap
 
-## Ask
-
-* **v1.0**: Q3 2016
-
-## Trust
-
-* **Beta release**: Q3 2016
-
-## Talk
-
-* **Beta release**: Q4 2016
 * **v1.0**: Q4 2016/Q1 2017
 
 ## Guides
