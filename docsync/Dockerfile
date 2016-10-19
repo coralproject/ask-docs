@@ -3,6 +3,7 @@ MAINTAINER "David Jay <davidgljay@gmail.com>"
 
 RUN apt-get update
 RUN pip install mkdocs
+RUN pip install mkdocs-cinder
 RUN apt-get install s3cmd -y
 RUN apt-get install git -y
 WORKDIR /usr/docs

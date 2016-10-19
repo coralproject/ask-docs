@@ -35,7 +35,7 @@ docs_dir: 'docs_dir'
 
 site_name: Coral Project Docs
 
-
+theme: 'cinder'
 
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
@@ -46,5 +46,5 @@ markdown_extensions:
   - sane_lists
   - smarty
 
-theme: mkdocs
+
 
