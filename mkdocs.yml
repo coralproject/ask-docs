@@ -33,6 +33,8 @@ pages:
 
 docs_dir: 'docs_dir'
 
+theme_dir: 'cinder'
+
 site_name: Coral Project Docs
 
 theme: 'cinder' 
