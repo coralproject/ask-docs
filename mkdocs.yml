@@ -35,9 +35,7 @@ docs_dir: 'docs_dir'
 
 site_name: Coral Project Docs
 
-theme_dir: 'cinder'
-
-theme: 'cinder'
+theme: 'mkdocs'
 
 extra_css:
     - css/extra.css
