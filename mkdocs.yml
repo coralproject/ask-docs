@@ -35,7 +35,7 @@ docs_dir: 'docs_dir'
 
 site_name: Coral Project Docs
 
-theme: 'mkdocs' 
+theme: 'cinder' 
 
 
 markdown_extensions:
