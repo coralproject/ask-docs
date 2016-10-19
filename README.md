@@ -1,10 +1,17 @@
-# The Coral Project
+# The Coral Project Docs
 
-This is the documentation for The Coral Project, and it is a work in progress. Please report any issues in [Github](https://github.com/coralproject/docs/issues).
+This is the documentation for The Coral Project, an initative by the [Mozilla Foundation](https://www.mozilla.org/en-US/foundation/) in partnership with [The New York Times](http://nytimes.com/), and [The Washington Post](http://washingtonpost.com/) to build an open source comment moderation system for newsrooms and media sites.
 
-You can view the Coral Project documentation at [https://coralprojectdocs.herokuapp.com](https://coralprojectdocs.herokuapp.com).
+Please report bugs and corrections via [Github issues](https://github.com/coralproject/docs/issues) in this repository.
 
-## Building Documentation
+Our live documentation lives at [https://docs.coralproject.net](https://docs.coralproject.net).
+
+
+## [REVISION AND QA NEEDED] Coral Team Notes and Instructions to edit the Docs
+
+
+Make all documentation changes to the markdown files in the `docs_dir` directory.
+
 
 Documentation is build via [mkdocs](http://www.mkdocs.org). To build the documentation:
 

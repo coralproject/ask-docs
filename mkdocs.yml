@@ -1,6 +1,7 @@
 # If you add a page, you must add it to the index here
 pages:
 - Home: 'index.md'
+- Products: products.md
 - Developer Guide:
   - Introduction: 'developer/index.md'
   - Architectural overview: 'developer/architectural_overview.md'
@@ -28,8 +29,14 @@ pages:
 - FAQ: 'faq.md'
 
 
-# Do not edit in PRs below here
+# Do not edit in PRs below here if you're a contributor
+
+docs_dir: 'docs_dir'
+
 site_name: Coral Project Docs
+
+theme: 'mkdocs' 
+
 
 markdown_extensions:
   - admonition
@@ -37,9 +44,8 @@ markdown_extensions:
   - sane_lists
   - smarty
 
-theme: mkdocs
 
-docs_dir: 'docs_dir'
+google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
-#extra_css:
-#  - css/extra.css
+
+

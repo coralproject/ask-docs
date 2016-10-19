@@ -2,7 +2,7 @@
 
 ## What is Ask?
 
-Ask is a tool that enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call.
+Ask is a tool that enables editors to create embeddable calls for contributions, including text, photo, video, and audio. The contributions can be connected to existing user profiles. Editors can manage high volumes of contributions, and display the best ones alongside the call. [Read more about Ask here.](https://coralproject.net/products/ask.html)
 
 ## Who is Ask for?
 
@@ -10,15 +10,15 @@ Ask is a tool that enables editors to create embeddable calls for contributions,
 * **End users**: People who consume content and contribute their own knowledge and experiences, in order to improve the quality of the coverage so that it is closer to their own needs and experiences.
 * **Publishers**: People who want to understand the value of engaging more deeply with segments of the users, in order to better assess how and why to invest smartly in community.
 
-We've created a guide on how to write a well-considered form. [You can read it here.](https://coralproject.net/forms-audience-engagement/)
+We've created a guide on how to write a well-considered form. [You can read it here.](https://blog.coralproject.net/forms-audience-engagement/)
 
 ## Architecture
 
 ![ask-architecture](/images/ask-architecture.svg)
 
-## Roadmap
+## Latest Install
 
-Version 1.0 of Ask will be released Q3 of 2016.
+Public beta of Ask, 0.40, was released on 9/14/16. 
 
 ## Ask components
 
