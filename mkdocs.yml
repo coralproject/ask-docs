@@ -46,9 +46,5 @@ markdown_extensions:
   - sane_lists
   - smarty
 
-theme_dir: themes/cinder
-
-extra_css:
-    - css/extra.css
-
+theme: mkdocs
 
