@@ -1,0 +1,24 @@
+# If you add a page, you must add it to the index here
+pages:
+  - Introduction: 'index.md'
+  - How to Install it: 'install.md'
+  - Development:
+    - Structure of this Repository: 'structure.md'
+    - Logging: 'logging.md'
+  - Packages included:
+    - OnePackage: 'onepackage.md'
+  - Contributions: 'contributions.md'
+  - Troubleshooting: 'faq.md'
+  - Coral System: 'http://coral-docs.readthedocs.io'
+
+
+# Do not edit in PRs below here
+site_name: The Coral Project Documentation - Your App
+
+markdown_extensions:
+  - admonition
+  - fenced_code
+  - sane_lists
+  - smarty
+
+theme: readthedocs

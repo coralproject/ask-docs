@@ -1,6 +1,5 @@
 .DS_Store
-site/
 docsync/iron.json
 docsync/config.sh
 docsync/*.zip
-site/
+

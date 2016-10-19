@@ -1,0 +1,44 @@
+{
+  "title": "The Coral Project",
+  "description": "The Coral Project is an open source project helping publishers of all sizes to build better communities around their journalism.",
+  "language": "en",
+  "structure": {
+    "readme": "README.md",
+    "langs": "en",
+    "summary":"",
+    "glossary":""
+  },
+  "plugins": ["disqus", "page-footer", "rss"],
+  "pluginsConfig": {
+      "disqus": {
+          "shortName": "coraldocs"
+      },
+      "page-footer": {
+        "description": "modified at",
+        "author": "The coral Project",
+        "wisdom": "read the comments",
+        "format": "YYYY-MM-DD HH:mm:ss",
+        "copyright": "Copyleft &#169; thecoralproject",
+        "timeColor": "#666",
+        "copyrightColor": "#666",
+        "utcOffset": "8",
+        "qrcode": true,
+        "baseUri": "https://www.coralproject.net"
+      },
+      "rss": {
+        "title": "The Coral Project Documentation",
+        "description": "The Coral Project is an open source project helping publishers of all sizes to build better communities around their journalism.",
+        "author": "Gabriela Rodriguez Beron",
+        "site_url": "http://www.coralproject.net",
+        "managingEditor": "gabriela@mozillafoundation.org (Gabriela Rodriguez Beron)",
+        "webMaster": "gabriela@mozillafoundation.org (Gabriela Rodriguez Beron)",
+        "categories": [
+          "awesome",
+          "book",
+          "gitbook",
+          "comments",
+          "jounralism"
+        ]
+      }
+  }
+}

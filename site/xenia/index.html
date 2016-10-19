@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>Xenia - Coral Project Docs</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+
+    <link href="../css/extra.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-73335347-3', 'docs.coralproject.net');
+    ga('send', 'pageview');
+    </script>
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Coral Project Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../products/">Products</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../developer/">Introduction</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../developer/architectural_overview/">Architectural overview</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../quickstart/install/">Installing Coral Ecosystem</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../developer/developer_setup/">Developer tools setup</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../cay/">Cay</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../elkhorn/">Elkhorn</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../pillar/">Pillar</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../sponge/">Sponge</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Xenia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="xenia-driver-js/">Xenia Driver</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../user/">Introduction</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../user/trust/">Trust</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../user/ask/">Ask</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../user/talk/">Talk</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contribute <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../contribute/">Introduction</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../contribute/writing_documentation/">Writing documentation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../contribute/docs_style_guide/">Documentation style guide</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../contribute/writing_code/">Writing code</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../contribute/coding_style_guide/">Coding style guide</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../contribute/reporting_bugs/">Reporting bugs and requesting features</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../contribute/code_of_conduct/">Code of Conduct</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../faq/">FAQ</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../sponge/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="xenia-driver-js/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#introduction">Introduction</a></li>
+        
+            <li class="second-level"><a href="#straightforward-query-creation">Straightforward query creation</a></li>
+            
+        
+            <li class="second-level"><a href="#xenia-recipes">Xenia recipes</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#xenia-installation">Xenia installation</a></li>
+        
+            <li class="second-level"><a href="#before-you-begin">Before you begin</a></li>
+            
+                <li class="third-level"><a href="#mongodb">MongoDB</a></li>
+            
+                <li class="third-level"><a href="#go">Go</a></li>
+            
+        
+            <li class="second-level"><a href="#obtaining-the-source-code">Obtaining the source code</a></li>
+            
+                <li class="third-level"><a href="#using-the-go-get-command">Using the go get command</a></li>
+            
+                <li class="third-level"><a href="#cloning-manually">Cloning manually</a></li>
+            
+        
+            <li class="second-level"><a href="#set-up-your-environment-variables">Set up your environment variables</a></li>
+            
+        
+            <li class="second-level"><a href="#build-the-cli-tool">Build the CLI tool</a></li>
+            
+        
+            <li class="second-level"><a href="#creating-a-xenia-database-for-the-first-time">Creating a Xenia database for the first time</a></li>
+            
+                <li class="third-level"><a href="#troubleshooting-note-1">Troubleshooting note #1</a></li>
+            
+                <li class="third-level"><a href="#troubleshooting-note-2">Troubleshooting note #2</a></li>
+            
+        
+            <li class="second-level"><a href="#run-the-web-service">Run the web service</a></li>
+            
+        
+            <li class="second-level"><a href="#troubleshooting">Troubleshooting</a></li>
+            
+        
+            <li class="second-level"><a href="#authorization">Authorization</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#xenia-api">Xenia API</a></li>
+        
+            <li class="second-level"><a href="#endpoints">Endpoints</a></li>
+            
+                <li class="third-level"><a href="#get-a-list-of-configured-queries">Get a list of configured queries</a></li>
+            
+                <li class="third-level"><a href="#get-the-query-set-document-for-the-basic-query-set">Get the query set document for the basic query set</a></li>
+            
+                <li class="third-level"><a href="#execute-the-query-for-the-basic-query-set">Execute the query for the basic query set</a></li>
+            
+                <li class="third-level"><a href="#execute-the-query-for-the-basic_var-query-set-with-variables">Execute the query for the basic_var query set with variables</a></li>
+            
+                <li class="third-level"><a href="#execute-a-dynamic-query-set">Execute a dynamic query set</a></li>
+            
+        
+            <li class="second-level"><a href="#query-management-with-the-command-line-tool">Query management with the command line tool</a></li>
+            
+                <li class="third-level"><a href="#get-a-list-of-saved-queries">Get a list of saved queries:</a></li>
+            
+                <li class="third-level"><a href="#look-at-the-details-of-a-query">Look at the details of a query:</a></li>
+            
+                <li class="third-level"><a href="#execute-a-query">Execute a query:</a></li>
+            
+                <li class="third-level"><a href="#add-or-update-a-query-for-use">Add or update a query for use:</a></li>
+            
+                <li class="third-level"><a href="#direct-mongo-access-optional">Direct Mongo access (optional)</a></li>
+            
+        
+            <li class="second-level"><a href="#writing-sets">Writing Sets</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#testing">Testing</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="introduction">Introduction</h1>
+<p><a href="https://github.com/coralproject/xenia">Xenia</a> is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.com/manual/core/aggregation-pipeline/">MongoDB aggregation pipeline</a> queries.</p>
+<p>Aggregation pipelines are chainable, allowing for the output of one endpoint to be fed into the next. Xenia provides a request syntax to allow for this, giving the requesting application an added dimension of flexibility via query control.</p>
+<p>Similarly, output documents from multiple pipelines can be bundled together. This is particularly useful in the noSQL/document database paradigm, in which joins are not natively supported.</p>
+<h3 id="straightforward-query-creation">Straightforward query creation</h3>
+<p>Xenia moves the query logic out of the application code. Front end developers, data analysts, and anyone else familiar with the simple, declarative <a href="https://docs.mongodb.com/manual/reference/aggregation/">MongoDB aggregation syntax</a> can adjust the data requests, and create or update endpoints.</p>
+<h3 id="xenia-recipes">Xenia recipes</h3>
+<p>During a Hackathon event, one of the Coral Project developers put together a set of interactive Xenia recipes. You can view those and play around with them <a href="http://coralproject.github.io/hackathon/recipes.html">here</a>.</p>
+<h1 id="xenia-installation">Xenia installation</h1>
+<p>Xenia is a configurable service layer that publishes endpoints against <a href="https://docs.mongodb.org/manual/core/aggregation-introduction/">MongoDB aggregation pipeline queries</a>.</p>
+<h2 id="before-you-begin">Before you begin</h2>
+<p>Before you install Xenia, you will want to have the following installed.</p>
+<h4 id="mongodb">MongoDB</h4>
+<p>You can find instructions on installing MongoDB <a href="https://docs.mongodb.com/getting-started/shell/">on the MongoDB website</a>.</p>
+<p>There are <a href="./../../quickstart/mongodb">instructions on importing sample comment data into MongoDB here</a></p>
+<h4 id="go">Go</h4>
+<p>If you want to install from source, you will need to have Go installed.</p>
+<p>You can install <a href="https://golang.org/dl/">install Go from their website</a>. The <a href="https://golang.org/doc/install">installation and setup instructions</a> on the Go website are quite good. Ensure that you have exported your $GOPATH environment variable, as detailed in the <a href="https://golang.org/doc/install">installation instructions</a>.</p>
+<p>If you are not on a version of Go that is 1.7 or higher, you will also have to set the GO15VENDOREXPERIMENT flag.</p>
+<pre><code>export GO15VENDOREXPERIMENT=1
+</code></pre>
+
+<p><em>If you are not on a version of Go 1.7 or higher, we recommend adding this to your ~/.bash_profile or other startup script.</em></p>
+<h2 id="obtaining-the-source-code">Obtaining the source code</h2>
+<p>You can install the source code via using the <code>go get</code> command, or by manually cloning the code.</p>
+<h3 id="using-the-go-get-command">Using the go get command</h3>
+<pre><code>go get github.com/coralproject/xenia
+</code></pre>
+
+<p>If you see a message about &ldquo;no buildable Go source files&rdquo; like the below, you can ignore it. It simply means that there are buildable source files in subdirectories, just not the uppermost xenia directory.</p>
+<pre><code>package github.com/coralproject/xenia: no buildable Go source files in [directory]
+</code></pre>
+
+<h3 id="cloning-manually">Cloning manually</h3>
+<p>You can also clone the code manually.</p>
+<pre><code>mkdir $GOPATH/src/github.com/coralproject/xenia
+cd $GOPATH/src/github.com/coralproject/xenia
+
+git clone https://github.com/coralproject/xenia.git
+</code></pre>
+
+<h2 id="set-up-your-environment-variables">Set up your environment variables</h2>
+<p>This tells Xenia which database you want to use, sets your port, and sets your database password.</p>
+<p>Make your own copy of the <code>config/dev.cfg</code> file (this edited cfg file will contain your own values for things like your database password, and will not be committed back to the repository if you are doing development work on Xenia). Call your config file whatever you like; we&rsquo;ll call it &ldquo;custom&rdquo; in this example.</p>
+<pre><code>cd $GOPATH/src/github.com/coralproject/xenia
+cp config/dev.cfg config/custom.cfg
+</code></pre>
+
+<p>Edit the environment variables to reflect your MongoDB setup.
+<em>Remember, you&rsquo;re entering your password here, so be sure not to commit this file to the repository!</em></p>
+<pre><code>export XENIA_MONGO_HOST=localhost:27017
+export XENIA_MONGO_USER=coral-user
+export XENIA_MONGO_AUTHDB=coral
+export XENIA_MONGO_DB=coral
+
+export XENIA_LOGGING_LEVEL=1
+export XENIA_HOST=:4000
+
+# Use to have the CLI tooling hit the web service.
+export XENIA_WEB_HOST=
+export XENIA_WEB_AUTH=
+
+# Set host to Anvil if configured.
+# export XENIA_ANVIL_HOST=https://HOST
+
+# Use to apply extra key:value pairs to the header
+# export XENIA_HEADERS=key:value,key:value
+
+# DO NOT PUSH TO REPO
+export XENIA_MONGO_PASS=
+</code></pre>
+
+<p>Required edits:</p>
+<ul>
+<li><code>XENIA_MONGO_HOST</code>: set to your MongoDB where you will be communicating with.<ul>
+<li>If you are running MongoDB locally on your machine, you should set this to <code>localhost:27017</code>.</li>
+<li>If you are pointing to a MongoDB running on a server somewhere, set this to the IP address and port of your MongoDB.</li>
+</ul>
+</li>
+<li><code>XENIA_MONGO_DB</code>: the database you are running queries against (<code>coral</code>).</li>
+<li><code>XENIA_MONGO_USER</code>: your MongoDB username.</li>
+<li><code>XENIA_MONGO_PASS</code>: the password for your MongoDB user.</li>
+<li><code>XENIA_MONGO_AUTHDB</code>: the database you are authenticating against (in most cases, should be the same <code>coral</code> database as XENIA_MONGO_DB).</li>
+</ul>
+<p>Optional edits:</p>
+<ul>
+<li><code>XENIA_WEB_HOST</code>: this is required for the CLI tool. It is the address of the Xenia web service (i.e., an instance of Xenia that you are running on a server).<ul>
+<li>If you are running everything locally, comment this variable out. This means that the CLI tool will connect directly to your local database, instead of connecting to a running web service.</li>
+</ul>
+</li>
+<li><code>XENIA_HOST</code>: default is <code>:4000</code> if this variable is not set.</li>
+<li><code>XENIA_LOGGING_LEVEL</code>: default is <code>2</code> if this variable is not set.</li>
+<li><code>XENIA_WEB_AUTH</code>: your Anvil token, if you have Anvil authentication set up. If you do not have authentication set up, leave this commented out.</li>
+<li><code>XENIA_ANVIL_HOST</code>: the URL to the Anvil host, if you have Anvil authentication set up. If you do not have authentication set up, leave this commented out.</li>
+<li><code>XENIA_HEADERS</code>: leave this commented out.</li>
+</ul>
+<p>Once you&rsquo;ve finished editing, source your config file using the source command:</p>
+<pre><code>source $GOPATH/src/github.com/coralproject/xenia/config/custom.cfg
+</code></pre>
+
+<h2 id="build-the-cli-tool">Build the CLI tool</h2>
+<p>Xenia has a CLI tool that allows you to manage endpoints and perform other actions.</p>
+<p>To build the tool:</p>
+<pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
+go build
+</code></pre>
+
+<p><em>Note: It is best to run with logging level 0 when using the xenia command:</em></p>
+<pre><code>export XENIA_LOGGING_LEVEL=0
+</code></pre>
+
+<h2 id="creating-a-xenia-database-for-the-first-time">Creating a Xenia database for the first time</h2>
+<p>If you are running Xenia on a MongoDB database for the first time you will need the Xenia command line tool to set up the MongoDB for use with Xenia. The CLI tool will create collections and sets of indexes that you can use to execute queries: a sort of dictionary of pre-made queries for you to use.</p>
+<p>1) First cd into cmd/xenia directory (this contains the CLI tool):</p>
+<pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
+</code></pre>
+
+<p>2) Configure the database using <code>db create</code>. The database.json file contains the information necessary to create the collections and indexes.</p>
+<pre><code>./xenia db create -f scrdb/database.json
+</code></pre>
+
+<p>Expected output:</p>
+<pre><code>Configuring MongoDB
+Creating collection query_sets
+Creating collection query_sets_history
+Creating collection query_scripts
+Creating collection query_scripts_history
+Creating collection query_masks
+Creating collection query_masks_history
+Creating collection query_regexs
+Creating collection query_regexs_history
+</code></pre>
+
+<h4 id="troubleshooting-note-1">Troubleshooting note #1</h4>
+<p>If you get a response that contains <code>ERROR: Invalid DB provided</code>, you may have an incorrectly set environment variable. If you are running everything locally and using a local MongoDB, use <code>printev</code> to see if <code>XENIA_WEB_HOST</code> is set:</p>
+<pre><code>printenv XENIA_WEB_HOST
+</code></pre>
+
+<p>If you are using a local MongoDB, this should not return a value. If it does return a value, unset the variable using <code>unset</code>, and then try step 2 again:</p>
+<pre><code>unset XENIA_WEB_HOST
+</code></pre>
+
+<h4 id="troubleshooting-note-2">Troubleshooting note #2</h4>
+<p>Instead of the expected output shown above, you may see something like:</p>
+<pre><code>Configuring MongoDB
+Creating collection query_sets
+ERROR: collection already exists
+</code></pre>
+
+<p>That&rsquo;s okay! It means that your database is already set up with Xenia. Perhaps you imported data that already had configured collections set up. Continue on to step 3.</p>
+<p>3) Load all the existing queries:</p>
+<pre><code>./xenia query upsert -p scrquery
+</code></pre>
+
+<p>Expected output:</p>
+<pre><code>Configuring MongoDB
+Upserting Set : Path[scrquery]
+Upserting Set : Upserted
+</code></pre>
+
+<p>4) Load all the existing masks:</p>
+<pre><code>./xenia mask upsert -p scrmask
+</code></pre>
+
+<p>Expected output:</p>
+<pre><code>Configuring MongoDB
+Upserting Set : Path[scrquery]
+Upserting Set : Upserted
+</code></pre>
+
+<p>5) Load all the existing regexes:</p>
+<pre><code>./xenia regex upsert -p scrregex
+</code></pre>
+
+<p>Expected output:</p>
+<pre><code>Configuring MongoDB
+Upserting Regex : Path[scrregex]
+Upserting Regex : Upserted
+</code></pre>
+
+<p>6) That&rsquo;s it! If you are using MongoChef, you should be able to see your newly created collections, which will look something like this:</p>
+<p><img alt="Screenshot" src="./../images/xeniacollections.png" /></p>
+<h2 id="run-the-web-service">Run the web service</h2>
+<p>1) First cd into the directory containing the web service, xeniad (the Xenia daemon):</p>
+<pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xeniad
+</code></pre>
+
+<p>2) Build the Xenia web service:</p>
+<pre><code>go build
+</code></pre>
+
+<p>3) Run the web service:</p>
+<pre><code>./xeniad
+</code></pre>
+
+<p>Expected output:</p>
+<pre><code>2016/06/08 10:26:38 app.go:173: USER : startup : Init :
+
+Config Settings:
+MONGO_USER=coral-user
+MONGO_AUTHDB=coral
+MONGO_DB=coral
+HOST=:4000
+LOGGING_LEVEL=1
+MONGO_HOST=localhost:27017
+
+2016/06/08 10:26:38 main.go:24: USER : startup : Init : Revision     : &quot;&lt;unknown&gt;&quot;
+2016/06/08 10:26:38 main.go:25: USER : startup : Init : Version      : &quot;&lt;unknown&gt;&quot;
+2016/06/08 10:26:38 main.go:26: USER : startup : Init : Build Date   : &quot;&lt;unknown&gt;&quot;
+2016/06/08 10:26:38 main.go:27: USER : startup : Init : Int Version  : &quot;201606081030&quot;
+2016/06/08 10:26:38 main.go:28: USER : startup : Init : Go Version   : &quot;go1.6.2&quot;
+2016/06/08 10:26:38 main.go:29: USER : startup : Init : Go Compiler  : &quot;gc&quot;
+2016/06/08 10:26:38 main.go:30: USER : startup : Init : Go ARCH      : &quot;amd64&quot;
+2016/06/08 10:26:38 main.go:31: USER : startup : Init : Go OS        : &quot;darwin&quot;
+</code></pre>
+
+<p>4) You can test your web service by going to the following URL in your browser: <a href="http://localhost:4000/1.0/query">http://localhost:4000/1.0/query</a>.</p>
+<p>In your browser, you will see some JSON displayed. In your terminal, you should see something like:</p>
+<pre><code>2016/06/08 13:30:58 app.go:104: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : Request : Started : Method[GET] URL[/1.0/query] RADDR[[::1]:62121]
+2016/06/08 13:30:58 context.go:65: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : api : Respond : Started : Code[200]
+2016/06/08 13:30:58 context.go:72: USER : startup : api : Respond : Setting user headers : Access-Control-Allow-Origin:*
+2016/06/08 13:30:58 context.go:110: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : api : Respond : Completed
+2016/06/08 13:30:58 app.go:126: USER : 6bd28905-8a92-4aa9-80fd-5e9cff199b3e : Request : Completed : Status[200] Duration[46.497305ms]
+</code></pre>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="_1"></h3>
+<h2 id="authorization">Authorization</h2>
+<h1 id="xenia-api">Xenia API</h1>
+<p><strong>This section is under construction, and is not currently complete.</strong></p>
+<h2 id="endpoints">Endpoints</h2>
+<p>If you set the authorization header properly in your browser (TODO) you can run the following endpoints.</p>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query</td>
+<td align="left">GET</td>
+<td align="left"><a href="#get-a-list-of-configured-queries">Get a list of configured queries</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/query/basic</td>
+<td align="left">GET</td>
+<td align="left"><a href="#get-the-query-set-document-for-the-basic-query-set">Get the query set document for the <code>basic</code> query set</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/exec/basic</td>
+<td align="left">GET</td>
+<td align="left"><a href="#execute-the-query-for-the-basic-query-set">Execute the query for the <code>basic</code> query set</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/exec/basic_var</td>
+<td align="left">GET</td>
+<td align="left"><a href="#execute-the-query-for-the-basic_var-query-set-with-variables">Execute the query for the <code>basic_var</code> query set with variables</a></td>
+</tr>
+<tr>
+<td align="left">/1.0/exec</td>
+<td align="left">POST</td>
+<td align="left"><a href="#execute-a-dynamic-query-set">Execute a dynamic query set</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-a-list-of-configured-queries">Get a list of configured queries</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query</td>
+<td align="left">GET</td>
+<td align="left">Get a list of configured queries</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters">Parameters</h4>
+<p>None</p>
+<h4 id="example-call">Example call</h4>
+<pre><code>GET
+http://localhost:4000/1.0/query
+</code></pre>
+
+<h4 id="example-response">Example response</h4>
+<pre><code>[&quot;basic&quot;,&quot;basic_var&quot;,&quot;top_commenters_by_count&quot;]
+</code></pre>
+
+<h3 id="get-the-query-set-document-for-the-basic-query-set">Get the query set document for the <code>basic</code> query set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query/basic</td>
+<td align="left">GET</td>
+<td align="left">Get the query set document for the <code>basic</code> query set</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_1">Parameters</h4>
+<p>None</p>
+<h4 id="example-call_1">Example call</h4>
+<pre><code>GET
+http://localhost:4000/1.0/query/basic
+</code></pre>
+
+<h4 id="example-response_1">Example response</h4>
+<pre><code>{
+   &quot;name&quot;:&quot;QTEST_basic&quot;,
+   &quot;desc&quot;:&quot;&quot;,
+   &quot;enabled&quot;:true,
+   &quot;params&quot;:[],
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;Basic&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:true,
+         &quot;commands&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : &quot;42021&quot;}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}}
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h3 id="execute-the-query-for-the-basic-query-set">Execute the query for the <code>basic</code> query set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/query</td>
+<td align="left">GET</td>
+<td align="left">Execute the query for the basic query set</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_2">Parameters</h4>
+<p>None</p>
+<h4 id="example-call_2">Example call</h4>
+<pre><code>GET
+http://localhost:4000/1.0/exec/basic
+</code></pre>
+
+<pre><code>set:
+
+{
+   &quot;name&quot;:&quot;basic&quot;,
+   &quot;desc&quot;:&quot;&quot;,
+   &quot;enabled&quot;:true,
+   &quot;params&quot;:[],
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;Basic&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:true,
+         &quot;commands&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : &quot;42021&quot;}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}}
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h4 id="example-response_2">Example response</h4>
+<pre><code>{
+  &quot;results&quot;:[
+    {
+      &quot;Name&quot;:&quot;basic&quot;,
+      &quot;Docs&quot;:[
+        {
+          &quot;name&quot;:&quot;C14 - Pasco County Buoy, FL&quot;
+        }
+      ]
+    }
+  ],
+  &quot;error&quot;:false
+}
+</code></pre>
+
+<h3 id="execute-the-query-for-the-basic_var-query-set-with-variables">Execute the query for the <code>basic_var</code> query set with variables</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/exec/basic_var</td>
+<td align="left">GET</td>
+<td align="left">Execute the query for the <code>basic_var</code> query set with variables</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Required?</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">station_id</td>
+<td align="left">Y</td>
+<td align="left">Tag ID</td>
+</tr>
+</tbody>
+</table>
+<pre><code>GET
+http://localhost:4000/1.0/exec/basic_var?station_id=42021
+
+set:
+
+{
+   &quot;name&quot;:&quot;basic_var&quot;,
+   &quot;desc&quot;:&quot;&quot;,
+   &quot;enabled&quot;:true,
+   &quot;params&quot;:[],
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;BasicVar&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:true,
+         &quot;commands&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : &quot;#string:station_id&quot;}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}}
+         ]
+      }
+   ]
+}
+
+output:
+
+{
+  &quot;results&quot;:[
+    {
+      &quot;Name&quot;:&quot;basic_var&quot;,
+      &quot;Docs&quot;:[
+        {
+          &quot;name&quot;:&quot;C14 - Pasco County Buoy, FL&quot;
+        }
+      ]
+    }
+  ],
+  &quot;error&quot;:false
+}
+</code></pre>
+
+<h3 id="execute-a-dynamic-query-set">Execute a dynamic query set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">URL</th>
+<th align="left">HTTP Verb</th>
+<th align="left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/1.0/exec</td>
+<td align="left">POST</td>
+<td align="left">Execute a dynamic query set</td>
+</tr>
+</tbody>
+</table>
+<pre><code>POST
+http://localhost:4000/1.0/exec
+
+Post Data:
+{
+   &quot;name&quot;:&quot;basic&quot;,
+   &quot;desc&quot;:&quot;&quot;,
+   &quot;enabled&quot;:true,
+   &quot;params&quot;:[],
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;Basic&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:true,
+         &quot;commands&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : &quot;42021&quot;}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}}
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h2 id="query-management-with-the-command-line-tool">Query management with the command line tool</h2>
+<p>Using the Xenia command line tool you can manage query sets.</p>
+<pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia
+</code></pre>
+
+<h4 id="get-a-list-of-saved-queries">Get a list of saved queries:</h4>
+<pre><code>./xenia query list
+
+output:
+
+basic
+basic_var
+top_commenters_by_count
+</code></pre>
+
+<h4 id="look-at-the-details-of-a-query">Look at the details of a query:</h4>
+<pre><code>./xenia query get -n basic
+
+output:
+
+{
+   &quot;name&quot;:&quot;basic&quot;,
+   &quot;desc&quot;:&quot;&quot;,
+   &quot;enabled&quot;:true,
+   &quot;params&quot;:[],
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;Basic&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:true,
+         &quot;commands&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : &quot;42021&quot;}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}}
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h4 id="execute-a-query">Execute a query:</h4>
+<pre><code>./xenia query exec -n basic
+
+output:
+
+{
+  &quot;results&quot;:[
+    {
+      &quot;Name&quot;:&quot;basic&quot;,
+      &quot;Docs&quot;:[
+        {
+          &quot;name&quot;:&quot;C14 - Pasco County Buoy, FL&quot;
+        }
+      ]
+    }
+  ],
+  &quot;error&quot;:false
+}
+</code></pre>
+
+<h4 id="add-or-update-a-query-for-use">Add or update a query for use:</h4>
+<pre><code>./xenia query upsert -p ./scrquery/basic_var.json
+
+output:
+
+Upserting Query : Path[./scrquery/basic_var.json]
+</code></pre>
+
+<p>By convention, we store core query scripts in the <a href="https://github.com/CoralProject/xenia/tree/master/cmd/xenia/scrquery">/xenia/cmd/xenia/scrquery</a> folder.  As we develop Coral features, store the JSON files there so other developers can use them (eventually, groups of query sets will be refactored to another location, but that&rsquo;s the right folder for the time being).</p>
+<pre><code>cd $GOPATH/src/github.com/coralproject/xenia/cmd/xenia/scrquery
+ls
+</code></pre>
+
+<h4 id="direct-mongo-access-optional">Direct Mongo access (optional)</h4>
+<p>You can look in the db at existing queries:</p>
+<pre><code>mongo [flags to connect to your server]
+use coral (or your databasename)
+db.query_sets.find()
+</code></pre>
+
+<h2 id="writing-sets">Writing Sets</h2>
+<p>&ldquo;Writing a set&rdquo; is essentially about creating a MongoDB aggregation pipeline. Xenia has built on top of this by providing extended functionality to make MongoDB more powerful.</p>
+<p>Here is a multi query set with variable substitution and date processing:</p>
+<pre><code>GET
+http://localhost:4000/1.0/exec/basic?station_id=42021
+
+{
+   &quot;name&quot;:&quot;basic&quot;,
+   &quot;desc&quot;:&quot;Shows a basic multi result query.&quot;,
+   &quot;enabled&quot;:true,
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;Basic&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_bill&quot;,
+         &quot;return&quot;:true,
+         &quot;scripts&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : &quot;#station_id#&quot;}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}}
+         ]
+      },
+      {
+         &quot;name&quot;:&quot;Time&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_bill&quot;,
+         &quot;return&quot;:true,
+         &quot;scripts&quot;:[
+            {&quot;$match&quot;: {&quot;condition.date&quot; : {&quot;$gt&quot;: &quot;#date:2013-01-01T00:00:00.000Z&quot;}}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}},
+            {&quot;$limit&quot;: 2}
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<p>Here is the list of commands that exist for variable substitution.</p>
+<pre><code>{&quot;field&quot;: &quot;#cmd:variable&quot;}
+
+// Basic commands.
+Before: {&quot;field&quot;: &quot;#number:variable_name&quot;}      After: {&quot;field&quot;: 1234}
+Before: {&quot;field&quot;: &quot;#string:variable_name&quot;}      After: {&quot;field&quot;: &quot;value&quot;}
+Before: {&quot;field&quot;: &quot;#date:variable_name&quot;}        After: {&quot;field&quot;: time.Time}
+Before: {&quot;field&quot;: &quot;#objid:variable_name&quot;}       After: {&quot;field&quot;: mgo.ObjectId}
+Before: {&quot;field&quot;: &quot;#regex:/pattern/{options}&quot;}  After: {&quot;field&quot;: bson.RegEx}
+
+// data command can index into saved results.
+Before: {&quot;field&quot; : {&quot;$in&quot;: &quot;#data.*:list.station_id&quot;}}}   After: [{&quot;station_id&quot;:&quot;42021&quot;}]
+Before: {&quot;field&quot;: &quot;#data.0:doc.station_id&quot;}               After: {&quot;field&quot;: &quot;23453&quot;}
+
+// time command manipulates the current time.
+Before: {&quot;field&quot;: #time:0}                 After: {&quot;field&quot;: time.Time(Current Time)}
+Before: {&quot;field&quot;: #time:-3600}             After: {&quot;field&quot;: time.Time(3600 seconds in the past)}
+Before: {&quot;field&quot;: #time:3m}                After: {&quot;field&quot;: time.Time(3 minutes in the future)}
+
+Possible duration types. Default is seconds if not provided.
+&quot;ns&quot;: Nanosecond
+&quot;us&quot;: Microsecond
+&quot;ms&quot;: Millisecond
+&quot;s&quot; : Second
+&quot;m&quot; : Minute
+&quot;h&quot; : Hour
+</code></pre>
+
+<p>You can save the result of one query for later use by the next.</p>
+<pre><code>GET
+http://localhost:4000/1.0/exec/basic_save
+
+{
+   &quot;name&quot;:&quot;basic_save&quot;,
+   &quot;desc&quot;:&quot;&quot;,
+   &quot;enabled&quot;:true,
+   &quot;params&quot;:[],
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;get_id_list&quot;,
+         &quot;desc&quot;: &quot;Get the list of id's&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:false,
+         &quot;commands&quot;:[
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;station_id&quot;: 1}},
+            {&quot;$limit&quot;: 5}
+            {&quot;$save&quot;: {&quot;$map&quot;: &quot;list&quot;}}
+         ]
+      },
+      {
+         &quot;name&quot;:&quot;retrieve_stations&quot;,
+         &quot;desc&quot;: &quot;Retrieve the list of stations&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_xenia_data&quot;,
+         &quot;return&quot;:true,
+         &quot;commands&quot;:[
+            {&quot;$match&quot;: {&quot;station_id&quot; : {&quot;$in&quot;: &quot;#data.*:list.station_id&quot;}}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}},
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<p>The <code>$save</code> command is an Xenia extension and currently only <code>$map</code> is supported.</p>
+<pre><code>{&quot;$save&quot;: {&quot;$map&quot;: &quot;list&quot;}}
+</code></pre>
+
+<p>The result will be saved in a map under the name <code>list</code>.</p>
+<p>The second query is using the <code>#data</code> command. The data command has two options. Use can use <code>#data.*</code> or <code>#data.Idx</code>.</p>
+<p>Use the <code>*</code> operator when you need an array. In this example we need to support an <code>$in</code> command:</p>
+<pre><code>{
+   &quot;name&quot;:&quot;retrieve_stations&quot;,
+   &quot;desc&quot;: &quot;Retrieve the list of stations&quot;,
+   &quot;type&quot;:&quot;pipeline&quot;,
+   &quot;collection&quot;:&quot;test_xenia_data&quot;,
+   &quot;return&quot;:true,
+   &quot;commands&quot;:[
+      {&quot;$match&quot;: {&quot;station_id&quot; : {&quot;$in&quot;: &quot;#data.*:list.station_id&quot;}}},
+      {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}},
+   ]
+}
+
+When you need an array to be substituted.
+Before: {&quot;field&quot; : {&quot;$in&quot;: &quot;#data.*:list.station_id&quot;}}}
+After : {&quot;field&quot; : {&quot;$in&quot;: [&quot;42021&quot;]}}
+    dataOp : &quot;*&quot;
+    lookup : &quot;list.station_id&quot;
+    results: {&quot;list&quot;: [{&quot;station_id&quot;:&quot;42021&quot;}]}
+</code></pre>
+
+<p>Use the index operator when you need a single value. Specify which document in the array of documents you want to select:</p>
+<pre><code>
+{
+   &quot;name&quot;:&quot;retrieve_stations&quot;,
+   &quot;desc&quot;: &quot;Retrieve the list of stations&quot;,
+   &quot;type&quot;:&quot;pipeline&quot;,
+   &quot;collection&quot;:&quot;test_xenia_data&quot;,
+   &quot;return&quot;:true,
+   &quot;commands&quot;:[
+      {&quot;$match&quot;: {&quot;station_id&quot; : &quot;#data.0:list.station_id&quot;}},
+      {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}},
+   ]
+}
+
+When you need a single value to be substituted, select an index.
+Before: {&quot;field&quot; : &quot;#data.0:list.station_id&quot;}
+After : {&quot;field&quot; : &quot;42021&quot;}
+    dataOp : 0
+    lookup : &quot;list.station_id&quot;
+    results: {&quot;list&quot;: [{&quot;station_id&quot;:&quot;42021&quot;}, {&quot;station_id&quot;:&quot;23567&quot;}]}
+</code></pre>
+
+<p>You can also replace field names in the query commands.</p>
+<pre><code>Variables
+{
+  &quot;cond&quot;: &quot;condition&quot;,
+  &quot;dt&quot;: &quot;date&quot;
+}
+
+Query Set
+{
+   &quot;name&quot;:&quot;basic&quot;,
+   &quot;desc&quot;:&quot;Shows field substitution.&quot;,
+   &quot;enabled&quot;:true,
+   &quot;queries&quot;:[
+      {
+         &quot;name&quot;:&quot;Time&quot;,
+         &quot;type&quot;:&quot;pipeline&quot;,
+         &quot;collection&quot;:&quot;test_bill&quot;,
+         &quot;return&quot;:true,
+         &quot;scripts&quot;:[
+            {&quot;$match&quot;: {&quot;{cond}.{dt}&quot; : {&quot;$gt&quot;: &quot;#date:2013-01-01T00:00:00.000Z&quot;}}},
+            {&quot;$project&quot;: {&quot;_id&quot;: 0, &quot;name&quot;: 1}},
+            {&quot;$limit&quot;: 2}
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<h1 id="testing">Testing</h1>
+<p>You can run tests in the <code>app</code> and <code>pkg</code> folder.</p>
+<p>If you plan to run tests in parallel, use this command:</p>
+<pre><code>go test -cpu 1 ./...
+</code></pre>
+
+<p>You can always run individual tests in each package using simply:</p>
+<pre><code>go test
+</code></pre>
+
+<p>Do not run tests in the vendor folder.</p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
