@@ -29,13 +29,19 @@ pages:
 - FAQ: 'faq.md'
 
 
-# Do not edit in PRs below here if you're a contributor
+# Site specific MkDocs configuration for Coral Project
+
+site_name: Coral Project Docs
+
+repo_url: https://github.com/coralproject/docs/
+
+repo_name: 'GitHub'
+
 
 docs_dir: 'docs_dir'
 
 theme_dir: 'cinder'
 
-site_name: Coral Project Docs
 
 theme: 'cinder' 
 
@@ -45,6 +51,8 @@ markdown_extensions:
   - fenced_code
   - sane_lists
   - smarty
+  - toc:
+        permalink: True
 
 
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
