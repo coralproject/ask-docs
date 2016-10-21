@@ -2,7 +2,7 @@
 
 This site aims to familiarize you with the Coral Project, how it works, and how you can help.
 
-![coral-project](/images/the_coral_project_home.png)
+![coral-project](/images/the_coral_project_home.png) 
 
 ### What is the Coral Project?
 
