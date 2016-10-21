@@ -1,23 +1,40 @@
+# Trust overview
+
+## What is Trust?
+
+The Trust product is a tool that allows journalistic organizations to filter through and create metrics based on individual comment behavior, and also add qualitative information. This information can be used to help journalistic organizations take next steps to better utilize and strengthen their communities.
+
+The [tutorials section](#trust-tutorials) will help guide you through accomplishing goals like the following:
+
+* I would like to find the most liked comments based on keyword/topic searches, so that I can do a round up (for instance, "best comments written about the Zika virus”).
+* I would like to identify commenters who leave high-quality comments that appear to be expert, so that potential sources can be identified.
+* I would like to identify new commenters who leave comments that get a lot of likes, so I can welcome them personally.
+* I would like to identify trolls on certain topics or authors, so that their comments on these subjects can automatically be moved to pre-moderation/create notifications for moderators to pay attention.
+
+## Roadmap
+
+The Trust beta will be released Q3 of 2016.
+
+## Trust sections
+
+Trust is comprised of the following sections:
+
+* Dashboard
+* Community Explorer
+* Lists
+* Settings
+
 # Trust tutorials
 
-This is where you can find tutorials on how to best utilize the Trust product.
+This is where you can find tutorials on how to use Trust. **This section is still in development, as Trust continues to evolve.**
 
 Do you have a tutorial you'd like to see here? Please [get in touch and let us know about it](../contribute/supporting_the_community), or better still, [add it yourself!](../contribute/writing_documentation)
 
 ## What would you like to do?
 
-* [Identify the most liked comments](#identify-most-liked-comments-tutorial): I would like to find the most liked comments based on keyword/topic searches, so that I can do a round up (for instance, "best comments written about the Zika virus”).
-* [Identify high quality comments](#identify-high-quality-comments-tutorial): I would like to identify commenters who leave high-quality comments that appear to be expert, so that potential sources can be identified.
-* [Identify high quality new commenters](#identify-high-quality-new-commenters-tutorial): I would like to identify new commenters who leave comments that get a lot of likes, so I can welcome them personally.
 * [Identify trolls](#identify-trolls): I would like to identify trolls on certain topics or authors, so that their comments on these subjects can automatically be moved to pre-moderation/create notifications for moderators to pay attention.
 
-## Identify most liked comments
-
-Specifically, we'd like to identify the most liked comments based on keyword/topic searches, so that we can do a round up (for instance, "best comments written about the Zika virus”).
-
-## Identify high quality new commenters
-
-We would like to identify new commenters who leave comments that get a lot of likes, so we can welcome them personally.
+_We are developing additional tutorials, including "Identify the most liked comments" and "Identify high quality new commenters."_
 
 ## Identify trolls
 
@@ -39,11 +56,6 @@ We are going to create and save a list of commenters who have a high percentage 
 1) Open the "Create a Search" page by clicking the wrench symbol on the side navigation bar.
 
 <img src="/images/identifytrolls1.png" alt="IdentifyTrollsScreenshot1" width="200">
-
-![IdentifyTrollsScreenshot1](../images/identifytrolls1.png "IdentifyTrollsScreenshot1")
-
-![SaveAsSVGScreenshot](../images/saveassvg.png)
-<img src="/images/saveassvg.png" alt="IdentifyTrollsScreenshot1" width="500">
 
 2) In the "Filters" section, choose "Section" in the drop down. This will trigger the display of a second drop down, which will let you choose which section you want to filter in (in this case, the "national" section).
 
@@ -72,3 +84,5 @@ Click "Confirm" to save your search.
 7) You (and your colleagues) can now access this saved search via the "Saved Search" button in the side navigation bar.
 
 ![IdentifyTrollsScreenshot8](../images/identifytrolls8.png "IdentifyTrollsScreenshot8")
+
+

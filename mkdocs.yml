@@ -1,32 +1,35 @@
 # If you add a page, you must add it to the index here
 pages:
 - Home: 'index.md'
-- Products: products.md
-- Developer Guide:
+- Products:
+  - User Guide: 'products/index.md'
+  - Ask: 'products/ask.md'
+  - Talk: 'products/talk.md'
+  - Trust: 'products/trust.md'
+- Developers:
   - Introduction: 'developer/index.md'
   - Architectural overview: 'developer/architectural_overview.md'
-  - Installing Coral Ecosystem: 'quickstart/install.md'
+  - Installing Coral Ecosystem: 'developer/quickstart/install.md'
   - Developer tools setup: 'developer/developer_setup.md'
-  - Cay: 'cay/index.md'
-  - Elkhorn: 'elkhorn/index.md'
-  - Pillar: 'pillar/index.md'
-  - Sponge: 'sponge/index.md'
-  - Xenia: 'xenia/index.md'
-  - Xenia Driver: 'xenia/xenia-driver-js.md'
-- User Guide:
-  - Introduction: 'user/index.md'
-  - Trust: 'user/trust.md'
-  - Ask: 'user/ask.md'
-  - Talk: 'user/talk.md'
-- Contribute:
+  - Cay: 'developer/cay/index.md'
+  - Elkhorn: 'developer/elkhorn/index.md'
+  - Pillar: 'developer/pillar/index.md'
+  - Sponge: 'developer/sponge/index.md'
+  - Xenia: 'developer/xenia/index.md'
+  - Xenia Driver: 'developer/xenia/xenia-driver-js.md'
+- Get Involved:
   - Introduction: 'contribute/index.md'
-  - Writing documentation: 'contribute/writing_documentation.md'
-  - Documentation style guide: 'contribute/docs_style_guide.md'
-  - Writing code: 'contribute/writing_code.md'
-  - Coding style guide: 'contribute/coding_style_guide.md'
-  - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
-  - Code of Conduct: 'contribute/code_of_conduct.md'
-- FAQ: 'faq.md'
+  - Contribute code: 'contribute/writing_code.md'
+  - Contribute to moderation style guide: 'contribute/docs_style_guide.md'
+  - Write documentation: 'contribute/writing_documentation.md'
+  - Code best practices: 'contribute/coding_style_guide.md'
+  - Submit feature requests: 'contribute/reporting_bugs.md'
+  - Report bugs: 'contribute/reporting_bugs.md'
+  - Our Code of Conduct: 'contribute/code_of_conduct.md'
+- Contact:
+  - Technical Support: 'contact/support.md'
+  - FAQ: 'contact/faq.md'
+
 
 
 # Site specific MkDocs configuration for Coral Project
@@ -35,8 +38,7 @@ site_name: Coral Project Docs
 
 repo_url: https://github.com/coralproject/docs/
 
-repo_name: 'Visit us on GitHub'
-
+repo_name: 'GitHub'
 
 docs_dir: 'docs_dir'
 
@@ -50,8 +52,6 @@ markdown_extensions:
   - fenced_code
   - sane_lists
   - smarty
-
-
 
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
