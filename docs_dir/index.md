@@ -1,15 +1,24 @@
-Welcome to the Coral Project documentation! This site aims to familiarize you with the Coral Project, how it works, and how you can help.
+# Welcome to the Coral Project documentation! 
 
-# What is the Coral Project?
+This site aims to familiarize you with the Coral Project, how it works, and how you can help.
+
+![coral-project](/images/the_coral_project_home.png)
+
+### What is the Coral Project?
 
 The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. We're creating tools that allow everyone feel safe, respected, and heard. It consists of three products: [Ask](#ask), [Trust](#trust) and [Talk](#talk). 
+
+
+
+
+
 
 Sign up for the [Coral Project newsletter](https://tinyletter.com/coralproject/subscribe/) to stay tuned for announcements, software updates and the on community engagement [Guides](#guides) for newsrooms. Our [product roadmap](products#roadmap).
 
 If you'd like to learn more about the Coral Project from a high-level perspective, please visit our [ Coral Project website](https://www.coralproject.net). You can find information there about the project, our goals, and the individual products. 
 
 
-## Who Can Benefit?
+### Who Can Benefit?
 
 We’ve designed our products to meet essential needs of journalism through effective online communities.
 
@@ -29,7 +38,7 @@ We’ve designed our products to meet essential needs of journalism through effe
 
 * Control your commenting experience, interact with journalists and avoid harassment
 
-# How the docs are organized
+### How the docs are organized
 
 The documentation is organized into sections based on what you want to do with Coral.
 
@@ -38,18 +47,17 @@ The documentation is organized into sections based on what you want to do with C
 * The [Contribute](contribute) section contains information for those who want to contribute to the Coral Project. You don't have to be a developer to contribute! There are a number of ways you can help out, which are outlined on the [Introduction](contribute) page.
 
 
-## Guides
+### Guides
 Strong community is about more than software. Our guides will help everyone in the newsroom be intentional about their community choices, whatever technology you use. We are currently covering these issues on our [blog](https://coralproject.net); the complete guides will be released in Q1 2017.
 
 
-# How can I contribute?
+### How can I contribute?
 
 We want your ideas, your requests, your experiences, your bug reports, your skills, your code. [Join our community of contributors](contribute).
 
 
 
-
-# Learn more
+### Learn more
 
 For more information about us and to see our blog, please visit [our website](https://coralproject.net) and [sign up to our newsletter](http://tinyletter.com/coralproject). We are also on [Twitter](https://twitter.com/coralproject).
 
