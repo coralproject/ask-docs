@@ -1,8 +1,12 @@
 # If you add a page, you must add it to the index here
 pages:
 - Home: 'index.md'
-- Products: products.md
-- Developer Guide:
+- Products:
+  - Ask: 'products/ask.md'
+  - Talk: 'products/talk.md'
+  - Trust: 'products/trust.md'
+  - User Guide: 'user/index.md'
+- Developers:
   - Introduction: 'developer/index.md'
   - Architectural overview: 'developer/architectural_overview.md'
   - Installing Coral Ecosystem: 'quickstart/install.md'
@@ -13,12 +17,7 @@ pages:
   - Sponge: 'sponge/index.md'
   - Xenia: 'xenia/index.md'
   - Xenia Driver: 'xenia/xenia-driver-js.md'
-- User Guide:
-  - Introduction: 'user/index.md'
-  - Trust: 'user/trust.md'
-  - Ask: 'user/ask.md'
-  - Talk: 'user/talk.md'
-- Contribute:
+- Get Involved:
   - Introduction: 'contribute/index.md'
   - Writing documentation: 'contribute/writing_documentation.md'
   - Documentation style guide: 'contribute/docs_style_guide.md'
@@ -35,8 +34,7 @@ site_name: Coral Project Docs
 
 repo_url: https://github.com/coralproject/docs/
 
-repo_name: 'Visit us on GitHub'
-
+repo_name: 'GitHub'
 
 docs_dir: 'docs_dir'
 
@@ -50,8 +48,6 @@ markdown_extensions:
   - fenced_code
   - sane_lists
   - smarty
-
-
 
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
