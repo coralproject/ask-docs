@@ -19,13 +19,16 @@ pages:
   - Xenia Driver: 'xenia/xenia-driver-js.md'
 - Get Involved:
   - Introduction: 'contribute/index.md'
-  - Writing documentation: 'contribute/writing_documentation.md'
-  - Documentation style guide: 'contribute/docs_style_guide.md'
+  - Write documentation: 'contribute/writing_documentation.md'
+  - Build the style guide: 'contribute/docs_style_guide.md'
   - Writing code: 'contribute/writing_code.md'
-  - Coding style guide: 'contribute/coding_style_guide.md'
+  - Code best practices: 'contribute/coding_style_guide.md'
   - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
   - Code of Conduct: 'contribute/code_of_conduct.md'
-- FAQ: 'faq.md'
+- Contact:
+  - Technical Support: 'contact/support'
+  - FAQ: 'contact/faq.md'
+
 
 
 # Site specific MkDocs configuration for Coral Project
