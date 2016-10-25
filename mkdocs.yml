@@ -42,9 +42,9 @@ repo_name: 'GitHub'
 
 docs_dir: 'docs_dir'
 
-theme_dir: 'cinder'
+theme_dir: 'themes'
 
-theme: 'cinder' 
+theme: 'material' 
 
 
 markdown_extensions:
