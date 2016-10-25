@@ -17,6 +17,11 @@ pages:
   - Sponge: 'developer/sponge/index.md'
   - Xenia: 'developer/xenia/index.md'
   - Xenia Driver: 'developer/xenia/xenia-driver-js.md'
+- Templates:
+    - Templates: 'developer/templates/index.md'
+    - FAQ: 'developer/templates/faq.md'
+- Guides: 
+  - Roadmap: 'guides/index.md'
 - Get Involved:
   - Introduction: 'contribute/index.md'
   - Contribute code: 'contribute/writing_code.md'
@@ -34,9 +39,9 @@ pages:
 
 # Site specific MkDocs configuration for Coral Project
 
-site_name: Coral Project Docs
+site_name: Coral Project
 
-repo_url: https://github.com/coralproject/docs/
+repo_url: https://github.com/coralproject/ask
 
 repo_name: 'GitHub'
 
@@ -46,14 +51,25 @@ theme_dir: 'themes'
 
 theme: 'material' 
 
-
 markdown_extensions:
   - admonition
   - fenced_code
   - sane_lists
   - smarty
+  - toc:
+      permalink: '&'
+  - codehilite(css_class=code)
 
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
+# Theme Options - MkDocs Material 
+
+extra:
+  logo: 'images/coralproject_logo250.png'
+  palette:
+    primary: 'blue grey'
+    accent: 'cyan'
+  author:
+    github: 'coralproject'  
 
 
