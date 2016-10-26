@@ -2,7 +2,7 @@
 YourPackage is ....
 
 
-After [installing](/INSTALL.md) it, you will need to  ....
+After installing it, you will need to  ....
 
 Setup the environment variables:
 
@@ -10,6 +10,6 @@ Setup the environment variables:
 
 ## Packages included
 
-* [Your package](/pkg/yourpackage/readme.md) does ... .
+* [pkg/yourpackage/readme.md)]() does ... .
 
 ## How To Use It
