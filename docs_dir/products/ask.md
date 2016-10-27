@@ -135,22 +135,6 @@ Once you have answered all the questions, you will be prompted to to run the ins
 After this process is complete, you should be able to access Ask via a web browser at the url that you specified in the startup process.
 
 
-
-
-
-
-
-
-
-
-
-
----
-
-## Architecture
-
-![ask-architecture](../images/ask-architecture.svg)
-
 ## Latest Install
 
 Public beta of Ask, 0.40, was released on 9/14/16. 
