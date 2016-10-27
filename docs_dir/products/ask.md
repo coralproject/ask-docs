@@ -1,6 +1,6 @@
 # Ask
 
-_Updated: 10/24/2016_
+_Updated: 10/27/2016_
 
 Greetings! We're revising our documents and the install package for Ask which is on-prem (Ask runs on your own cloud servers). If you have questions in the meantime, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org)
 
@@ -17,6 +17,135 @@ Ask is a tool that enables editors to create embeddable calls for contributions,
 * **Publishers**: People who want to understand the value of engaging more deeply with segments of the users, in order to better assess how and why to invest smartly in community.
 
 We've created a guide on how to write a well-considered form. [You can read it here.](https://blog.coralproject.net/forms-audience-engagement/)
+
+
+**Thank you for installing Ask!**
+
+
+## Install Requirements
+
+
+Operating System requirements
+macOS Yosemite 10.10.3 or above 
+Windows 10 Professional or Enterprise 64-bit 
+Any version of Linux supported by Docker: https://docs.docker.com/engine/installation/linux/
+
+
+(Ask can also run on any Docker container service, such as AWS, Azure or Windows Server Containers 2016 untested. The installer described below does not cover such hosting options.)
+
+
+Docker 1.12.1 or later is required: https://www.docker.com/products/docker
+Please make sure that the docker install is a stable release as we have encountered problems with experimental Docker releases, which are often installed via other managers such as brew.
+
+
+Notes:
+We have encountered errors when installing into symlinked folders.  When 
+
+
+**Where do I get the ask-installer?**
+
+
+You can download the latest release of the ask-installer for your os: https://github.com/coralproject/ask-install/releases
+
+
+
+
+**Where will you be hosting Ask?**
+
+
+Ask can be installed on a local machine or a server.
+
+
+Local installs are generally for evaluation or development purposes. The web url will generally look like this: http://localhost:2020.  (You may pick any free port you like.  If you’re not sure which ports are free, use :2020 as this is rarely taken.) Local installs do not support ssl over https.
+
+
+Server installs are no different than local installs except they are on a server that is accessible by others. Before starting, you will need to provision a server and get access to it via ssh.  Server installs can use ssl to allow secure https connections but dns needs to be installed first.
+
+
+**Will you be hosting Ask over https?** 
+
+
+What is https?
+
+
+If you’re ok with http or you’re installing a local machine (as opposed to a server that’s accessible by others), you may proceed to the next question.
+
+
+If you want to use https, you will need to go to your DNS provider and set up the domain to point to your new server before you run the install script.  
+
+
+This is required because Ask contains an automated mechanism for acquiring a secure certification (https://github.com/mholt/caddy) and keeping it up to date. The server must be reachable using the https://your.domain in order for this to happen.
+
+
+**Do you want reCAPTCHA enabled?**
+
+
+Ask Forms can be protected from bots submitting false entries via reCAPTCHA.  You can learn more about it here: https://www.google.com/recaptcha/intro/index.html.
+
+
+If you want to use reCAPTCHA, you need to have signed up for an account and have the keys ready as they will be needed during the Ask install process.
+
+
+Will you be publishing forms to S3?
+
+
+**What is S3?**
+
+
+Ask publishes forms and gallery embeds to static files. This improves load times, allows for greater scale and availability. If you don’t expect many thousands of forms requests per day, it is probably best to not use S3. By default Ask will publish files to and serve them from the same server it runs on.
+
+
+If you want to publish to S3, please create a bucket for Ask and have the following pieces of info at hand during the installation:
+
+
+- S3 bucket name
+- S3 public key
+- S3 secret key
+
+_For very large international projects, consider fronting your S3 bucket with a CDN such as Amazon CloudFront (https://aws.amazon.com/cloudfront/) or Cloud Flare (https://www.cloudflare.com/)._
+
+
+If you’d like to use another platform to host your files, let us know! We can work together to build it as an option into the Coral Platform!
+
+
+**Running the installer**
+
+
+Create an empty folder (recommendations on where?)
+
+
+Download the Ask Installer from our repo (https://github.com/coralproject/ask-install/releases
+) and unpack it into that folder.
+
+
+Open up a console
+Cd to the directory
+
+  ./ask-install
+  docker-machine create -d virtualbox coral
+  docker-machine start coral
+  eval $(docker-machine env)
+
+Follow the on screen prompts to configure Ask.
+
+
+Once you have answered all the questions, you will be prompted to to run the install command. This will download and set up all the components of Ask.
+
+
+After this process is complete, you should be able to access Ask via a web browser at the url that you specified in the startup process.
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 ## Architecture
 
