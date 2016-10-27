@@ -23,15 +23,21 @@ This folder contains scripts and configuration files that generate a copy of the
 
 ## Commands
 
-- CLI Command line syntax to delete files to S3 using [s3tools](http://s3tools.org/s3cmd)
+- Command to delete all files from S3 bucket using [s3tools](http://s3tools.org/s3cmd)
 
 	~~~~
 	s3cmd del -r --force s3://testdocs.coralproject.net/
 	~~~~
-- Command to push files to S3 using [s3tools](http://s3tools.org/s3cmd)
+- Command to put (push) all files to S3 using [s3tools](http://s3tools.org/s3cmd)
 
 	~~~~
 	s3cmd put ./site/* -rvMP --force --no-mime-magic --guess-mime-type s3://testdocs.coralproject.net/
+	~~~~
+
+- Command to sync all changed files by comparing the md5 checksum between local and S3 bucket files using [s3tools](http://s3tools.org/s3cmd)
+	~~~~
+
+	s3cmd sync ./site/* -rvM --force --no-mime-magic --guess-mime-type --check-md5 s3://testdocs.coralproject.net/
 	~~~~
 
 - Command to compress and upload docsync folder contents to Iron.io (run within the folder)
