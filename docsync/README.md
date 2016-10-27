@@ -26,7 +26,7 @@ This folder contains scripts and configuration files that generate a copy of the
 - CLI Command line syntax to delete files to S3 using [s3tools](http://s3tools.org/s3cmd)
 
 	~~~~
-	s3cmd del -r --force s3://testdocs.coralproject.net/site
+	s3cmd del -r --force s3://testdocs.coralproject.net/
 	~~~~
 - Command to push files to S3 using [s3tools](http://s3tools.org/s3cmd)
 
