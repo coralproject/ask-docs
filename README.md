@@ -16,17 +16,17 @@ Make all documentation changes to the markdown files in the `docs_dir` directory
 Documentation is build via [mkdocs](http://www.mkdocs.org). To build the documentation:
 
 1) Verify that you have python and pip installed (version numbers may vary): 
-  `$ python --version
-    Python 2.7.2`
-  `$ pip --version
-    pip 1.5.2`
+  ```$ python --version
+    Python 2.7.2
+   $ pip --version
+    pip 1.5.2```
 
 If not follow [these steps](https://pip.pypa.io/en/stable/installing/).
 
 2) Install mkdocs:
-  `pip install mkdocs`
+  ```pip install mkdocs```
 
 3) Build the documentation from the root directory of this repo.
-  `mkdocs build`
+  ```mkdocs build```
 
 4) Push to master. This will trigger an update of docs.coralproject.net that will take about 10 minutes. See the docsync directory for details.
