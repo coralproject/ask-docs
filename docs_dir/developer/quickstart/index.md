@@ -22,7 +22,7 @@ Set up your http host.  If you're running locally, you should use the ip address
 
 To find your docker-machine ip, run this command:
 
-> docker-machine ip default
+> docker-machine ip default 
 
 (note, if you are not using the *default* docker machine, use the name of your docker-machine env above.)
 
