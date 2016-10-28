@@ -26,7 +26,7 @@ If not follow [these steps](https://pip.pypa.io/en/stable/installing/).
 3) Install the mkdocs themes that are located in the /themes directory:
   ```pip install mkdocs-cinder```
 
-3) Build the documentation from the root directory of this repo.
+4) Build the documentation from the root directory of this repo.
   ```mkdocs build```
 
-4) Push to master. This will trigger an update of docs.coralproject.net that will take about 10 minutes. See the docsync directory for details.
+5) Push to master. This will trigger an update of docs.coralproject.net that will take about 10 minutes. See the docsync directory for details.
