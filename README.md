@@ -17,8 +17,8 @@ Documentation is build via [mkdocs](http://www.mkdocs.org). To build the documen
 
 1) Verify that you have python and pip installed (version numbers may vary): 
   `$ python --version
-    Python 2.7.2
-  $ pip --version
+    Python 2.7.2`
+  `$ pip --version
     pip 1.5.2`
 
 If not follow [these steps](https://pip.pypa.io/en/stable/installing/).
