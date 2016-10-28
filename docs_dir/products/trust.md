@@ -24,6 +24,7 @@ Trust is comprised of the following sections:
 * Lists
 * Settings
 
+
 # Trust tutorials
 
 This is where you can find tutorials on how to use Trust. **This section is still in development, as Trust continues to evolve.**
