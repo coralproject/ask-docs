@@ -98,13 +98,13 @@ If you’re ok with http or you’re installing a local machine (as opposed to a
 If you want to use https, you will need to go to your DNS provider and set up the domain to point to your new server before you run the install script.  
 
 
-This is required because Ask contains an automated mechanism for acquiring a secure certification (https://github.com/mholt/caddy) and keeping it up to date. The server must be reachable using the https://your.domain in order for this to happen.
+This is required because Ask contains an automated mechanism for acquiring a secure certification (https://github.com/mholt/caddy) and keeping it up to date. The server must be reachable using the `https://your.domain.com` in order for this to happen.
 
 
 ### Do you want reCAPTCHA enabled?
 
 
-Ask Forms can be protected from bots submitting false entries via reCAPTCHA.  You can learn more about it here: https://www.google.com/recaptcha/intro/index.html.
+Ask Forms can be protected from bots submitting false entries via reCAPTCHA.  You can learn more about it here: [https://www.google.com/recaptcha/intro/index.html](https://www.google.com/recaptcha/intro/index.html).
 
 
 If you want to use reCAPTCHA, you need to have signed up for an account and have the keys ready as they will be needed during the Ask install process.
