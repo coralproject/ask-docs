@@ -1,14 +1,14 @@
 # Ask
 
-_Updated: 10/27/2016_
+_Updated: 10/28/2016_
 
 ### Latest Release 0.0.5 
 
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer for your os from our Github repository
 
 
-!!! warning "We're revising our documents and install packages for Ask"
-If you have questions about installing Ask, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org)
+!!! warning "We're revising our documentation and install instructions for Ask"
+If you have questions about installing Ask, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
 
 ## What is Ask?
 
@@ -62,7 +62,8 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 ) and unpack it into the folder.
 
 
-3. Open up a console/terminal
+3. Open up a console/terminal.
+
 4. Cd to the directory and enter the following:
 
 		  ./ask-install

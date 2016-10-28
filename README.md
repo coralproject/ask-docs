@@ -7,26 +7,26 @@ Please report bugs and corrections via [Github issues](https://github.com/coralp
 Our live documentation lives at [https://docs.coralproject.net](https://docs.coralproject.net).
 
 
-## [REVISION AND QA NEEDED] Coral Team Notes and Instructions to edit the Docs
+# Contributing to the Docs
 
 
 Make all documentation changes to the markdown files in the `docs_dir` directory.
 
 
-Documentation is build via [mkdocs](http://www.mkdocs.org). To build the documentation:
+Documentation is built via [mkdocs](http://www.mkdocs.org). To build the documentation:
 
 1) Verify that you have python and pip installed (version numbers may vary): 
-  `$ python --version
-    Python 2.7.2
-  $ pip --version
-    pip 1.5.2`
+  ```python --version && pip --version```
 
 If not follow [these steps](https://pip.pypa.io/en/stable/installing/).
 
 2) Install mkdocs:
-  `pip install mkdocs`
+  ```pip install mkdocs```
 
-3) Build the documentation from the root directory of this repo.
-  `mkdocs build`
+3) Install the mkdocs themes that are located in the /themes directory:
+  ```pip install mkdocs-cinder```
 
-4) Push to master. This will trigger an update of docs.coralproject.net that will take about 10 minutes. See the docsync directory for details.
+4) Build the documentation from the root directory of this repo.
+  ```mkdocs build```
+
+5) Push to master. This will trigger an update of docs.coralproject.net that will take about 10 minutes. See the docsync directory for details.
