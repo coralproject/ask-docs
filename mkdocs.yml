@@ -2,7 +2,6 @@
 pages:
 - Home: 'index.md'
 - Products:
-  - Introduction: 'products/index.md'
   - Ask: 'products/ask.md'
   - Talk: 'products/talk.md'
   - Trust: 'products/trust.md'
@@ -16,7 +15,7 @@ pages:
   - Report bugs: 'contribute/reporting_bugs.md'
   - Our Code of Conduct: 'contribute/code_of_conduct.md'
 - Contact: 'contact/support.md'
-- FAQ: 'contact/faq.md'
+
 
 
 
