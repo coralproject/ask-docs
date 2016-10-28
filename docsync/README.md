@@ -31,7 +31,7 @@ This folder contains scripts and configuration files that generate a copy of the
 - Command to put (push) all files to S3 using [s3tools](http://s3tools.org/s3cmd)
 
 	~~~~
-	s3cmd put ./site/* -rvMP --force --no-mime-magic --guess-mime-type s3://testdocs.coralproject.net/
+	s3cmd put ./site/* -rvM --force --no-mime-magic --guess-mime-type s3://testdocs.coralproject.net/
 	~~~~
 
 - Command to sync all changed files by comparing the md5 checksum between local and S3 bucket files using [s3tools](http://s3tools.org/s3cmd)
