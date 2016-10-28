@@ -7,7 +7,7 @@ Please report bugs and corrections via [Github issues](https://github.com/coralp
 Our live documentation lives at [https://docs.coralproject.net](https://docs.coralproject.net).
 
 
-# Coral Team Notes and Instructions to edit the Docs
+# Contributing to the Docs
 
 
 Make all documentation changes to the markdown files in the `docs_dir` directory.
