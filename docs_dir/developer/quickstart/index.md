@@ -82,7 +82,6 @@ You should now have a fully operational Coral Ecosystem. If anything has gone wr
 
 You just installed the following coral components:
 
-![Architecture](/images/trust-architecture.png)
 
 * MongoDB server
   * [Sponge Application](https://github.com/coralproject/sponge)
@@ -132,7 +131,6 @@ To access Trust App browse to http://192.168.99.100
 
 The Coral ecosystem consists of several appliations that work together to form our products. The following diagram lays out the full install.  
 
-![Architecture](/images/trust-architecture.png)
 
 # Where to go from here?
 
