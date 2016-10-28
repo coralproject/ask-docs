@@ -1,27 +1,11 @@
-# If you add a page, you must add it to the index here
+# This section controls the navigation and nesting of pages, including their titles
 pages:
 - Home: 'index.md'
 - Products:
-  - User Guide: 'products/index.md'
+  - Introduction: 'products/index.md'
   - Ask: 'products/ask.md'
   - Talk: 'products/talk.md'
   - Trust: 'products/trust.md'
-- Developers:
-  - Introduction: 'developer/index.md'
-  - Architectural overview: 'developer/architectural_overview.md'
-  - Installing Coral Ecosystem: 'developer/quickstart/install.md'
-  - Developer tools setup: 'developer/developer_setup.md'
-  - Cay: 'developer/cay/index.md'
-  - Elkhorn: 'developer/elkhorn/index.md'
-  - Pillar: 'developer/pillar/index.md'
-  - Sponge: 'developer/sponge/index.md'
-  - Xenia: 'developer/xenia/index.md'
-  - Xenia Driver: 'developer/xenia/xenia-driver-js.md'
-- Templates:
-    - Templates: 'developer/templates/index.md'
-    - FAQ: 'developer/templates/faq.md'
-- Guides: 
-  - Roadmap: 'guides/index.md'
 - Get Involved:
   - Introduction: 'contribute/index.md'
   - Contribute code: 'contribute/writing_code.md'
@@ -31,9 +15,8 @@ pages:
   - Submit feature requests: 'contribute/reporting_bugs.md'
   - Report bugs: 'contribute/reporting_bugs.md'
   - Our Code of Conduct: 'contribute/code_of_conduct.md'
-- Contact:
-  - Technical Support: 'contact/support.md'
-  - FAQ: 'contact/faq.md'
+- Contact: 'contact/support.md'
+- FAQ: 'contact/faq.md'
 
 
 
