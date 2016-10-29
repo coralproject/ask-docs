@@ -15,7 +15,7 @@ If there isn't already an GitHub issue, then create an issue for it. You can fin
 
 As you're working, refer to our [coding style guide](coding_style_guide) to make sure your code conforms to our standards.
 
-# Working With GitHub
+## Working With GitHub
 
 This section explains how open source contributors can contribute code to the Coral Project via pull requests.
 
