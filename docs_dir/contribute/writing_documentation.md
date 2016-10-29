@@ -14,7 +14,45 @@ Here is, briefly, how our documentation works:
 
 There is a separate page for the [documentation style guide](docs_style_guide), that covers guidelines for how to organize and write instructions and tutorials, how to format text for consistency, and terminology.
 
+<<<<<<< Updated upstream
 ## Installing MkDocs
+=======
+## How the documentation is organized
+
+The documentation is organized into several categories:
+
+* **Introduction**: This offers a general overview of the Coral Project and its different components.
+* **Developer Guide**: This provides information for technical users of the Coral Project. It offers installation instructions for the Coral Ecosystem as a whole, as well as installation instructions for each individual component.
+* **User Guide**: This provides information for end users (publishers, journalists, moderators, readers) on how to use the features of Coral. It includes tutorials and how-to guides.
+* **Contribute**: This provides information on how to contribute to the Coral Project through open source. There are sections for the developers (how to work with GitHub, etc.), as well as sections for those who want to contribute to other pieces of the Coral Project (such as the documentation!).
+* **FAQ**
+
+## How to obtain, write, and deploy documentation
+
+Our documentation is hosted and deployed through GitHub. This guide will take you step by step through the process of getting the documentation on to your local machine, editing the documentation, and submitting your changes. If you've never worked with Git before, it might seem a little intimidating, but we've broken it down for you into manageable chunks.
+
+Briefly, the process is as follows:
+
+1. First, you will get the documentation source code, using Git.
+2. Then, you will work on the documentation. You will use Mkdocs and Markdown to write the documentation.
+3. Then, you will push your changes to GitHub.
+4. Finally, you will deploy the documentation. The documentation is deployed using a simple Mkdocs command that builds the documentation, and then the resulting generated site is pushed to Heroku.
+
+## Install and set up Git
+
+If you don't already have Git installed, you'll want to get that set up first. You'll have to [download and install Git](https://git-scm.com/download). You can read more about Git on [their website](https://git-scm.com/).
+
+You will also have to [create a GitHub account](https://help.github.com/articles/signing-up-for-a-new-github-account/), which is a very straightforward process.
+
+After installing Git, the first thing you should do is setup your name and email using the following commands:
+```
+git config --global user.name "Your Real Name"
+git config --global user.email "you@email.com"
+```
+Note that user.name should be your real name, not your GitHub username. The email you use in the user.email field will be used to associate your commits with your GitHub account.
+
+## Install MkDocs
+>>>>>>> Stashed changes
 
 The Coral Project's documentation uses the [MkDocs](http://www.mkdocs.org/) documentation system, which uses [Markdown](http://daringfireball.net/projects/markdown/) to format text. Before you can get started on writing and editing the documentation, you will need to have MkDocs installed.
 
