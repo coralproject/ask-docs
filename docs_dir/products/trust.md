@@ -1,4 +1,4 @@
-# Trust overview
+# Trust
 
 ## What is Trust?
 
@@ -23,6 +23,7 @@ Trust is comprised of the following sections:
 * Community Explorer
 * Lists
 * Settings
+
 
 # Trust tutorials
 
@@ -84,5 +85,3 @@ Click "Confirm" to save your search.
 7) You (and your colleagues) can now access this saved search via the "Saved Search" button in the side navigation bar.
 
 ![IdentifyTrollsScreenshot8](../images/identifytrolls8.png "IdentifyTrollsScreenshot8")
-
-
