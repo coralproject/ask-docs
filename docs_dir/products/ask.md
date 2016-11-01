@@ -66,10 +66,12 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 
 4. Cd to the directory and enter the following:
 
+
 		  ./ask-install
 		  docker-machine create -d virtualbox coral
 		  docker-machine start coral
 		  eval $(docker-machine env)
+
 
 5. Follow the on screen prompts to configure Ask.
 
@@ -92,10 +94,10 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 
 2. Run the following commands (NOTE: the `-s` argument is very important):
 
-      
-		  ./ask-install -s
+
+		  ./ask-install
 		  docker-compose pull
-      bash setup.sh
+		  bash setup.sh
        
 
 3. You can check that docker is running by using `docker-compose ps`
