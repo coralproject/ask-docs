@@ -52,7 +52,7 @@ Docker 1.12.1 or later is required.
 
 Visit the Docker website for [stable releases](https://www.docker.com/products/docker). Please make sure that the docker install is a stable release as we have encountered problems with experimental Docker releases.
 
-## Step By Step Install
+## Install Steps
 
 
 1. Create an empty folder on your server, outside of the user profile directory.
@@ -79,7 +79,12 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 
 7. After this process is complete, you should be able to access Ask via a web browser at the url that you specified in the startup process.
 
-## Upgrade Step by Step
+
+### Install Gotchas
+
+- We have encountered errors when installing into symlinked folders. 
+
+## Upgrade Steps
 
 
 1. Make sure you have the latest version of the Installer: https://github.com/coralproject/ask-install/releases
@@ -99,9 +104,6 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 For troubleshooting help on upgrading, please reach out to Jeff: jeff@mozillafoundation.org
 
 
-## FAQ
-
-- We have encountered errors when installing into symlinked folders. 
 
 ## HTTPS and Spam Reduction
 
