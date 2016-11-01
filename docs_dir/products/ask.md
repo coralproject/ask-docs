@@ -79,6 +79,23 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 
 7. After this process is complete, you should be able to access Ask via a web browser at the url that you specified in the startup process.
 
+## Upgrade Step by Step
+
+
+1. Make sure you have the latest version of the Installer: https://github.com/coralproject/ask-install/releases
+
+
+2. Run the following commands (NOTE: the `-s` argument is very important):
+
+      
+		  ./ask-install -s
+		  docker-compose pull
+      bash setup.sh
+
+3. You can check that docker is running by using `docker-compose ps`
+
+
+For troubleshooting help on upgrading, please reach out to Jeff: jeff@mozillafoundation.org
 
 
 ## FAQ
