@@ -1,8 +1,8 @@
 # Ask
 
-_Updated: 10/28/2016_
+_Updated: 11/01/2016_
 
-### Latest Release 0.0.5 
+### Ask Latest Release: v0.4.3
 
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer for your os from our Github repository
 
