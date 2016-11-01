@@ -92,6 +92,7 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 		  docker-compose pull
       bash setup.sh
 
+
 3. You can check that docker is running by using `docker-compose ps`
 
 
