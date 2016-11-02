@@ -15,7 +15,7 @@ Make all documentation changes to the markdown files in the `docs_dir` directory
 
 Documentation is built via [mkdocs](http://www.mkdocs.org). To build the documentation:
 
-1) Verify that you have python and pip installed (version numbers may vary): 
+1) Verify that you have python and pip installed (version numbers may vary):
   ```python --version && pip --version```
 
 If not follow [these steps](https://pip.pypa.io/en/stable/installing/).
@@ -24,7 +24,7 @@ If not follow [these steps](https://pip.pypa.io/en/stable/installing/).
   ```pip install mkdocs```
 
 3) Install the mkdocs themes that are located in the /themes directory:
-  ```pip install mkdocs-cinder```
+  ```pip install mkdocs-material```
 
 4) Build the documentation from the root directory of this repo.
   ```mkdocs build```
