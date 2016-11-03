@@ -1,4 +1,4 @@
-# Trust overview
+# Trust
 
 ## What is Trust?
 
@@ -13,7 +13,7 @@ The [tutorials section](#trust-tutorials) will help guide you through accomplish
 
 ## Roadmap
 
-The Trust beta will be released Q3 of 2016.
+The Trust beta will be released Q4 of 2016.
 
 ## Trust sections
 
@@ -23,6 +23,7 @@ Trust is comprised of the following sections:
 * Community Explorer
 * Lists
 * Settings
+
 
 # Trust tutorials
 
@@ -84,5 +85,3 @@ Click "Confirm" to save your search.
 7) You (and your colleagues) can now access this saved search via the "Saved Search" button in the side navigation bar.
 
 ![IdentifyTrollsScreenshot8](../images/identifytrolls8.png "IdentifyTrollsScreenshot8")
-
-
