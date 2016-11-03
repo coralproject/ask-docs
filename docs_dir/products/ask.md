@@ -13,11 +13,11 @@ _Updated: 11/03/2016_
 
 ## What is Ask?
 
-Ask enables newsrooms and media companies to create custom comment forms which can be easily embededed into media websites.
+Ask lets you easily create embeddable forms, manage submissions, and display galleries of the best responses. It's fast, flexible, and you control the design and the data.
 
 * **Boost engagement**: Editors and journalists can directly tap into the contributor stream to easily solicit, invite and feature user-generated content that compliments the narrative
-* **Community**: Community members can lend their personal knowledge and experiences for trending stories, improving the quality of the coverage while building a sense of investment among readers
-* **Publishers**: Once installed and integrated with the Coral Project ecosystem, editors and publishers will gain the power to explore, filter and rank contributor traits, behavioral patterns and associated metadata
+* **Engage your community**: Community members can lend their personal knowledge and experiences for trending stories, improving the quality of the coverage while building a sense of investment among readers
+* **Add to other metadata**: Once installed and integrated with the Coral Project ecosystem, editors and publishers will gain the power to connect user-generated submissions to other logged-in interactions such as comments, with user opt-in permission
 
 We've created a guide on creating effective, targeted questions that attract and engage contributors. [You can read it here](https://blog.coralproject.net/forms-audience-engagement/). `#ProTip`
  ____
