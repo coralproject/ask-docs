@@ -13,15 +13,13 @@ _Updated: 11/03/2016_
 
 ## What is Ask?
 
-Ask enables newsrooms and media companies to create custom comment forms which can be easily embededed into media websites.
+Ask lets you easily create embeddable forms, manage submissions, and display galleries of the best responses. It's fast, flexible, and you control the design and the data.
 
-* **Attract multimedia contributions**: Ask can help you gather submissions in a variety of formats including text, photo, video, and audio, helping you craft immersive, authentic and sensory-driven articles
-* **Surface high quality comments**: Contributions can be connected to user profiles, allowing editors to manage high volume articles and feature comments that add value to the conversation
 * **Boost engagement**: Editors and journalists can directly tap into the contributor stream to easily solicit, invite and feature user-generated content that compliments the narrative
-* **Community**: Commenters can lend their their personal knowledge and experiences for trending stories, improving the quality of the coverage while building a sense of investment among readers
-* **Publishers**: Once installed and integrated with the Coral Project ecosystem, editors and publishers will gain the power to explore, filter and rank contributor traits, behavioural patterns and associated metadata
+* **Engage your community**: Community members can lend their personal knowledge and experiences for trending stories, improving the quality of the coverage while building a sense of investment among readers
+* **Add to other metadata**: Once installed and integrated with the Coral Project ecosystem, editors and publishers will gain the power to connect user-generated submissions to other logged-in interactions such as comments, with user opt-in permission
 
- We've created a guide on creating effective, targeted questions that attract and engage contributors. [You can read it here](https://blog.coralproject.net/forms-audience-engagement/). `#ProTip`
+We've created a guide on creating effective, targeted questions that attract and engage contributors. [You can read it here](https://blog.coralproject.net/forms-audience-engagement/). `#ProTip`
  ____
 
 
@@ -39,9 +37,9 @@ Ask enables newsrooms and media companies to create custom comment forms which c
 
 ## Before You Get Started
 
-This installation guide is intended for the primary use case of a cloud installation of Ask on Amazon AWS. Ask can be deployed locally an into most cloud platforms. 
+This installation guide is intended for the primary use case of a cloud installation of Ask on Amazon AWS. Ask can be deployed locally onto most cloud platforms. 
 
-The install consists of standing up a server, configuring secure terminal access via ssh, creating an S3 bucket for file storage, connecting the server to publicly available DNS for SSL cert generation, downloading the latest Ask installer from github, providing answers for the configuration script and then activating the Ask server which downloads, builds and launches a series of Docker containers for the front-end, MongoDB database, web server, authentication, etc.
+The install consists of standing up a server, configuring secure terminal access via ssh, creating an S3 bucket for file storage, connecting the server to publicly available DNS for SSL cert generation, downloading the latest Ask installer from GitHub, providing answers for the configuration script and then activating the Ask server which downloads, builds and launches a series of Docker containers for the front-end, MongoDB database, web server, authentication, etc.
 
 ### Hosting your Ask Install
 
@@ -122,7 +120,7 @@ Server installs can use ssl to allow secure https connections but dns needs to b
   10. To ssh into the server, you need to change the permissions on your private key (NAME-YOU-SELECTED-FOR-THE-KEY.pem file) that you downloaded a few steps ago. It may be in your `Downloads` folder. This file cannot be readable by everyone; if it is, your ssh connection will be refused. Running the unix command 'chmod' against the file will resolve it.
 
 	- You can `cd` to the directory that contains the .pem file
-	- Reference it's current location but stay in your current directory
+	- Reference its current location but stay in your current directory
 	- Move it to a new location
 
 			$ chmod 400 /path/to/your/private-key.pem
@@ -233,7 +231,7 @@ New to working with Amazon's S3 file storage service? Check out this AWS knowled
 
 
 	- Now click into the user and click the tab 'Permissions', then 'Attach Policy' and find the one you just created, attaching it to this user.
-	- You will need the user 'Access Key ID' (Not the Secret Key' during the Ask Installation
+	- You will need the user 'Access Key ID' (Not the Secret Key) during the Ask Installation
 			
 ____
 
@@ -265,7 +263,7 @@ Run this command to create the `coral` directory in the `/opt/` directory and th
 	$ sudo mkdir /opt/coral/ && cd /opt/coral/
 
 
-Run this command to download the latest release of Ask (0.0.7), unzip it an change directories into it:
+Run this command to download the latest release of Ask, unzip it and change directories into it:
 
 
 	$sudo curl -LOk https://github.com/coralproject/ask-install/releases/download/v0.0.7/ask-install_0.0.7_linux_amd64.tar.gz && sudo tar zxvf ask-install_0.0.7_linux_amd64.tar.gz && cd ask-install_0.0.7_linux_amd64/
@@ -513,11 +511,11 @@ For very large or international sites, you may want to consider using a CDN cach
 Will you be hosting Ask over https? If you’re ok with http or you’re installing a local machine (as opposed to a server that’s accessible by others), you may proceed to the next question.
 
 
-If you want to use https, you will need to go to your DNS provider and set up the domain to point to your new server before you run the install script. This is required because Ask contains an automated mechanism for acquiring a secure certification (https://github.com/mholt/caddy) and keeping it up to date. The server must be reach it using a publicly accessbile url such as [https://your.domain.com](https://your.domain.com) in order for this to happen.
+If you want to use https, you will need to go to your DNS provider and set up the domain to point to your new server before you run the install script. This is required because Ask contains an automated mechanism for acquiring a secure certification (https://github.com/mholt/caddy) and keeping it up to date. The server must be reach it using a publicly accessible url such as [https://your.domain.com](https://your.domain.com) in order for this to happen.
 
 If you’d like to use another platform to host your files, let us know. We can work together to build it as an option into the Coral Platform. Send a mesage to [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
 
-**Spam Reduction with Captcha**
+**Spam Reduction with reCaptcha**
 
 Do you want reCAPTCHA enabled?
 
