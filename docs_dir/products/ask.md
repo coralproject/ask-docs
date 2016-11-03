@@ -1,14 +1,12 @@
 # Ask
 
-_Updated: 10/28/2016_
+_Updated: 11/2/2016_
 
-### Latest Release 0.0.5 
+### Latest Release 0.0.7
 
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer for your os from our Github repository
 
-
-!!! warning "We're revising our documentation and install instructions for Ask"
-If you have questions about installing Ask, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
+- If you have questions about installing Ask, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
 
 ## What is Ask?
 
@@ -24,7 +22,20 @@ We've created a guide on how to write a well-considered form. [You can read it h
 
 ![Ask Form Builder](../images/ask_comment_form_builder300.png)
 
-## Installing Ask
+## Ask Installation ##
+
+### 1. Deploy AWS EC2 Server
+
+### 2. Set up S3 bucket and IAM permissions
+
+### 3. Add Server DNS for SSL certificate
+
+### 4. Ask Environment Configuration
+
+### 5. Run Ask Install
+
+
+## Before You Get Started
 
 ### Where will you be hosting Ask?
 
@@ -54,31 +65,46 @@ Visit the Docker website for [stable releases](https://www.docker.com/products/d
 
 ## Step By Step Install
 
+### Launch A new Amazon AWS Instance via EC2 Dashboard
 
-1. Create an empty folder on your server, outside of the user profile directory.
+  1. Select AMI Image
+    - Ubuntu Server 16.04 LTS (HVM), SSD Volume Type 64-bit - ami-6e165d0e
+Ubuntu Server 16.04 LTS (HVM),EBS General Purpose (SSD) Volume Type. Support available from Canonical (http://www.ubuntu.com/cloud/services).
 
+  2. Select Instance Type and then click 'Next'
+    - t2.medium
+    
+  3. Configure Instance Details and then click 'Next'
+    - **Number of Instances:** 1
+    - **Network, Subnet and Auto-Assign Public IP:** Ensure the EC2 instance is placed into a VPC network and subnet that match your desired demo/testing/production goals
+    - **IAM Role:** None
+    - **Leave these items as defaults (Optional)**
+      - Shutdown behaviour
+      - Enable termination protection
+      - Monitoring
+      - Monitoring
+      
+  4. Add storage:
+    - Enter '8GB' and then click 'Next'
+  
+  5. Tag Instance (Optional) 
 
-2. Download the Ask Installer from our repo [https://github.com/coralproject/ask-install/releases](https://github.com/coralproject/ask-install/releases
-) and unpack it into the folder.
+  6. Configure Security Group
+    - You can use an existing security group or create a new one in AWS's VPC
+    - We recoommend you define access for the following ports:
+        
+    ``` 
+    Type  Protocol  Port  Source    IP
+    SSH   TCP     22    MY IP   YOUR-IP-ADDRESS (example 64.28.114.31/32)
+    HTTPS TCP     443   ANYWHERE  0.0.0.0/0
+    HTTP  TCP     80    ANYWHERE  0.0.0.0/0
+    ```
+    
+    - We recommend you limit remote access via ```ssh/22``` to only the necessary IP's of your office connection which can be found using sites like [https://whatismyipaddress.com/](https://whatismyipaddress.com/)
+    - If you use a VPN, you can find out what range is covered and enter that in
 
-
-3. Open up a console/terminal.
-
-4. Cd to the directory and enter the following:
-
-		  ./ask-install
-		  docker-machine create -d virtualbox coral
-		  docker-machine start coral
-		  eval $(docker-machine env)
-
-5. Follow the on screen prompts to configure Ask.
-
-
-6. Once you have answered all the questions, you will be prompted to to run the install command. This will download and set up all the components of Ask.
-
-
-7. After this process is complete, you should be able to access Ask via a web browser at the url that you specified in the startup process.
-
+  7. Review EC2 Instance Settings
+  8. Create new key pair or use existing one
 
 
 ## FAQ
