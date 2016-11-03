@@ -13,7 +13,7 @@ The [tutorials section](#trust-tutorials) will help guide you through accomplish
 
 ## Roadmap
 
-The Trust beta will be released Q3 of 2016.
+The Trust beta will be released Q4 of 2016.
 
 ## Trust sections
 

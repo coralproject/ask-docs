@@ -39,7 +39,8 @@ markdown_extensions:
   - sane_lists
   - smarty
   - codehilite(css_class=code)
-
+  - toc:
+      permalink: '#'
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
 # Theme Options - MkDocs Material 
