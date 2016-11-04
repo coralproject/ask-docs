@@ -250,10 +250,37 @@ ____
 
 		Example of ssh connection using a DNS registered subdomain
 		$ ssh -i /path/to/your/secret-key.pem ubuntu@ask-stg-docs.coralproject.net
+		
+____
+
+		
+## 4. Slack Notifications
+
+
+Now you can get notifications on Slack when new form submissions come in.
+
+1. Create a Slack incoming webhook (see: [https://api.slack.com/incoming-webhooks](https://api.slack.com/incoming-webhooks))
+
+2. Run the Ask installer and choose `y` for Slack integration:
+
+
+		Do you want form submissions to post to a slack channel?
+
+
+3. Input your incoming webhook url:
+
+
+		What is the slack incoming hook url?:
+
+
+4. And finally, enter the channel where you want to receive the notifications:
+
+
+		What is the slack channel you want notifications posted? (without the #):
 
 ____
 
-## 4. Ask Configuration Tool
+## 5. Ask Configuration Tool
 
 Back on the remote server, change directories to begin running the Ask Configuration Tool
 
@@ -348,7 +375,7 @@ Here are the prompts you will recieve during the configuration process:
 
 ____
 
-## 5. Run Ask installer
+## 6. Run Ask installer
 
 1. Start the Ask Install
 
@@ -461,7 +488,7 @@ ____
 		
 ____
 		
-## 6. Upgrading Your Ask Install
+## 7. Upgrading Your Ask Install
 
 1. Make sure you have the latest version of the Installer: [https://github.com/coralproject/ask-install/releases](https://github.com/coralproject/ask-install/releases)
 
