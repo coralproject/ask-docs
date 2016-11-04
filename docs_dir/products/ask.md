@@ -29,11 +29,13 @@ We've created a guide on creating effective, targeted questions that attract and
 
 **3. [Activate DNS for SSL cert](#3-activate-dns-for-ssl-cert)**
 
-**4. [Configure Ask Environment](#4ask-configuration-tool)**
+**4. [Slack Notifications](#4-slack-notifications)**
 
-**5. [Run Ask Install](#5-run-ask-install)**
+**5. [Configure Ask Environment](#4ask-configuration-tool)**
 
-**6. [Upgrading Your Ask Install](#6-upgrading-your-ask-install)**
+**6. [Run Ask Install](#5-run-ask-install)**
+
+**7. [Upgrading Your Ask Install](#6-upgrading-your-ask-install)**
 
 ## Before You Get Started
 
