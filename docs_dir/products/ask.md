@@ -472,6 +472,7 @@ ____
 		$ sudo ./ask-install -s
 		$ sudo  docker-compose pull
 		$ sudo  bash setup.sh
+		$ sudo  docker-compose up -d
 ____
 
 
