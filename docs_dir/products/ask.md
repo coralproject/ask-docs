@@ -295,7 +295,7 @@ Run this command to create the `coral` directory in the `/opt/` directory and th
 Run this command to download the latest release of Ask, unzip it and change directories into it:
 
 
-	$sudo curl -LOk https://github.com/coralproject/ask-install/releases/download/v0.0.7/ask-install_0.0.7_linux_amd64.tar.gz && sudo tar zxvf ask-install_0.0.7_linux_amd64.tar.gz && cd ask-install_0.0.7_linux_amd64/
+	$sudo curl -LOk https://github.com/coralproject/ask-install/releases/download/v0.0.8/ask-install_0.0.8_linux_amd64.tar.gz && sudo tar zxvf ask-install_0.0.8_linux_amd64.tar.gz && cd ask-install_0.0.8_linux_amd64/
 	
 From this directory, run the following commands:
 
