@@ -69,9 +69,9 @@ Server installs can use ssl to allow secure https connections but dns needs to b
 
 ## 1. Setup AWS Instance 
 
-Option A: Use the Coral Ask AMI here by searching for `coral-ask-ami` in the Amazon Marketplace
+* **Option A**: Use the Coral Ask AMI here by searching for `coral-ask-ami` in the Amazon Marketplace
 
-Option B: Use your own custom AMI using the following steps:
+* **Option B**: Use your own custom AMI using the following steps:
 
   1. Select an AWS AMI Image that contains a [supported Operating System](#operating-system):
     - [Ubuntu Server 16.04 LTS - Xenial HVM](https://aws.amazon.com/marketplace/pp/B01JBL2M0O?ref_=gtw_msl_sim_os__B01JBL2M0O_4) (Recommended)
