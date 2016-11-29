@@ -31,11 +31,11 @@ We've created a guide on creating effective, targeted questions that attract and
 
 **4. [Slack Notifications](#4-slack-notifications)**
 
-**5. [Configure Ask Environment](#4ask-configuration-tool)**
+**5. [Configure Ask Environment](#5-ask-configuration-tool)**
 
-**6. [Run Ask Install](#5-run-ask-install)**
+**6. [Run Ask Install](#6-run-ask-installer)**
 
-**7. [Upgrading Your Ask Install](#6-upgrading-your-ask-install)**
+**7. [Upgrading Your Ask Install](#7-upgrading-your-ask-install)**
 
 ## Before You Get Started
 
