@@ -1,6 +1,6 @@
 # Ask
 
-_Updated: 11/04/2016_
+_Updated: 11/29/2016_
 
 	Latest Releases:
 	Ask 0.4.5
@@ -23,7 +23,7 @@ We've created a guide on creating effective, targeted questions that attract and
  ____
 
 
-**1. [Deploy AWS EC2 Server](#1-deploy-aws-ec2-server)**
+**1. [Setup AWS Instance](#1-setup-aws-instance)**
 
 **2. [Set up S3 bucket & IAM User](#2-set-up-s3-bucket-iam-user)**
 
@@ -67,7 +67,11 @@ The web url will generally look like this: `http://localhost:2020`. You may pick
 
 Server installs can use ssl to allow secure https connections but dns needs to be installed first. In order to activate SSL, a domain or subdomain must be mapped to the Ask instance so the webserver portion of Ask (we use [Caddy](https://caddyserver.com/)) can request a certificate from [Let's Encrypt](https://letsencrypt.org/).
 
-## 1. Deploy AWS EC2 Server
+## 1. Setup AWS Instance 
+
+Option A: Use the Coral Ask AMI here by searching for `coral-ask-ami` in the Amazon Marketplace
+
+Option B: Use your own custom AMI using the following steps:
 
   1. Select an AWS AMI Image that contains a [supported Operating System](#operating-system):
     - [Ubuntu Server 16.04 LTS - Xenial HVM](https://aws.amazon.com/marketplace/pp/B01JBL2M0O?ref_=gtw_msl_sim_os__B01JBL2M0O_4) (Recommended)
