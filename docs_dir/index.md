@@ -10,7 +10,7 @@ The Coral Project is an open source project to help publishers of all sizes buil
 
 Sign up for the [Coral Project newsletter](https://tinyletter.com/coralproject/subscribe/) to stay tuned for announcements, software updates and the latest news on community engagement.
 
-If you'd like to learn more about the Coral Project from a high-level perspective, please visit our [ Coral Project website](https://www.coralproject.net). You can find information there about the project, our goals, and the individual products. 
+If you'd like to learn more about the Coral Project from a high-level perspective, please visit our [ Coral Project website](https://www.coralproject.net). You can find information there about the project, our goals, and our products.
 
 
 ### Who Can Benefit?
