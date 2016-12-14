@@ -1,6 +1,6 @@
 # Talk
 
-This page will get filled in as we unroll the Talk product. In the meantime, you can find out more on the Talk product on [our website](https://www.coralproject.net) and see our user stories and roadmap, as well as paths to contribute, [on our website.](https://coralproject.net/contribute.html#help-us-improve-talk)
+This page will get filled in as we unroll the Talk product. In the meantime, you can [find out more](https://coralproject.net/products/talk.html) about the Talk product, and see our user stories, roadmap, and ways to contribute, [on our website.](https://coralproject.net/contribute.html#help-us-improve-talk)
 
 ## Roadmap
 
