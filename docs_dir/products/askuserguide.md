@@ -14,7 +14,7 @@ With each Ask form you have the option create a headline and subheadline that wi
 
 #### Adding Questions
 
-To add a question, simply click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by it's number and dropping it into the correct location, or by using the up and down action buttons on a question.
+To add a question, simply click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by its number and dropping it into the correct location, or by using the up and down action buttons on a question.
 
 #### Question Types
 
@@ -25,7 +25,7 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 - **Multiple Choice**: Give your readers a few answers to choose from. You can also enable, an "other" option to let them provide their answer.
 - **Email**: Looking to potentially follow up with some of your readers? Ask for their email address with this field. 
 - **Date**: You can use this field to verify an age minimum. Readers will be able to choose the date with a calendar picker or by entering the date manually. 
-- **Phone Number**: 
+- **Phone Number**: A numbers field that also tags the response as being personal information.
 
 #### Creating your question
 - **Write your question:** After you add a question type from the left, you can type your question for your readers in the first text field. 
