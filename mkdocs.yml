@@ -1,46 +1,54 @@
-# If you add a page, you must add it to the index here
+# This section controls the navigation and nesting of pages, including their titles
 pages:
 - Home: 'index.md'
-- Developer Guide:
-  - Introduction: 'developer/index.md'
-  - Architectural overview: 'developer/architectural_overview.md'
-  - Installing Coral Ecosystem: 'quickstart/install.md'
-  - Developer tools setup: 'developer/developer_setup.md'
-  - Cay: 'cay/index.md'
-  - Elkhorn: 'elkhorn/index.md'
-  - Pillar: 'pillar/index.md'
-  - Sponge: 'sponge/index.md'
-  - Xenia: 'xenia/index.md'
-  - Xenia Driver: 'xenia/xenia-driver-js.md'
-- User Guide:
-  - Introduction: 'user/index.md'
-  - Trust: 'user/trust.md'
-  - Ask: 'user/ask.md'
-  - Talk: 'user/talk.md'
-- Contribute:
+- Products:
+  - Ask: 'products/ask.md'
+  - Talk: 'products/talk.md'
+  - Trust: 'products/trust.md'
+- Get Involved:
   - Introduction: 'contribute/index.md'
-  - Writing documentation: 'contribute/writing_documentation.md'
-  - Documentation style guide: 'contribute/docs_style_guide.md'
-  - Writing code: 'contribute/writing_code.md'
-  - Coding style guide: 'contribute/coding_style_guide.md'
-  - Reporting bugs and requesting features: 'contribute/reporting_bugs.md'
-  - Contributor License Agreement: 'contribute/contributor_license_agreement.md'
-  - Code of Conduct: 'contribute/code_of_conduct.md'
-- FAQ: 'faq.md'
+  - Contribute code: 'contribute/writing_code.md'
+  - Contribute to moderation style guide: 'contribute/docs_style_guide.md'
+  - Write documentation: 'contribute/writing_documentation.md'
+  - Code best practices: 'contribute/coding_style_guide.md'
+  - Submit feature requests: 'contribute/reporting_bugs.md'
+  - Report bugs: 'contribute/reporting_bugs.md'
+  - Our Code of Conduct: 'contribute/code_of_conduct.md'
+- Contact: 'contact/support.md'
 
 
-# Do not edit in PRs below here
-site_name: Coral Project Docs
+
+
+# Site specific MkDocs configuration for Coral Project
+
+site_name: Coral Project
+
+repo_url: https://github.com/coralproject/ask
+
+repo_name: 'GitHub'
+
+docs_dir: 'docs_dir'
+
+theme_dir: 'themes'
+
+theme: 'material' 
 
 markdown_extensions:
   - admonition
   - fenced_code
   - sane_lists
   - smarty
+  - codehilite(css_class=code)
+  - toc:
+      permalink: '#'
+google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
-theme: mkdocs
+# Theme Options - MkDocs Material 
 
-docs_dir: 'docs_dir'
-
-#extra_css:
-#  - css/extra.css
+extra:
+  logo: 'images/coralproject_logo250.png'
+  palette:
+    primary: 'blue grey'
+    accent: 'cyan'
+  author:
+    github: 'coralproject'  
