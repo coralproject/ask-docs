@@ -1,5 +1,3 @@
-We've designed Ask to make it easy for newsrooms to create forms to help gather reader responses. 
-
 ## Creating a form
 
 ### Getting Started
@@ -38,17 +36,29 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 
 - **Reader Info:** One key feature of Ask is...
 
-#### Rearranging, deleting, duplicating questions
+#### Rearranging, Duplicating and Deleting Questions
+
 #### Saying thank you
+
+After readers submit a response, they will receive a confirmation message thanking them for their time. With Ask you can easily customize this meesage to fit with your organizations style and voice.
+
 #### Linking your privacy policy
-### Preview your form
-### Save your form
+Using Markdown, you can add a link to your organizations privacy policy. This link will prominantly appear above the "Submit" button on the form. 
+
+*Not familiar with Markdown?* You can use this format to add a link: 
+`[link text](http://webaddresshere.com)`
+
+### Previewing and Saving Your Form
 
 ###Publishing your form
 #####Embed options
 #####Standalone form
 
-###Collecting responses
+###Begin Collecting Submission
 ####Live vs. closed forms
 ####Setting closed form messages
+
+## Managing Submissions
+
+## Creating a Gallery of Responses
 
