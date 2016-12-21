@@ -10,6 +10,8 @@ Surveys and forms are powerful tools when trying to engage your audience. Before
 
 ### Getting Started
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder1.gif) 
+
 #### Form Name
 
 To get started, give your form a name. This form name will only be used internally and will help you search and identify it among the other forms you and your organization have created. We recommend using unique descriptive form names to make searching for your forms later on as easy as possible.
@@ -25,6 +27,8 @@ As you begin creating your form we encourage you to save early and save often (w
 ### Building Your Form
 
 #### Adding Questions
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder2.gif) 
 
 To add a question, simply click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by its number and dropping it into the correct location, or by using the up and down action buttons on a question.
 
@@ -49,6 +53,8 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 - **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to it's author when [creating your gallery]().
 
 #### Reordering, Duplicating and Deleting Questions
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder3.gif) 
 
 **Reording** a question can be done by either dragging and dropping a question by it's number to correct position, or by using the up and down arrows on the question's action bar.
 
