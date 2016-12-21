@@ -1,4 +1,12 @@
-## Creating a form
+# Ask
+
+
+## Why Use Ask?
+Ask helps you create embeddable forms quickly, manage the submissions you receive, and easily create a gallery of the best responses to share with your readers. Also, because Ask is intalled on your servers your organization will own the data.
+
+## Creating A Form
+
+Surveys and forms are powerful tools when trying to engage your audience. Before you make your form, think about what you’re asking and why. We have [an article on our blog](https://blog.coralproject.net/forms-audience-engagement/) that will help you write better forms. 
 
 ### Getting Started
 
