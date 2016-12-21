@@ -10,6 +10,8 @@ Surveys and forms are powerful tools when trying to engage your audience. Before
 
 ### Getting Started
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder1.gif) 
+
 #### Form Name
 
 To get started, give your form a name. This form name will only be used internally and will help you search and identify it among the other forms you and your organization have created. We recommend using unique descriptive form names to make searching for your forms later on as easy as possible.
@@ -18,13 +20,11 @@ To get started, give your form a name. This form name will only be used internal
 
 With each Ask form you have the option create a headline and subheadline that will be displayed above your form. Use a headline to grab your readers' attention, and take advantage of the subheadline to give instructions or provide an additional description. *This step is optional.*
 
-### Previewing and Saving Your Form
-
-As you begin creating your form we encourage you to save early and save often (we will be adding auto-save in the future) by clicking "Save." Also, you can preview your form by clicking the "Preview" button.
-
 ### Building Your Form
 
 #### Adding Questions
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder2.gif) 
 
 To add a question, simply click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by its number and dropping it into the correct location, or by using the up and down action buttons on a question.
 
@@ -37,7 +37,7 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 - **Multiple Choice**: Give your readers a few answers to choose from. You can also enable, an "other" option to let them provide their answer.
 - **Email**: Looking to potentially follow up with some of your readers? Ask for their email address with this field. 
 - **Date**: You can use this field to verify an age minimum. Readers will be able to choose the date with a calendar picker or by entering the date manually. 
-- **Phone Number**: Make it easy to follow up by phone. This field is designated as ["Reader Info"]() by default.
+- **Phone Number**: A numbers field that also tags the response as being personal information.
 
 #### Creating your question
 - **Write your question:** After you add a question type from the left, you can type your question for your readers in the first text field. 
@@ -46,13 +46,11 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 #### Question Options
 - **Required:** If a question is very important you may want to make it required. You can make any question required by clicking the checkbox in the expanded question.
 
-- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to it's author when [creating your gallery]().
+- **Reader Info:** One key feature of Ask is...
 
-#### Reordering, Duplicating and Deleting Questions
+#### Rearranging, Duplicating and Deleting Questions
 
-**Reording** a question can be done by either dragging and dropping a question by it's number to correct position, or by using the up and down arrows on the question's action bar.
-
-You may **delete** a question by clicking the `icon needed` or **duplicate** a question by clicking the `icon needed`.
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder3.gif) 
 
 #### Saying thank you
 
@@ -61,34 +59,18 @@ After readers submit a response, they will receive a confirmation message thanki
 #### Linking your privacy policy
 Using Markdown, you can add a link to your organizations privacy policy. This link will prominantly appear above the "Submit" button on the form. 
 
-> *Not familiar with Markdown?* You can use this format to add a link: 
-> `[link text](http://webaddresshere.com)`
+*Not familiar with Markdown?* You can use this format to add a link: 
+`[link text](http://webaddresshere.com)`
 
 ### Previewing and Saving Your Form
 
-###Publishing Your Form
-Ask offers flexibility as to how you can publish and share the forms you create. By clicking the "Publish Options" button you can choose which option is best for you.
-
-#####Embed Options
-
-Your CMS or organization may have preferences or requirements on which type of embed to choose.
-- With IFrame:
-- Without IFrame: 
-
+###Publishing your form
+#####Embed options
 #####Standalone form
 
-When your form is published it also is published to it's own page that can be linked to or shared.
-
 ###Begin Collecting Submission
-To begin collecting submissions from your readers you will need to set your form to "Live." By default,forms are set to "Closed." 
-####Setting Form Status
-You can change the status of your form in two ways: 
-- **Form Status Menu:** This menu, located in the upper right corner of ask, makes it easy to change form status regardless of what screen you are on.
-- **Publish Options:** Quickly change your form status as you are retrieving your embed codes or form links.
-
-#### Closed Form Message
-
-Ask let's you customize the message displayed to readers when your form is closed.
+####Live vs. closed forms
+####Setting closed form messages
 
 ## Managing Submissions
 
