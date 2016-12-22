@@ -72,10 +72,10 @@ Using Markdown, you can add a link to your organizations privacy policy. This li
 
 ### Previewing and Saving Your Form
 
-###Publishing Your Form
+### Publishing Your Form
 Ask offers flexibility as to how you can publish and share the forms you create. By clicking the "Publish Options" button you can choose which option is best for you.
 
-####Embed Options
+#### Embed Options
 
 Your CMS or organization may have preferences or requirements on which type of embed to choose.
 - With IFrame: This code will work across more sites as soon as it is pasted into your CMS. However, it will require the help of a developer to customize the styles.
@@ -133,5 +133,48 @@ One key feature of Ask is the ability to quickly create publishable gallaries of
 
 You can download a CSV of the submissions you form has received by clicking the `icon needed` icon.
 
-## Creating a Gallery of Responses
+## Creating and Publishing Gallaries
 
+`introductory material here`
+
+### Selecting and Displaying Reader Information
+
+Ask makes it easy to attribute gallery submissions to their correct authors without any copy and pasting. 
+- **Placement**: Choose if you would like the reader information to appear above or below the submission
+- **Reader Info Fields**: Select which Reader Info fields you would like to appear alongside each submissions.
+- **Preview**: To see how this will be displayed simply press the Preview button. This will also save your gallery.
+
+### Save Early and Often
+
+As with the Form Builder, we recommend you save changes to your gallery early and often. You can save your changes by clicking the "Save" button.
+
+### Editing Responses
+
+There may be times when you will need to make edits to submissions for length, style, etc. Ask makes it easy to do this while also still preserving the original response. To get started click the `icon needed` button on the submission you wish to edit.
+
+A submission editor will appear with the original on the left along with the reader information you had selected to appear in your gallery. The right side of the editor allows you to make your changes both to the submission and the reader information
+
+If you need to **start over** with your changes click **"Reset Changes"** to undo all your changes and go back to using the original.
+
+Once you have completed making your changes click **Save Edits** and your changes as well as the whole gallery will be saved.
+
+###  Rearranging and Deleting Responses
+
+You can change the order of the responses in your gallery by clicking the `icon needed` and `icon needed` buttons.
+
+To remove a response from your gallery simply click the `icon needed` button.
+
+###  Publishing Your Gallery
+
+Ask offers flexibility as to how you can publish and share the gallaries you've created. By clicking the "Publish Options" button you can choose which option is best for you.
+
+#### Embed Options
+
+One method you may choose to use is embedding the gallery into an article on your CMS.
+
+- With IFrame: This code will work across more sites as soon as it is pasted into your CMS. However, it will require the help of a developer to customize the styles.
+- Without IFrame: By pasting this code into your CMS, this javascript tag with adopt the styles of your website. Be sure to double check that your site allows this.
+
+####Standalone Gallery
+
+When your gallery is published it also is published to it's own page that can be linked to or shared.
