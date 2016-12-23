@@ -45,6 +45,8 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 
 #### Creating Your Question
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/createquestion.png)
+
 After you have selected your question type and added it to the form builder you can begin writing your question. There are two fields you may complete:
 
 - **Write your question:** After you add a question type from the left, you can type your question for your readers in the first text field. 
@@ -72,6 +74,8 @@ Ask also allows you to **ADD AGGREGATION**
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder3.gif) 
 
 **Reording** a question can be accomplished by either dragging and dropping a question by it's number to the correct position, or by using the up and down arrows on the question's action bar.
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questionactions.png)
 
 You may also **delete** a question by clicking the `icon needed` or **duplicate** a question by clicking the `icon needed`.
 
