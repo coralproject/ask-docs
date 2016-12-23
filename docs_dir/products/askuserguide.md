@@ -58,6 +58,15 @@ After you have written your question you are presented with additional settings 
 
 - **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to it's author when [creating your gallery](). Questions that have been selected as Reader Info will display the 'icon needed' icon when collapsed.
 
+Ask also allows you to **ADD AGGREGATION**
+
+>  /*
+>
+>  Andrew to add copy here.
+>
+>  */
+
+
 #### Reordering, Duplicating and Deleting Questions
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder3.gif) 
