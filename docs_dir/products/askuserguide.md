@@ -129,9 +129,13 @@ Ask provides you with a default message that is displayed to readers when your f
 
 ## Managing Submissions
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submissionmanager.png)
+
 ### Navigating Your Submissions
 
 After you form has collected a number of submission you can review them by clicking on the form name from the View Forms page. From there you will be brought to Ask's submission manager. 
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submissionnavigator.png)
 
 By default, Ask's submission navigator will show you all submissions you have received with the newest first and displaying that newest submission in the reading area. From the navigator you can:
 - **sort** your submissions by oldest or newest first;
@@ -139,6 +143,8 @@ By default, Ask's submission navigator will show you all submissions you have re
 - **search** your submissions for specific words and phrases.
 
 ### Reading and Working With Submissions
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submission.png)
 
 #### The Reader Info Area
 
@@ -154,15 +160,19 @@ Similarly, if you have received a submission that has offensive or harassing con
 
 #### Adding Tags
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/tagging.gif)
+
 You can create a tag and add it to a submission to help you stay organized and add short notes.
 - To **add** a tag simply type a short word or phrase in the tag text area and press `enter` to add it.
 - You can **remove** a tag by clicking the "X" next to the tag you would like to remove.
 
 #### Sending to Gallery
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/sendtogallery.gif)
+
 One key feature of Ask is the ability to quickly create publishable gallaries of selected responses from a form. By clicking "Send to Gallery" on a selected response the response along with it's Reader Info is sent to the form's gallary manager for editing and publishing.
 
-### Downloading the Submissions
+### Downloading the Submissions ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/downloadcsv.png)
 
 You can download a CSV of the submissions you form has received by clicking the `icon needed` icon.
 
