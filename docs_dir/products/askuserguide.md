@@ -33,9 +33,9 @@ As you begin creating your form we encourage you to save early and save often (w
 To add a question, simply click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by its number and dropping it into the correct location, or by using the up and down action buttons on a question.
 
 #### Understanding Question Types
-
-![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questiontypes.png)
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questiontypes.png" width="400"> 
+</p>
 Ask offers 7 question types to choose from, giving your readers a variety of ways to answer and share their stories.
 - **Short Answer**: Ideal for short answers such as a name, city, favorite dog breed, etc. This will give your readers a single line text input area for their response. You have the option to set a character limit (or minimum).
 - **Long Answer**: Use this question type for more open-ended questions that may result in reponses of a few sentences or paragraphs. You can also enable minimum and maximum character limits for this question type.
@@ -77,9 +77,7 @@ Ask also allows you to **ADD AGGREGATION**
 
 **Reording** a question can be accomplished by either dragging and dropping a question by it's number to the correct position, or by using the up and down arrows on the question's action bar.
 
-![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questionactions.png)
-
-You may also **delete** a question by clicking the ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/trash.png) icon or **duplicate** a question by clicking the ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/duplicate.png) icon.
+You may also **delete** a question by clicking the <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/trash.png" width="30" align="middle"> icon or **duplicate** a question by clicking the <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/duplicate.png" width="30" align="middle"> icon.
 
 #### Saying thank you
 
@@ -134,10 +132,11 @@ Ask provides you with a default message that is displayed to readers when your f
 ### Navigating Your Submissions
 
 After you form has collected a number of submission you can review them by clicking on the form name from the View Forms page. From there you will be brought to Ask's submission manager. 
-
-![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submissionnavigator.png)
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submissionnavigator.png" width="300">
+</p>
 By default, Ask's submission navigator will show you all submissions you have received with the newest first and displaying that newest submission in the reading area. From the navigator you can:
+
 - **sort** your submissions by oldest or newest first;
 - **filter** to focus on items that have been bookmarked or remove items that have been flagged; and, 
 - **search** your submissions for specific words and phrases.
@@ -172,7 +171,7 @@ You can create a tag and add it to a submission to help you stay organized and a
 
 One key feature of Ask is the ability to quickly create publishable gallaries of selected responses from a form. By clicking "Send to Gallery" on a selected response the response along with it's Reader Info is sent to the form's gallary manager for editing and publishing.
 
-### Downloading the Submissions ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/downloadcsv.png)
+### Downloading the Submissions <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/downloadcsv.png" width="30" align="middle">
 
 You can download a CSV of the submissions you form has received by clicking the `icon needed` icon.
 
