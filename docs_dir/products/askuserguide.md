@@ -34,6 +34,8 @@ To add a question, simply click on a question type located in the left panel or 
 
 #### Understanding Question Types
 
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questiontypes.png)
+
 Ask offers 7 question types to choose from, giving your readers a variety of ways to answer and share their stories.
 - **Short Answer**: Ideal for short answers such as a name, city, favorite dog breed, etc. This will give your readers a single line text input area for their response. You have the option to set a character limit (or minimum).
 - **Long Answer**: Use this question type for more open-ended questions that may result in reponses of a few sentences or paragraphs. You can also enable minimum and maximum character limits for this question type.
@@ -77,13 +79,17 @@ Ask also allows you to **ADD AGGREGATION**
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questionactions.png)
 
-You may also **delete** a question by clicking the `icon needed` or **duplicate** a question by clicking the `icon needed`.
+You may also **delete** a question by clicking the ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/trash.png) icon or **duplicate** a question by clicking the ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/duplicate.png) icon.
 
 #### Saying thank you
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/thankyoumessage.png)
 
 After readers submit a response, they will receive a confirmation message thanking them for their time. You can easily customize this meesage to fit with your organizations style and voice by editing the message in the Thank You Message text area.
 
 #### Linking your privacy policy
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/privacypolicy.png)
 
 Using Markdown, you can add a link to your organizations privacy policy. This link will prominantly appear above the "Submit" button on the form. 
 
@@ -91,6 +97,9 @@ Using Markdown, you can add a link to your organizations privacy policy. This li
 > `[link text](http://webaddresshere.com)`
 
 ### Publishing Your Form
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/publish.gif)
+
 Ask offers flexibility as to how you can publish and share the forms you create. By clicking the "Publish Options" button you can choose which option is best for you.
 
 #### Embed Options
@@ -106,6 +115,9 @@ When your form is published it also is published to it's own page that can be li
 
 ### Begin Collecting Submission
 To begin collecting submissions from your readers you will need to set your form to "Live." By default,forms are set to "Closed." 
+
+![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/live-close-form.gif)
+
 #### Setting Form Status
 You can change the status of your form in two ways: 
 - **Form Status Menu:** This menu, located in the upper right corner of ask, makes it easy to change form status regardless of what screen you are on.
@@ -113,7 +125,7 @@ You can change the status of your form in two ways:
 
 #### Closed Form Message
 
-Ask let's you customize the message displayed to readers when your form is closed.
+Ask provides you with a default message that is displayed to readers when your form is closed. To customize the message simply make sure your form is set to closed and then change the message in the text area that appears.
 
 ## Managing Submissions
 
