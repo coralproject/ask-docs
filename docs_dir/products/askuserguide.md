@@ -14,15 +14,15 @@ Better for journalism:
 Improved Design and Accessibility:
 * **Ask forms are fully compatible across devices.**
 * **Ask form designs are fully customizable.** By utilizing a script tag, it automatically matches your site design.
-* **Ask forms are fully accessible.**
+* **Ask forms are fully accessible.**<br/><br/>
 
 More efficient response management:
 * **Ask contains full Slack integration**
 * **Ask makes it possible to track respondees across forms.**
-* **The Ask submissions manager makes it easy to filter out abusive or meaningless responses, and to share the most helpful contributions.**
+* **The Ask submissions manager makes it easy to filter out abusive or meaningless responses, and to share the most helpful contributions.**<br/><br/>
 
 Stronger user privacy: 
-* **Ask doesn't share user data with anyone.** 
+* **Ask doesn't share user data with anyone.** <br/><br/>
 
 It is also open source and fully customizable. You own your install of Ask, and can optimize it for your needs.
 
