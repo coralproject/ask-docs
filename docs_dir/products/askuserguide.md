@@ -1,24 +1,46 @@
 # Ask
 
 
-## Why Use Ask?
-Ask helps you create embeddable forms quickly, manage the submissions you receive, and easily create a gallery of the best responses to share with your readers. Also, because Ask is intalled on your servers your organization will own the data you receive.
+## Why use Ask?
+
+Journalists often use forms to invite suggestions, tips, ideas for their stories. Ask builds on existing tools in a number of ways:
+
+Better for journalism: 
+* **Ask encourages more people to respond to your form.** The Gallery feature makes it easy to showcase the best responses, applying the psychological principle of ['Social Proof'](http://www.obanalytics.com/images/Cialdini_2001.pdf) to journalistic practice.
+* **Ask allows journalists to tag and search responses to follow up.**<br/>
+* **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's response.<br/>
+* **Data visualizations based on submissions are easy to build using the API** <br/><br/>
+
+Improved Design and Accessibility:
+* **Ask forms are fully compatible across devices.**
+* **Ask form designs are fully customizable.** By utilizing a script tag, it automatically matches your site design.
+* **Ask forms are fully accessible.**
+
+More efficient response management:
+* **Ask contains full Slack integration**
+* **Ask makes it possible to track respondees across forms.**
+* **The Ask submissions manager makes it easy to filter out abusive or meaningless responses, and to share the most helpful contributions.**
+
+Stronger user privacy: 
+* **Ask doesn't share user data with anyone.** 
+
+It is also open source and fully customizable. You own your install of Ask, and can optimize it for your needs.
 
 ## Creating A Form
 
-Surveys and forms are powerful tools when trying to engage your audience. Before you make your form, think about what you’re asking and why. We have [an article on our blog](https://blog.coralproject.net/forms-audience-engagement/) that will help you write better forms. 
+Surveys and forms are productive tools to engage your audience in your work. Before you make a form, you need to think about what you’re asking and how you're asking it. [This article on our blog](https://blog.coralproject.net/forms-audience-engagement/) can help you write more effective form text. 
 
 ### Getting Started
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder1.gif) 
 
-#### Naming Your Form Name
+#### Naming Your Form 
 
-To get started, give your form a name. This form name will only be used internally and will help you search and identify it among the other forms you and your organization have created. We recommend using unique descriptive form names to make searching for your forms later on as easy as possible.
+To get started, give your form a name. This name is for internal use, in order to identify it later. We recommend using unique descriptive form names (eg. 'Camera Factory Closure Form').
 
-#### Creating Headline and Description
+#### Creating a Headline and Description
 
-With each Ask form you have the option create a headline and subheadline that will be displayed above your form. Use a headline to grab your readers' attention, and take advantage of the subheadline to give instructions or provide an additional description. *This step is optional.*
+With each Ask form, you can create a headline and subheadline that will be displayed to your readers at the top of the form. The headline describes what the form is for, while subheadline can include instructions or provide an additional description. *This step is optional.*
 
 #### Saving and Previewing Your Form
 
