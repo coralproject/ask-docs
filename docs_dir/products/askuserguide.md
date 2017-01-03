@@ -3,17 +3,17 @@
 
 ## Why use Ask?
 
-Journalists often use forms to invite suggestions, tips, ideas for their stories. Ask builds on existing tools in a number of ways:
+Journalists often use forms to invite suggestions, tips, or ideas for their stories. Ask builds on existing tools in a number of ways:
 
 Better for journalism: 
 * **Ask encourages more people to respond to your form.** The Gallery feature makes it easy to showcase the best responses, applying the psychological principle of ['Social Proof'](http://www.obanalytics.com/images/Cialdini_2001.pdf) to journalistic practice.
 * **Ask allows journalists to tag and search responses to follow up.**<br/>
-* **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's response.<br/>
+* **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's original response.<br/>
 * **Data visualizations based on submissions are easy to build using the API** <br/><br/>
 
-Improved Design and Accessibility:
+Improved design and accessibility:
 * **Ask forms are fully compatible across devices.**
-* **Ask form designs are fully customizable.** By utilizing a script tag, it automatically matches your site design.
+* **Ask form designs are fully customizable.** By utilizing a script tag, Ask automatically matches your site design.
 * **Ask forms are fully accessible.**<br/><br/>
 
 More efficient response management:
@@ -24,7 +24,7 @@ More efficient response management:
 Stronger user privacy: 
 * **Ask doesn't share user data with anyone.** <br/><br/>
 
-It is also open source and fully customizable. You own your install of Ask, and can optimize it for your needs.
+Ask is also open source and fully customizable. You own your install of Ask, and can optimize it for your needs.
 
 ## Creating A Form
 
@@ -40,11 +40,11 @@ To get started, give your form a name. This name is for internal use, in order t
 
 #### Creating a Headline and Description
 
-With each Ask form, you can create a headline and subheadline that will be displayed to your readers at the top of the form. The headline describes what the form is for, while subheadline can include instructions or provide an additional description. *This step is optional.*
+With each Ask form, you can create a headline and subheadline that will be displayed to your readers at the top of the form. The headline describes what the form is for, while the subheadline can include instructions or provide an additional description. *This step is optional.*
 
 #### Saving and Previewing Your Form
 
-As you begin creating your form we encourage you to save early and save often (we will be adding auto-save in the future) by clicking "Save." Also, you can preview your form by clicking the "Preview" button.
+As you begin creating your form, we encourage you to save early and save often by clicking "Save" (we will be adding auto-save in the future). Also, you can preview your form by clicking the "Preview" button.
 
 ### Building Your Form
 
@@ -52,18 +52,18 @@ As you begin creating your form we encourage you to save early and save often (w
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder2.gif) 
 
-To add a question, simply click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by its number and dropping it into the correct location, or by using the up and down action buttons on a question.
+To add a question, click on a question type located in the left panel or drag and drop that question into the form builder. You can rearrange questions by dragging a question by its number and dropping it into the correct location, or by using the up and down action buttons on a question.
 
 #### Understanding Question Types
 <p align="center">
 <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questiontypes.png" width="400"> 
 </p>
 Ask offers 7 question types to choose from, giving your readers a variety of ways to answer and share their stories.
-- **Short Answer**: Ideal for short answers such as a name, city, favorite dog breed, etc. This will give your readers a single line text input area for their response. You have the option to set a character limit (or minimum).
+- **Short Answer**: Ideal for answers such as a name, city, favorite dog breed, etc. This will give your readers a single-line text input area for their response. You have the option to set a character limit (or minimum).
 - **Long Answer**: Use this question type for more open-ended questions that may result in reponses of a few sentences or paragraphs. You can also enable minimum and maximum character limits for this question type.
-- **Numbers**: Fairly self explanitory, use this when you are asking for an answer that is a numerical value. (If you are looking for readers to submit their phone numbers for follow up, we have a separate question type for that!) You have the option to set a value minimum or maximum.
-- **Multiple Choice**: Give your readers a few answers to choose from. You can also enable, an "other" option to let them provide their answer.
-- **Email**: Looking to potentially follow up with some of your readers? Ask for their email address with this field. This field is designated as ["Reader Info"]() by default.
+- **Numbers**: Use this when you are asking for an answer that is a numerical value. (If you are looking for readers to submit their phone numbers for follow up, we have a separate question type for that!) You have the option to set a value minimum or maximum.
+- **Multiple Choice**: Give your readers a few answers to choose from. You can also enable an "other" option to let them provide an answer in a text field.
+- **Email**: Looking to follow up with some of your readers? Ask for their email address with this field. This field is designated as ["Reader Info"]() by default.
 - **Date**: You can use this field to verify an age minimum. Readers will be able to choose the date with a calendar picker or by entering the date manually. 
 - **Phone Number**: Make it easy to follow up by phone. This field is designated as ["Reader Info"]() by default.
 
@@ -78,7 +78,7 @@ After you have selected your question type and added it to the form builder you 
 
 #### Question Options
 
-After you have written your question you are presented with additional settings for your question. While some may be question type specific, such as creating character or value limits (see information on Question Types above), every question will have the following options:
+After you have written your question you are presented with additional settings for your question. While some may be question-type specific, such as creating character or value limits (see information on Question Types above), every question will have the following options:
 
 - **Required:** If a question is very important you may want to make it required. You can make any question required by clicking the checkbox in the expanded question.
 
@@ -93,11 +93,11 @@ Ask also allows you to **ADD AGGREGATION**
 >  */
 
 
-#### Reordering, Duplicating and Deleting Questions
+#### Reordering, Duplicating, and Deleting Questions
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/master/docs_dir/images/formbuilder3.gif) 
 
-**Reording** a question can be accomplished by either dragging and dropping a question by it's number to the correct position, or by using the up and down arrows on the question's action bar.
+**Reording** a question can be accomplished by either dragging and dropping a question by its number to the correct position, or by using the up and down arrows on the question's action bar.
 
 You may also **delete** a question by clicking the <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/trash.png" width="30" align="middle"> icon or **duplicate** a question by clicking the <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/duplicate.png" width="30" align="middle"> icon.
 
