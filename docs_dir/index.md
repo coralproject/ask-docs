@@ -6,7 +6,7 @@ This site aims to familiarize you with the Coral Project, how it works, and how 
 
 ### What is the Coral Project?
 
-The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. We're creating tools that allow everyone feel safe, respected, and heard. It consists of three products: Ask, Talk and Trust.
+The Coral Project is an open source project to help publishers of all sizes build better communities around their journalism. We're creating tools that allow everyone feel safe, respected, and heard. It consists of two software products: Ask and Talk.
 
 Sign up for the [Coral Project newsletter](https://tinyletter.com/coralproject/subscribe/) to stay tuned for announcements, software updates and the latest news on community engagement.
 
