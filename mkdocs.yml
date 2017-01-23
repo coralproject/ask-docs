@@ -5,7 +5,6 @@ pages:
   - Ask User Guide: 'products/askuserguide.md'
   - Ask Technical Docs: 'products/ask.md'
   - Talk: 'products/talk.md'
-  - Trust: 'products/trust.md'
 - Get Involved:
   - Introduction: 'contribute/index.md'
   - Contribute code: 'contribute/writing_code.md'
