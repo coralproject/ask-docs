@@ -82,7 +82,7 @@ After you have written your question you are presented with additional settings 
 
 - **Required:** If a question is very important you may want to make it required. You can make any question required by clicking the checkbox in the expanded question.
 
-- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to its author when [creating your gallery](). Questions that have been selected as Reader Info will display the 'icon needed' icon when collapsed.
+- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to its author when [creating your gallery](). Questions that have been selected as Reader Info will display a small outline of a person as an icon when collapsed.
 
 Ask also allows you to **ADD AGGREGATION** totals to the API.
 
@@ -191,11 +191,13 @@ One key feature of Ask is the ability to quickly create publishable gallaries of
 
 ### Downloading the Submissions <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/downloadcsv.png" width="30" align="middle">
 
-You can download a CSV of the submissions you form has received by clicking the `icon needed` icon.
+You can download a CSV of the submissions you form has received by clicking the icon above.
 
-## Creating and Publishing Gallaries
+## Creating and Publishing Galleries
 
-`introductory material here`
+The Gallery is a fast and easy way to display the best submissions for your form. By placing it alongside the form, this will encourage more people to submit responses, and indicate the kinds of responses you're looking for. You can also use it as the basis of a follow-up piece about the responses you received. Publishing a gallery is as simple as publishing a form.
+
+![screen shot 2017-02-10 at 7 57 09 am](https://cloud.githubusercontent.com/assets/10014755/22827572/a0d34c2e-ef66-11e6-97a9-43752b60d082.png)
 
 ### Selecting and Displaying Reader Information
 
@@ -210,23 +212,23 @@ As with the Form Builder, we recommend you save changes to your gallery early an
 
 ### Editing Responses
 
-There may be times when you will need to make edits to submissions for length, style, etc. Ask makes it easy to do this while also still preserving the original response. To get started click the `icon needed` button on the submission you wish to edit.
+There may be times when you will need to make edits to submissions for length, style, etc. Ask makes it easy to do this while also still preserving the original response. To get started click the pencil button on the submission you wish to edit.
 
 A submission editor will appear with the original on the left along with the reader information you had selected to appear in your gallery. The right side of the editor allows you to make your changes both to the submission and the reader information
 
 If you need to **start over** with your changes click **"Reset Changes"** to undo all your changes and go back to using the original.
 
-Once you have completed making your changes click **Save Edits** and your changes as well as the whole gallery will be saved.
+Once you have completed making your changes click **Save Edits** and your changes, as well as the rest of the gallery, will be saved.
 
 ###  Rearranging and Deleting Responses
 
-You can change the order of the responses in your gallery by clicking the `icon needed` and `icon needed` buttons.
+You can change the order of the responses in your gallery by clicking the arrow icons.
 
-To remove a response from your gallery simply click the `icon needed` button.
+To remove a response from your gallery, simply click the trashcan button.
 
 ###  Publishing Your Gallery
 
-Ask offers flexibility as to how you can publish and share the gallaries you've created. By clicking the "Publish Options" button you can choose which option is best for you.
+Ask offers flexibility as to how you can publish and share the galleries you've created. By clicking the "Publish Options" button you can choose which option is best for you.
 
 #### Embed Options
 
@@ -237,4 +239,4 @@ One method you may choose to publish your gallery is embedding the gallery into 
 
 ####Standalone Gallery
 
-When you publish your gallery, it creates a standalone webpage that can be linked to or shared.
+When you publish your gallery, it creates a standalone webpage that can be linked to or shared. You can only create one gallery per form.
