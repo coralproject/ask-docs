@@ -82,15 +82,11 @@ After you have written your question you are presented with additional settings 
 
 - **Required:** If a question is very important you may want to make it required. You can make any question required by clicking the checkbox in the expanded question.
 
-- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to it's author when [creating your gallery](). Questions that have been selected as Reader Info will display the 'icon needed' icon when collapsed.
+- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to its author when [creating your gallery](). Questions that have been selected as Reader Info will display the 'icon needed' icon when collapsed.
 
-Ask also allows you to **ADD AGGREGATION**
+Ask also allows you to **ADD AGGREGATION** totals to the API.
 
->  /*
->
->  Andrew to add copy here.
->
->  */
+Selecting this option in certain question types adds totals to the [API](https://medium.freecodecamp.com/what-is-an-api-in-english-please-b880a3214a82#.cxbmkltik) of your Ask form, which you can then use to create visualizations of the data. If you'd like more information about this, [get in touch.](https://coralproject.net/contact.html)
 
 
 #### Reordering, Duplicating, and Deleting Questions
@@ -126,12 +122,12 @@ Ask offers flexibility as to how you can publish and share the forms you create.
 
 One method you may choose to for publishing is embedding the form into an article on your CMS.
 
-- With IFrame: This code will work across more sites as soon as it is pasted into your CMS. However, it will require the help of a developer to customize the styles.
-- Without IFrame: By pasting this code into your CMS, this javascript tag with adopt the styles of your website. Be sure to double check that your site allows this.
+- With iFrame: This code will work across more sites as soon as it is pasted into your CMS. However, it will require the help of a developer to customize the styles.
+- Without iFrame: By pasting this code into your CMS, this javascript tag with adopt the styles of your website. Be sure to double check that your site allows this.
 
 #### Standalone form
 
-When your form is published it also is published to it's own page that can be linked to or shared.
+When your form is published it also is published to its own page that can be linked to or shared.
 
 ### Begin Collecting Submission
 To begin collecting submissions from your readers you will need to set your form to "Live." By default,forms are set to "Closed." 
@@ -191,7 +187,7 @@ You can create a tag and add it to a submission to help you stay organized and a
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/sendtogallery.gif)
 
-One key feature of Ask is the ability to quickly create publishable gallaries of selected responses from a form. By clicking "Send to Gallery" on a selected response the response along with it's Reader Info is sent to the form's gallary manager for editing and publishing.
+One key feature of Ask is the ability to quickly create publishable gallaries of selected responses from a form. By clicking "Send to Gallery" on a selected response the response along with its Reader Info is sent to the form's gallary manager for editing and publishing.
 
 ### Downloading the Submissions <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/downloadcsv.png" width="30" align="middle">
 
@@ -236,9 +232,9 @@ Ask offers flexibility as to how you can publish and share the gallaries you've 
 
 One method you may choose to publish your gallery is embedding the gallery into an article on your CMS.
 
-- With IFrame: This code will work across more sites as soon as it is pasted into your CMS. However, it will require the help of a developer to customize the styles.
-- Without IFrame: By pasting this code into your CMS, this javascript tag with adopt the styles of your website. Be sure to double check that your site allows this.
+- With iFrame: This code will work across more sites as soon as it is pasted into your CMS. However, it will require the help of a developer to customize the styles.
+- Without iFrame: By pasting this code into your CMS, this javascript tag with adopt the styles of your website. Be sure to double check that your site allows this.
 
 ####Standalone Gallery
 
-When your gallery is published it also is published to it's own page that can be linked to or shared.
+When you publish your gallery, it creates a standalone webpage that can be linked to or shared.
