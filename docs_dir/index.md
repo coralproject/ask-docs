@@ -37,10 +37,13 @@ We’ve designed our products to meet essential needs of journalism through effe
 Strong community is about more than software. Our guides will help everyone in the newsroom be intentional about their community choices, whatever technology you use. We are currently covering these issues on our [blog](https://coralproject.net); the complete guides will be released in Q1 2017.
 
 
-### How can I contribute?
+### Improve these guides
+
+If you see an error or an omission in these docs, or would like us to add something, please [file an issue in GitHub.](https://github.com/coralproject/docs/issues) If you don't know how to do that, please [email your suggestion to Jeff Nelson.](mailto:jeff@mozillafoundation.org)
+
+### How else can I contribute?
 
 We want your ideas, your requests, your experiences, your bug reports, your skills, your code. [Join our community of contributors](contribute).
-
 
 
 ### Learn more
