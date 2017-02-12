@@ -159,6 +159,15 @@ By default, Ask's submission navigator will show you all submissions you have re
 - **filter** to focus on items that have been bookmarked or remove items that have been flagged; and, 
 - **search** your submissions for specific words and phrases.
 
+### Keyboard shortcuts
+
+You can use the following keyboard shortcuts to navigate and select submissions quickly:
+
+**j** - move to the next submission
+**k** - move to the previous submission
+**b** - bookmark/remove bookmark from the current submission
+**f** - flag/unflag the current submission
+
 ### Reading and Working With Submissions
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submission.png)
