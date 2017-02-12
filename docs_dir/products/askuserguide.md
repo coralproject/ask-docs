@@ -192,6 +192,8 @@ You can create a tag and add it to a submission to help you stay organized and a
 - To **add** a tag simply type a short word or phrase in the tag text area and press `enter` to add it.
 - You can **remove** a tag by clicking the "X" next to the tag you would like to remove.
 
+You can then search and filter by these tags via the Search bar at the top of the submission list.
+
 #### Sending to Gallery
 
 ![Form-builder](https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/sendtogallery.gif)
