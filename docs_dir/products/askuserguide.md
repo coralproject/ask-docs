@@ -182,7 +182,7 @@ If you receive a submission that you'd like to come back to or would like to hav
 
 #### Flagging
 
-Similarly, if you have received a submission that has offensive or harassing content you may choose to **flag** this item. This item then can be reviewed by a community manager by filtering to "Flagged" items in the submission navigator, or you can avoid continuing to see flagged submissions by filtering to "Flagged Submissions Hidden". 
+Similarly, if you have received a submission that has offensive, harassing, or otherwise low-value content, you may choose to **flag** this item. This item then can be reviewed by a community manager by filtering to "Flagged" items in the submission navigator, or you can avoid continuing to see flagged submissions by filtering to "Flagged Submissions Hidden". 
 
 #### Adding Tags
 
