@@ -23,15 +23,13 @@ pages:
 
 site_name: Coral Project
 
-repo_url: https://github.com/coralproject/ask
-
 repo_name: 'GitHub'
 
 docs_dir: 'docs_dir'
 
 theme_dir: 'themes'
 
-theme: 'material' 
+theme: 'material'
 
 markdown_extensions:
   - admonition
@@ -43,7 +41,7 @@ markdown_extensions:
       permalink: '#'
 google_analytics: ['UA-73335347-3', 'docs.coralproject.net']
 
-# Theme Options - MkDocs Material 
+# Theme Options - MkDocs Material
 
 extra:
   logo: 'images/coralproject_logo250.png'
@@ -51,4 +49,4 @@ extra:
     primary: 'blue grey'
     accent: 'cyan'
   author:
-    github: 'coralproject'  
+    github: 'coralproject'
