@@ -6,23 +6,23 @@
 Journalists often use forms to invite suggestions, tips, or ideas for their stories. Ask builds on existing tools in a number of ways:
 
 Better for journalism: 
-* **Ask encourages more people to respond to your form.** The Gallery feature makes it easy to showcase the best responses, applying the psychological principle of ['Social Proof'](http://www.obanalytics.com/images/Cialdini_2001.pdf) to journalistic practice.
-* **Ask allows journalists to tag and search responses to follow up.**<br/>
-* **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's original response.<br/>
-* **Data visualizations based on submissions are easy to build using the API.** <br/><br/>
+- **Ask encourages more people to respond to your form.** The Gallery feature makes it easy to showcase the best responses, applying the psychological principle of ['Social Proof'](http://www.obanalytics.com/images/Cialdini_2001.pdf) to journalistic practice.
+- **Ask allows journalists to tag and search responses to follow up.**<br/>
+- **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's original response.<br/>
+- **Data visualizations based on submissions are easy to build using the API.** <br/><br/>
 
 Improved design and accessibility:
-* **Ask forms are fully compatible across devices.**
-* **Ask form designs are fully customizable.** By utilizing a script tag, Ask automatically matches your site design.
-* **Ask forms are fully accessible.**<br/><br/>
+- **Ask forms are fully compatible across devices.**
+- **Ask form designs are fully customizable.** By utilizing a script tag, Ask automatically matches your site design.
+- **Ask forms are fully accessible.**<br/><br/>
 
 More efficient response management:
-* **Ask contains full Slack integration**
-* **Ask makes it possible to track respondees across forms.**
-* **The Ask submissions manager makes it easy to filter out abusive or meaningless responses, and to share the most helpful contributions.**<br/><br/>
+- **Ask contains full Slack integration**
+- **Ask makes it possible to track respondees across forms.**
+- **The Ask submissions manager makes it easy to filter out abusive or meaningless responses, and to share the most helpful contributions.**<br/><br/>
 
 Stronger user privacy: 
-* **Ask doesn't share user data with anyone.** <br/><br/>
+- **Ask doesn't share user data with anyone.** <br/><br/>
 
 Ask is also open source and fully customizable. You own your install of Ask, and can optimize it for your needs.
 
@@ -59,6 +59,7 @@ To add a question, click on a question type located in the left panel or drag an
 <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/questiontypes.png" width="400"> 
 </p>
 Ask offers 7 question types to choose from, giving your readers a variety of ways to answer and share their stories.
+
 - **Short Answer**: Ideal for answers such as a name, city, favorite dog breed, etc. This will give your readers a single-line text input area for their response. You have the option to set a character limit (or minimum).
 - **Long Answer**: Use this question type for more open-ended questions that may result in reponses of a few sentences or paragraphs. You can also enable minimum and maximum character limits for this question type.
 - **Numbers**: Use this when you are asking for an answer that is a numerical value. (If you are looking for readers to submit their phone numbers for follow up, we have a separate question type for that!) You have the option to set a value minimum or maximum.
