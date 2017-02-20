@@ -12,7 +12,7 @@ Better for journalism:
 - **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's original response.<br/>
 - **Data visualizations based on submissions are easy to build using the API.** <br/><br/>
 
-Improved design and accessibility:
+Improved design and accessibility
 
 - **Ask forms are fully compatible across devices.**
 - **Ask form designs are fully customizable.** By utilizing a script tag, Ask automatically matches your site design.
@@ -26,7 +26,7 @@ More efficient response management:
 
 Stronger user privacy: 
 
-- **Ask doesn't share user data with anyone.** <br/><br/>
+- **Ask doesn't share any user data with anyone.** <br/><br/>
 
 Ask is also open source and fully customizable. You own your install of Ask, and can optimize it for your needs.
 
