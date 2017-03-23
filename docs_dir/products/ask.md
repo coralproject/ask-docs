@@ -1,10 +1,10 @@
 # Ask
 
-_Updated: 11/29/2016_
+_Updated: 03/23/2017_
 
 	Latest Releases:
 	Ask 0.4.6
-	Ask Installer 0.0.8
+	Ask Installer 0.0.9
 
 
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer from our Github repository
@@ -19,7 +19,7 @@ Ask lets you easily create embeddable forms, manage submissions, and display gal
 
 * **Boost engagement**: Editors and journalists can directly tap into the contributor stream to easily solicit, invite and feature user-generated content that compliments the narrative
 * **Engage your community**: Community members can lend their personal knowledge and experiences for trending stories, improving the quality of the coverage while building a sense of investment among readers
-* **Add to other metadata**: Once installed and integrated with the Coral Project ecosystem, editors and publishers will gain the power to connect user-generated submissions to other logged-in interactions such as comments, with user opt-in permission
+* **Own your data**: You have complete and sole access to the data from Ask. You can then connect it to other logged-in interactions such as comments and newsletters – though we strongly suggest allowing users to explicitly opt in for any connected services
 
 We've created a guide on creating effective, targeted questions that attract and engage contributors. [You can read it here](https://blog.coralproject.net/forms-audience-engagement/). `#ProTip`
  ____
