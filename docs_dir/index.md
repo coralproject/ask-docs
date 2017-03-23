@@ -34,7 +34,7 @@ We’ve designed our products to meet essential needs of journalism through effe
 * Control your commenting experience, interact with journalists and avoid harassment
 
 ### Guides
-Strong community is about more than software. Our guides will help everyone in the newsroom be intentional about their community choices, whatever technology you use. We are currently covering these issues on our [blog](https://coralproject.net); the complete guides will be released in Q1 2017.
+Strong community is about more than software. Our guides will help everyone in the newsroom be intentional about their community choices, whatever technology you use. We are currently covering these issues on our [blog](https://blog.coralproject.net); the complete guides will be released in Q1 2017.
 
 
 ### Improve these guides
