@@ -9,6 +9,8 @@ _Updated: 11/29/2016_
 
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer from our Github repository
 
+- If you use WordPress, after you've installed Ask you can [install our WordPress plugin](https://github.com/coralproject/ask-wp-plugin)
+
 - If you have questions about installing Ask, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
 
 ## What is Ask?
