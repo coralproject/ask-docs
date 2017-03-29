@@ -1,8 +1,8 @@
 # Talk
 
-_Updated: 2/11/2017_
+_Updated: 3/30/2017_
 
-  Latest Release: Talk v0.0.3
+  Latest Release: Talk v1.3.0
 
 - [View the latest release](https://github.com/coralproject/talk/releases) 
 
