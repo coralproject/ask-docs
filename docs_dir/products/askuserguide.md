@@ -154,11 +154,11 @@ Ask provides you with a default message that is displayed to readers when your f
 
 ### Navigating Your Submissions
 
-After you form has collected a number of submission you can review them by clicking on the form name from the View Forms page. From there you will be brought to Ask's submission manager. 
+After your form has collected a number of submissions, you can review them by clicking on the form name from the View Forms page. From there you will be brought to Ask's submission manager. 
 <p align="center">
 <img src="https://raw.githubusercontent.com/losowsky/docs/ask-user-guide/docs_dir/images/submissionnavigator.png" width="300">
 </p>
-By default, Ask's submission navigator will show you all submissions you have received with the newest first and displaying that newest submission in the reading area. From the navigator you can:
+By default, Ask's submission navigator will show you all submissions you have received, displaying that newest submission in the reading area. From the navigator you can:
 
 - **sort** your submissions by oldest or newest first;
 - **filter** to focus on items that have been bookmarked or remove items that have been flagged; and, 
@@ -183,7 +183,7 @@ Any questions you have designated as containing "Reader Info" will be displayed 
 
 #### Bookmarking
 
-If you receive a submission that you'd like to come back to or would like to have another person take a look at you can **bookmark** the submission. You can quickly return to this item by filtering the submission navigator to "Bookmarked" items.
+If you receive a submission that you'd like to come back to, or would like to have another person take a look at, you can **bookmark** the submission. You can quickly return to this item by filtering the submission navigator to "Bookmarked" items.
 
 #### Flagging
 
