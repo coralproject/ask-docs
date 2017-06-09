@@ -1,10 +1,10 @@
 # Ask
 
-_Updated: 03/23/2017_
+_Updated: 06/09/2017_
 
 	Latest Releases:
-	Ask 0.4.6
-	Ask Installer 0.0.9
+	Ask 0.4.9
+	Ask Installer 0.0.10
 
 
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer from our Github repository
@@ -41,13 +41,13 @@ We've created a guide on creating effective, targeted questions that attract and
 
 ## Before You Get Started
 
-This installation guide is intended for the primary use case of a cloud installation of Ask on Amazon AWS. Ask can be deployed locally onto most cloud platforms. 
+This installation guide is intended for the primary use case of a cloud installation of Ask on Amazon AWS. Ask can be deployed locally onto most cloud platforms.
 
 The install consists of standing up a server, configuring secure terminal access via ssh, creating an S3 bucket for file storage, connecting the server to publicly available DNS for SSL cert generation, downloading the latest Ask installer from GitHub, providing answers for the configuration script and then activating the Ask server which downloads, builds and launches a series of Docker containers for the front-end, MongoDB database, web server, authentication, etc.
 
 ### Hosting your Ask Install
 
-Ask can be installed on a local machine or a server. Local installs are generally for evaluation or development purposes. Server installs are no different than local installs except they are on a server that is accessible by others. 
+Ask can be installed on a local machine or a server. Local installs are generally for evaluation or development purposes. Server installs are no different than local installs except they are on a server that is accessible by others.
 
 Before starting, you will need to:
 
@@ -60,7 +60,7 @@ The web url will generally look like this: `http://localhost:2020`. You may pick
 
 - Any version of [Linux supported by Docker](https://docs.docker.com/engine/installation/linux/). +1 for [Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntulinux/) (Recommended method and distro)
 - Ask can run on any Linux Docker container service. Cloud options include AWS, Azure and similar cloud hosting providers
-- MacOS Yosemite 10.10.3 or higher 
+- MacOS Yosemite 10.10.3 or higher
 - _Microsoft Windows is not supported at this time_
 - _Windows Server Containers 2016 is untested_
 
@@ -69,7 +69,7 @@ The web url will generally look like this: `http://localhost:2020`. You may pick
 
 Server installs can use ssl to allow secure https connections but dns needs to be installed first. In order to activate SSL, a domain or subdomain must be mapped to the Ask instance so the webserver portion of Ask (we use [Caddy](https://caddyserver.com/)) can request a certificate from [Let's Encrypt](https://letsencrypt.org/).
 
-## 1. Setup AWS Instance 
+## 1. Setup AWS Instance
 
 * **Option A**: Use the Coral Ask AMI here by searching for `coral-ask-ami` in the Amazon Marketplace
 
@@ -80,15 +80,15 @@ Server installs can use ssl to allow secure https connections but dns needs to b
     	- ami-6e165d0e
     	- SSD Volume Type 64-bit
     	- EBS General Purpose (SSD) Volume Type
-   
+
 
   2. Select Instance Type and then click 'Next':
     - t2.medium (Recommended)
-    
+
   3. Configure Instance Details and then click 'Next'
-    - Number of Instances: 
+    - Number of Instances:
     	- 1 (Recommended)
-    - Network, Subnet and Auto-Assign Public IP: 
+    - Network, Subnet and Auto-Assign Public IP:
     	- Ensure the EC2 instance is placed into a VPC network and subnet that match your desired goals for demo/testing/production availability
     - IAM Role:
     	- None
@@ -97,23 +97,23 @@ Server installs can use ssl to allow secure https connections but dns needs to b
       - Enable termination protection
       - Monitoring
       - Monitoring
-      
+
   4. Add storage:
     - Enter '10GB' and then click 'Next'
-  
-  5. Tag Instance (Optional) 
+
+  5. Tag Instance (Optional)
 
   6. Configure Security Group
-  
+
 	You can use an existing security group or create a new one in AWS's VPC.
-	
+
 	- Networking Tips
 		- Limit remote access via `ssh/22` to only the necessary IP's of your office connection which can be found using sites like [https://whatismyipaddress.com/](https://whatismyipaddress.com/)
 
 		- If you use a VPN, you can find out what range is covered and enter that in as well
-   
+
    	- We recommend you define access for the following ports:
-	
+
 			Type  Protocol  Port  Source    IP
 			SSH   TCP     	22    MY IP   	YOUR-IP-ADDRESS/32 (example 64.28.114.31/32)
 			HTTPS TCP     	443   ANYWHERE  0.0.0.0/0
@@ -122,9 +122,9 @@ Server installs can use ssl to allow secure https connections but dns needs to b
   7. Review your EC2 Instance Settings for the server
 
   8. Create new key pair or use existing one (You will need this information to ssh into the server) and note the download location
- 
+
   9. Launch your new AWS EC2 instance!
-  
+
   10. To ssh into the server, you need to change the permissions on your private key (NAME-YOU-SELECTED-FOR-THE-KEY.pem file) that you downloaded a few steps ago. It may be in your `Downloads` folder. This file cannot be readable by everyone; if it is, your ssh connection will be refused. Running the unix command 'chmod' against the file will resolve it.
 
 	- You can `cd` to the directory that contains the .pem file
@@ -133,7 +133,7 @@ Server installs can use ssl to allow secure https connections but dns needs to b
 
 			$ chmod 400 /path/to/your/private-key.pem
 
-	Have questions? Check out the Amazon AWS knowledgebase article [Connecting to Your Linux Instance Using SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) 
+	Have questions? Check out the Amazon AWS knowledgebase article [Connecting to Your Linux Instance Using SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
 
 12. Connect to your newly launched server via SSH using this format:
 
@@ -149,15 +149,15 @@ Server installs can use ssl to allow secure https connections but dns needs to b
 2. Once you're able to successfully connect, run the following command on the remote server to download and install the images, packages, certificates and tools related to Docker. These items will be used as the foundation for your Ask instance:
 
 
-		$ sudo apt-get -y update && sudo apt-get install apt-transport-https ca-certificates && sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list && sudo apt-get -y update && sudo apt-get -y install linux-image-extra-$(uname -r) linux-image-extra-virtual && sudo apt install python-pip && sudo apt-get -y install docker-engine && sudo chown -R $(whoami) /usr/local/bin && curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose 
+		$ sudo apt-get -y update && sudo apt-get install apt-transport-https ca-certificates && sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list && sudo apt-get -y update && sudo apt-get -y install linux-image-extra-$(uname -r) linux-image-extra-virtual && sudo apt install python-pip && sudo apt-get -y install docker-engine && sudo chown -R $(whoami) /usr/local/bin && curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
-	
+
 3. Run this command which will query both `docker` and `docker-compose` packages for their location and version:
 
 
 		$ which docker;docker --version;which docker-compose;docker-compose --version
 
-	
+
 	Make note of the locations and version in a text file in case you need to troubleshoot your installation. You should get results similar to this:
 
 
@@ -166,7 +166,7 @@ Server installs can use ssl to allow secure https connections but dns needs to b
 		/usr/local/bin/docker-compose
 		docker-compose version 1.8.0, build unknown
 
-		
+
 ____
 
 
@@ -176,17 +176,17 @@ ____
 New to working with Amazon's S3 file storage service? Check out this AWS knowledge article [S3 buckets - Getting Started with Amazon Simple Storage Service](http://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html) and we have an [article in the FAQ section on S3 terminology](#faq-troubleshooting). Continue through the set up guide once you've reviewed these support articles.
 
 1. From AWS S3 dashboard, [create new bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
-	
+
 	During the Ask Configuration Tool set up you will be asked to provide:
 	- The name of your S3 bucket
-	- The region the bucket is located in 
+	- The region the bucket is located in
 
 			Bucket example: YOUR-BUCKET-NAME.s3.amazonaws.com
 			Region example: us-east-1
 
 
-			
-2. Next, add a bucket policy by clicking on bucket name and then clicking on 'Properties' in upper right hand corner. 
+
+2. Next, add a bucket policy by clicking on bucket name and then clicking on 'Properties' in upper right hand corner.
 3. Click on 'Permissions' and select the "Add Bucket Policy" if you have just created the bucket (otherwise the label will say 'Edit Bucket Policy')
 4. Copy/Paste the following into the bucket policy box, then select 'Save' and 'Close'.
 
@@ -206,9 +206,9 @@ New to working with Amazon's S3 file storage service? Check out this AWS knowled
 			}
 
 
-              
-              
-              
+
+
+
 	Note: Please ensure your bucket name falls within the [AWS Bucket DNS Naming Convention](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html).
 
 4. Create IAM user with write access to AWS S3 bucket
@@ -216,7 +216,7 @@ New to working with Amazon's S3 file storage service? Check out this AWS knowled
 	- From the AWS IAM dashboard, create a new user, giving the same name as the S3 bucket
 	- Make note of the credentials in a secure location and then finish the user set up
 	- On the left, click 'Policies', then 'Create policy' and 'Create your own policy' so you can paste in the following and change the bucket name:
-	
+
 
 
 						{
@@ -240,7 +240,7 @@ New to working with Amazon's S3 file storage service? Check out this AWS knowled
 
 	- Now click into the user and click the tab 'Permissions', then 'Attach Policy' and find the one you just created, attaching it to this user.
 	- You will need the user 'Access Key ID' (Not the Secret Key) during the Ask Installation
-			
+
 ____
 
 
@@ -250,18 +250,18 @@ ____
 
 		Example DNS Record
 		A 	ask-stg-docs.coralproject.net   54.193.105.56
-			
+
 	Once you've made the changes and verified that the DNS is resolving to the new address ([OpenDNS CacheCheck](https://cachecheck.opendns.com/) is a reliable way to check for DNS propogation).
-	
+
 	It's time to test the DNS resolution by reconnecting to the remote server using the new domain/subdomain address. If you're still connected to the remote server, exit it and reconnect via the DNS address you've created:
 
 
 		Example of ssh connection using a DNS registered subdomain
 		$ ssh -i /path/to/your/secret-key.pem ubuntu@ask-stg-docs.coralproject.net
-		
+
 ____
 
-		
+
 ## 4. Slack Notifications
 
 
@@ -302,7 +302,7 @@ Run this command to download the latest release of Ask, unzip it and change dire
 
 
 	$sudo curl -LOk https://github.com/coralproject/ask-install/releases/download/v0.0.8/ask-install_0.0.8_linux_amd64.tar.gz && sudo tar zxvf ask-install_0.0.8_linux_amd64.tar.gz && cd ask-install_0.0.8_linux_amd64/
-	
+
 From this directory, run the following commands:
 
 - To ensure the files were unpacked properly
@@ -311,73 +311,73 @@ From this directory, run the following commands:
 
 - To Start the Ask Configuration Tool
 
-		$ sudo ./ask-install 
-		
-			
+		$ sudo ./ask-install
+
+
 Here are the prompts you will recieve during the configuration process:
-	
+
 		**Coral Project ASK Installer**
-		
+
 		~~ General Configuration ~~
-		
+
 		Do you want to use the stable version of ask?: (y)
-				
+
 		This is where you can specify the host on which the provided server will bind
 		to. If you specify the host with a port, it will specifically bind to that port,
 		otherwise, port 80, 443 will be bound to
-		
+
 		What's the external hostname of this machine?: (Use DNS name you created. Example ask-stg-docs.coralproject.net)
-		
+
 		Do you want SSL enabled?: (y)
-		
+
 		External URL will be "https://ask-stg-docs.coralproject.net", is that ok?: (y)
-		
+
 		Do you want to enable recaptcha?: (y) WHERE TO FIND THIS?
 		Create a captcha id via Google service: [https://www.google.com/recaptcha/admin#list](https://www.google.com/recaptcha/admin#list)
-		
+
 		Create label for easy identification
-		Enter DNS domain or subdomain you created earlier (Example 
-		
-		Do you want to enable Google Analytics?: 
-		
-		What is the Google Analytics ID?: 
+		Enter DNS domain or subdomain you created earlier (Example
+
+		Do you want to enable Google Analytics?:
+
+		What is the Google Analytics ID?:
 		_YOU NEED TO HAVE ALREADY CREATED A Google Analytics ID and PROPERTY CREATED_
-		
+
 		~~ Amazon ~~
-		
+
 		Do you want forms uploaded to S3?: (y)
-		
+
 		What's the S3 Bucket we can upload forms?: (enter your bucket url using the virtual-style url: ask-stg-docs.amazonaws.com)
-		                                  
+
 		What's the S3 Region for this bucket?: (example: us-east-1)
-		
+
 		You can find your bucket location in the properties of the bucket where you went to add the policy.
-		
+
 		NOTE: Most buckets are created in the US Standard region which translates to: us-east-1
-		
-		What's the AWS_ACCESS_KEY_ID with write access?: 
-		
+
+		What's the AWS_ACCESS_KEY_ID with write access?:
+
 		What's the AWS_ACCESS_KEY associated with this AWS_ACCESS_KEY_ID?:
-		
+
 		Is this bucket hosted in AWS?: (y)
-		
+
 		Auth EXPLAIN THIS IS FOR THE ASK APPLICATION TO SIGN IN
-		
+
 		What's the name for the user account?: WHICH WHAT USER ACCOUNT?
-		
-		
+
+
 		~~ Auth ~~
-		
-		What's the name for the user account?: 
-		
+
+		What's the name for the user account?:
+
 		_YOUR-PREFERRED-USERNAME_
-		
-		What's the email address for the user account?: 
-		
+
+		What's the email address for the user account?:
+
 		_YOUR-PREFERRED-EMAIL-ADDRESS_
-		
+
 		Password
-		
+
 		_YOUR-PREFERRED-PASSWORD_
 
 
@@ -388,11 +388,11 @@ ____
 1. Start the Ask Install
 
 		$ sudo bash setup.sh
-		
+
 2. Your outupt will look similar to this:
 
 		Pulling service layers:
-		
+
 		Pulling cay (coralproject/cay:release)...
 		release: Pulling from coralproject/cay
 		3690ec4760f9: Pull complete
@@ -467,9 +467,9 @@ ____
 		Digest: sha256:bdc0b59a6a6b88135f6a61343a66870f565966b0080f4dd492447cf651e10ead
 		Status: Downloaded newer image for abiosoft/caddy:latest
 		Layers pulled.
-		
+
 		Creating the services now:
-		
+
 		Creating network "askinstall007linuxamd64_back-auth" with the default driver
 		Creating network "askinstall007linuxamd64_bastion" with the default driver
 		Creating network "askinstall007linuxamd64_back-shelf" with the default driver
@@ -483,26 +483,56 @@ ____
 		Creating askinstall007linuxamd64_auth_1
 		Creating askinstall007linuxamd64_elkhorn_1
 		Creating askinstall007linuxamd64_caddy_1
-		
+
 		Services created.
-		
+
 		Now creating user:
-		
+
 		Created user 879f8fcb-c7a2-49b2-8fd3-1d7e7d1b3611.
-		
+
 		User was created.
-		
+
 		Please remove this file as it contains the plaintext password.
-		
+
 ____
-		
-## 7. Upgrading Your Ask Install
+
+## 7. Manage Users
+
+1. Start a one-off docker container to manage Ask's auth database
+
+		$ docker-compose run --rm auth bash
+
+2. Inside the container, use the `cli` command to manage users.
+
+		  Usage: cli [options] [command]
+
+		  Commands:
+
+		    create [options]               create a new user
+		    delete <userID>                delete a user
+		    passwd <userID>                change a password for a user
+		    update [options] <userID>      update a user
+		    list                           list all the users in the database
+		    merge <dstUserID> <srcUserID>  merge srcUser into the dstUser
+		    addrole <userID> <role>        adds a role to a given user
+		    removerole <userID> <role>     removes a role from a given user
+		    disable <userID>               disable a given user from logging in
+		    enable <userID>                enable a given user from logging in
+		    create-token <userID>          generates a jwt token for a given user
+
+		  Options:
+
+		    -h, --help     output usage information
+		    -V, --version  output the version number
+
+____
+
+## 8. Upgrading Your Ask Install
 
 1. Make sure you have the latest version of the Installer: [https://github.com/coralproject/ask-install/releases](https://github.com/coralproject/ask-install/releases)
 
 
 2. Run the following commands (NOTE: the `-s` argument is very important):
-
 
 		$ sudo ./ask-install -s
 		$ sudo  docker-compose pull
@@ -513,8 +543,8 @@ ____
 
 ## Software Versions
 
-### Docker 
-Docker 1.12.1 or later is required. 
+### Docker
+Docker 1.12.1 or later is required.
 
 - Visit the Docker website for [stable releases](https://www.docker.com/products/docker)
 
