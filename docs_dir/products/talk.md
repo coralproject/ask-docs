@@ -1,10 +1,12 @@
 # Talk
 
+**Deprecated:** This guide has been deprecated. Please view the current Talk documentation at [https://coralproject.github.io/talk/index.html](https://coralproject.github.io/talk/index.html).
+
 _Updated: 3/30/2017_
 
   Latest Release: Talk v1.3.0
 
-- [View the latest release](https://github.com/coralproject/talk/releases) 
+- [View the latest release](https://github.com/coralproject/talk/releases)
 
 - If you have questions about installing Talk, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org)
 
@@ -90,7 +92,7 @@ You can also set up your own SSL certificate if you prefer.
 ### Installing with Docker [#TODO]
 - Clone the repo: https://github.com/coralproject/talk
 - Set your environment variables in `deploy.sh` (required unless otherwise noted):
-  
+
     "TALK_PORT=5000"
     "TALK_MONGO_URL=mongodb://mongo"
     "TALK_REDIS_URL=redis://redis"
