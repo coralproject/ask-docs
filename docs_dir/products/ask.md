@@ -37,7 +37,9 @@ We've created a guide on creating effective, targeted questions that attract and
 
 **6. [Run Ask Install](#6-run-ask-installer)**
 
-**7. [Upgrading Your Ask Install](#7-upgrading-your-ask-install)**
+**7. [Manage Users](#7-manage-users)**
+
+**8. [Upgrading Your Ask Install](#8-upgrading-your-ask-install)**
 
 ## Before You Get Started
 
