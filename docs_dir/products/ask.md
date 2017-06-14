@@ -101,7 +101,7 @@ Server installs can use ssl to allow secure https connections but dns needs to b
       - Monitoring
 
   4. Add storage:
-    - Enter '10GB' and then click 'Next'
+    - Enter '15GB' and then click 'Next'
 
   5. Tag Instance (Optional)
 
