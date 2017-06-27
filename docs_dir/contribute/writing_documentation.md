@@ -14,9 +14,6 @@ Here is, briefly, how our documentation works:
 
 There is a separate page for the [documentation style guide](docs_style_guide), that covers guidelines for how to organize and write instructions and tutorials, how to format text for consistency, and terminology.
 
-<<<<<<< Updated upstream
-## Installing MkDocs
-=======
 ## How the documentation is organized
 
 The documentation is organized into several categories:
@@ -52,7 +49,6 @@ git config --global user.email "you@email.com"
 Note that user.name should be your real name, not your GitHub username. The email you use in the user.email field will be used to associate your commits with your GitHub account.
 
 ## Install MkDocs
->>>>>>> Stashed changes
 
 The Coral Project's documentation uses the [MkDocs](http://www.mkdocs.org/) documentation system, which uses [Markdown](http://daringfireball.net/projects/markdown/) to format text. Before you can get started on writing and editing the documentation, you will need to have MkDocs installed.
 
