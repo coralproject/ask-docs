@@ -68,9 +68,9 @@ Ask offers 7 question types to choose from, giving your readers a variety of way
 - **Long Answer**: Use this question type for more open-ended questions that may result in reponses of a few sentences or paragraphs. You can also enable minimum and maximum character limits for this question type.
 - **Numbers**: Use this when you are asking for an answer that is a numerical value. (If you are looking for readers to submit their phone numbers for follow up, we have a separate question type for that!) You have the option to set a value minimum or maximum.
 - **Multiple Choice**: Give your readers a few answers to choose from. You can also enable an "other" option to let them provide an answer in a text field.
-- **Email**: Looking to follow up with some of your readers? Ask for their email address with this field. This field is designated as ["Reader Info"]() by default.
+- **Email**: Looking to follow up with some of your readers? Ask for their email address with this field. This field is designated as "Personal Reader Information" by default.
 - **Date**: You can use this field to verify an age minimum. Readers will be able to choose the date with a calendar picker or by entering the date manually. 
-- **Phone Number**: Make it easy to follow up by phone. This field is designated as ["Reader Info"]() by default.
+- **Phone Number**: Make it easy to follow up by phone. This field is designated as "Personal Reader Information" by default.
 
 #### Creating Your Question
 
@@ -87,7 +87,7 @@ After you have written your question you are presented with additional settings 
 
 - **Required:** If a question is very important you may want to make it required. You can make any question required by clicking the checkbox in the expanded question.
 
-- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to its author when [creating your gallery](). Questions that have been selected as Reader Info will display a small outline of a person as an icon when collapsed.
+- **Reader Info:** One key feature of Ask is the ability to designate certain questions as personal information, connecting contributions to your users’ existing on-site identity. Enabling a question as "Reader Info" also makes it easier for you to connect a response to its author when creating your gallery. Questions that have been selected as Reader Info will display a small outline of a person as an icon when collapsed.
 
 Ask also allows you to **ADD AGGREGATION** totals to the API.
 
