@@ -7,7 +7,7 @@ Journalists often use forms to invite suggestions, tips, or ideas for their stor
 
 Better for journalism: 
 
-- **Ask encourages more people to respond to your form.** The Gallery feature makes it easy to showcase the best responses, applying the psychological principle of ['Social Proof'](http://www.obanalytics.com/images/Cialdini_2001.pdf) to journalistic practice.
+- **Ask encourages more people to respond to your form.** The Gallery feature makes it easy to showcase the best responses, applying the psychological principle of ['Social Proof'](https://web.archive.org/web/20140123151558/http://www.obanalytics.com/images/Cialdini_2001.pdf) to journalistic practice.
 - **Ask allows journalists to tag and search responses to follow up.**<br/>
 - **Ask maintains the text of the original submission.** Editors can edit submissions for length, clarity, grammar while maintaining the reader's original response.<br/>
 - **Data visualizations based on submissions are easy to build using the API.** <br/><br/>
