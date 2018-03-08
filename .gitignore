@@ -4,3 +4,4 @@ docsync/iron.json
 docsync/config.sh
 docsync/*.zip
 _site/
+venv
