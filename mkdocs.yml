@@ -22,7 +22,7 @@ pages:
 # Site specific MkDocs configuration for Coral Project
 
 site_name: Coral Project
-
+site_dir: 'site/ask'
 repo_name: 'GitHub'
 
 docs_dir: 'docs_dir'
