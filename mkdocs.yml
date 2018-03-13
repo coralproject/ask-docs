@@ -1,9 +1,8 @@
 # This section controls the navigation and nesting of pages, including their titles
 pages:
 - Home: 'index.md'
-- Products:
-  - Ask User Guide: 'products/askuserguide.md'
-  - Ask Technical Docs: 'products/ask.md'
+- Ask User Guide: 'products/askuserguide.md'
+- Ask Technical Docs: 'products/ask.md'
 - Get Involved:
   - Introduction: 'contribute/index.md'
   - Contribute code: 'contribute/writing_code.md'
