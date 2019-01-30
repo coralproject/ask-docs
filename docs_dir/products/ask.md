@@ -1,8 +1,8 @@
 # Ask
 
-_Updated: 06/09/2017_
+**Ask is no longer in active development**
 
-	Latest Releases:
+	Final Release:
 	Ask 0.4.9
 	Ask Installer 0.0.10
 
@@ -10,8 +10,6 @@ _Updated: 06/09/2017_
 - [Download the latest release](https://github.com/coralproject/ask-install/releases) of the ask-installer from our Github repository
 
 - If you use WordPress, after you've installed Ask you can [install our WordPress plugin](https://github.com/coralproject/ask-wp-plugin)
-
-- If you have questions about installing Ask, please email [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
 
 ## What is Ask?
 
@@ -21,7 +19,7 @@ Ask lets you easily create embeddable forms, manage submissions, and display gal
 * **Engage your community**: Community members can lend their personal knowledge and experiences for trending stories, improving the quality of the coverage while building a sense of investment among readers
 * **Own your data**: You have complete and sole access to the data from Ask. You can then connect it to other logged-in interactions such as comments and newsletters – though we strongly suggest allowing users to explicitly opt in for any connected services
 
-We've created a guide on creating effective, targeted questions that attract and engage contributors. [You can read it here](https://blog.coralproject.net/forms-audience-engagement/). `#ProTip`
+We've created a guide on creating effective, targeted questions that attract and engage contributors. [You can read it here](https://coralproject.net/blog/forms-audience-engagement/). `#ProTip`
  ____
 
 
@@ -581,7 +579,6 @@ Will you be hosting Ask over https? If you’re ok with http or you’re install
 
 If you want to use https, you will need to go to your DNS provider and set up the domain to point to your new server before you run the install script. This is required because Ask contains an automated mechanism for acquiring a secure certification (https://github.com/mholt/caddy) and keeping it up to date. The server must be reach it using a publicly accessible url such as [https://your.domain.com](https://your.domain.com) in order for this to happen.
 
-If you’d like to use another platform to host your files, let us know. We can work together to build it as an option into the Coral Platform. Send a mesage to [jeff@mozillafoundation.org](jeff@mozillafoundation.org).
 
 **Spam Reduction with reCaptcha**
 
